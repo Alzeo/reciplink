@@ -1,0 +1,142 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Recipe{% endblock %}
+
+    {% block body %}
+<div class="content" style="background-image: url({{ asset ('/assets/img/2873066.jpg') }}); background-position: center; padding-bottom:60px;">
+        <div class="background-recip" style="padding-top: 30px; padding-bottom: 30px; text-align: center; ">
+            <h1 style="margin-top:90px;">Nouvelle recette</h1>
+        </div>
+        <div class="formulaire  container" style="max-width: 60%; margin:auto; padding: 50px; background: #ffffffc9;">
+
+            {{ form_start(form) }}
+            {{ form_row(form.name) }}
+            <div class="row">
+                <div class="col">
+                    {{ form_row(form.dificulty) }}
+                </div>
+                <div class="col">
+                    {{ form_row(form.type) }}
+                </div>
+            </div>
+            <hr/>
+            <div class="row">
+                <div class="col">
+                    {{ form_row(form.time) }}
+                </div>
+                <div class="col">
+                    {{ form_row(form.timeUnity) }}
+                </div>
+                <div class="col">
+                    {{ form_row(form.part) }}
+                </div>
+            </div>
+            <hr/>
+
+            {{ form_row(form.foods) }}
+            <a href="#" id="add_food" class="btn btn-success"><i class="fa fa-plus"></i> Ajouter un ingrédients</a>
+            <hr/>
+            {{ form_row(form.description) }}
+            <hr/>
+            <div class="row">
+                <div class="col">
+                    {{ form_row(form.protein)}}
+                </div>
+                <div class="col">
+                    {{ form_row(form.glucide) }}
+                </div>
+                <div class="col">
+                    {{ form_row(form.lipide) }}
+                </div>
+                <div class="col">
+                    {{ form_row(form.calorie) }}
+                </div>
+            </div>
+            <hr/>
+            {{ form_row(form.picture) }}
+            {{ form_row(form.tags) }}
+
+            <button class="btn btn-success">{{ button_label|default('Ajouter') }}</button>
+            <a href="{{ path('recipe_index') }}">back to list</a>
+            {{ form_end(form) }}
+        </div>
+
+</div>
+    {% endblock %}
+{% block stylesheets %}
+{% endblock %}
+
+{% block javascript %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.10/js/select2.min.js"></script>
+    <script>
+    $('select').select2();
+</script>
+{# Voici le script en question : #}
+   <script type="text/javascript">
+       $(document).ready(function() {
+           // On récupère la balise <div> en question qui contient l'attribut « data-prototype » qui nous intéresse.
+           var $container = $('div#recipe_foods');
+
+           // On définit un compteur unique pour nommer les champs qu'on va ajouter dynamiquement
+           var index = $container.find(':input').length;
+
+           // On ajoute un nouveau champ à chaque clic sur le lien d'ajout.
+           $('#add_food').click(function(e) {
+               addFood($container);
+
+               e.preventDefault(); // évite qu'un # apparaisse dans l'URL
+               return false;
+           });
+
+           // On ajoute un premier champ automatiquement s'il n'en existe pas déjà un (cas d'une nouvelle annonce par exemple).
+           if (index == 0) {
+               addFood($container);
+           } else {
+               // S'il existe déjà des catégories, on ajoute un lien de suppression pour chacune d'entre elles
+               $container.children('div').each(function() {
+                   addDeleteLink($(this));
+               });
+           }
+
+           // La fonction qui ajoute un formulaire CategoryType
+           function addFood($container) {
+               // Dans le contenu de l'attribut « data-prototype », on remplace :
+               // - le texte "__name__label__" qu'il contient par le label du champ
+               // - le texte "__name__" qu'il contient par le numéro du champ
+               var template = $container.attr('data-prototype')
+                   .replace(/__name__label__/g, 'Aliment n°' + (index+1))
+                   .replace(/__name__/g,        index)
+               ;
+
+               // On crée un objet jquery qui contient ce template
+               var $prototype = $(template);
+
+               // On ajoute au prototype un lien pour pouvoir supprimer la catégorie
+               addDeleteLink($prototype);
+
+               // On ajoute le prototype modifié à la fin de la balise <div>
+               $container.append($prototype);
+
+               // Enfin, on incrémente le compteur pour que le prochain ajout se fasse avec un autre numéro
+               index++;
+           }
+
+           // La fonction qui ajoute un lien de suppression d'une catégorie
+           function addDeleteLink($prototype) {
+               // Création du lien
+               var $deleteLink = $('<a href="#" class="btn btn-danger">Supprimer</a>');
+
+               // Ajout du lien
+               $prototype.append($deleteLink);
+
+               // Ajout du listener sur le clic du lien pour effectivement supprimer la catégorie
+               $deleteLink.click(function(e) {
+                   $prototype.remove();
+
+                   e.preventDefault(); // évite qu'un # apparaisse dans l'URL
+                   return false;
+               });
+           }
+       });
+   </script>
+{% endblock %}

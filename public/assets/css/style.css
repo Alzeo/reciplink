@@ -1,0 +1,30 @@
+.btn-circle {
+    width: 30px;
+    height: 30px;
+    padding: 6px 0px;
+    border-radius: 15px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.42857;
+}
+
+textarea#recipe_description {
+    min-height: 200px;
+}
+
+h1 {
+    color: #fff;
+    text-transform: uppercase;
+    text-shadow: 1px 0px 10px #000;
+}
+
+h1, p {
+    font-family: 'Montserrat', sans-serif;
+}
+
+label, legend {
+    display: inline-block;
+    margin-bottom: .5rem;
+    font-size: 18px;
+    font-weight: 500;
+}
