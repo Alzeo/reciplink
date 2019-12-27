@@ -8,12 +8,13 @@ use App\Form\RecipeType;
 use App\Repository\RecipeRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\File\Exception\FileException;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("admin/recipe")
+ * @Route("profil/{username}/recipe")
  */
 class RecipeController extends AbstractController
 {
@@ -22,8 +23,12 @@ class RecipeController extends AbstractController
      */
     public function index(RecipeRepository $recipeRepository): Response
     {
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
+        $user = $this->getUser();
+
         return $this->render('recipe/index.html.twig', [
             'recipes' => $recipeRepository->findAll(),
+            'user' => $user
         ]);
     }
 
@@ -32,21 +37,54 @@ class RecipeController extends AbstractController
      */
     public function new(Request $request): Response
     {
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
+        $user = $this->getUser();
+        $username = $user->getUsername();
         $recipe = new Recipe();
         $form = $this->createForm(RecipeType::class, $recipe);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+            /** @var UploadedFile $picture */
+            $picture = $form['picture']->getData();
+
+            if ($picture) {
+                $originalFilename = pathinfo($picture->getClientOriginalName(), PATHINFO_FILENAME);
+                // this is needed to safely include the file name as part of the URL
+                $safeFilename = transliterator_transliterate('Any-Latin; Latin-ASCII; [^A-Za-z0-9_] remove; Lower()', $originalFilename);
+                $newFilename = $safeFilename.'-'.uniqid().'.'.$picture->guessExtension();
+
+                // Move the file to the directory where brochures are stored
+                try {
+                    $picture->move(
+                        $this->getParameter('recipes_image_directory'),
+                        $newFilename
+                    );
+                } catch (FileException $e) {
+                    // ... handle exception if something happens during file upload
+                }
+
+                // updates the 'brochureFilename' property to store the PDF file name
+                // instead of its contents
+                $recipe->setPicture($newFilename);
+            }
+
+
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($recipe);
             $entityManager->flush();
 
-            return $this->redirectToRoute('recipe_index');
+            return $this->redirectToRoute('recipe_index', [
+                'user' => $user,
+                'username' => $username
+            ]);
         }
 
         return $this->render('recipe/new.html.twig', [
             'recipe' => $recipe,
             'form' => $form->createView(),
+            'user' => $user
         ]);
     }
 

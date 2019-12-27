@@ -7,21 +7,11 @@
         .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
         .example-wrapper code { ; padding: 2px 6px; }
     </style>
-    <div class="position-relative overflow-hidden text-center bg-light" style="background-image: url({{ asset ('/assets/img/2533.jpg') }})">
-        <div class="col-md-5 p-lg-5 mx-auto my-5">
-            <h1 class="display-4 font-weight-normal">RecipLink</h1>
+    <div class="jumbotron position-relative overflow-hidden text-center bg-light" style="background-image: url({{ asset ('/assets/img/2533.jpg') }}); min-height: 500px;">
+        <div class="col-md-6 p-lg-6 mx-auto my-6" style="padding-top:110px; padding-bottom:110px">
+            <h1 class="display-4 font-weight-normal" ><span class="blue">RECIP</span><span class="grey">LINK</span> </h1>
             <p class="lead font-weight-normal">The first and easiest way to share your healthy recip with all the world</p>
-            <a class="btn btn-outline-primary" href="#">let's get it ?</a>
+            <a class="btn btn-primary" href="{{ path('recipe_new', {'username': user.username }) }}"><i class="fa fa-leaf"></i> share yours now</a>
         </div>
-    </div>
-    <div class="example-wrapper">
-
-        <h1>Hello {{ controller_name }}! ✅</h1>
-
-        This friendly message is coming from:
-        <ul>
-            <li>Your controller at <code><a href="{{ '/Users/tomaccess/RecipLink/src/Controller/MainController.php'|file_link(0) }}">src/Controller/MainController.php</a></code></li>
-            <li>Your template at <code><a href="{{ '/Users/tomaccess/RecipLink/templates/main/index.html.twig'|file_link(0) }}">templates/main/index.html.twig</a></code></li>
-        </ul>
     </div>
 {% endblock %}

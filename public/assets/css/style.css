@@ -12,14 +12,13 @@ textarea#recipe_description {
     min-height: 200px;
 }
 
-h1 {
-    color: #fff;
-    text-transform: uppercase;
-    text-shadow: 1px 0px 10px #000;
+
+h1, p, a {
+    font-family: 'Montserrat', sans-serif;
 }
 
-h1, p {
-    font-family: 'Montserrat', sans-serif;
+nav a {
+    font-weight: 500;
 }
 
 label, legend {
@@ -27,4 +26,62 @@ label, legend {
     margin-bottom: .5rem;
     font-size: 18px;
     font-weight: 500;
+}
+
+.site-header {
+    background-color: #fff;
+    padding-top: 20px !important;
+    padding-bottom: 20px !important;
+}
+
+.site-header a {
+    font-family: 'Open sans', sans-serif;
+    color:#333333 !important;
+    font-weight: 600;
+    font-size: 15px;
+    text-transform: uppercase;
+}
+
+.site-header a:hover {
+    color:#77777ba !important;
+}
+
+.blue {
+    color:#ed6464;
+    font-weight: 500 !important;
+}
+
+.grey {
+    color:#313131;
+    font-weight: 500 !important;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #5ea4f0;
+    border-color: #5ea4f0;
+}
+
+.btn {
+    border-radius: 0px;
+}
+
+.btn-primary:hover {
+    color: #fff;
+    background-color: #a3ba6a;
+    border-color: #a3ba6a;
+}
+
+.jumbotron.position-relative.overflow-hidden.text-center.bg-light {
+    line-height: 3em;
+}
+
+.sub-title {
+    font-size: 18px;
+    font-style: italic;
+}
+
+
+span#cke_18, span#cke_20, span#cke_24, span#cke_29, span#cke_31 {
+    display: none;
 }

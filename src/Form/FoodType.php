@@ -17,16 +17,16 @@ class FoodType extends AbstractType
 
         $builder
             ->add('name', TextType::class, [
-                'label' => false,
+                'label' => 'Ingrédient',
             ])
             ->add('quantity', IntegerType::class, [
-                'label' => 'Quantité (gr)',
+                'label' => 'Quantité',
                 'attr' => [
                     'class' => '20percent'
                 ]
             ])
             ->add('quantityUnity', ChoiceType::class, [
-                'label' => false,
+                'label' => 'Unité',
                 'choices' => [
                     'gr' => 'gr',
                     'càc' => 'càc',

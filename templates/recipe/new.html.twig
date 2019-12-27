@@ -32,9 +32,19 @@
                 </div>
             </div>
             <hr/>
-
-            {{ form_row(form.foods) }}
+            <div id="recipe_foods" class="form-group" data-prototype="
+                {% filter escape %}
+                {{ include('recipe/foods.html.twig', {'form': form.foods.vars.prototype}) }}
+                {% endfilter %}">
+                {% if not form.vars.valid %}
+                    <div id="form_refresh">
+                        {{ form_widget(form.foods)}}
+                    </div>
+                {% endif %}
+                {% do form.foods.setRendered %}
+            </div>
             <a href="#" id="add_food" class="btn btn-success"><i class="fa fa-plus"></i> Ajouter un ingrédients</a>
+            <hr/>
             <hr/>
             {{ form_row(form.description) }}
             <hr/>
@@ -57,7 +67,7 @@
             {{ form_row(form.tags) }}
 
             <button class="btn btn-success">{{ button_label|default('Ajouter') }}</button>
-            <a href="{{ path('recipe_index') }}">back to list</a>
+            <a href="{{ path('recipe_index', {'username': user.username }) }}">back to list</a>
             {{ form_end(form) }}
         </div>
 
