@@ -91,19 +91,7 @@ class RecipeType extends AbstractType
                 ]
             ))
             ->add('picture', FileType::class, [
-                'mapped' => false,
                 'required' => false,
-                'constraints' => [
-                    new File([
-                        'maxSize' => '1024k',
-                        'mimeTypes' => [
-                            'image/jpg',
-                            'image/jpeg',
-                            'image/png',
-                        ],
-                        'mimeTypesMessage' => 'Please upload a valid image',
-                    ])
-                ],
                 ])
 
             ;

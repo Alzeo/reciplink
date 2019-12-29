@@ -8,8 +8,11 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.10/css/select2.min.css" rel="stylesheet" />
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600|Poppins&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('assets/css/product.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/paper-kit.css') }}">
+
     <script src="//cdn.ckeditor.com/4.13.1/standard/ckeditor.js"></script>
     {% block stylesheets %}
     {% endblock %}
@@ -32,28 +35,37 @@
 
 </head>
 <body>
-<nav class="site-header sticky-top py-1 shadow">
-    <div class="container d-flex flex-column flex-md-row justify-content-between">
-        <a class="py-2" href="#" aria-label="Product">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="d-block mx-auto" role="img" viewBox="0 0 24 24" focusable="false"><title>Product</title><circle cx="12" cy="12" r="10"/><path d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83m13.79-4l-5.74 9.94"/></svg>
-        </a>
-        <a class="py-2 d-none d-md-inline-block" href="#">Find a recip</a>
-        <a class="py-2 d-none d-md-inline-block" href="#">Category</a>
-        <a class="py-2 d-none d-md-inline-block" href="#">Type of plat</a>
-        <a class="py-2 d-none d-md-inline-block" href="#">Enterprise</a>
-        <a class="py-2 d-none d-md-inline-block" href="#">Support</a>
-        <a class="py-2 d-none d-md-inline-block" href="#">Pricing</a>
-        {% if user == 'null' %}
-            <a class="py-2 d-none d-md-inline-block " href="#">Se connecter/s'inscrire</a>
-        {% else %}
-            <a class="py-2 d-none d-md-inline-block" href="#"><i class="fa fa-user-circle-o"></i> {{ user.username}}</a>
-        {% endif %}
+<nav class="site-header sticky-top navbar navbar navbar-expand-lg">
+    <div class="container">
+        <a href="#pablo" class="navbar-brand"><img src="{{ asset('/assets/img/cauldron.png') }}" width="60px" alt="Card image cap"></a>
+        <button aria-controls="navbarNav" aria-expanded="true" aria-label="Toggle navigation" class="navbar-toggler navbar-toggler-right" data-target="#navbar-success" data-toggle="collapse" id="navbar-success" type="button">
+            <span class="navbar-toggler-bar"></span>
+            <span class="navbar-toggler-bar"></span><span class="navbar-toggler-bar"></span>
+        </button>
+        <div toggler="#navbar-success" class="collapse navbar-collapse">
+            <ul class="ml-auto navbar-nav">
+                <li class="nav-item">
+                    <a href="#pablo" class="nav-link"><i class="fa fa-cutlery" aria-hidden="true"></i> Découvrir</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#pablo" class="nav-link"><i class="fa fa-heart" aria-hidden="true"></i> Partager une recette</a>
+                </li>
+            </ul>
+            <ul class="ml-auto navbar-nav pull-right">
+                {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                    <li class="nav-item"><a href="#pablo" class="nav-link"><i class="fa fa-user" aria-hidden="true"></i>{{ user.username}}</a></li>
+                {% else %}
 
+                   <a href="#pablo"type="button" class="btn-round mr-1 btn btn-outline-success"><i class="fa fa-sign-in" aria-hidden="true"></i> Se connecter</a>
+                {% endif %}
+            </ul>
+        </div>
     </div>
 </nav>
 {% block body  %}
 {% endblock %}
-<footer class="container py-5">
+<footer >
+    <div class="container py-5">
     <div class="row">
         <div class="col-12 col-md">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="d-block mb-2" role="img" viewBox="0 0 24 24" focusable="false"><title>Product</title><circle cx="12" cy="12" r="10"/><path d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83m13.79-4l-5.74 9.94"/></svg>
@@ -98,7 +110,13 @@
             </ul>
         </div>
     </div>
+    </div>
 </footer>
+<div class="bottom-footer">
+    <div class="copyright-text text-center">
+        © 2017-2019 RecipLink, Inc. ALL RIGHT RESERVED.
+    </div>
+</div>
 
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>

@@ -14,7 +14,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("profil/{username}/recipe")
+ * @Route("/recipe")
  */
 class RecipeController extends AbstractController
 {
@@ -27,7 +27,9 @@ class RecipeController extends AbstractController
         $user = $this->getUser();
 
         return $this->render('recipe/index.html.twig', [
-            'recipes' => $recipeRepository->findAll(),
+            'recipes' => $recipeRepository->findBy(
+                ['user' => $user]
+            ),
             'user' => $user
         ]);
     }
@@ -41,6 +43,7 @@ class RecipeController extends AbstractController
         $user = $this->getUser();
         $username = $user->getUsername();
         $recipe = new Recipe();
+        $recipe->setUser($user);
         $form = $this->createForm(RecipeType::class, $recipe);
         $form->handleRequest($request);
 
@@ -52,8 +55,7 @@ class RecipeController extends AbstractController
             if ($picture) {
                 $originalFilename = pathinfo($picture->getClientOriginalName(), PATHINFO_FILENAME);
                 // this is needed to safely include the file name as part of the URL
-                $safeFilename = transliterator_transliterate('Any-Latin; Latin-ASCII; [^A-Za-z0-9_] remove; Lower()', $originalFilename);
-                $newFilename = $safeFilename.'-'.uniqid().'.'.$picture->guessExtension();
+                $newFilename = 'recipe'.'-'.uniqid().'.'.$picture->guessExtension();
 
                 // Move the file to the directory where brochures are stored
                 try {
@@ -131,4 +133,5 @@ class RecipeController extends AbstractController
 
         return $this->redirectToRoute('recipe_index');
     }
+
 }

@@ -4,21 +4,31 @@ namespace Symfony\Component\VarExporter\Internal;
 
 return $getExpiry ? PHP_INT_MAX : Hydrator::hydrate(
     $o = [
-        clone (Registry::$prototypes['Doctrine\\ORM\\Mapping\\Column'] ?? Registry::p('Doctrine\\ORM\\Mapping\\Column')),
+        clone (($p = &Registry::$prototypes)['Vich\\UploaderBundle\\Mapping\\Annotation\\UploadableField'] ?? Registry::p('Vich\\UploaderBundle\\Mapping\\Annotation\\UploadableField')),
+        clone ($p['Doctrine\\ORM\\Mapping\\Column'] ?? Registry::p('Doctrine\\ORM\\Mapping\\Column')),
     ],
     null,
     [
+        'Vich\\UploaderBundle\\Mapping\\Annotation\\UploadableField' => [
+            'mapping' => [
+                'recipe_image',
+            ],
+            'fileNameProperty' => [
+                'filename',
+            ],
+        ],
         'stdClass' => [
             'length' => [
-                255,
+                1 => 255,
             ],
             'nullable' => [
-                true,
+                1 => true,
             ],
         ],
     ],
     [
         $o[0],
+        $o[1],
     ],
     []
 );

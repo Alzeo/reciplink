@@ -2,7 +2,9 @@ security:
     encoders:
         App\Entity\User:
             algorithm: auto
-
+    role_hierarchy:
+        ROLE_ADMIN: ROLE_USER
+        ROLE_SUPER_ADMIN: [ROLE_USER, ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
 
 
     # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
@@ -19,10 +21,15 @@ security:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
         main:
-            anonymous: lazy
+            pattern: ^/
+            anonymous: true
+            form_login:
+                login_path: app_login
+
 
             logout:
                 path: app_logout
+
             guard:
                 authenticators:
                     - App\Security\FormLoginAuthenticator
@@ -40,5 +47,5 @@ security:
     # Easy way to control access for large sections of your site
     # Note: Only the *first* access control that matches will be used
     access_control:
-        # - { path: ^/admin, roles: ROLE_ADMIN }
+        - { path: ^/add, roles: ROLE_USER }
 

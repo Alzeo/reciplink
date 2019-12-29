@@ -13,6 +13,8 @@ return [
         '/_profiler/search_bar' => [[['_route' => '_profiler_search_bar', '_controller' => 'web_profiler.controller.profiler::searchBarAction'], null, null, null, false, false, null]],
         '/_profiler/phpinfo' => [[['_route' => '_profiler_phpinfo', '_controller' => 'web_profiler.controller.profiler::phpinfoAction'], null, null, null, false, false, null]],
         '/_profiler/open' => [[['_route' => '_profiler_open_file', '_controller' => 'web_profiler.controller.profiler::openAction'], null, null, null, false, false, null]],
+        '/recipe' => [[['_route' => 'recipe_index', '_controller' => 'App\\Controller\\Admin\\RecipeController::index'], null, ['GET' => 0], null, true, false, null]],
+        '/recipe/new' => [[['_route' => 'recipe_new', '_controller' => 'App\\Controller\\Admin\\RecipeController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/' => [[['_route' => 'main', '_controller' => 'App\\Controller\\MainController::index'], null, null, null, false, false, null]],
         '/register' => [[['_route' => 'register', '_controller' => 'App\\Controller\\MainController::register'], null, null, null, false, false, null]],
         '/login' => [[['_route' => 'app_login', '_controller' => 'App\\Controller\\SecurityController::login'], null, null, null, false, false, null]],
@@ -35,16 +37,10 @@ return [
                         .'|(*:159)'
                     .')'
                 .')'
-                .'|/profil/([^/]++)/recipe(?'
-                    .'|(*:195)'
-                    .'|/(?'
-                        .'|new(*:210)'
-                        .'|([^/]++)(?'
-                            .'|(*:229)'
-                            .'|/edit(*:242)'
-                            .'|(*:250)'
-                        .')'
-                    .')'
+                .'|/recipe/([^/]++)(?'
+                    .'|(*:188)'
+                    .'|/edit(*:201)'
+                    .'|(*:209)'
                 .')'
             .')/?$}sD',
     ],
@@ -56,12 +52,10 @@ return [
         136 => [[['_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception_panel::body'], ['token'], null, null, false, false, null]],
         149 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception_panel::stylesheet'], ['token'], null, null, false, false, null]],
         159 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
-        195 => [[['_route' => 'recipe_index', '_controller' => 'App\\Controller\\Admin\\RecipeController::index'], ['username'], ['GET' => 0], null, true, false, null]],
-        210 => [[['_route' => 'recipe_new', '_controller' => 'App\\Controller\\Admin\\RecipeController::new'], ['username'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        229 => [[['_route' => 'recipe_show', '_controller' => 'App\\Controller\\Admin\\RecipeController::show'], ['username', 'id'], ['GET' => 0], null, false, true, null]],
-        242 => [[['_route' => 'recipe_edit', '_controller' => 'App\\Controller\\Admin\\RecipeController::edit'], ['username', 'id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        250 => [
-            [['_route' => 'recipe_delete', '_controller' => 'App\\Controller\\Admin\\RecipeController::delete'], ['username', 'id'], ['DELETE' => 0], null, false, true, null],
+        188 => [[['_route' => 'recipe_show', '_controller' => 'App\\Controller\\Admin\\RecipeController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        201 => [[['_route' => 'recipe_edit', '_controller' => 'App\\Controller\\Admin\\RecipeController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        209 => [
+            [['_route' => 'recipe_delete', '_controller' => 'App\\Controller\\Admin\\RecipeController::delete'], ['id'], ['DELETE' => 0], null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],
     ],
