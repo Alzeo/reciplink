@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello MainController!{% endblock %}
+{% block title %}RecipeLink - Accueil{% endblock %}
 
 {% block body %}
     <style>
@@ -20,13 +20,21 @@
                 {% for recipe in recipes %}
                     <div class="col-4">
                         <div class="card">
-                            <img class="card-img-top" src="{{ asset('uploads/recipes/' ~ recipe.picture) }}" alt="Card image cap">
+                            <img class="card-img-top" src="{{ asset('uploads/recipes/' ~ recipe.picture) }}" alt="recette {{ recipe.name }}">
+                            <div class="top-right"><span class="user"><i class="fa fa-user" aria-hidden="true"></i> {{ recipe.user.username }}</span></div>
+                            <div class="top-left"><span class="like"> <i class="fa fa-thumbs-up" aria-hidden="true"></i> 320</span></div>
                             <div class="card-body">
+                                <label class="label label-danger">{{ recipe.type }}</label>
                                 <h5 class="card-title">{{ recipe.name }}</h5>
+
                                 <p class="card-text">
-                                    Paléo
+                                    {% for tag in recipe.tags %}
+                                        <span class="tags">
+                                          <label class="label label-default mr-1">#{{ tag.name }}</label>
+                                        </span>
+                                    {% endfor %}
                                 </p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                                <a href="#" class="btn btn-success">Voir la recette</a>
                             </div>
                         </div>
                     </div>

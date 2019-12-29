@@ -65,7 +65,7 @@ class __TwigTemplate_2737c82864826f8a6784c75ccf409a92f375e4e698c267c0ae730196267
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo "Hello MainController!";
+        echo "RecipeLink - Accueil";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -113,16 +113,45 @@ class __TwigTemplate_2737c82864826f8a6784c75ccf409a92f375e4e698c267c0ae730196267
                             <img class=\"card-img-top\" src=\"";
             // line 23
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/recipes/" . twig_get_attribute($this->env, $this->source, $context["recipe"], "picture", [], "any", false, false, false, 23))), "html", null, true);
-            echo "\" alt=\"Card image cap\">
+            echo "\" alt=\"recette ";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["recipe"], "name", [], "any", false, false, false, 23), "html", null, true);
+            echo "\">
+                            <div class=\"top-right\"><span class=\"user\"><i class=\"fa fa-user\" aria-hidden=\"true\"></i> ";
+            // line 24
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["recipe"], "user", [], "any", false, false, false, 24), "username", [], "any", false, false, false, 24), "html", null, true);
+            echo "</span></div>
+                            <div class=\"top-left\"><span class=\"like\"> <i class=\"fa fa-thumbs-up\" aria-hidden=\"true\"></i> 320</span></div>
                             <div class=\"card-body\">
+                                <label class=\"label label-danger\">";
+            // line 27
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["recipe"], "type", [], "any", false, false, false, 27), "html", null, true);
+            echo "</label>
                                 <h5 class=\"card-title\">";
-            // line 25
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["recipe"], "name", [], "any", false, false, false, 25), "html", null, true);
+            // line 28
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["recipe"], "name", [], "any", false, false, false, 28), "html", null, true);
             echo "</h5>
+
                                 <p class=\"card-text\">
-                                    Paléo
-                                </p>
-                                <a href=\"#\" class=\"btn btn-primary\">Go somewhere</a>
+                                    ";
+            // line 31
+            $context['_parent'] = $context;
+            $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, $context["recipe"], "tags", [], "any", false, false, false, 31));
+            foreach ($context['_seq'] as $context["_key"] => $context["tag"]) {
+                // line 32
+                echo "                                        <span class=\"tags\">
+                                          <label class=\"label label-default mr-1\">#";
+                // line 33
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["tag"], "name", [], "any", false, false, false, 33), "html", null, true);
+                echo "</label>
+                                        </span>
+                                    ";
+            }
+            $_parent = $context['_parent'];
+            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['tag'], $context['_parent'], $context['loop']);
+            $context = array_intersect_key($context, $_parent) + $_parent;
+            // line 36
+            echo "                                </p>
+                                <a href=\"#\" class=\"btn btn-success\">Voir la recette</a>
                             </div>
                         </div>
                     </div>
@@ -131,7 +160,7 @@ class __TwigTemplate_2737c82864826f8a6784c75ccf409a92f375e4e698c267c0ae730196267
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['recipe'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 34
+        // line 42
         echo "        </div>
     </section>
 ";
@@ -155,14 +184,14 @@ class __TwigTemplate_2737c82864826f8a6784c75ccf409a92f375e4e698c267c0ae730196267
 
     public function getDebugInfo()
     {
-        return array (  135 => 34,  120 => 25,  115 => 23,  111 => 21,  107 => 20,  94 => 10,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  164 => 42,  153 => 36,  144 => 33,  141 => 32,  137 => 31,  131 => 28,  127 => 27,  121 => 24,  115 => 23,  111 => 21,  107 => 20,  94 => 10,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{% extends 'base.html.twig' %}
 
-{% block title %}Hello MainController!{% endblock %}
+{% block title %}RecipeLink - Accueil{% endblock %}
 
 {% block body %}
     <style>
@@ -182,13 +211,21 @@ class __TwigTemplate_2737c82864826f8a6784c75ccf409a92f375e4e698c267c0ae730196267
                 {% for recipe in recipes %}
                     <div class=\"col-4\">
                         <div class=\"card\">
-                            <img class=\"card-img-top\" src=\"{{ asset('uploads/recipes/' ~ recipe.picture) }}\" alt=\"Card image cap\">
+                            <img class=\"card-img-top\" src=\"{{ asset('uploads/recipes/' ~ recipe.picture) }}\" alt=\"recette {{ recipe.name }}\">
+                            <div class=\"top-right\"><span class=\"user\"><i class=\"fa fa-user\" aria-hidden=\"true\"></i> {{ recipe.user.username }}</span></div>
+                            <div class=\"top-left\"><span class=\"like\"> <i class=\"fa fa-thumbs-up\" aria-hidden=\"true\"></i> 320</span></div>
                             <div class=\"card-body\">
+                                <label class=\"label label-danger\">{{ recipe.type }}</label>
                                 <h5 class=\"card-title\">{{ recipe.name }}</h5>
+
                                 <p class=\"card-text\">
-                                    Paléo
+                                    {% for tag in recipe.tags %}
+                                        <span class=\"tags\">
+                                          <label class=\"label label-default mr-1\">#{{ tag.name }}</label>
+                                        </span>
+                                    {% endfor %}
                                 </p>
-                                <a href=\"#\" class=\"btn btn-primary\">Go somewhere</a>
+                                <a href=\"#\" class=\"btn btn-success\">Voir la recette</a>
                             </div>
                         </div>
                     </div>

@@ -95,7 +95,7 @@ class __TwigTemplate_30d8c17cafe65b47cb5619cc221ecccb30ba415a7d02450d8738eabf3c8
 
 </head>
 <body>
-<nav class=\"site-header sticky-top navbar navbar navbar-expand-lg\">
+<nav class=\"site-header sticky-top navbar navbar navbar-expand\">
     <div class=\"container\">
         <a href=\"#pablo\" class=\"navbar-brand\"><img src=\"";
         // line 40
@@ -103,12 +103,16 @@ class __TwigTemplate_30d8c17cafe65b47cb5619cc221ecccb30ba415a7d02450d8738eabf3c8
         echo "\" width=\"60px\" alt=\"Card image cap\"></a>
         <button aria-controls=\"navbarNav\" aria-expanded=\"true\" aria-label=\"Toggle navigation\" class=\"navbar-toggler navbar-toggler-right\" data-target=\"#navbar-success\" data-toggle=\"collapse\" id=\"navbar-success\" type=\"button\">
             <span class=\"navbar-toggler-bar\"></span>
-            <span class=\"navbar-toggler-bar\"></span><span class=\"navbar-toggler-bar\"></span>
+            <span class=\"navbar-toggler-bar\"></span>
+            <span class=\"navbar-toggler-bar\"></span>
         </button>
         <div toggler=\"#navbar-success\" class=\"collapse navbar-collapse\">
             <ul class=\"ml-auto navbar-nav\">
                 <li class=\"nav-item\">
-                    <a href=\"#pablo\" class=\"nav-link\"><i class=\"fa fa-cutlery\" aria-hidden=\"true\"></i> Découvrir</a>
+                    <a href=\"";
+        // line 49
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("discover");
+        echo "\" class=\"nav-link\"><i class=\"fa fa-cutlery\" aria-hidden=\"true\"></i> Découvrir</a>
                 </li>
                 <li class=\"nav-item\">
                     <a href=\"#pablo\" class=\"nav-link\"><i class=\"fa fa-heart\" aria-hidden=\"true\"></i> Partager une recette</a>
@@ -116,28 +120,28 @@ class __TwigTemplate_30d8c17cafe65b47cb5619cc221ecccb30ba415a7d02450d8738eabf3c8
             </ul>
             <ul class=\"ml-auto navbar-nav pull-right\">
                 ";
-        // line 55
+        // line 56
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("IS_AUTHENTICATED_FULLY")) {
-            // line 56
+            // line 57
             echo "                    <li class=\"nav-item\"><a href=\"#pablo\" class=\"nav-link\"><i class=\"fa fa-user\" aria-hidden=\"true\"></i>";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 56, $this->source); })()), "username", [], "any", false, false, false, 56), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 57, $this->source); })()), "username", [], "any", false, false, false, 57), "html", null, true);
             echo "</a></li>
                 ";
         } else {
-            // line 58
+            // line 59
             echo "
                    <a href=\"#pablo\"type=\"button\" class=\"btn-round mr-1 btn btn-outline-success\"><i class=\"fa fa-sign-in\" aria-hidden=\"true\"></i> Se connecter</a>
                 ";
         }
-        // line 61
+        // line 62
         echo "            </ul>
         </div>
     </div>
 </nav>
 ";
-        // line 65
+        // line 66
         $this->displayBlock('body', $context, $blocks);
-        // line 67
+        // line 68
         echo "<footer >
     <div class=\"container py-5\">
     <div class=\"row\">
@@ -193,7 +197,6 @@ class __TwigTemplate_30d8c17cafe65b47cb5619cc221ecccb30ba415a7d02450d8738eabf3c8
 </div>
 
 <script src=\"https://code.jquery.com/jquery-3.4.1.slim.min.js\" integrity=\"sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n\" crossorigin=\"anonymous\"></script>
-<script src=\"https://code.jquery.com/jquery-3.4.1.slim.min.js\" integrity=\"sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n\" crossorigin=\"anonymous\"></script>
 <script src=\"https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js\" integrity=\"sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo\" crossorigin=\"anonymous\"></script>
 <script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js\" integrity=\"sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6\" crossorigin=\"anonymous\"></script>
 <script>
@@ -205,6 +208,7 @@ class __TwigTemplate_30d8c17cafe65b47cb5619cc221ecccb30ba415a7d02450d8738eabf3c8
         // line 130
         echo "</body>
 </html>
+
 ";
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
@@ -253,7 +257,7 @@ class __TwigTemplate_30d8c17cafe65b47cb5619cc221ecccb30ba415a7d02450d8738eabf3c8
 
     }
 
-    // line 65
+    // line 66
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -301,7 +305,7 @@ class __TwigTemplate_30d8c17cafe65b47cb5619cc221ecccb30ba415a7d02450d8738eabf3c8
 
     public function getDebugInfo()
     {
-        return array (  275 => 128,  257 => 65,  247 => 18,  237 => 17,  218 => 5,  206 => 130,  204 => 128,  141 => 67,  139 => 65,  133 => 61,  128 => 58,  122 => 56,  120 => 55,  102 => 40,  79 => 19,  77 => 17,  71 => 14,  67 => 13,  63 => 12,  53 => 5,  47 => 1,);
+        return array (  279 => 128,  261 => 66,  251 => 18,  241 => 17,  222 => 5,  209 => 130,  207 => 128,  145 => 68,  143 => 66,  137 => 62,  132 => 59,  126 => 57,  124 => 56,  114 => 49,  102 => 40,  79 => 19,  77 => 17,  71 => 14,  67 => 13,  63 => 12,  53 => 5,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -343,17 +347,18 @@ class __TwigTemplate_30d8c17cafe65b47cb5619cc221ecccb30ba415a7d02450d8738eabf3c8
 
 </head>
 <body>
-<nav class=\"site-header sticky-top navbar navbar navbar-expand-lg\">
+<nav class=\"site-header sticky-top navbar navbar navbar-expand\">
     <div class=\"container\">
         <a href=\"#pablo\" class=\"navbar-brand\"><img src=\"{{ asset('/assets/img/cauldron.png') }}\" width=\"60px\" alt=\"Card image cap\"></a>
         <button aria-controls=\"navbarNav\" aria-expanded=\"true\" aria-label=\"Toggle navigation\" class=\"navbar-toggler navbar-toggler-right\" data-target=\"#navbar-success\" data-toggle=\"collapse\" id=\"navbar-success\" type=\"button\">
             <span class=\"navbar-toggler-bar\"></span>
-            <span class=\"navbar-toggler-bar\"></span><span class=\"navbar-toggler-bar\"></span>
+            <span class=\"navbar-toggler-bar\"></span>
+            <span class=\"navbar-toggler-bar\"></span>
         </button>
         <div toggler=\"#navbar-success\" class=\"collapse navbar-collapse\">
             <ul class=\"ml-auto navbar-nav\">
                 <li class=\"nav-item\">
-                    <a href=\"#pablo\" class=\"nav-link\"><i class=\"fa fa-cutlery\" aria-hidden=\"true\"></i> Découvrir</a>
+                    <a href=\"{{ path('discover') }}\" class=\"nav-link\"><i class=\"fa fa-cutlery\" aria-hidden=\"true\"></i> Découvrir</a>
                 </li>
                 <li class=\"nav-item\">
                     <a href=\"#pablo\" class=\"nav-link\"><i class=\"fa fa-heart\" aria-hidden=\"true\"></i> Partager une recette</a>
@@ -427,7 +432,6 @@ class __TwigTemplate_30d8c17cafe65b47cb5619cc221ecccb30ba415a7d02450d8738eabf3c8
 </div>
 
 <script src=\"https://code.jquery.com/jquery-3.4.1.slim.min.js\" integrity=\"sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n\" crossorigin=\"anonymous\"></script>
-<script src=\"https://code.jquery.com/jquery-3.4.1.slim.min.js\" integrity=\"sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n\" crossorigin=\"anonymous\"></script>
 <script src=\"https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js\" integrity=\"sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo\" crossorigin=\"anonymous\"></script>
 <script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js\" integrity=\"sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6\" crossorigin=\"anonymous\"></script>
 <script>
@@ -437,6 +441,7 @@ class __TwigTemplate_30d8c17cafe65b47cb5619cc221ecccb30ba415a7d02450d8738eabf3c8
 {% endblock %}
 </body>
 </html>
+
 ", "base.html.twig", "/home/cortez/Sites/reciplink/templates/base.html.twig");
     }
 }

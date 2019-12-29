@@ -95,8 +95,10 @@ class RecipeController extends AbstractController
      */
     public function show(Recipe $recipe): Response
     {
+
         return $this->render('recipe/show.html.twig', [
             'recipe' => $recipe,
+            'recipeUser' => $recipe->getUser()
         ]);
     }
 

@@ -22,6 +22,7 @@ return [
     'recipe_delete' => [['id'], ['_controller' => 'App\\Controller\\Admin\\RecipeController::delete'], [], [['variable', '/', '[^/]++', 'id'], ['text', '/recipe']], [], []],
     'main' => [[], ['_controller' => 'App\\Controller\\MainController::index'], [], [['text', '/']], [], []],
     'register' => [[], ['_controller' => 'App\\Controller\\MainController::register'], [], [['text', '/register']], [], []],
+    'discover' => [[], ['_controller' => 'App\\Controller\\MainController::allRecipes'], [], [['text', '/recettes']], [], []],
     'app_login' => [[], ['_controller' => 'App\\Controller\\SecurityController::login'], [], [['text', '/login']], [], []],
     'app_logout' => [[], ['_controller' => 'App\\Controller\\SecurityController::logout'], [], [['text', '/logout']], [], []],
 ];

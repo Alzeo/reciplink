@@ -2456,6 +2456,14 @@
         <argument>2048</argument>
       </call>
       <call method="addListener">
+        <argument>console.command</argument>
+        <argument type="collection">
+          <argument type="service" id="debug.debug_handlers_listener"/>
+          <argument>configure</argument>
+        </argument>
+        <argument>2048</argument>
+      </call>
+      <call method="addListener">
         <argument>kernel.request</argument>
         <argument type="collection">
           <argument type="service" id="router_listener"/>
@@ -4895,7 +4903,7 @@
       <tag name="console.command" command="server:run"/>
       <argument>/home/cortez/Sites/reciplink/public</argument>
       <argument>dev</argument>
-      <argument>/home/cortez/Sites/reciplink/var/cache</argument>
+      <argument>/home/cortez/Sites/reciplink</argument>
       <call method="setName">
         <argument>server:run</argument>
       </call>
@@ -4904,21 +4912,21 @@
       <tag name="console.command" command="server:start"/>
       <argument>/home/cortez/Sites/reciplink/public</argument>
       <argument>dev</argument>
-      <argument>/home/cortez/Sites/reciplink/var/cache</argument>
+      <argument>/home/cortez/Sites/reciplink</argument>
       <call method="setName">
         <argument>server:start</argument>
       </call>
     </service>
     <service id="web_server.command.server_stop" class="Symfony\Bundle\WebServerBundle\Command\ServerStopCommand" public="false">
       <tag name="console.command" command="server:stop"/>
-      <argument>/home/cortez/Sites/reciplink/var/cache</argument>
+      <argument>/home/cortez/Sites/reciplink</argument>
       <call method="setName">
         <argument>server:stop</argument>
       </call>
     </service>
     <service id="web_server.command.server_status" class="Symfony\Bundle\WebServerBundle\Command\ServerStatusCommand" public="false">
       <tag name="console.command" command="server:status"/>
-      <argument>/home/cortez/Sites/reciplink/var/cache</argument>
+      <argument>/home/cortez/Sites/reciplink</argument>
       <call method="setName">
         <argument>server:status</argument>
       </call>
@@ -5381,14 +5389,14 @@
         <argument key="authenticationUtils" type="service" id="security.authentication_utils"/>
       </argument>
     </service>
-    <service id=".service_locator.YHjcmi9" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.jJ4tn3d" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\Admin\RecipeController::delete" type="service" id=".service_locator.g_QAUHN"/>
         <argument key="App\Controller\Admin\RecipeController::edit" type="service" id=".service_locator.g_QAUHN"/>
         <argument key="App\Controller\Admin\RecipeController::index" type="service" id=".service_locator.LPAUdgn"/>
         <argument key="App\Controller\Admin\RecipeController::show" type="service" id=".service_locator.g_QAUHN"/>
-        <argument key="App\Controller\MainController::allRecipes" type="service" id=".service_locator.g_QAUHN"/>
+        <argument key="App\Controller\MainController::allRecipes" type="service" id=".service_locator.LPAUdgn"/>
         <argument key="App\Controller\MainController::index" type="service" id=".service_locator.LPAUdgn"/>
         <argument key="App\Controller\MainController::register" type="service" id=".service_locator.ccM2MGC"/>
         <argument key="App\Controller\SecurityController::login" type="service" id=".service_locator.g.xob4v"/>
@@ -5396,7 +5404,7 @@
         <argument key="App\Controller\Admin\RecipeController:edit" type="service" id=".service_locator.g_QAUHN"/>
         <argument key="App\Controller\Admin\RecipeController:index" type="service" id=".service_locator.LPAUdgn"/>
         <argument key="App\Controller\Admin\RecipeController:show" type="service" id=".service_locator.g_QAUHN"/>
-        <argument key="App\Controller\MainController:allRecipes" type="service" id=".service_locator.g_QAUHN"/>
+        <argument key="App\Controller\MainController:allRecipes" type="service" id=".service_locator.LPAUdgn"/>
         <argument key="App\Controller\MainController:index" type="service" id=".service_locator.LPAUdgn"/>
         <argument key="App\Controller\MainController:register" type="service" id=".service_locator.ccM2MGC"/>
         <argument key="App\Controller\SecurityController:login" type="service" id=".service_locator.g.xob4v"/>
@@ -5807,12 +5815,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" public="false">
-      <argument type="service" id=".service_locator.YHjcmi9"/>
+      <argument type="service" id=".service_locator.jJ4tn3d"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" public="false"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver" public="false"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver" public="false">
-      <argument type="service" id=".service_locator.YHjcmi9"/>
+      <argument type="service" id=".service_locator.jJ4tn3d"/>
     </service>
     <service id=".debug.http_client.inner" class="Symfony\Contracts\HttpClient\HttpClientInterface" public="false">
       <argument type="collection"/>
@@ -6262,7 +6270,7 @@
     <service id="Vich\UploaderBundle\Templating\Helper\UploaderHelper" alias="vich_uploader.templating.helper.uploader_helper" public="false"/>
     <service id="Vich\UploaderBundle\Twig\Extension\UploaderExtension" alias="vich_uploader.twig.extension.uploader" public="false"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.CmORmuK" public="true"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.YHjcmi9"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.jJ4tn3d"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem" public="false"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>

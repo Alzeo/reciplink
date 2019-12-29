@@ -12,6 +12,8 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use Symfony\Component\Security\Core\Security;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Entity;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter ;
 
 class MainController extends AbstractController
 {
@@ -23,15 +25,18 @@ class MainController extends AbstractController
 
     /**
      * @Route("/", name="main")
+     * @param RecipeRepository $recipeRepository
+     * @param Recipe $recipe
      */
     public function index(Request $request, RecipeRepository $recipeRepository)
     {
 
+        $recipes = $recipeRepository->findAll();
         $user = $this->security->getUser();
         return $this->render('main/index.html.twig', [
             'controller_name' => 'MainController',
             'user' => $user,
-            'recipes' => $recipeRepository->findAll(),
+            'recipes' => $recipes,
         ]);
     }
 
@@ -58,11 +63,16 @@ class MainController extends AbstractController
         ]);
     }
 
-    public function allRecipes(Request $request, Recipe $recipe): Response {
+    /**
+     * @Route("/recettes", name="discover")
+     */
+    public function allRecipes(Request $request, RecipeRepository $recipeRepository): Response {
         $user = $this->security->getUser();
-        return $this->render('main/index.html.twig', [
+        $recipes = $recipeRepository->findAll();
+        return $this->render('main/discover.html.twig', [
             'controller_name' => 'MainController',
-            'user' => $user
+            'user' => $user,
+            'recipes' => $recipes
         ]);
 
     }

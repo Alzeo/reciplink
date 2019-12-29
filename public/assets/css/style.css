@@ -184,3 +184,42 @@ footer a:hover {
 .card {
     margin-bottom: 70px !important;
 }
+.card-title {
+    font-size: 25px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.user {
+    color: #fb4113;
+    font-weight: 500;
+}
+
+.top-right {
+    position: absolute;
+    top: 8px;
+    right: 16px;
+    background: white;
+    border-radius: 10%;
+    padding: 2px;
+}
+
+
+.top-left {
+    position: absolute;
+    top: 8px;
+    left: 16px;
+    background: #0000008a;
+    border-radius: 10%;
+    padding: 2px;
+}
+
+.like {
+    color: #fff;
+}
+
+.card img {
+    max-width: 100%;
+    border-radius: 12px 12px 0 0;
+    height: 15vw !important;
+    object-fit: cover;
+}
