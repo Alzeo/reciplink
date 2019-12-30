@@ -3,9 +3,13 @@
 namespace App\Controller;
 
 use App\Entity\Recipe;
+use App\Entity\RecipeSearch;
 use App\Entity\User;
+use App\Form\RecipeSearchType;
 use App\Form\RegisterType;
 use App\Repository\RecipeRepository;
+use Knp\Component\Pager\Pagination\PaginationInterface;
+use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -24,14 +28,14 @@ class MainController extends AbstractController
     }
 
     /**
-     * @Route("/", name="main")
+     * @Route("/", name="home")
      * @param RecipeRepository $recipeRepository
      * @param Recipe $recipe
      */
     public function index(Request $request, RecipeRepository $recipeRepository)
     {
 
-        $recipes = $recipeRepository->findAll();
+        $recipes = $recipeRepository->findLatest();
         $user = $this->security->getUser();
         return $this->render('main/index.html.twig', [
             'controller_name' => 'MainController',
@@ -66,13 +70,23 @@ class MainController extends AbstractController
     /**
      * @Route("/recettes", name="discover")
      */
-    public function allRecipes(Request $request, RecipeRepository $recipeRepository): Response {
+    public function allRecipes(Request $request, RecipeRepository $recipeRepository, PaginatorInterface $paginator): Response {
         $user = $this->security->getUser();
-        $recipes = $recipeRepository->findAll();
+        $search = new RecipeSearch();
+        $form = $this->createForm(RecipeSearchType::class, $search);
+        $form->handleRequest($request);
+        $recipes = $paginator->paginate($recipeRepository->findAllVisibleQuery($search),
+            $request->query->getInt('page', 1),
+            12/*page number*/
+        );
+       $totalRecipe = count($recipes);
+        dump($totalRecipe);
+
         return $this->render('main/discover.html.twig', [
             'controller_name' => 'MainController',
             'user' => $user,
-            'recipes' => $recipes
+            'recipes' => $recipes,
+            'form' => $form->createView()
         ]);
 
     }

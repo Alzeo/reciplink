@@ -203,6 +203,13 @@ footer a:hover {
     padding: 2px;
 }
 
+.bottom-left {
+    position: absolute;
+    top: 255px;
+    left: 16px;
+}
+
+
 
 .top-left {
     position: absolute;
@@ -222,4 +229,57 @@ footer a:hover {
     border-radius: 12px 12px 0 0;
     height: 15vw !important;
     object-fit: cover;
+}
+
+.img-recipe {
+    width: 100%;
+    border-radius: 12px 12px 0 0;
+    max-height: 20vw !important;
+    object-fit:cover;
+}
+
+.block-regime h2 {
+    text-transform: uppercase;
+    font-size: 25px;
+    font-family: 'Montserrat', sans-serif;
+    margin: 40px 0 35px;
+}
+.block-regime .btn[class*="btn-outline-"] {
+    background:#fff !important;
+    font-size: 15px;
+    letter-spacing: 2px;
+    font-family: 'Montserrat', sans-serif;
+    padding: 20px 0;
+}
+
+.block-regime .btn[class*="btn-outline-"]:hover {
+    background: #69cc95 !important;
+    color: #fff;
+}
+
+.type_plat {
+    background:#f5593d;
+    color:#fff;
+    width:50%;
+}
+
+.block-im-recipe {
+    margin-top: -29px;
+}
+
+.more-info-recipe {
+    padding:15px;
+    background:#fff;
+    border:1px solid rgb(219, 219, 219);
+}
+
+h1.images-title {
+
+    margin-top: 0px;
+
+}
+
+.card-regime {
+    color: #8bdaae;
+    font-size: 17px;
 }

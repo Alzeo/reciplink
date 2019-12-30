@@ -22,6 +22,8 @@
       <parameter key="MakerBundle">Symfony\Bundle\MakerBundle\MakerBundle</parameter>
       <parameter key="WebServerBundle">Symfony\Bundle\WebServerBundle\WebServerBundle</parameter>
       <parameter key="VichUploaderBundle">Vich\UploaderBundle\VichUploaderBundle</parameter>
+      <parameter key="DoctrineFixturesBundle">Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle</parameter>
+      <parameter key="KnpPaginatorBundle">Knp\Bundle\PaginatorBundle\KnpPaginatorBundle</parameter>
     </parameter>
     <parameter key="kernel.bundles_metadata" type="collection">
       <parameter key="FrameworkBundle" type="collection">
@@ -75,6 +77,14 @@
       <parameter key="VichUploaderBundle" type="collection">
         <parameter key="path">/home/cortez/Sites/reciplink/vendor/vich/uploader-bundle</parameter>
         <parameter key="namespace">Vich\UploaderBundle</parameter>
+      </parameter>
+      <parameter key="DoctrineFixturesBundle" type="collection">
+        <parameter key="path">/home/cortez/Sites/reciplink/vendor/doctrine/doctrine-fixtures-bundle</parameter>
+        <parameter key="namespace">Doctrine\Bundle\FixturesBundle</parameter>
+      </parameter>
+      <parameter key="KnpPaginatorBundle" type="collection">
+        <parameter key="path">/home/cortez/Sites/reciplink/vendor/knplabs/knp-paginator-bundle</parameter>
+        <parameter key="namespace">Knp\Bundle\PaginatorBundle</parameter>
       </parameter>
     </parameter>
     <parameter key="kernel.charset">UTF-8</parameter>
@@ -266,6 +276,10 @@
       </parameter>
     </parameter>
     <parameter key="vich_uploader.file_injector.class">Vich\UploaderBundle\Injector\FileInjector</parameter>
+    <parameter key="knp_paginator.template.pagination">@KnpPaginator/Pagination/twitter_bootstrap_v4_pagination.html.twig</parameter>
+    <parameter key="knp_paginator.template.filtration">@KnpPaginator/Pagination/filtration.html.twig</parameter>
+    <parameter key="knp_paginator.template.sortable">@KnpPaginator/Pagination/sortable_link.html.twig</parameter>
+    <parameter key="knp_paginator.page_range">5</parameter>
     <parameter key="data_collector.templates" type="collection">
       <parameter key="data_collector.request" type="collection">
         <parameter>request</parameter>
@@ -358,19 +372,19 @@
     <service id="EasyCorp\EasyLog\EasyLogHandler" class="EasyCorp\EasyLog\EasyLogHandler" public="false">
       <argument>/home/cortez/Sites/reciplink/var/log/dev.log</argument>
     </service>
-    <service id="App\Controller\Admin\RecipeController" class="App\Controller\Admin\RecipeController" public="true" autowire="true" autoconfigure="true">
-      <tag name="controller.service_arguments"/>
-      <tag name="container.service_subscriber"/>
-      <call method="setContainer">
-        <argument type="service" id=".service_locator.WkgBPi_.App\Controller\Admin\RecipeController"/>
-      </call>
-    </service>
     <service id="App\Controller\MainController" class="App\Controller\MainController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
       <argument type="service" id="security.helper"/>
       <call method="setContainer">
         <argument type="service" id=".service_locator.WkgBPi_.App\Controller\MainController"/>
+      </call>
+    </service>
+    <service id="App\Controller\RecipeController" class="App\Controller\RecipeController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.WkgBPi_.App\Controller\RecipeController"/>
       </call>
     </service>
     <service id="App\Controller\SecurityController" class="App\Controller\SecurityController" public="true" autowire="true" autoconfigure="true">
@@ -380,7 +394,16 @@
         <argument type="service" id=".service_locator.WkgBPi_.App\Controller\SecurityController"/>
       </call>
     </service>
+    <service id="App\DataFixtures\AppFixtures" class="App\DataFixtures\AppFixtures" autowire="true" autoconfigure="true">
+      <tag name="doctrine.fixture.orm"/>
+    </service>
+    <service id="App\DataFixtures\RecipeFixtures" class="App\DataFixtures\RecipeFixtures" autowire="true" autoconfigure="true">
+      <tag name="doctrine.fixture.orm"/>
+    </service>
     <service id="App\Form\FoodType" class="App\Form\FoodType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
+    <service id="App\Form\RecipeSearchType" class="App\Form\RecipeSearchType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
     <service id="App\Form\RecipeType" class="App\Form\RecipeType" autowire="true" autoconfigure="true">
@@ -829,6 +852,7 @@
       </argument>
       <argument type="collection">
         <argument>App\Form\FoodType</argument>
+        <argument>App\Form\RecipeSearchType</argument>
         <argument>App\Form\RecipeType</argument>
         <argument>App\Form\RegisterType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\FormType</argument>
@@ -1171,7 +1195,7 @@
       <argument type="service" id="form.registry"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension" public="false">
-      <argument type="service" id=".service_locator.ZjadLSN"/>
+      <argument type="service" id=".service_locator.9oWAwRE"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.transformation_failure_handling"/>
@@ -1461,6 +1485,7 @@
             <argument>/home/cortez/Sites/reciplink/vendor/symfony/form/Resources/translations/validators.ar.xlf</argument>
             <argument>/home/cortez/Sites/reciplink/vendor/symfony/security-core/Resources/translations/security.ar.xlf</argument>
             <argument>/home/cortez/Sites/reciplink/vendor/vich/uploader-bundle/translations/VichUploaderBundle.ar.yml</argument>
+            <argument>/home/cortez/Sites/reciplink/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.ar.xliff</argument>
           </argument>
           <argument key="az" type="collection">
             <argument>/home/cortez/Sites/reciplink/vendor/symfony/validator/Resources/translations/validators.az.xlf</argument>
@@ -1477,6 +1502,7 @@
             <argument>/home/cortez/Sites/reciplink/vendor/symfony/form/Resources/translations/validators.bg.xlf</argument>
             <argument>/home/cortez/Sites/reciplink/vendor/symfony/security-core/Resources/translations/security.bg.xlf</argument>
             <argument>/home/cortez/Sites/reciplink/vendor/vich/uploader-bundle/translations/VichUploaderBundle.bg.yml</argument>
+            <argument>/home/cortez/Sites/reciplink/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.bg.xliff</argument>
           </argument>
           <argument key="ca" type="collection">
             <argument>/home/cortez/Sites/reciplink/vendor/symfony/validator/Resources/translations/validators.ca.xlf</argument>
@@ -1489,6 +1515,7 @@
             <argument>/home/cortez/Sites/reciplink/vendor/symfony/form/Resources/translations/validators.cs.xlf</argument>
             <argument>/home/cortez/Sites/reciplink/vendor/symfony/security-core/Resources/translations/security.cs.xlf</argument>
             <argument>/home/cortez/Sites/reciplink/vendor/vich/uploader-bundle/translations/VichUploaderBundle.cs.yml</argument>
+            <argument>/home/cortez/Sites/reciplink/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.cs.xliff</argument>
           </argument>
           <argument key="cy" type="collection">
             <argument>/home/cortez/Sites/reciplink/vendor/symfony/validator/Resources/translations/validators.cy.xlf</argument>
@@ -1497,12 +1524,14 @@
             <argument>/home/cortez/Sites/reciplink/vendor/symfony/validator/Resources/translations/validators.da.xlf</argument>
             <argument>/home/cortez/Sites/reciplink/vendor/symfony/form/Resources/translations/validators.da.xlf</argument>
             <argument>/home/cortez/Sites/reciplink/vendor/symfony/security-core/Resources/translations/security.da.xlf</argument>
+            <argument>/home/cortez/Sites/reciplink/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.da.xliff</argument>
           </argument>
           <argument key="de" type="collection">
             <argument>/home/cortez/Sites/reciplink/vendor/symfony/validator/Resources/translations/validators.de.xlf</argument>
             <argument>/home/cortez/Sites/reciplink/vendor/symfony/form/Resources/translations/validators.de.xlf</argument>
             <argument>/home/cortez/Sites/reciplink/vendor/symfony/security-core/Resources/translations/security.de.xlf</argument>
             <argument>/home/cortez/Sites/reciplink/vendor/vich/uploader-bundle/translations/VichUploaderBundle.de.yml</argument>
+            <argument>/home/cortez/Sites/reciplink/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.de.xliff</argument>
           </argument>
           <argument key="el" type="collection">
             <argument>/home/cortez/Sites/reciplink/vendor/symfony/validator/Resources/translations/validators.el.xlf</argument>
@@ -1514,12 +1543,14 @@
             <argument>/home/cortez/Sites/reciplink/vendor/symfony/form/Resources/translations/validators.en.xlf</argument>
             <argument>/home/cortez/Sites/reciplink/vendor/symfony/security-core/Resources/translations/security.en.xlf</argument>
             <argument>/home/cortez/Sites/reciplink/vendor/vich/uploader-bundle/translations/VichUploaderBundle.en.yml</argument>
+            <argument>/home/cortez/Sites/reciplink/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.en.xliff</argument>
           </argument>
           <argument key="es" type="collection">
             <argument>/home/cortez/Sites/reciplink/vendor/symfony/validator/Resources/translations/validators.es.xlf</argument>
             <argument>/home/cortez/Sites/reciplink/vendor/symfony/form/Resources/translations/validators.es.xlf</argument>
             <argument>/home/cortez/Sites/reciplink/vendor/symfony/security-core/Resources/translations/security.es.xlf</argument>
             <argument>/home/cortez/Sites/reciplink/vendor/vich/uploader-bundle/translations/VichUploaderBundle.es.yml</argument>
+            <argument>/home/cortez/Sites/reciplink/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.es.xliff</argument>
           </argument>
           <argument key="et" type="collection">
             <argument>/home/cortez/Sites/reciplink/vendor/symfony/validator/Resources/translations/validators.et.xlf</argument>
@@ -1529,11 +1560,13 @@
             <argument>/home/cortez/Sites/reciplink/vendor/symfony/validator/Resources/translations/validators.eu.xlf</argument>
             <argument>/home/cortez/Sites/reciplink/vendor/symfony/form/Resources/translations/validators.eu.xlf</argument>
             <argument>/home/cortez/Sites/reciplink/vendor/symfony/security-core/Resources/translations/security.eu.xlf</argument>
+            <argument>/home/cortez/Sites/reciplink/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.eu.xliff</argument>
           </argument>
           <argument key="fa" type="collection">
             <argument>/home/cortez/Sites/reciplink/vendor/symfony/validator/Resources/translations/validators.fa.xlf</argument>
             <argument>/home/cortez/Sites/reciplink/vendor/symfony/form/Resources/translations/validators.fa.xlf</argument>
             <argument>/home/cortez/Sites/reciplink/vendor/symfony/security-core/Resources/translations/security.fa.xlf</argument>
+            <argument>/home/cortez/Sites/reciplink/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.fa.xliff</argument>
           </argument>
           <argument key="fi" type="collection">
             <argument>/home/cortez/Sites/reciplink/vendor/symfony/validator/Resources/translations/validators.fi.xlf</argument>
@@ -1545,6 +1578,8 @@
             <argument>/home/cortez/Sites/reciplink/vendor/symfony/form/Resources/translations/validators.fr.xlf</argument>
             <argument>/home/cortez/Sites/reciplink/vendor/symfony/security-core/Resources/translations/security.fr.xlf</argument>
             <argument>/home/cortez/Sites/reciplink/vendor/vich/uploader-bundle/translations/VichUploaderBundle.fr.yml</argument>
+            <argument>/home/cortez/Sites/reciplink/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.fr.xliff</argument>
+            <argument>/home/cortez/Sites/reciplink/translations/KnpPaginatorBundle.fr.yml</argument>
           </argument>
           <argument key="gl" type="collection">
             <argument>/home/cortez/Sites/reciplink/vendor/symfony/validator/Resources/translations/validators.gl.xlf</argument>
@@ -1566,6 +1601,7 @@
             <argument>/home/cortez/Sites/reciplink/vendor/symfony/form/Resources/translations/validators.hu.xlf</argument>
             <argument>/home/cortez/Sites/reciplink/vendor/symfony/security-core/Resources/translations/security.hu.xlf</argument>
             <argument>/home/cortez/Sites/reciplink/vendor/vich/uploader-bundle/translations/VichUploaderBundle.hu.yml</argument>
+            <argument>/home/cortez/Sites/reciplink/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.hu.xliff</argument>
           </argument>
           <argument key="hy" type="collection">
             <argument>/home/cortez/Sites/reciplink/vendor/symfony/validator/Resources/translations/validators.hy.xlf</argument>
@@ -1575,17 +1611,20 @@
             <argument>/home/cortez/Sites/reciplink/vendor/symfony/validator/Resources/translations/validators.id.xlf</argument>
             <argument>/home/cortez/Sites/reciplink/vendor/symfony/form/Resources/translations/validators.id.xlf</argument>
             <argument>/home/cortez/Sites/reciplink/vendor/symfony/security-core/Resources/translations/security.id.xlf</argument>
+            <argument>/home/cortez/Sites/reciplink/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.id.xliff</argument>
           </argument>
           <argument key="it" type="collection">
             <argument>/home/cortez/Sites/reciplink/vendor/symfony/validator/Resources/translations/validators.it.xlf</argument>
             <argument>/home/cortez/Sites/reciplink/vendor/symfony/form/Resources/translations/validators.it.xlf</argument>
             <argument>/home/cortez/Sites/reciplink/vendor/symfony/security-core/Resources/translations/security.it.xlf</argument>
             <argument>/home/cortez/Sites/reciplink/vendor/vich/uploader-bundle/translations/VichUploaderBundle.it.yml</argument>
+            <argument>/home/cortez/Sites/reciplink/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.it.xliff</argument>
           </argument>
           <argument key="ja" type="collection">
             <argument>/home/cortez/Sites/reciplink/vendor/symfony/validator/Resources/translations/validators.ja.xlf</argument>
             <argument>/home/cortez/Sites/reciplink/vendor/symfony/form/Resources/translations/validators.ja.xlf</argument>
             <argument>/home/cortez/Sites/reciplink/vendor/symfony/security-core/Resources/translations/security.ja.xlf</argument>
+            <argument>/home/cortez/Sites/reciplink/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.ja.xliff</argument>
           </argument>
           <argument key="lb" type="collection">
             <argument>/home/cortez/Sites/reciplink/vendor/symfony/validator/Resources/translations/validators.lb.xlf</argument>
@@ -1597,6 +1636,7 @@
             <argument>/home/cortez/Sites/reciplink/vendor/symfony/form/Resources/translations/validators.lt.xlf</argument>
             <argument>/home/cortez/Sites/reciplink/vendor/symfony/security-core/Resources/translations/security.lt.xlf</argument>
             <argument>/home/cortez/Sites/reciplink/vendor/vich/uploader-bundle/translations/VichUploaderBundle.lt.yml</argument>
+            <argument>/home/cortez/Sites/reciplink/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.lt.xliff</argument>
           </argument>
           <argument key="lv" type="collection">
             <argument>/home/cortez/Sites/reciplink/vendor/symfony/validator/Resources/translations/validators.lv.xlf</argument>
@@ -1617,6 +1657,7 @@
             <argument>/home/cortez/Sites/reciplink/vendor/symfony/form/Resources/translations/validators.nl.xlf</argument>
             <argument>/home/cortez/Sites/reciplink/vendor/symfony/security-core/Resources/translations/security.nl.xlf</argument>
             <argument>/home/cortez/Sites/reciplink/vendor/vich/uploader-bundle/translations/VichUploaderBundle.nl.yml</argument>
+            <argument>/home/cortez/Sites/reciplink/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.nl.xliff</argument>
           </argument>
           <argument key="nn" type="collection">
             <argument>/home/cortez/Sites/reciplink/vendor/symfony/validator/Resources/translations/validators.nn.xlf</argument>
@@ -1627,12 +1668,14 @@
             <argument>/home/cortez/Sites/reciplink/vendor/symfony/validator/Resources/translations/validators.no.xlf</argument>
             <argument>/home/cortez/Sites/reciplink/vendor/symfony/form/Resources/translations/validators.no.xlf</argument>
             <argument>/home/cortez/Sites/reciplink/vendor/symfony/security-core/Resources/translations/security.no.xlf</argument>
+            <argument>/home/cortez/Sites/reciplink/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.no.xliff</argument>
           </argument>
           <argument key="pl" type="collection">
             <argument>/home/cortez/Sites/reciplink/vendor/symfony/validator/Resources/translations/validators.pl.xlf</argument>
             <argument>/home/cortez/Sites/reciplink/vendor/symfony/form/Resources/translations/validators.pl.xlf</argument>
             <argument>/home/cortez/Sites/reciplink/vendor/symfony/security-core/Resources/translations/security.pl.xlf</argument>
             <argument>/home/cortez/Sites/reciplink/vendor/vich/uploader-bundle/translations/VichUploaderBundle.pl.yml</argument>
+            <argument>/home/cortez/Sites/reciplink/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.pl.xliff</argument>
           </argument>
           <argument key="pt" type="collection">
             <argument>/home/cortez/Sites/reciplink/vendor/symfony/validator/Resources/translations/validators.pt.xlf</argument>
@@ -1643,17 +1686,20 @@
             <argument>/home/cortez/Sites/reciplink/vendor/symfony/validator/Resources/translations/validators.pt_BR.xlf</argument>
             <argument>/home/cortez/Sites/reciplink/vendor/symfony/form/Resources/translations/validators.pt_BR.xlf</argument>
             <argument>/home/cortez/Sites/reciplink/vendor/symfony/security-core/Resources/translations/security.pt_BR.xlf</argument>
+            <argument>/home/cortez/Sites/reciplink/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.pt_BR.xliff</argument>
           </argument>
           <argument key="ro" type="collection">
             <argument>/home/cortez/Sites/reciplink/vendor/symfony/validator/Resources/translations/validators.ro.xlf</argument>
             <argument>/home/cortez/Sites/reciplink/vendor/symfony/form/Resources/translations/validators.ro.xlf</argument>
             <argument>/home/cortez/Sites/reciplink/vendor/symfony/security-core/Resources/translations/security.ro.xlf</argument>
+            <argument>/home/cortez/Sites/reciplink/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.ro.xliff</argument>
           </argument>
           <argument key="ru" type="collection">
             <argument>/home/cortez/Sites/reciplink/vendor/symfony/validator/Resources/translations/validators.ru.xlf</argument>
             <argument>/home/cortez/Sites/reciplink/vendor/symfony/form/Resources/translations/validators.ru.xlf</argument>
             <argument>/home/cortez/Sites/reciplink/vendor/symfony/security-core/Resources/translations/security.ru.xlf</argument>
             <argument>/home/cortez/Sites/reciplink/vendor/vich/uploader-bundle/translations/VichUploaderBundle.ru.yml</argument>
+            <argument>/home/cortez/Sites/reciplink/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.ru.xliff</argument>
           </argument>
           <argument key="sk" type="collection">
             <argument>/home/cortez/Sites/reciplink/vendor/symfony/validator/Resources/translations/validators.sk.xlf</argument>
@@ -1683,6 +1729,7 @@
             <argument>/home/cortez/Sites/reciplink/vendor/symfony/validator/Resources/translations/validators.sv.xlf</argument>
             <argument>/home/cortez/Sites/reciplink/vendor/symfony/form/Resources/translations/validators.sv.xlf</argument>
             <argument>/home/cortez/Sites/reciplink/vendor/symfony/security-core/Resources/translations/security.sv.xlf</argument>
+            <argument>/home/cortez/Sites/reciplink/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.sv.xliff</argument>
           </argument>
           <argument key="th" type="collection">
             <argument>/home/cortez/Sites/reciplink/vendor/symfony/validator/Resources/translations/validators.th.xlf</argument>
@@ -1704,6 +1751,7 @@
             <argument>/home/cortez/Sites/reciplink/vendor/symfony/form/Resources/translations/validators.uk.xlf</argument>
             <argument>/home/cortez/Sites/reciplink/vendor/symfony/security-core/Resources/translations/security.uk.xlf</argument>
             <argument>/home/cortez/Sites/reciplink/vendor/vich/uploader-bundle/translations/VichUploaderBundle.uk.yml</argument>
+            <argument>/home/cortez/Sites/reciplink/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.uk.xliff</argument>
           </argument>
           <argument key="vi" type="collection">
             <argument>/home/cortez/Sites/reciplink/vendor/symfony/validator/Resources/translations/validators.vi.xlf</argument>
@@ -1724,12 +1772,19 @@
           <argument key="vn" type="collection">
             <argument>/home/cortez/Sites/reciplink/vendor/vich/uploader-bundle/translations/VichUploaderBundle.vn.yml</argument>
           </argument>
+          <argument key="ky" type="collection">
+            <argument>/home/cortez/Sites/reciplink/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.ky.xliff</argument>
+          </argument>
+          <argument key="sw" type="collection">
+            <argument>/home/cortez/Sites/reciplink/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.sw.xliff</argument>
+          </argument>
         </argument>
         <argument key="scanned_directories" type="collection">
           <argument>/home/cortez/Sites/reciplink/vendor/symfony/validator/Resources/translations</argument>
           <argument>/home/cortez/Sites/reciplink/vendor/symfony/form/Resources/translations</argument>
           <argument>/home/cortez/Sites/reciplink/vendor/symfony/security-core/Resources/translations</argument>
           <argument>/home/cortez/Sites/reciplink/vendor/vich/uploader-bundle/translations</argument>
+          <argument>/home/cortez/Sites/reciplink/vendor/knplabs/knp-paginator-bundle/translations</argument>
           <argument>/home/cortez/Sites/reciplink/translations</argument>
           <argument>/home/cortez/Sites/reciplink/vendor/symfony/framework-bundle/translations</argument>
           <argument>/home/cortez/Sites/reciplink/src/Resources/FrameworkBundle/translations</argument>
@@ -1756,6 +1811,9 @@
           <argument>/home/cortez/Sites/reciplink/vendor/symfony/web-server-bundle/translations</argument>
           <argument>/home/cortez/Sites/reciplink/src/Resources/WebServerBundle/translations</argument>
           <argument>/home/cortez/Sites/reciplink/src/Resources/VichUploaderBundle/translations</argument>
+          <argument>/home/cortez/Sites/reciplink/vendor/doctrine/doctrine-fixtures-bundle/translations</argument>
+          <argument>/home/cortez/Sites/reciplink/src/Resources/DoctrineFixturesBundle/translations</argument>
+          <argument>/home/cortez/Sites/reciplink/src/Resources/KnpPaginatorBundle/translations</argument>
           <argument>/home/cortez/Sites/reciplink/src/Resources/translations</argument>
         </argument>
         <argument key="cache_vary" type="collection">
@@ -1764,6 +1822,7 @@
             <argument>vendor/symfony/form/Resources/translations</argument>
             <argument>vendor/symfony/security-core/Resources/translations</argument>
             <argument>vendor/vich/uploader-bundle/translations</argument>
+            <argument>vendor/knplabs/knp-paginator-bundle/translations</argument>
             <argument>translations</argument>
             <argument>vendor/symfony/framework-bundle/translations</argument>
             <argument>src/Resources/FrameworkBundle/translations</argument>
@@ -1790,6 +1849,9 @@
             <argument>vendor/symfony/web-server-bundle/translations</argument>
             <argument>src/Resources/WebServerBundle/translations</argument>
             <argument>src/Resources/VichUploaderBundle/translations</argument>
+            <argument>vendor/doctrine/doctrine-fixtures-bundle/translations</argument>
+            <argument>src/Resources/DoctrineFixturesBundle/translations</argument>
+            <argument>src/Resources/KnpPaginatorBundle/translations</argument>
             <argument>src/Resources/translations</argument>
           </argument>
         </argument>
@@ -1799,6 +1861,7 @@
       </call>
       <call method="setFallbackLocales">
         <argument type="collection">
+          <argument>fr</argument>
           <argument>en</argument>
         </argument>
       </call>
@@ -2240,6 +2303,14 @@
         <argument>0</argument>
       </call>
       <call method="addListener">
+        <argument>kernel.request</argument>
+        <argument type="collection">
+          <argument type="service" id="knp_paginator.subscriber.sliding_pagination"/>
+          <argument>onKernelRequest</argument>
+        </argument>
+        <argument>0</argument>
+      </call>
+      <call method="addListener">
         <argument>kernel.response</argument>
         <argument type="collection">
           <argument type="service" id="response_listener"/>
@@ -2456,14 +2527,6 @@
         <argument>2048</argument>
       </call>
       <call method="addListener">
-        <argument>console.command</argument>
-        <argument type="collection">
-          <argument type="service" id="debug.debug_handlers_listener"/>
-          <argument>configure</argument>
-        </argument>
-        <argument>2048</argument>
-      </call>
-      <call method="addListener">
         <argument>kernel.request</argument>
         <argument type="collection">
           <argument type="service" id="router_listener"/>
@@ -2654,6 +2717,46 @@
           <argument>onConsoleTerminate</argument>
         </argument>
         <argument>0</argument>
+      </call>
+      <call method="addListener">
+        <argument>knp_pager.before</argument>
+        <argument type="collection">
+          <argument type="service" id="knp_paginator.subscriber.paginate"/>
+          <argument>before</argument>
+        </argument>
+        <argument>0</argument>
+      </call>
+      <call method="addListener">
+        <argument>knp_pager.pagination</argument>
+        <argument type="collection">
+          <argument type="service" id="knp_paginator.subscriber.paginate"/>
+          <argument>pagination</argument>
+        </argument>
+        <argument>0</argument>
+      </call>
+      <call method="addListener">
+        <argument>knp_pager.before</argument>
+        <argument type="collection">
+          <argument type="service" id="knp_paginator.subscriber.sortable"/>
+          <argument>before</argument>
+        </argument>
+        <argument>1</argument>
+      </call>
+      <call method="addListener">
+        <argument>knp_pager.before</argument>
+        <argument type="collection">
+          <argument type="service" id="knp_paginator.subscriber.filtration"/>
+          <argument>before</argument>
+        </argument>
+        <argument>1</argument>
+      </call>
+      <call method="addListener">
+        <argument>knp_pager.pagination</argument>
+        <argument type="collection">
+          <argument type="service" id="knp_paginator.subscriber.sliding_pagination"/>
+          <argument>pagination</argument>
+        </argument>
+        <argument>1</argument>
       </call>
     </service>
     <service id="debug.controller_resolver" class="Symfony\Component\HttpKernel\Controller\TraceableControllerResolver" public="false">
@@ -3094,6 +3197,9 @@
       <call method="addExtension">
         <argument type="service" id="vich_uploader.twig.extension.uploader"/>
       </call>
+      <call method="addExtension">
+        <argument type="service" id="knp_paginator.twig.extension.pagination"/>
+      </call>
       <call method="addGlobal">
         <argument>app</argument>
         <argument type="service" id="twig.app_variable"/>
@@ -3203,6 +3309,14 @@
       <call method="addPath">
         <argument>/home/cortez/Sites/reciplink/vendor/vich/uploader-bundle/templates</argument>
         <argument>!VichUploader</argument>
+      </call>
+      <call method="addPath">
+        <argument>/home/cortez/Sites/reciplink/vendor/knplabs/knp-paginator-bundle/templates</argument>
+        <argument>KnpPaginator</argument>
+      </call>
+      <call method="addPath">
+        <argument>/home/cortez/Sites/reciplink/vendor/knplabs/knp-paginator-bundle/templates</argument>
+        <argument>!KnpPaginator</argument>
       </call>
       <call method="addPath">
         <argument>/home/cortez/Sites/reciplink/templates</argument>
@@ -4903,7 +5017,7 @@
       <tag name="console.command" command="server:run"/>
       <argument>/home/cortez/Sites/reciplink/public</argument>
       <argument>dev</argument>
-      <argument>/home/cortez/Sites/reciplink</argument>
+      <argument>/home/cortez/Sites/reciplink/var/cache</argument>
       <call method="setName">
         <argument>server:run</argument>
       </call>
@@ -4912,21 +5026,21 @@
       <tag name="console.command" command="server:start"/>
       <argument>/home/cortez/Sites/reciplink/public</argument>
       <argument>dev</argument>
-      <argument>/home/cortez/Sites/reciplink</argument>
+      <argument>/home/cortez/Sites/reciplink/var/cache</argument>
       <call method="setName">
         <argument>server:start</argument>
       </call>
     </service>
     <service id="web_server.command.server_stop" class="Symfony\Bundle\WebServerBundle\Command\ServerStopCommand" public="false">
       <tag name="console.command" command="server:stop"/>
-      <argument>/home/cortez/Sites/reciplink</argument>
+      <argument>/home/cortez/Sites/reciplink/var/cache</argument>
       <call method="setName">
         <argument>server:stop</argument>
       </call>
     </service>
     <service id="web_server.command.server_status" class="Symfony\Bundle\WebServerBundle\Command\ServerStatusCommand" public="false">
       <tag name="console.command" command="server:status"/>
-      <argument>/home/cortez/Sites/reciplink</argument>
+      <argument>/home/cortez/Sites/reciplink/var/cache</argument>
       <call method="setName">
         <argument>server:status</argument>
       </call>
@@ -5157,17 +5271,88 @@
       <argument type="service" id="vich_uploader.metadata_reader"/>
       <argument type="service" id="vich_uploader.upload_handler"/>
     </service>
-    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Admin\RecipeController" class="App\Controller\Admin\RecipeController" autowire="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Admin\RecipeController" class="App\Controller\Admin\RecipeController" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Controller\Admin\RecipeController" class="App\Controller\Admin\RecipeController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id="doctrine.fixtures_load_command" class="Doctrine\Bundle\FixturesBundle\Command\LoadDataFixturesDoctrineCommand">
+      <tag name="console.command" command="doctrine:fixtures:load"/>
+      <argument type="service" id="doctrine.fixtures.loader"/>
+      <argument type="service" id="doctrine"/>
+      <call method="setName">
+        <argument>doctrine:fixtures:load</argument>
+      </call>
+    </service>
+    <service id="doctrine.fixtures.loader" class="Doctrine\Bundle\FixturesBundle\Loader\SymfonyFixturesLoader" public="false">
+      <argument type="service" id="service_container"/>
+      <call method="addFixtures">
+        <argument type="collection">
+          <argument type="collection">
+            <argument key="fixture" type="service" id="App\DataFixtures\AppFixtures"/>
+            <argument key="groups" type="collection"/>
+          </argument>
+          <argument type="collection">
+            <argument key="fixture" type="service" id="App\DataFixtures\RecipeFixtures"/>
+            <argument key="groups" type="collection"/>
+          </argument>
+        </argument>
+      </call>
+    </service>
+    <service id="knp_paginator" class="Knp\Component\Pager\Paginator" public="true" lazy="true">
+      <argument type="service" id="debug.event_dispatcher"/>
+      <argument type="service" id="request_stack"/>
+      <call method="setDefaultPaginatorOptions">
+        <argument type="collection">
+          <argument key="pageParameterName">page</argument>
+          <argument key="sortFieldParameterName">sort</argument>
+          <argument key="sortDirectionParameterName">direction</argument>
+          <argument key="filterFieldParameterName">filterField</argument>
+          <argument key="filterValueParameterName">filterValue</argument>
+          <argument key="distinct">true</argument>
+        </argument>
+      </call>
+    </service>
+    <service id="knp_paginator.subscriber.paginate" class="Knp\Component\Pager\Event\Subscriber\Paginate\PaginationSubscriber">
+      <tag name="knp_paginator.subscriber"/>
+    </service>
+    <service id="knp_paginator.subscriber.sortable" class="Knp\Component\Pager\Event\Subscriber\Sortable\SortableSubscriber">
+      <tag name="knp_paginator.subscriber"/>
+    </service>
+    <service id="knp_paginator.subscriber.filtration" class="Knp\Component\Pager\Event\Subscriber\Filtration\FiltrationSubscriber">
+      <tag name="knp_paginator.subscriber"/>
+    </service>
+    <service id="knp_paginator.subscriber.sliding_pagination" class="Knp\Bundle\PaginatorBundle\Subscriber\SlidingPaginationSubscriber">
+      <tag name="knp_paginator.subscriber"/>
+      <tag name="kernel.event_listener" event="kernel.request" method="onKernelRequest"/>
+      <tag name="container.hot_path"/>
+      <argument type="collection">
+        <argument key="defaultPaginationTemplate">@KnpPaginator/Pagination/twitter_bootstrap_v4_pagination.html.twig</argument>
+        <argument key="defaultSortableTemplate">@KnpPaginator/Pagination/sortable_link.html.twig</argument>
+        <argument key="defaultFiltrationTemplate">@KnpPaginator/Pagination/filtration.html.twig</argument>
+        <argument key="defaultPageRange">5</argument>
+      </argument>
+    </service>
+    <service id="knp_paginator.helper.processor" class="Knp\Bundle\PaginatorBundle\Helper\Processor">
+      <argument type="service" id="router.default"/>
+      <argument type="service" id="translator.data_collector"/>
+    </service>
+    <service id="knp_paginator.twig.extension.pagination" class="Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension">
+      <tag name="twig.extension"/>
+      <argument type="service" id="knp_paginator.helper.processor"/>
+    </service>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\MainController" class="App\Controller\MainController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\MainController" class="App\Controller\MainController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\MainController" class="App\Controller\MainController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\RecipeController" class="App\Controller\RecipeController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\RecipeController" class="App\Controller\RecipeController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\RecipeController" class="App\Controller\RecipeController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\SecurityController" class="App\Controller\SecurityController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\SecurityController" class="App\Controller\SecurityController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\SecurityController" class="App\Controller\SecurityController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\FixturesBundle\ORMFixtureInterface.0.App\DataFixtures\AppFixtures" class="App\DataFixtures\AppFixtures" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\DataFixtures\AppFixtures" class="App\DataFixtures\AppFixtures" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\FixturesBundle\ORMFixtureInterface.0.App\DataFixtures\RecipeFixtures" class="App\DataFixtures\RecipeFixtures" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\DataFixtures\RecipeFixtures" class="App\DataFixtures\RecipeFixtures" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\FoodType" class="App\Form\FoodType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\FoodType" class="App\Form\FoodType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\RecipeSearchType" class="App\Form\RecipeSearchType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\RecipeSearchType" class="App\Form\RecipeSearchType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\RecipeType" class="App\Form\RecipeType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\RecipeType" class="App\Form\RecipeType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\RegisterType" class="App\Form\RegisterType" autowire="true" abstract="true"/>
@@ -5371,16 +5556,23 @@
         <argument key="recipeRepository" type="service" id="App\Repository\RecipeRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.g_QAUHN" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
-      <tag name="container.service_locator"/>
-      <argument type="collection">
-        <argument key="recipe" type="service" id=".errored..service_locator.g_QAUHN.App\Entity\Recipe"/>
-      </argument>
-    </service>
     <service id=".service_locator.ccM2MGC" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="passwordEncoder" type="service" id="security.user_password_encoder.generic"/>
+      </argument>
+    </service>
+    <service id=".service_locator.MN_z1ND" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="paginator" type="service" id="knp_paginator"/>
+        <argument key="recipeRepository" type="service" id="App\Repository\RecipeRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.g_QAUHN" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="recipe" type="service" id=".errored..service_locator.g_QAUHN.App\Entity\Recipe"/>
       </argument>
     </service>
     <service id=".service_locator.g.xob4v" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
@@ -5389,24 +5581,24 @@
         <argument key="authenticationUtils" type="service" id="security.authentication_utils"/>
       </argument>
     </service>
-    <service id=".service_locator.jJ4tn3d" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.VB1ommZ" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
-        <argument key="App\Controller\Admin\RecipeController::delete" type="service" id=".service_locator.g_QAUHN"/>
-        <argument key="App\Controller\Admin\RecipeController::edit" type="service" id=".service_locator.g_QAUHN"/>
-        <argument key="App\Controller\Admin\RecipeController::index" type="service" id=".service_locator.LPAUdgn"/>
-        <argument key="App\Controller\Admin\RecipeController::show" type="service" id=".service_locator.g_QAUHN"/>
-        <argument key="App\Controller\MainController::allRecipes" type="service" id=".service_locator.LPAUdgn"/>
+        <argument key="App\Controller\MainController::allRecipes" type="service" id=".service_locator.MN_z1ND"/>
         <argument key="App\Controller\MainController::index" type="service" id=".service_locator.LPAUdgn"/>
         <argument key="App\Controller\MainController::register" type="service" id=".service_locator.ccM2MGC"/>
+        <argument key="App\Controller\RecipeController::delete" type="service" id=".service_locator.g_QAUHN"/>
+        <argument key="App\Controller\RecipeController::edit" type="service" id=".service_locator.g_QAUHN"/>
+        <argument key="App\Controller\RecipeController::index" type="service" id=".service_locator.LPAUdgn"/>
+        <argument key="App\Controller\RecipeController::show" type="service" id=".service_locator.g_QAUHN"/>
         <argument key="App\Controller\SecurityController::login" type="service" id=".service_locator.g.xob4v"/>
-        <argument key="App\Controller\Admin\RecipeController:delete" type="service" id=".service_locator.g_QAUHN"/>
-        <argument key="App\Controller\Admin\RecipeController:edit" type="service" id=".service_locator.g_QAUHN"/>
-        <argument key="App\Controller\Admin\RecipeController:index" type="service" id=".service_locator.LPAUdgn"/>
-        <argument key="App\Controller\Admin\RecipeController:show" type="service" id=".service_locator.g_QAUHN"/>
-        <argument key="App\Controller\MainController:allRecipes" type="service" id=".service_locator.LPAUdgn"/>
+        <argument key="App\Controller\MainController:allRecipes" type="service" id=".service_locator.MN_z1ND"/>
         <argument key="App\Controller\MainController:index" type="service" id=".service_locator.LPAUdgn"/>
         <argument key="App\Controller\MainController:register" type="service" id=".service_locator.ccM2MGC"/>
+        <argument key="App\Controller\RecipeController:delete" type="service" id=".service_locator.g_QAUHN"/>
+        <argument key="App\Controller\RecipeController:edit" type="service" id=".service_locator.g_QAUHN"/>
+        <argument key="App\Controller\RecipeController:index" type="service" id=".service_locator.LPAUdgn"/>
+        <argument key="App\Controller\RecipeController:show" type="service" id=".service_locator.g_QAUHN"/>
         <argument key="App\Controller\SecurityController:login" type="service" id=".service_locator.g.xob4v"/>
       </argument>
     </service>
@@ -5469,10 +5661,11 @@
       <argument type="service" id="debug.argument_resolver.not_tagged_controller.inner"/>
       <argument type="service" id="debug.stopwatch"/>
     </service>
-    <service id=".service_locator.ZjadLSN" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.9oWAwRE" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Form\FoodType" type="service" id="App\Form\FoodType"/>
+        <argument key="App\Form\RecipeSearchType" type="service" id="App\Form\RecipeSearchType"/>
         <argument key="App\Form\RecipeType" type="service" id="App\Form\RecipeType"/>
         <argument key="App\Form\RegisterType" type="service" id="App\Form\RegisterType"/>
         <argument key="Symfony\Bridge\Doctrine\Form\Type\EntityType" type="service" id="form.type.entity"/>
@@ -5700,15 +5893,15 @@
         <argument key="twig" type="service" id="twig" on-invalid="ignore"/>
       </argument>
     </service>
-    <service id=".service_locator.WkgBPi_.App\Controller\Admin\RecipeController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
-      <tag name="container.service_locator_context" id="App\Controller\Admin\RecipeController"/>
-      <argument>App\Controller\Admin\RecipeController</argument>
-      <argument type="service" id="service_container"/>
-      <factory service=".service_locator.WkgBPi_" method="withContext"/>
-    </service>
     <service id=".service_locator.WkgBPi_.App\Controller\MainController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator_context" id="App\Controller\MainController"/>
       <argument>App\Controller\MainController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.WkgBPi_" method="withContext"/>
+    </service>
+    <service id=".service_locator.WkgBPi_.App\Controller\RecipeController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator_context" id="App\Controller\RecipeController"/>
+      <argument>App\Controller\RecipeController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.WkgBPi_" method="withContext"/>
     </service>
@@ -5815,12 +6008,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" public="false">
-      <argument type="service" id=".service_locator.jJ4tn3d"/>
+      <argument type="service" id=".service_locator.VB1ommZ"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" public="false"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver" public="false"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver" public="false">
-      <argument type="service" id=".service_locator.jJ4tn3d"/>
+      <argument type="service" id=".service_locator.VB1ommZ"/>
     </service>
     <service id=".debug.http_client.inner" class="Symfony\Contracts\HttpClient\HttpClientInterface" public="false">
       <argument type="collection"/>
@@ -5866,7 +6059,7 @@
     </service>
     <service id=".errored..service_locator.g_QAUHN.App\Entity\Recipe" class="App\Entity\Recipe"/>
     <service id="console.command_loader" class="Symfony\Component\Console\CommandLoader\ContainerCommandLoader" public="true">
-      <argument type="service" id=".service_locator.FdZaAio"/>
+      <argument type="service" id=".service_locator.MrZtq3N"/>
       <argument type="collection">
         <argument key="about">console.command.about</argument>
         <argument key="assets:install">console.command.assets_install</argument>
@@ -5936,6 +6129,7 @@
         <argument key="vich:mapping:debug-class">vich_uploader.command.mapping_debug_class</argument>
         <argument key="vich:mapping:debug">vich_uploader.command.mapping_debug</argument>
         <argument key="vich:mapping:list-classes">vich_uploader.command.mapping_list_classes</argument>
+        <argument key="doctrine:fixtures:load">doctrine.fixtures_load_command</argument>
         <argument key="make:auth">maker.auto_command.make_auth</argument>
         <argument key="make:command">maker.auto_command.make_command</argument>
         <argument key="make:controller">maker.auto_command.make_controller</argument>
@@ -5956,7 +6150,7 @@
         <argument key="make:migration">maker.auto_command.make_migration</argument>
       </argument>
     </service>
-    <service id=".service_locator.FdZaAio" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.MrZtq3N" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="console.command.about" type="service" id="console.command.about"/>
@@ -5996,6 +6190,7 @@
         <argument key="doctrine.database_drop_command" type="service" id="doctrine.database_drop_command"/>
         <argument key="doctrine.database_import_command" type="service" id="doctrine.database_import_command"/>
         <argument key="doctrine.ensure_production_settings_command" type="service" id="doctrine.ensure_production_settings_command"/>
+        <argument key="doctrine.fixtures_load_command" type="service" id="doctrine.fixtures_load_command"/>
         <argument key="doctrine.mapping_convert_command" type="service" id="doctrine.mapping_convert_command"/>
         <argument key="doctrine.mapping_import_command" type="service" id="doctrine.mapping_import_command"/>
         <argument key="doctrine.mapping_info_command" type="service" id="doctrine.mapping_info_command"/>
@@ -6269,8 +6464,9 @@
     <service id="Vich\UploaderBundle\Form\Type\VichImageType" alias="vich_uploader.form.type.image" public="false"/>
     <service id="Vich\UploaderBundle\Templating\Helper\UploaderHelper" alias="vich_uploader.templating.helper.uploader_helper" public="false"/>
     <service id="Vich\UploaderBundle\Twig\Extension\UploaderExtension" alias="vich_uploader.twig.extension.uploader" public="false"/>
+    <service id="Knp\Component\Pager\PaginatorInterface" alias="knp_paginator"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.CmORmuK" public="true"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.jJ4tn3d"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.VB1ommZ"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem" public="false"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>

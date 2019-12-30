@@ -31,6 +31,7 @@ class RecipeType extends AbstractType
                 'choices' => [
                     'Petit déjeuner' => 'Petit déjeuner',
                     'Déjeuner/Dîner' => 'Déjeuner/Dîner',
+                    'Dessert' => 'Dessert',
                     'Goûter' => 'Goûter',
                     'Pré-Workout' => 'Pré-Workout',
                     'Post-Workout' => 'Post-Workout',
@@ -67,6 +68,16 @@ class RecipeType extends AbstractType
             ->add('glucide', IntegerType::class, [
                 'label' => 'Valeur glucidique en gr'
             ])
+            ->add('regime', ChoiceType::class, [
+                'label' => 'Quel régime alimentaire ?',
+                'choices' => [
+                    'Paléo' => 'Paléo',
+                    'Végétarien' => 'Végétarien',
+                    'Végétalien' => 'Végétalien',
+                    'Végan' => 'Végan',
+                    'Sans gluten' => 'Sans gluten'
+                ]
+            ])
             ->add('lipide', IntegerType::class, [
                 'label' => 'Valeur lipidique en gr'
             ])
@@ -93,7 +104,6 @@ class RecipeType extends AbstractType
             ->add('picture', FileType::class, [
                 'required' => false,
                 ])
-
             ;
     }
 

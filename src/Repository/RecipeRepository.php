@@ -3,8 +3,11 @@
 namespace App\Repository;
 
 use App\Entity\Recipe;
+use App\Entity\RecipeSearch;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Common\Persistence\ManagerRegistry;
+use Doctrine\ORM\Query;
+use Doctrine\ORM\QueryBuilder;
 
 /**
  * @method Recipe|null find($id, $lockMode = null, $lockVersion = null)
@@ -19,32 +22,44 @@ class RecipeRepository extends ServiceEntityRepository
         parent::__construct($registry, Recipe::class);
     }
 
-    // /**
-    //  * @return Recipe[] Returns an array of Recipe objects
-    //  */
-    /*
-    public function findByExampleField($value)
+    /**
+     * @return Recipe[]
+     */
+    public function findLatest(): array
     {
-        return $this->createQueryBuilder('r')
-            ->andWhere('r.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('r.id', 'ASC')
-            ->setMaxResults(10)
+        return $this->findVisibleQuery()
             ->getQuery()
-            ->getResult()
-        ;
+            ->setMaxResults(6)
+            ->getResult();
     }
-    */
 
-    /*
-    public function findOneBySomeField($value): ?Recipe
+
+
+    public function findAllVisibleQuery(RecipeSearch $search): Query
     {
-        return $this->createQueryBuilder('r')
-            ->andWhere('r.exampleField = :val')
-            ->setParameter('val', $value)
-            ->getQuery()
-            ->getOneOrNullResult()
-        ;
+
+        $query = $this->findVisibleQuery();
+
+        if($search->getType()){
+            $query = $query->andwhere('p.type = :type')
+                ->setParameter('type', $search->getType());
+        }
+
+        if($search->getRegime()){
+            $query = $query->andwhere('p.regime = :regime')
+                ->setParameter('regime', $search->getRegime());
+        }
+
+        return $query->getQuery();
+
     }
-    */
+
+    private function findVisibleQuery(): QueryBuilder {
+        return $this->createQueryBuilder('p')
+            ->where('p.publish = true');
+    }
+
+
+
+
 }

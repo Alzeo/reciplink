@@ -9,30 +9,29 @@
     </style>
 
     <section class="howWork text-center container-fluid" style="padding-top: 40px; padding-bottom: 40px; width: 80%;">
-        <h4>Dernières recettes</h4>
+        <h4 CLASS="mb-5">TOUTES LES RECETTES</h4>
+        <div class="jumbotron">
+            {{ form_start(form) }}
+            <div class="form-row">
+                <div class="col">
+                    {{ form_row(form.type) }}
+                </div>
+                <div class="col">
+                    {{ form_row(form.regime) }}
+                </div>
+                <div class="col">
+                    <button class="btn btn-warning btn-block">Rechercher</button>
+                </div>
+            </div>
+            {{ form_end(form) }}
+        </div>
         <div class="row text-center" style="margin-top:80px;">
                 {% for recipe in recipes %}
-                    <div class="col-4">
-                        <div class="card">
-                            <img class="card-img-top" src="{{ asset('uploads/recipes/' ~ recipe.picture) }}" alt="recette {{ recipe.name }}">
-                            <div class="top-right"><span class="user"><i class="fa fa-user" aria-hidden="true"></i> {{ recipe.user.username }}</span></div>
-                            <div class="top-left"><span class="like"> <i class="fa fa-thumbs-up" aria-hidden="true"></i> 320</span></div>
-                            <div class="card-body">
-                                <label class="label label-danger">{{ recipe.type }}</label>
-                                <h5 class="card-title">{{ recipe.name }}</h5>
-
-                                <p class="card-text">
-                                    {% for tag in recipe.tags %}
-                                        <span class="tags">
-                                          <label class="label label-default mr-1">#{{ tag.name }}</label>
-                                        </span>
-                                    {% endfor %}
-                                </p>
-                                <a href="#" class="btn btn-success">Voir la recette</a>
-                            </div>
-                        </div>
-                    </div>
+                    {% include 'recipe/_recipe.html.twig' %}
                 {% endfor %}
+        </div>
+        <div class="pagination justify-content-center">
+            {{ knp_pagination_render(recipes) }}
         </div>
     </section>
 {% endblock %}

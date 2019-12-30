@@ -99,6 +99,16 @@ class Recipe
      */
     private $user;
 
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $publish;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $regime;
+
 
 
 
@@ -369,6 +379,30 @@ class Recipe
     public function setUser(?User $user): self
     {
         $this->user = $user;
+
+        return $this;
+    }
+
+    public function getPublish(): ?bool
+    {
+        return $this->publish;
+    }
+
+    public function setPublish(bool $publish): self
+    {
+        $this->publish = $publish;
+
+        return $this;
+    }
+
+    public function getRegime(): ?string
+    {
+        return $this->regime;
+    }
+
+    public function setRegime(string $regime): self
+    {
+        $this->regime = $regime;
 
         return $this;
     }

@@ -6,7 +6,7 @@
 use Symfony\Component\DependencyInjection\Dumper\Preloader;
 
 require dirname(__DIR__, 3).'/vendor/autoload.php';
-require __DIR__.'/ContainerUfykyNJ/srcApp_KernelDevDebugContainer.php';
+require __DIR__.'/ContainerV8xxvSz/srcApp_KernelDevDebugContainer.php';
 
 $classes = [];
 $classes[] = 'App\Kernel';
@@ -102,6 +102,8 @@ $classes[] = 'Doctrine\Bundle\DoctrineBundle\Twig\DoctrineExtension';
 $classes[] = 'Symfony\Bundle\WebProfilerBundle\Twig\WebProfilerExtension';
 $classes[] = 'Symfony\Component\VarDumper\Dumper\HtmlDumper';
 $classes[] = 'Vich\UploaderBundle\Twig\Extension\UploaderExtension';
+$classes[] = 'Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension';
+$classes[] = 'Knp\Bundle\PaginatorBundle\Helper\Processor';
 $classes[] = 'Symfony\Bridge\Twig\AppVariable';
 $classes[] = 'Twig\RuntimeLoader\ContainerRuntimeLoader';
 $classes[] = 'Twig\Extra\TwigExtraBundle\MissingExtensionSuggestor';
@@ -158,6 +160,7 @@ $classes[] = 'Vich\UploaderBundle\Metadata\Driver\YamlDriver';
 $classes[] = 'Metadata\Cache\FileCache';
 $classes[] = 'Vich\UploaderBundle\Mapping\PropertyMappingFactory';
 $classes[] = 'Vich\UploaderBundle\Templating\Helper\UploaderHelper';
+$classes[] = 'Knp\Bundle\PaginatorBundle\Subscriber\SlidingPaginationSubscriber';
 $classes[] = 'Symfony\Component\HttpClient\TraceableHttpClient';
 $classes[] = 'Symfony\Component\HttpClient\HttpClient';
 $classes[] = 'Symfony\Component\Translation\DataCollectorTranslator';
