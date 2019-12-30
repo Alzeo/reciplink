@@ -36,6 +36,7 @@ class MainController extends AbstractController
     {
 
         $recipes = $recipeRepository->findLatest();
+
         $user = $this->security->getUser();
         return $this->render('main/index.html.twig', [
             'controller_name' => 'MainController',

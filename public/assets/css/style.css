@@ -233,7 +233,6 @@ footer a:hover {
 
 .img-recipe {
     width: 100%;
-    border-radius: 12px 12px 0 0;
     max-height: 20vw !important;
     object-fit:cover;
 }
@@ -282,4 +281,47 @@ h1.images-title {
 .card-regime {
     color: #8bdaae;
     font-size: 17px;
+}
+
+.head-recip {
+    background:#fbfbfbe8;
+    margin-left:1px;
+    margin-right:1px;
+    border-radius:12px 12px 0 0;
+    padding:15px 0;
+}
+
+.more-info-recipe {
+    padding:15px 0 10px;
+    background:#f8f9fa;
+    border:1px solid rhb(219,219,219);
+}
+
+.explain-recip {
+    background:#fff;
+    border:1px solid #dbdbdb;
+    padding:15px;
+    border-top: 1px solid #fff !important;
+}
+
+.explain-recip h4 {
+    color:#f5593d;
+}
+
+#recipe_foods .btn-just-icon.ml-1.btn.btn-danger {
+    margin-left: 20px !important;
+}
+
+.formulaire h1 {
+    color: #f5593d;
+    letter-spacing: 2px;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+}
+
+.custom-file-control:before{
+    content: "Upload";
+}
+.custom-file-control:after{
+    content: "Add files..";
 }

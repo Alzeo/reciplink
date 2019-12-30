@@ -11,16 +11,14 @@
         <div class="col-md-6 p-lg-6 mx-auto my-6" style="padding-top:120px; padding-bottom:120px; line-height: 60px">
             <h1 class="display-4 font-weight-normal" >Que des recettes saines <span class="green"> avec des ingrédients sains </span></h1>
             <p class="lead font-weight-normal" style="margin-top:10px; margin-bottom:30px;">Une manière simple de partager vos recettes</p>
-            <a class="btn btn-success btn-lg" href="#"><i class="fa fa-leaf"></i> Commencer</a>
+            <a class="btn btn-success btn-lg" href="{{ path('recipe_new')}}"><i class="fa fa-leaf"></i> Commencer</a>
         </div>
     </div>
     <section class="howWork text-center container-fluid" style="padding-top: 40px; padding-bottom: 40px; width: 80%;">
         <h4>Dernières recettes</h4>
         <div class="row text-center" style="margin-top:80px;">
                 {% for recipe in recipes %}
-                    {% for recipe in recipes %}
-                        {% include 'recipe/_recipe.html.twig' %}
-                    {% endfor %}
+                    {% include 'recipe/_recipe.html.twig' %}
                 {% endfor %}
         </div>
     </section>

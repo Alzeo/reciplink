@@ -27,7 +27,7 @@ class RecipeType extends AbstractType
                 'label' => 'Nom de votre recette'
             ])
             ->add('type', ChoiceType::class, [
-                'label' => 'Quel est le type de recette ?',
+                'label' => 'Type de recette',
                 'choices' => [
                     'Petit déjeuner' => 'Petit déjeuner',
                     'Déjeuner/Dîner' => 'Déjeuner/Dîner',
@@ -39,7 +39,7 @@ class RecipeType extends AbstractType
                 ]
             ])
             ->add('dificulty', ChoiceType::class, [
-                'label' => 'Difficulté de préparation',
+                'label' => 'Difficulté',
                 'choices' => [
                     'Facile' => 'Facile',
                     'Moyen' => 'Moyen',
@@ -47,29 +47,29 @@ class RecipeType extends AbstractType
                 ]
             ])
             ->add('time', IntegerType::class, [
-                'label' => 'Temps de préparation'
+                'label' => 'Durée'
             ])
             ->add('timeUnity', ChoiceType::class, [
-                'label' => 'Unité de temps',
+                'label' => 'Unité',
                 'choices' => [
                     'Minutes' => 'Minutes',
                     'Heures' => 'Heures',
                 ]
             ])
             ->add('part', IntegerType::class, [
-                'label' => 'Pour combien de personne ?'
+                'label' => 'Portion'
             ])
             ->add('description', TextareaType::class, [
                 'label' => 'Détaillez votre recette'
             ])
             ->add('protein', IntegerType::class, [
-                'label' => 'Valeur protéique en gr'
+                'label' => 'Protéine'
             ])
             ->add('glucide', IntegerType::class, [
-                'label' => 'Valeur glucidique en gr'
+                'label' => 'Glucide'
             ])
             ->add('regime', ChoiceType::class, [
-                'label' => 'Quel régime alimentaire ?',
+                'label' => 'Régime alimentaire',
                 'choices' => [
                     'Paléo' => 'Paléo',
                     'Végétarien' => 'Végétarien',
@@ -79,12 +79,11 @@ class RecipeType extends AbstractType
                 ]
             ])
             ->add('lipide', IntegerType::class, [
-                'label' => 'Valeur lipidique en gr'
+                'label' => 'Lipide'
             ])
             ->add('calorie', IntegerType::class, [
-                'label' => 'Valeur calorique'
+                'label' => 'Calorie'
             ])
-            ->add('picture')
             ->add('tags', EntityType::class, [
                 'class' => Tags::class,
                 'label' => 'Tags',
@@ -103,6 +102,7 @@ class RecipeType extends AbstractType
             ))
             ->add('picture', FileType::class, [
                 'required' => false,
+                'label' => 'Photo du plat'
                 ])
             ;
     }

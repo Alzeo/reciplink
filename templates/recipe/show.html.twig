@@ -15,7 +15,7 @@
                     </span>
                 {% endfor %}
             </p>
-            <div class="row mt-5">
+            <div class="head-recip row mt-2">
                 <div class="col-6">
                     <p>Recette proposée par : <span class="user"><i class="fa fa-user" aria-hidden="true"></i> {{ recipe.user.username }}</span></p>
                 </div>
@@ -23,10 +23,9 @@
                     <i class="fa fa-thumbs-up" aria-hidden="true"></i> 320 aiment cette recette
                 </div>
             </div>
-            <img class="img-responsive img-recipe mt-2" src="{{ asset('uploads/recipes/' ~ recipe.picture) }}" alt="recette {{ recipe.name }}">
+            <img class="img-responsive img-recipe" src="{{ asset('uploads/recipes/' ~ recipe.picture) }}" alt="recette {{ recipe.name }}">
         </div>
         <div class="more-info-recipe">
-            <div class="detail-recipe">
                 <div class="row">
                     <div class="col-4">
                         <label class="label label-danger">{{ recipe.type }}</label>
@@ -37,9 +36,28 @@
                     <div class="col-4">
                         <p>Difficulté : <label class="label label-primary">{{ recipe.dificulty }}</label> </p>
                     </div>
-
                 </div>
-                <h2>Recette</h2>
+            </div>
+        <div class="explain-recip text-left mb-5">
+            <div class="row">
+                <div class="col-4">
+                    <h4>Ingrédients</h4>
+                    <div class="foods mt-4">
+                        {% for food in recipe.foods %}
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">
+                                    {{ food.quantity }} {{ food.quantityUnity }} {{ food.name }}
+                                </li>
+                            </ul>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="col-8">
+                    <h4>Préparation</h4>
+                    <p class="text-justify text-left mt-4">
+                        {{ recipe.description|raw }}
+                    </p>
+                </div>
             </div>
         </div>
     </div>

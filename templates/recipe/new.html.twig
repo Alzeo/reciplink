@@ -1,16 +1,22 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New Recipe{% endblock %}
+{% block title %}Nouvelle recette{% endblock %}
 
     {% block body %}
-<div class="content" style="background-image: url({{ asset ('/assets/img/2873066.jpg') }}); background-position: center; padding-bottom:60px;">
+<div class="content" style="background-image: url({{ asset ('/assets/img/2533.jpg') }}); background-repeat: no-repeat; background-size: cover;">
         <div class="background-recip" style="padding-top: 30px; padding-bottom: 30px; text-align: center; ">
-            <h1 style="margin-top:90px;">Nouvelle recette</h1>
         </div>
-        <div class="formulaire  container" style="max-width: 60%; margin:auto; padding: 50px; background: #ffffffc9;">
-
+        <div class="formulaire container" style="max-width: 60%; margin:auto; padding: 50px; background: #fff;">
+            <h1 class="text-center mb-5">Nouvelle recette</h1>
             {{ form_start(form) }}
-            {{ form_row(form.name) }}
+           <div class="row">
+               <div class="col-7">
+                   {{ form_row(form.name) }}
+               </div>
+               <div class="col-5">
+                   {{ form_row(form.picture) }}
+               </div>
+           </div>
             <div class="row">
                 <div class="col">
                     {{ form_row(form.dificulty) }}
@@ -43,8 +49,7 @@
                 {% endif %}
                 {% do form.foods.setRendered %}
             </div>
-            <a href="#" id="add_food" class="btn btn-success"><i class="fa fa-plus"></i> Ajouter un ingrédients</a>
-            <hr/>
+            <a href="#" id="add_food"  class="btn-round mr-1 btn btn-success"><i class="fa fa-plus"></i> Ajouter un ingrédients</a>
             <hr/>
             {{ form_row(form.description) }}
             <hr/>
@@ -63,11 +68,9 @@
                 </div>
             </div>
             <hr/>
-            {{ form_row(form.picture) }}
             {{ form_row(form.tags) }}
 
             <button class="btn btn-success">{{ button_label|default('Ajouter') }}</button>
-            <a href="{{ path('recipe_index', {'username': user.username }) }}">back to list</a>
             {{ form_end(form) }}
         </div>
 
@@ -134,7 +137,8 @@
            // La fonction qui ajoute un lien de suppression d'une catégorie
            function addDeleteLink($prototype) {
                // Création du lien
-               var $deleteLink = $('<a href="#" class="btn btn-danger">Supprimer</a>');
+               var $deleteLink = $('<a href="#" class="btn-just-icon ml-1 btn btn-danger mb-3"><i class="fa fa-trash" aria-hidden="true"></i></a>');
+
 
                // Ajout du lien
                $prototype.append($deleteLink);
@@ -149,4 +153,18 @@
            }
        });
    </script>
+   <script>
+            $('#recipe_picture').on('change',function(){
+                //get the file name
+                var fileName = $(this).val().replace('C:\\fakepath\\', " ");
+                //replace the "Choose a file" label
+                $(this).next('.custom-file-label').html(fileName);
+            })
+        </script>
+    <script>
+			$('#recipe_picture').filestyle({
+				buttonName : 'btn-danger',
+                buttonText : ' File selection'
+			});
+</script>
 {% endblock %}

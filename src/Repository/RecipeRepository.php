@@ -25,11 +25,11 @@ class RecipeRepository extends ServiceEntityRepository
     /**
      * @return Recipe[]
      */
-    public function findLatest(): array
-    {
-        return $this->findVisibleQuery()
-            ->getQuery()
+    public function findLatest() {
+        return $this->createQueryBuilder('a')
+            ->andWhere('a.publish = true')
             ->setMaxResults(6)
+            ->getQuery()
             ->getResult();
     }
 

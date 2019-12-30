@@ -55,7 +55,7 @@ class RecipeController extends AbstractController
             if ($picture) {
                 $originalFilename = pathinfo($picture->getClientOriginalName(), PATHINFO_FILENAME);
                 // this is needed to safely include the file name as part of the URL
-                $newFilename = 'recipe'.'-'.uniqid().'.'.$picture->guessExtension();
+                $newFilename = 'recipelink'.'-'.uniqid().'.'.$picture->guessExtension();
 
                 // Move the file to the directory where brochures are stored
                 try {
