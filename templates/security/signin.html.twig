@@ -41,6 +41,16 @@
 </head>
 <body class="text-center" style="background-image: url({{ asset ('/assets/img/home-banner2.jpg') }});  background-repeat: no-repeat; background-size: cover;">
 <form class="form-signin" method="post">
+
+    {% if error %}
+        <div class="alert alert-danger"><i class="fa fa-bell-o" aria-hidden="true"></i>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+    {% endif %}
+
+    {% if app.user %}
+        <div class="mb-3">
+            Vous êtes connecté(e) en tant que {{ app.user.username }}, <a href="{{ path('app_logout') }}">Déconnexion</a>
+        </div>
+    {% endif %}
     <img src="{{ asset('/assets/img/cauldron.png') }}" width="60px" alt="Card image cap">
     <h1 class="h3 mb-3 font-weight-normal">Connectez vous</h1>
     <input type="text" value="{{ last_username }}" name="username" placeholder="Username" id="inputUsername" class="form-control mb-4" required autofocus>
@@ -56,6 +66,16 @@
         </label>
     </div>
     <button class="btn btn-lg btn-success btn-block" type="submit">Se connecter</button>
+    <div class="text-center w-full p-t-115 mt-4">
+						<span class="txt1">
+							Pas de compte ?
+						</span>
+
+        <a class="txt1 bo1 hov1" href="{{path('register')}}">
+            Créez en un.
+        </a>
+    </div>
+
     <p class="mt-5 mb-3 text-muted">&copy; 2017-2019</p>
 </form>
 </body>

@@ -14,7 +14,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/recipe")
+ * @Route("/recette")
  */
 class RecipeController extends AbstractController
 {
@@ -35,7 +35,7 @@ class RecipeController extends AbstractController
     }
 
     /**
-     * @Route("/new", name="recipe_new", methods={"GET","POST"})
+     * @Route("/nouvelle", name="recipe_new", methods={"GET","POST"})
      */
     public function new(Request $request): Response
     {

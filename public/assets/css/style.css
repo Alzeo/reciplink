@@ -325,3 +325,7 @@ h1.images-title {
 .custom-file-control:after{
     content: "Add files..";
 }
+
+.btn-just-icon.ml-1.btn.btn-danger.form-btn {
+    margin-top: 35px;
+}

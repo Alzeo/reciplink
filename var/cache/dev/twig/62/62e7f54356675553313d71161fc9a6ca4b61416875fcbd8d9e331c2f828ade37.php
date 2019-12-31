@@ -136,7 +136,10 @@ class __TwigTemplate_6fa38e5a2e106cfea1e585f1e4c51458daff0a752968ecaa1ed2da3b182
         } else {
             // line 62
             echo "
-                   <a href=\"#pablo\"type=\"button\" class=\"btn-round mr-1 btn btn-outline-success\"><i class=\"fa fa-sign-in\" aria-hidden=\"true\"></i> Se connecter</a>
+                   <a href=\"";
+            // line 63
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
+            echo "\"type=\"button\" class=\"btn-round mr-1 btn btn-outline-success\"><i class=\"fa fa-sign-in\" aria-hidden=\"true\"></i> Se connecter</a>
                 ";
         }
         // line 65
@@ -311,7 +314,7 @@ class __TwigTemplate_6fa38e5a2e106cfea1e585f1e4c51458daff0a752968ecaa1ed2da3b182
 
     public function getDebugInfo()
     {
-        return array (  285 => 131,  267 => 69,  257 => 18,  247 => 17,  228 => 5,  215 => 133,  213 => 131,  151 => 71,  149 => 69,  143 => 65,  138 => 62,  132 => 60,  130 => 59,  120 => 52,  114 => 49,  102 => 40,  79 => 19,  77 => 17,  71 => 14,  67 => 13,  63 => 12,  53 => 5,  47 => 1,);
+        return array (  288 => 131,  270 => 69,  260 => 18,  250 => 17,  231 => 5,  218 => 133,  216 => 131,  154 => 71,  152 => 69,  146 => 65,  141 => 63,  138 => 62,  132 => 60,  130 => 59,  120 => 52,  114 => 49,  102 => 40,  79 => 19,  77 => 17,  71 => 14,  67 => 13,  63 => 12,  53 => 5,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -378,7 +381,7 @@ class __TwigTemplate_6fa38e5a2e106cfea1e585f1e4c51458daff0a752968ecaa1ed2da3b182
                     <li class=\"nav-item\"><a href=\"#pablo\" class=\"nav-link\"><i class=\"fa fa-user\" aria-hidden=\"true\"></i>{{ user.username}}</a></li>
                 {% else %}
 
-                   <a href=\"#pablo\"type=\"button\" class=\"btn-round mr-1 btn btn-outline-success\"><i class=\"fa fa-sign-in\" aria-hidden=\"true\"></i> Se connecter</a>
+                   <a href=\"{{ path('app_login') }}\"type=\"button\" class=\"btn-round mr-1 btn btn-outline-success\"><i class=\"fa fa-sign-in\" aria-hidden=\"true\"></i> Se connecter</a>
                 {% endif %}
             </ul>
         </div>

@@ -41,7 +41,7 @@ class __TwigTemplate_a5496dd72879df532d59564691d111ff70203f6f27cda1e4a2369c847f1
 
         // line 1
         echo "<div class=\"row\">
-    <div class=\"col-6\">
+    <div class=\"col-4\">
         ";
         // line 3
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 3, $this->source); })()), "name", [], "any", false, false, false, 3), 'row');
@@ -86,7 +86,7 @@ class __TwigTemplate_a5496dd72879df532d59564691d111ff70203f6f27cda1e4a2369c847f1
     public function getSourceContext()
     {
         return new Source("<div class=\"row\">
-    <div class=\"col-6\">
+    <div class=\"col-4\">
         {{ form_row(form.name) }}
     </div>
     <div class=\"col-4\">

@@ -60,7 +60,7 @@
                     <li class="nav-item"><a href="#pablo" class="nav-link"><i class="fa fa-user" aria-hidden="true"></i>{{ user.username}}</a></li>
                 {% else %}
 
-                   <a href="#pablo"type="button" class="btn-round mr-1 btn btn-outline-success"><i class="fa fa-sign-in" aria-hidden="true"></i> Se connecter</a>
+                   <a href="{{ path('app_login') }}"type="button" class="btn-round mr-1 btn btn-outline-success"><i class="fa fa-sign-in" aria-hidden="true"></i> Se connecter</a>
                 {% endif %}
             </ul>
         </div>
