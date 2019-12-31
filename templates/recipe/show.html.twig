@@ -20,7 +20,16 @@
                     <p>Recette proposée par : <span class="user"><i class="fa fa-user" aria-hidden="true"></i> {{ recipe.user.username }}</span></p>
                 </div>
                 <div class="col-6">
-                    <i class="fa fa-thumbs-up" aria-hidden="true"></i> 320 aiment cette recette
+                    {% for love in recipe.love %}
+
+                        <a href="{{ path('love',{'idLove': love.id, 'idRecipe':recipe.id}) }}">
+                        {% if recipe.user(app.user) %}
+                            <i id="like" class=" text-danger"></i>&nbsp;<i class="fa fa-thumbs-up" aria-hidden="true"></i> {{ love.loves }} aiment cette recette
+                        {% else %}
+                            <i id="like" class=" text-danger"></i>&nbsp;<i class="fa fa-thumbs-up" aria-hidden="true"></i> {{ love.loves }} aiment cette recette
+                        {% endif %}
+                    </a>
+                    {% endfor %}
                 </div>
             </div>
             <img class="img-responsive img-recipe" src="{{ asset('uploads/recipes/' ~ recipe.picture) }}" alt="recette {{ recipe.name }}">

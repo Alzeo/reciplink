@@ -15,6 +15,7 @@ return [
     '_profiler_router' => [['token'], ['_controller' => 'web_profiler.controller.router::panelAction'], [], [['text', '/router'], ['variable', '/', '[^/]++', 'token'], ['text', '/_profiler']], [], []],
     '_profiler_exception' => [['token'], ['_controller' => 'web_profiler.controller.exception_panel::body'], [], [['text', '/exception'], ['variable', '/', '[^/]++', 'token'], ['text', '/_profiler']], [], []],
     '_profiler_exception_css' => [['token'], ['_controller' => 'web_profiler.controller.exception_panel::stylesheet'], [], [['text', '/exception.css'], ['variable', '/', '[^/]++', 'token'], ['text', '/_profiler']], [], []],
+    'love' => [['idLove', 'idRecipe'], ['_controller' => 'App\\Controller\\LoveController::love'], [], [['variable', '/', '[^/]++', 'idRecipe'], ['text', '/recipe'], ['variable', '/', '[^/]++', 'idLove'], ['text', '/love']], [], []],
     'home' => [[], ['_controller' => 'App\\Controller\\MainController::index'], [], [['text', '/']], [], []],
     'register' => [[], ['_controller' => 'App\\Controller\\MainController::register'], [], [['text', '/register']], [], []],
     'discover' => [[], ['_controller' => 'App\\Controller\\MainController::allRecipes'], [], [['text', '/recettes']], [], []],

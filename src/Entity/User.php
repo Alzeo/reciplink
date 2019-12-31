@@ -45,10 +45,16 @@ class User implements UserInterface
      */
     private $recipes;
 
+    /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\Love", inversedBy="users")
+     */
+    private $love;
+
 
     public function __construct()
     {
         $this->recipes = new ArrayCollection();
+        $this->love = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -166,4 +172,31 @@ class User implements UserInterface
 
         return $this;
     }
+
+    /**
+     * @return Collection|Love[]
+     */
+    public function getLove(): Collection
+    {
+        return $this->love;
+    }
+
+    public function addLove(Love $love): self
+    {
+        if (!$this->love->contains($love)) {
+            $this->love[] = $love;
+        }
+
+        return $this;
+    }
+
+    public function removeLove(Love $love): self
+    {
+        if ($this->love->contains($love)) {
+            $this->love->removeElement($love);
+        }
+
+        return $this;
+    }
+
 }

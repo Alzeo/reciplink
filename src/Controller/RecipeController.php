@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Recipe;
 use App\Entity\RecipeFood;
 use App\Form\RecipeType;
+use App\Repository\LikeRepository;
 use App\Repository\RecipeRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\File\Exception\FileException;
@@ -93,12 +94,13 @@ class RecipeController extends AbstractController
     /**
      * @Route("/{id}", name="recipe_show", methods={"GET"})
      */
-    public function show(Recipe $recipe): Response
+    public function show(Recipe $recipe, RecipeRepository $recipeRepository): Response
     {
+
 
         return $this->render('recipe/show.html.twig', [
             'recipe' => $recipe,
-            'recipeUser' => $recipe->getUser()
+            'user' => $recipe->getUser()
         ]);
     }
 

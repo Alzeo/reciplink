@@ -109,6 +109,12 @@ class Recipe
      */
     private $regime;
 
+    /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\Love", mappedBy="recipe")
+     */
+    private $love;
+
+
 
 
 
@@ -116,7 +122,7 @@ class Recipe
     {
         $this->tags = new ArrayCollection();
         $this->foods = new ArrayCollection();
-        $this->users = new ArrayCollection();
+        $this->love = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -406,4 +412,33 @@ class Recipe
 
         return $this;
     }
+
+    /**
+     * @return Collection|Love[]
+     */
+    public function getLove(): Collection
+    {
+        return $this->love;
+    }
+
+    public function addLove(Love $love): self
+    {
+        if (!$this->love->contains($love)) {
+            $this->love[] = $love;
+            $love->addRecipe($this);
+        }
+
+        return $this;
+    }
+
+    public function removeLove(Love $love): self
+    {
+        if ($this->love->contains($love)) {
+            $this->love->removeElement($love);
+            $love->removeRecipe($this);
+        }
+
+        return $this;
+    }
+
 }
