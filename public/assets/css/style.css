@@ -349,3 +349,8 @@ h1.images-title {
 .author {
     margin:auto;
 }
+
+.btn-neutral {
+    background-color: #DBDBDB !important;
+    border-color: #DBDBDB !important;
+}

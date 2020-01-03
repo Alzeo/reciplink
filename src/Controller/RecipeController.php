@@ -60,8 +60,11 @@ class RecipeController extends AbstractController
         $user = $this->getUser();
         $username = $user->getUsername();
         $recipe = new Recipe();
+        $recipeLike = new RecipeLike();
+        $recipeLike->setRecipe($recipe);
         $recipe->setUser($user);
         $recipe->setPublish(true);
+
         $form = $this->createForm(RecipeType::class, $recipe);
         $form->handleRequest($request);
 

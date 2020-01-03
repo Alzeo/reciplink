@@ -20,6 +20,7 @@ return [
         '/recette/nouvelle' => [[['_route' => 'recipe_new', '_controller' => 'App\\Controller\\RecipeController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/login' => [[['_route' => 'app_login', '_controller' => 'App\\Controller\\SecurityController::login'], null, null, null, false, false, null]],
         '/logout' => [[['_route' => 'app_logout', '_controller' => 'App\\Controller\\SecurityController::logout'], null, null, null, false, false, null]],
+        '/user' => [[['_route' => 'user_index', '_controller' => 'App\\Controller\\UserController::index'], null, ['GET' => 0], null, true, false, null]],
     ],
     [ // $regexpList
         0 => '{^(?'
@@ -46,6 +47,11 @@ return [
                     .')'
                     .'|(*:226)'
                 .')'
+                .'|/user/([^/]++)(?'
+                    .'|(*:252)'
+                    .'|/edit(*:265)'
+                    .'|(*:273)'
+                .')'
             .')/?$}sD',
     ],
     [ // $dynamicRoutes
@@ -59,8 +65,11 @@ return [
         189 => [[['_route' => 'recipe_show', '_controller' => 'App\\Controller\\RecipeController::show'], ['id'], ['GET' => 0], null, false, true, null]],
         205 => [[['_route' => 'recipe_edit', '_controller' => 'App\\Controller\\RecipeController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
         217 => [[['_route' => 'recipe_like', '_controller' => 'App\\Controller\\RecipeController::like'], ['id'], null, null, false, false, null]],
-        226 => [
-            [['_route' => 'recipe_delete', '_controller' => 'App\\Controller\\RecipeController::delete'], ['id'], ['DELETE' => 0], null, false, true, null],
+        226 => [[['_route' => 'recipe_delete', '_controller' => 'App\\Controller\\RecipeController::delete'], ['id'], ['DELETE' => 0], null, false, true, null]],
+        252 => [[['_route' => 'user_show', '_controller' => 'App\\Controller\\UserController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        265 => [[['_route' => 'user_edit', '_controller' => 'App\\Controller\\UserController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        273 => [
+            [['_route' => 'user_delete', '_controller' => 'App\\Controller\\UserController::delete'], ['id'], ['DELETE' => 0], null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],
     ],
