@@ -1,3 +1,16 @@
+@media (max-width: 576px) {
+    .card img {
+        height: 100vw !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .card img {
+        height: 100vw !important;
+    }
+}
+
+
 .btn-circle {
     width: 30px;
     height: 30px;
@@ -198,7 +211,6 @@ footer a:hover {
     position: absolute;
     top: 8px;
     right: 16px;
-    background: white;
     border-radius: 10%;
     padding: 2px;
 }
@@ -215,13 +227,13 @@ footer a:hover {
     position: absolute;
     top: 8px;
     left: 16px;
-    background: #0000008a;
-    border-radius: 10%;
     padding: 2px;
 }
 
 .like {
     color: #fff;
+    padding:3px;
+    border-radius:5px;
 }
 
 .card img {
@@ -328,4 +340,12 @@ h1.images-title {
 
 .btn-just-icon.ml-1.btn.btn-danger.form-btn {
     margin-top: 35px;
+}
+
+.block-blog .card img {
+    border-radius:0px;
+}
+
+.author {
+    margin:auto;
 }

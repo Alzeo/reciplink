@@ -41,20 +41,21 @@ class User implements UserInterface
     private $email;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Recipe", mappedBy="user")
+     * @ORM\OneToMany(targetEntity="App\Entity\Recipe", mappedBy="user",)
      */
     private $recipes;
 
     /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\Love", inversedBy="users")
+     * @ORM\OneToMany(targetEntity="App\Entity\RecipeLike", mappedBy="user")
      */
-    private $love;
+    private $likes;
+
 
 
     public function __construct()
     {
         $this->recipes = new ArrayCollection();
-        $this->love = new ArrayCollection();
+        $this->likes = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -174,29 +175,35 @@ class User implements UserInterface
     }
 
     /**
-     * @return Collection|Love[]
+     * @return Collection|RecipeLike[]
      */
-    public function getLove(): Collection
+    public function getLikes(): Collection
     {
-        return $this->love;
+        return $this->likes;
     }
 
-    public function addLove(Love $love): self
+    public function addLike(RecipeLike $like): self
     {
-        if (!$this->love->contains($love)) {
-            $this->love[] = $love;
+        if (!$this->likes->contains($like)) {
+            $this->likes[] = $like;
+            $like->setUser($this);
         }
 
         return $this;
     }
 
-    public function removeLove(Love $love): self
+    public function removeLike(RecipeLike $like): self
     {
-        if ($this->love->contains($love)) {
-            $this->love->removeElement($love);
+        if ($this->likes->contains($like)) {
+            $this->likes->removeElement($like);
+            // set the owning side to null (unless already changed)
+            if ($like->getUser() === $this) {
+                $like->setUser(null);
+            }
         }
 
         return $this;
     }
+
 
 }

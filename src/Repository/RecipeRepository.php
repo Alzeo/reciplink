@@ -59,6 +59,18 @@ class RecipeRepository extends ServiceEntityRepository
             ->where('p.publish = true');
     }
 
+    public function findByLikes($value)
+    {
+        return $this->createQueryBuilder('l')
+            ->leftJoin('l.love', 'u')
+            ->leftJoin('u.users','e')
+            ->addSelect('u','e')
+            ->where('l.id = :val')
+            ->setParameter('val', $value)
+            ->getQuery()
+            ->getOneOrNullResult()
+            ;
+    }
 
 
 

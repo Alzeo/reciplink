@@ -1,9 +1,8 @@
-<div class="col-4">
+<div class="col-xs-12 col-md-6 col-lg-4">
     <div class="card">
-        <img class="card-img-top" src="{{ asset('uploads/recipes/' ~ recipe.picture) }}" alt="recette {{ recipe.name }}">
-        <div class="top-right"><span class="user"><i class="fa fa-user" aria-hidden="true"></i> {{ recipe.user.username }}</span></div>
-        <div class="top-left"><span class="like"> <i class="fa fa-thumbs-up" aria-hidden="true"></i> 320</span></div>
-        <div class="bottom-left"><label class="label label-danger">{{ recipe.type }}</label></div>
+        <a href="{{ path('recipe_show', {'id': recipe.id}) }}"><img class="card-img-top" src="{{ asset('uploads/recipes/' ~ recipe.picture) }}" alt="recette {{ recipe.name }}"> </a>
+        <div class="top-right"><label class="label label-danger">{{ recipe.type }}</label></div>
+        <div class="top-left"><span class="like label-warning"> <i class="fa fa-heart" aria-hidden="true"></i> {{ recipe.likes|length }}</span></div>
         <div class="card-body">
             <h6 class="card-regime">Régime : {{ recipe.regime }}</h6>
 

@@ -110,19 +110,16 @@ class Recipe
     private $regime;
 
     /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\Love", mappedBy="recipe")
+     * @ORM\OneToMany(targetEntity="App\Entity\RecipeLike", mappedBy="recipe")
      */
-    private $love;
-
-
-
+    private $likes;
 
 
     public function __construct()
     {
         $this->tags = new ArrayCollection();
         $this->foods = new ArrayCollection();
-        $this->love = new ArrayCollection();
+        $this->likes = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -414,31 +411,43 @@ class Recipe
     }
 
     /**
-     * @return Collection|Love[]
+     * @return Collection|RecipeLike[]
      */
-    public function getLove(): Collection
+    public function getLikes(): Collection
     {
-        return $this->love;
+        return $this->likes;
     }
 
-    public function addLove(Love $love): self
+    public function addLike(RecipeLike $like): self
     {
-        if (!$this->love->contains($love)) {
-            $this->love[] = $love;
-            $love->addRecipe($this);
+        if (!$this->likes->contains($like)) {
+            $this->likes[] = $like;
+            $like->setRecipe($this);
         }
 
         return $this;
     }
 
-    public function removeLove(Love $love): self
+    public function removeLike(RecipeLike $like): self
     {
-        if ($this->love->contains($love)) {
-            $this->love->removeElement($love);
-            $love->removeRecipe($this);
+        if ($this->likes->contains($like)) {
+            $this->likes->removeElement($like);
+            // set the owning side to null (unless already changed)
+            if ($like->getRecipe() === $this) {
+                $like->setRecipe(null);
+            }
         }
 
         return $this;
     }
+
+    public function isLikeByUser(User $user) : bool {
+        foreach ($this->likes as $like) {
+            if($like->getUser() === $user) return true;
+        }
+
+        return false;
+    }
+
 
 }

@@ -15,7 +15,6 @@ return [
     '_profiler_router' => [['token'], ['_controller' => 'web_profiler.controller.router::panelAction'], [], [['text', '/router'], ['variable', '/', '[^/]++', 'token'], ['text', '/_profiler']], [], []],
     '_profiler_exception' => [['token'], ['_controller' => 'web_profiler.controller.exception_panel::body'], [], [['text', '/exception'], ['variable', '/', '[^/]++', 'token'], ['text', '/_profiler']], [], []],
     '_profiler_exception_css' => [['token'], ['_controller' => 'web_profiler.controller.exception_panel::stylesheet'], [], [['text', '/exception.css'], ['variable', '/', '[^/]++', 'token'], ['text', '/_profiler']], [], []],
-    'love' => [['idLove', 'idRecipe'], ['_controller' => 'App\\Controller\\LoveController::love'], [], [['variable', '/', '[^/]++', 'idRecipe'], ['text', '/recipe'], ['variable', '/', '[^/]++', 'idLove'], ['text', '/love']], [], []],
     'home' => [[], ['_controller' => 'App\\Controller\\MainController::index'], [], [['text', '/']], [], []],
     'register' => [[], ['_controller' => 'App\\Controller\\MainController::register'], [], [['text', '/register']], [], []],
     'discover' => [[], ['_controller' => 'App\\Controller\\MainController::allRecipes'], [], [['text', '/recettes']], [], []],
@@ -24,6 +23,7 @@ return [
     'recipe_show' => [['id'], ['_controller' => 'App\\Controller\\RecipeController::show'], [], [['variable', '/', '[^/]++', 'id'], ['text', '/recette']], [], []],
     'recipe_edit' => [['id'], ['_controller' => 'App\\Controller\\RecipeController::edit'], [], [['text', '/edit'], ['variable', '/', '[^/]++', 'id'], ['text', '/recette']], [], []],
     'recipe_delete' => [['id'], ['_controller' => 'App\\Controller\\RecipeController::delete'], [], [['variable', '/', '[^/]++', 'id'], ['text', '/recette']], [], []],
+    'recipe_like' => [['id'], ['_controller' => 'App\\Controller\\RecipeController::like'], [], [['text', '/like'], ['variable', '/', '[^/]++', 'id'], ['text', '/recette']], [], []],
     'app_login' => [[], ['_controller' => 'App\\Controller\\SecurityController::login'], [], [['text', '/login']], [], []],
     'app_logout' => [[], ['_controller' => 'App\\Controller\\SecurityController::logout'], [], [['text', '/logout']], [], []],
 ];

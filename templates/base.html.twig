@@ -52,7 +52,7 @@
                     <a href="{{ path('discover') }}" class="nav-link"><i class="fa fa-cutlery" aria-hidden="true"></i> Découvrir</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#pablo" class="nav-link"><i class="fa fa-heart" aria-hidden="true"></i> Partager une recette</a>
+                    <a href="{{ path('recipe_new') }}" class="nav-link"><i class="fa fa-heart" aria-hidden="true"></i> Partager une recette</a>
                 </li>
             </ul>
             <ul class="ml-auto navbar-nav pull-right">
@@ -127,6 +127,37 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 <script>
     CKEDITOR.replace( 'recipe[description]' );
+</script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+    function onClickOnBtnLike(event){
+        event.preventDefault();
+        const url = this.href;
+        const spanCount = this.querySelector('span.js-likes');
+        const icone = this.querySelector('i');
+        const textLike = this.querySelector('span.js-label');
+
+        axios.get(url).then(function(response){
+            spanCount.textContent = response.data.likes;
+
+            if(icone.classList.contains('fa-heart')) {
+                icone.classList.replace('fa-heart', 'fa-heart-o');
+                document.getElementById("js-label").textContent="Je n'aime plus";
+            }
+            else {
+                icone.classList.replace('fa-heart-o', 'fa-heart');
+            }
+        }).catch(function (error) {
+            if(error.response.status === 403) {
+                console.log('Vous devez être connecté pour aimer une recette');
+            }
+        })
+
+        ;
+    }
+    document.querySelectorAll('a.js-like').forEach(function(link){
+        link.addEventListener('click', onClickOnBtnLike)
+    })
 </script>
 {% block javascript %}
 {% endblock %}

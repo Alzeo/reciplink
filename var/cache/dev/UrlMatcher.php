@@ -38,11 +38,13 @@ return [
                         .'|(*:159)'
                     .')'
                 .')'
-                .'|/love/([^/]++)/recipe/([^/]++)(*:199)'
                 .'|/recette/([^/]++)(?'
-                    .'|(*:227)'
-                    .'|/edit(*:240)'
-                    .'|(*:248)'
+                    .'|(*:189)'
+                    .'|/(?'
+                        .'|edit(*:205)'
+                        .'|like(*:217)'
+                    .')'
+                    .'|(*:226)'
                 .')'
             .')/?$}sD',
     ],
@@ -54,10 +56,10 @@ return [
         136 => [[['_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception_panel::body'], ['token'], null, null, false, false, null]],
         149 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception_panel::stylesheet'], ['token'], null, null, false, false, null]],
         159 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
-        199 => [[['_route' => 'love', '_controller' => 'App\\Controller\\LoveController::love'], ['idLove', 'idRecipe'], null, null, false, true, null]],
-        227 => [[['_route' => 'recipe_show', '_controller' => 'App\\Controller\\RecipeController::show'], ['id'], ['GET' => 0], null, false, true, null]],
-        240 => [[['_route' => 'recipe_edit', '_controller' => 'App\\Controller\\RecipeController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        248 => [
+        189 => [[['_route' => 'recipe_show', '_controller' => 'App\\Controller\\RecipeController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        205 => [[['_route' => 'recipe_edit', '_controller' => 'App\\Controller\\RecipeController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        217 => [[['_route' => 'recipe_like', '_controller' => 'App\\Controller\\RecipeController::like'], ['id'], null, null, false, false, null]],
+        226 => [
             [['_route' => 'recipe_delete', '_controller' => 'App\\Controller\\RecipeController::delete'], ['id'], ['DELETE' => 0], null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],

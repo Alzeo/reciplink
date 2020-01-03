@@ -16,20 +16,29 @@
                 {% endfor %}
             </p>
             <div class="head-recip row mt-2">
-                <div class="col-6">
+                <div class="col-6 author">
                     <p>Recette proposée par : <span class="user"><i class="fa fa-user" aria-hidden="true"></i> {{ recipe.user.username }}</span></p>
                 </div>
                 <div class="col-6">
-                    {% for love in recipe.love %}
+                    {% if is_granted('ROLE_USER') %}
+                        <a href="#" class="btn btn-round btn-danger">Enregistrer la recette</a>
+                        <a href="{{ path('recipe_like', {'id': recipe.id}) }}" class="btn btn-round btn-warning js-like">
+                        {% if app.user and recipe.isLikeByUser(app.user) %}
+                                <i class="fa fa-heart"></i>
+                            {% else %}
+                                <i class="fa fa-heart-o"></i>
+                            {% endif %}
+                            <span class="js-likes">{{ recipe.likes|length }}</span>
+                            <span class="js-label"></span>
+                        </a>
 
-                        <a href="{{ path('love',{'idLove': love.id, 'idRecipe':recipe.id}) }}">
-                        {% if recipe.user(app.user) %}
-                            <i id="like" class=" text-danger"></i>&nbsp;<i class="fa fa-thumbs-up" aria-hidden="true"></i> {{ love.loves }} aiment cette recette
                         {% else %}
-                            <i id="like" class=" text-danger"></i>&nbsp;<i class="fa fa-thumbs-up" aria-hidden="true"></i> {{ love.loves }} aiment cette recette
-                        {% endif %}
-                    </a>
-                    {% endfor %}
+                            <a href="{{ path('app_login') }}" class="btn btn-round btn-warning btn-primary">
+                                    <i class="fa fa-heart-o"></i>
+                                <span class="js-likes">{{ recipe.likes|length }}</span>
+                                <span class="js-label"></span>
+                            </a>
+                    {% endif %}
                 </div>
             </div>
             <img class="img-responsive img-recipe" src="{{ asset('uploads/recipes/' ~ recipe.picture) }}" alt="recette {{ recipe.name }}">
@@ -37,13 +46,13 @@
         <div class="more-info-recipe">
                 <div class="row">
                     <div class="col-4">
-                        <label class="label label-danger">{{ recipe.type }}</label>
+                        <p><i class="fa fa-cutlery"></i> {{ recipe.type }}</p>
                     </div>
                     <div class="col-4">
                         <i class="fa fa-hourglass-half" aria-hidden="true"></i> {{recipe.time }} {{ recipe.timeUnity }}</p>
                     </div>
                     <div class="col-4">
-                        <p>Difficulté : <label class="label label-primary">{{ recipe.dificulty }}</label> </p>
+                        <p><i class="fa fa-signal"></i> {{ recipe.dificulty }}</p>
                     </div>
                 </div>
             </div>
@@ -71,5 +80,7 @@
         </div>
     </div>
 </div>
+{% endblock %}
 
+{% block javascript %}
 {% endblock %}

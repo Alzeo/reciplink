@@ -2,28 +2,44 @@
 
 namespace App\Controller;
 
+use App\Entity\Love;
 use App\Entity\Recipe;
 use App\Entity\RecipeFood;
+use App\Entity\RecipeLike;
+use App\Entity\User;
 use App\Form\RecipeType;
 use App\Repository\LikeRepository;
+use App\Repository\LoveRepository;
+use App\Repository\RecipeLikeRepository;
 use App\Repository\RecipeRepository;
+use App\Repository\UserRepository;
+use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\File\Exception\FileException;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Security\Core\Security;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Entity;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter ;
 
 /**
  * @Route("/recette")
  */
 class RecipeController extends AbstractController
 {
+
+    public function __construct(Security $security)
+    {
+        $this->security = $security;
+    }
     /**
      * @Route("/", name="recipe_index", methods={"GET"})
      */
     public function index(RecipeRepository $recipeRepository): Response
     {
+
         $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
         $user = $this->getUser();
 
@@ -45,6 +61,7 @@ class RecipeController extends AbstractController
         $username = $user->getUsername();
         $recipe = new Recipe();
         $recipe->setUser($user);
+        $recipe->setPublish(true);
         $form = $this->createForm(RecipeType::class, $recipe);
         $form->handleRequest($request);
 
@@ -93,14 +110,22 @@ class RecipeController extends AbstractController
 
     /**
      * @Route("/{id}", name="recipe_show", methods={"GET"})
+     * @param Recipe $recipe
+     * @param RecipeRepository $recipeRepository
+     * @param Love $love
+     * @param LoveRepository $loveRepository
+     * @param UserRepository $userRepository
+     * @return Response
      */
     public function show(Recipe $recipe, RecipeRepository $recipeRepository): Response
     {
 
+        $user = $this->security->getUser();
 
         return $this->render('recipe/show.html.twig', [
             'recipe' => $recipe,
-            'user' => $recipe->getUser()
+            'userRecipe' => $recipe->getUser(),
+            'user' => $user,
         ]);
     }
 
@@ -136,6 +161,52 @@ class RecipeController extends AbstractController
         }
 
         return $this->redirectToRoute('recipe_index');
+    }
+
+    /**
+     * @Route("/{id}/like", name="recipe_like")
+     * @param Recipe $recipe
+     * @param $likeRepo
+     * @return Response
+     */
+    public function like(Recipe $recipe, RecipeLikeRepository $likeRepo) : Response {
+
+        $user =$this->getUser();
+
+        if(!$user) return $this->json([
+            'code' => 403,
+            'message' => 'pas autorisé'
+        ], 403);
+
+        if($recipe->isLikeByUser($user)){
+            $like = $likeRepo->findOneBy([
+                'recipe' => $recipe,
+                'user' => $user
+            ]);
+
+            $em = $this->getDoctrine()->getManager();
+            $em->remove($like);
+            $em->flush();
+            return $this->json([
+                'code' => 200,
+                'message' => 'Like bien supprimé',
+                'likes' => $likeRepo->count(['recipe' => $recipe])
+            ], 200);
+        }
+
+        $like = new RecipeLike();
+        $like->setRecipe($recipe)
+            ->setUser($user);
+        $em = $this->getDoctrine()->getManager();
+        $em->persist($like);
+        $em->flush();
+
+
+        return $this->json([
+            'code' => 200,
+            'message' => 'Like bien ajouté',
+            'likes' => $likeRepo->count(['recipe' => $recipe])
+        ], 200);
     }
 
 }

@@ -1,0 +1,48 @@
+<?php //%255BApp%255CController%255CLoveController%2523dislove%255D%255B1%255D
+
+namespace Symfony\Component\VarExporter\Internal;
+
+return $getExpiry ? PHP_INT_MAX : Hydrator::hydrate(
+    $o = [
+        clone (($p = &Registry::$prototypes)['Symfony\\Component\\Routing\\Annotation\\Route'] ?? Registry::p('Symfony\\Component\\Routing\\Annotation\\Route')),
+        clone ($p['Sensio\\Bundle\\FrameworkExtraBundle\\Configuration\\Entity'] ?? Registry::p('Sensio\\Bundle\\FrameworkExtraBundle\\Configuration\\Entity')),
+        clone $p['Sensio\\Bundle\\FrameworkExtraBundle\\Configuration\\Entity'],
+        clone $p['Sensio\\Bundle\\FrameworkExtraBundle\\Configuration\\Entity'],
+    ],
+    null,
+    [
+        'Symfony\\Component\\Routing\\Annotation\\Route' => [
+            'path' => [
+                '/dislove/love/{idLove}/recipe/{idRecipe}/user/{idUser}',
+            ],
+            'name' => [
+                'removeLove',
+            ],
+        ],
+        'Sensio\\Bundle\\FrameworkExtraBundle\\Configuration\\ParamConverter' => [
+            'name' => [
+                1 => 'recipe',
+                'love',
+                'user',
+            ],
+            'options' => [
+                1 => [
+                    'expr' => 'repository.find(idRecipe)',
+                ],
+                [
+                    'expr' => 'repository.find(idLove)',
+                ],
+                [
+                    'expr' => 'repository.find(idUser)',
+                ],
+            ],
+        ],
+    ],
+    [
+        $o[0],
+        $o[1],
+        $o[2],
+        $o[3],
+    ],
+    []
+);

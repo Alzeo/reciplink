@@ -2,9 +2,11 @@
 
 namespace App\Controller;
 
+use App\Entity\Newsletter;
 use App\Entity\Recipe;
 use App\Entity\RecipeSearch;
 use App\Entity\User;
+use App\Form\NewsType;
 use App\Form\RecipeSearchType;
 use App\Form\RegisterType;
 use App\Repository\RecipeRepository;
@@ -35,6 +37,17 @@ class MainController extends AbstractController
     public function index(Request $request, RecipeRepository $recipeRepository)
     {
 
+        $news = new Newsletter();
+        $form = $this->createForm(NewsType::class, $news);
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($news);
+            $entityManager->flush();
+            return $this->redirectToRoute('home');
+        }
+
+
         $recipes = $recipeRepository->findLatest();
 
         $user = $this->security->getUser();
@@ -42,6 +55,7 @@ class MainController extends AbstractController
             'controller_name' => 'MainController',
             'user' => $user,
             'recipes' => $recipes,
+            'form' => $form->createView()
         ]);
     }
 
