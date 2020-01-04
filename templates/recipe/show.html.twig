@@ -21,7 +21,11 @@
                 </div>
                 <div class="col-6">
                     {% if is_granted('ROLE_USER') %}
-                        <a href="#" class="btn btn-round btn-danger">Enregistrer la recette</a>
+                        {% if app.user and recipe.isSaveByUser(app.user) %}
+                            <a href="{{ path('recipe_unsave', {'id': recipe.id}) }}" class="btn btn-round btn-danger "><i class="fa fa-bookmark-o"></i> Retirer la recette</a>
+                        {% else %}
+                            <a href="{{ path('recipe_save', {'id': recipe.id}) }}" class="btn btn-outline-danger btn-round"> <i class="fa fa-bookmark-o"></i>Enregistrer la recette</a>
+                        {% endif %}
                         <a href="{{ path('recipe_like', {'id': recipe.id}) }}" class="btn btn-round btn-warning js-like">
                         {% if app.user and recipe.isLikeByUser(app.user) %}
                                 <i class="fa fa-heart"></i>
@@ -29,14 +33,14 @@
                                 <i class="fa fa-heart-o"></i>
                             {% endif %}
                             <span class="js-likes">{{ recipe.likes|length }}</span>
-                            <span class="js-label"></span>
+                            <span class="js-label">j'aime</span>
                         </a>
 
                         {% else %}
                             <a href="{{ path('app_login') }}" class="btn btn-round btn-warning btn-primary">
                                     <i class="fa fa-heart-o"></i>
                                 <span class="js-likes">{{ recipe.likes|length }}</span>
-                                <span class="js-label"></span>
+                                <span class="js-label">j'aime</span>
                             </a>
                     {% endif %}
                 </div>

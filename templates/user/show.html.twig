@@ -35,13 +35,39 @@
             </div>
             </div>
         <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab"><div class="container-fluid text-center" style="width: 80%;">
+                <div class="row">
+                    {% for saveRecipe in saveRecipes %}
+                        <div class="col-xs-12 col-md-6 col-lg-4">
+                            <div class="card">
+                                <a href="{{ path('recipe_show', {'id': saveRecipe.recipe.id}) }}"><img class="card-img-top" src="{{ asset('uploads/recipes/' ~ saveRecipe.recipe.picture) }}" alt="recette {{ saveRecipe.recipe.name }}"> </a>
+                                <div class="top-right"><label class="label label-danger">{{ saveRecipe.recipe.type }}</label></div>
+                                <div class="top-left"><span class="like label-warning"> <i class="fa fa-heart" aria-hidden="true"></i> {{ saveRecipe.recipe.likes|length }}</span></div>
+                                <div class="card-body">
+                                    <h6 class="card-regime">Régime : {{ saveRecipe.recipe.regime }}</h6>
+
+                                    <h5 class="card-title">{{ saveRecipe.recipe.name }}</h5>
+                                    <p class="card-text">
+                                        {% for tag in saveRecipe.recipe.tags %}
+                                            <span class="tags">
+                        <label class="label label-default mr-1">#{{ tag.name }}</label>
+                    </span>
+                                        {% endfor %}
+                                    </p>
+                                    <a href="{{ path ('recipe_show', {'id': saveRecipe.recipe.id })}}" class="btn btn-success">Voir la recette</a>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
 
             </div>
         </div>
         <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab"><div class="container-fluid text-center" style="width: 80%;">
-                {% for recipe in recipes %}
-                    {% include 'recipe/_recipe.html.twig' %}
-                {% endfor %}
+               <div class="row">
+                   {% for recipe in recipes %}
+                       {% include 'recipe/_recipe.html.twig' %}
+                   {% endfor %}
+               </div>
                 <div class="pagination justify-content-center">
                     {{ knp_pagination_render(recipes) }}
                 </div>

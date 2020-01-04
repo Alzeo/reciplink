@@ -6,12 +6,14 @@ use App\Entity\Love;
 use App\Entity\Recipe;
 use App\Entity\RecipeFood;
 use App\Entity\RecipeLike;
+use App\Entity\RecipeSave;
 use App\Entity\User;
 use App\Form\RecipeType;
 use App\Repository\LikeRepository;
 use App\Repository\LoveRepository;
 use App\Repository\RecipeLikeRepository;
 use App\Repository\RecipeRepository;
+use App\Repository\RecipeSaveRepository;
 use App\Repository\UserRepository;
 use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -176,11 +178,6 @@ class RecipeController extends AbstractController
 
         $user =$this->getUser();
 
-        if(!$user) return $this->json([
-            'code' => 403,
-            'message' => 'pas autorisé'
-        ], 403);
-
         if($recipe->isLikeByUser($user)){
             $like = $likeRepo->findOneBy([
                 'recipe' => $recipe,
@@ -210,6 +207,61 @@ class RecipeController extends AbstractController
             'message' => 'Like bien ajouté',
             'likes' => $likeRepo->count(['recipe' => $recipe])
         ], 200);
+    }
+
+    /**
+     * @Route("/{id}/unsave", name="recipe_unsave")
+     * @param Recipe $recipe
+     * @param RecipeSaveRepository $recipeSaveRepository
+     * @return Response
+     */
+    public function unsave(Recipe $recipe, RecipeSaveRepository $recipeSaveRepository) : Response
+    {
+
+        $user = $this->getUser();
+
+        if ($recipe->isSaveByUser($user)) {
+            $save = $recipeSaveRepository->findOneBy([
+                'recipe' => $recipe,
+                'user' => $user
+            ]);
+
+            $em = $this->getDoctrine()->getManager();
+            $em->remove($save);
+            $em->flush();
+            return $this->redirectToRoute('recipe_show', [
+                'recipe' => $recipe,
+                'userRecipe' => $recipe->getUser(),
+                'user' => $user,
+                'id' => $recipe->getId(),
+            ]);
+
+        }
+    }
+
+    /**
+     * @Route("/{id}/save", name="recipe_save")
+     * @param Recipe $recipe
+     * @param RecipeSaveRepository $recipeSaveRepository
+     * @return Response
+     */
+    public function save(Recipe $recipe, RecipeSaveRepository $recipeSaveRepository) : Response {
+
+        $user =$this->getUser();
+
+        $save = new RecipeSave();
+        $save->setRecipe($recipe)
+            ->setUser($user);
+        $em = $this->getDoctrine()->getManager();
+        $em->persist($save);
+        $em->flush();
+
+        return $this->redirectToRoute('recipe_show', [
+            'recipe' => $recipe,
+            'userRecipe' => $recipe->getUser(),
+            'user' => $user,
+            'id' => $recipe->getId(),
+        ]);
     }
 
 }

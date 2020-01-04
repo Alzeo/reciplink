@@ -24,6 +24,8 @@ return [
     'recipe_edit' => [['id'], ['_controller' => 'App\\Controller\\RecipeController::edit'], [], [['text', '/edit'], ['variable', '/', '[^/]++', 'id'], ['text', '/recette']], [], []],
     'recipe_delete' => [['id'], ['_controller' => 'App\\Controller\\RecipeController::delete'], [], [['variable', '/', '[^/]++', 'id'], ['text', '/recette']], [], []],
     'recipe_like' => [['id'], ['_controller' => 'App\\Controller\\RecipeController::like'], [], [['text', '/like'], ['variable', '/', '[^/]++', 'id'], ['text', '/recette']], [], []],
+    'recipe_unsave' => [['id'], ['_controller' => 'App\\Controller\\RecipeController::unsave'], [], [['text', '/unsave'], ['variable', '/', '[^/]++', 'id'], ['text', '/recette']], [], []],
+    'recipe_save' => [['id'], ['_controller' => 'App\\Controller\\RecipeController::save'], [], [['text', '/save'], ['variable', '/', '[^/]++', 'id'], ['text', '/recette']], [], []],
     'app_login' => [[], ['_controller' => 'App\\Controller\\SecurityController::login'], [], [['text', '/login']], [], []],
     'app_logout' => [[], ['_controller' => 'App\\Controller\\SecurityController::logout'], [], [['text', '/logout']], [], []],
     'user_index' => [[], ['_controller' => 'App\\Controller\\UserController::index'], [], [['text', '/user/']], [], []],

@@ -114,12 +114,18 @@ class Recipe
      */
     private $likes;
 
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\RecipeSave", mappedBy="recipe")
+     */
+    private $save;
+
 
     public function __construct()
     {
         $this->tags = new ArrayCollection();
         $this->foods = new ArrayCollection();
         $this->likes = new ArrayCollection();
+        $this->save = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -447,6 +453,45 @@ class Recipe
         }
 
         return false;
+    }
+
+    public function isSaveByUser(User $user) : bool {
+        foreach ($this->save as $save) {
+            if($save->getUser() === $user) return true;
+        }
+
+        return false;
+    }
+
+    /**
+     * @return Collection|RecipeSave[]
+     */
+    public function getSave(): Collection
+    {
+        return $this->save;
+    }
+
+    public function addSave(RecipeSave $save): self
+    {
+        if (!$this->save->contains($save)) {
+            $this->save[] = $save;
+            $save->setRecipe($this);
+        }
+
+        return $this;
+    }
+
+    public function removeSave(RecipeSave $save): self
+    {
+        if ($this->save->contains($save)) {
+            $this->save->removeElement($save);
+            // set the owning side to null (unless already changed)
+            if ($save->getRecipe() === $this) {
+                $save->setRecipe(null);
+            }
+        }
+
+        return $this;
     }
 
 

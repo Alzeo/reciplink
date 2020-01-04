@@ -50,12 +50,18 @@ class User implements UserInterface
      */
     private $likes;
 
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\RecipeSave", mappedBy="user")
+     */
+    private $save;
+
 
 
     public function __construct()
     {
         $this->recipes = new ArrayCollection();
         $this->likes = new ArrayCollection();
+        $this->save = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -199,6 +205,37 @@ class User implements UserInterface
             // set the owning side to null (unless already changed)
             if ($like->getUser() === $this) {
                 $like->setUser(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|RecipeSave[]
+     */
+    public function getSave(): Collection
+    {
+        return $this->save;
+    }
+
+    public function addSave(RecipeSave $save): self
+    {
+        if (!$this->save->contains($save)) {
+            $this->save[] = $save;
+            $save->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeSave(RecipeSave $save): self
+    {
+        if ($this->save->contains($save)) {
+            $this->save->removeElement($save);
+            // set the owning side to null (unless already changed)
+            if ($save->getUser() === $this) {
+                $save->setUser(null);
             }
         }
 

@@ -132,7 +132,9 @@ class __TwigTemplate_b46297f18e917ea1ac4c1835d252acde93d5a6c2d57037d852affaca0f8
         // line 59
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("IS_AUTHENTICATED_FULLY")) {
             // line 60
-            echo "                    <li class=\"nav-item\"><a href=\"#pablo\" class=\"nav-link\"><i class=\"fa fa-user\" aria-hidden=\"true\"></i>";
+            echo "                    <li class=\"nav-item\"><a href=\"";
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("user_show", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 60, $this->source); })()), "id", [], "any", false, false, false, 60)]), "html", null, true);
+            echo "\" class=\"nav-link\"><i class=\"fa fa-user\" aria-hidden=\"true\"></i>";
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 60, $this->source); })()), "username", [], "any", false, false, false, 60), "html", null, true);
             echo "</a></li>
                 ";
@@ -150,10 +152,34 @@ class __TwigTemplate_b46297f18e917ea1ac4c1835d252acde93d5a6c2d57037d852affaca0f8
         </div>
     </div>
 </nav>
+
 ";
-        // line 69
+        // line 70
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 70, $this->source); })()), "flashes", [0 => "success"], "method", false, false, false, 70));
+        foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
+            // line 71
+            echo "    <div class=\"alert alert-warning alert-with-icon\" data-notify=\"container\">
+        <div class=\"container\">
+            <div class=\"alert-wrapper\">
+                <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">
+                    <i class=\"nc-icon nc-simple-remove\"></i>
+                </button>
+                <div class=\"message\"><i class=\"nc-icon nc-bell-55\"></i> ";
+            // line 77
+            echo twig_escape_filter($this->env, $context["message"], "html", null, true);
+            echo "</div>
+            </div>
+        </div>
+    </div>
+";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['message'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 82
         $this->displayBlock('body', $context, $blocks);
-        // line 71
+        // line 84
         echo "<footer >
     <div class=\"container py-5\">
     <div class=\"row\">
@@ -246,9 +272,9 @@ class __TwigTemplate_b46297f18e917ea1ac4c1835d252acde93d5a6c2d57037d852affaca0f8
     })
 </script>
 ";
-        // line 162
+        // line 175
         $this->displayBlock('javascript', $context, $blocks);
-        // line 164
+        // line 177
         echo "</body>
 </html>
 
@@ -300,7 +326,7 @@ class __TwigTemplate_b46297f18e917ea1ac4c1835d252acde93d5a6c2d57037d852affaca0f8
 
     }
 
-    // line 69
+    // line 82
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -318,7 +344,7 @@ class __TwigTemplate_b46297f18e917ea1ac4c1835d252acde93d5a6c2d57037d852affaca0f8
 
     }
 
-    // line 162
+    // line 175
     public function block_javascript($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -348,7 +374,7 @@ class __TwigTemplate_b46297f18e917ea1ac4c1835d252acde93d5a6c2d57037d852affaca0f8
 
     public function getDebugInfo()
     {
-        return array (  322 => 162,  304 => 69,  294 => 18,  284 => 17,  265 => 5,  252 => 164,  250 => 162,  157 => 71,  155 => 69,  149 => 65,  144 => 63,  141 => 62,  135 => 60,  133 => 59,  126 => 55,  120 => 52,  114 => 49,  102 => 40,  79 => 19,  77 => 17,  71 => 14,  67 => 13,  63 => 12,  53 => 5,  47 => 1,);
+        return array (  348 => 175,  330 => 82,  320 => 18,  310 => 17,  291 => 5,  278 => 177,  276 => 175,  183 => 84,  181 => 82,  170 => 77,  162 => 71,  158 => 70,  151 => 65,  146 => 63,  143 => 62,  135 => 60,  133 => 59,  126 => 55,  120 => 52,  114 => 49,  102 => 40,  79 => 19,  77 => 17,  71 => 14,  67 => 13,  63 => 12,  53 => 5,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -412,7 +438,7 @@ class __TwigTemplate_b46297f18e917ea1ac4c1835d252acde93d5a6c2d57037d852affaca0f8
             </ul>
             <ul class=\"ml-auto navbar-nav pull-right\">
                 {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-                    <li class=\"nav-item\"><a href=\"#pablo\" class=\"nav-link\"><i class=\"fa fa-user\" aria-hidden=\"true\"></i>{{ user.username}}</a></li>
+                    <li class=\"nav-item\"><a href=\"{{ path('user_show', {'id': user.id}) }}\" class=\"nav-link\"><i class=\"fa fa-user\" aria-hidden=\"true\"></i>{{ user.username}}</a></li>
                 {% else %}
 
                    <a href=\"{{ path('app_login') }}\"type=\"button\" class=\"btn-round mr-1 btn btn-outline-success\"><i class=\"fa fa-sign-in\" aria-hidden=\"true\"></i> Se connecter</a>
@@ -421,6 +447,19 @@ class __TwigTemplate_b46297f18e917ea1ac4c1835d252acde93d5a6c2d57037d852affaca0f8
         </div>
     </div>
 </nav>
+
+{% for message in app.flashes('success') %}
+    <div class=\"alert alert-warning alert-with-icon\" data-notify=\"container\">
+        <div class=\"container\">
+            <div class=\"alert-wrapper\">
+                <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">
+                    <i class=\"nc-icon nc-simple-remove\"></i>
+                </button>
+                <div class=\"message\"><i class=\"nc-icon nc-bell-55\"></i> {{ message }}</div>
+            </div>
+        </div>
+    </div>
+{% endfor %}
 {% block body  %}
 {% endblock %}
 <footer >
