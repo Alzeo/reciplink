@@ -1,0 +1,26 @@
+<div class="col-xs-12 col-md-6 col-lg-4">
+    <div class="card">
+        <a href="{{ path('recipe_show', {'id': recipe.id}) }}"><img class="card-img-top" src="{{ asset('uploads/recipes/' ~ recipe.picture) }}" alt="recette {{ recipe.name }}"> </a>
+        <div class="top-right"><label class="label label-danger">{{ recipe.type }}</label></div>
+        <div class="top-left"><span class="like label-warning"> <i class="fa fa-heart" aria-hidden="true"></i> {{ recipe.likes|length }}</span></div>
+        <div class="card-body">
+            <span class="statut mb-3">
+                {% if recipe.publish == false %}
+                    <div class="statut-i" data-toggle="popover" data-placement="top" title="" data-content="Recette en cours de traitement.">statut : <i class="fa fa-eye"></i>
+                    </div> {% else %} <div class="statut-i" data-toggle="popover" data-placement="top" title="" data-content="Votre recette a été validé">statut : <i class="fa fa-check"></i>
+                    </div>  {% endif %}
+            </span>
+            <h6 class="card-regime mt-3">Régime : {{ recipe.regime }}</h6>
+
+            <h5 class="card-title">{{ recipe.name }}</h5>
+            <p class="card-text">
+                {% for tag in recipe.tags %}
+                    <span class="tags">
+                        <label class="label label-default mr-1">#{{ tag.name }}</label>
+                    </span>
+                {% endfor %}
+            </p>
+            <a href="{{ path ('recipe_show', {'id': recipe.id })}}" class="btn btn-success">Voir la recette</a>
+        </div>
+    </div>
+</div>

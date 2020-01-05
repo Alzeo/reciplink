@@ -119,6 +119,16 @@ class Recipe
      */
     private $save;
 
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\RecipeComment", mappedBy="recipe")
+     */
+    private $commentRecipe;
+
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    private $created_at;
+
 
     public function __construct()
     {
@@ -126,6 +136,7 @@ class Recipe
         $this->foods = new ArrayCollection();
         $this->likes = new ArrayCollection();
         $this->save = new ArrayCollection();
+        $this->commentRecipe = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -493,6 +504,50 @@ class Recipe
 
         return $this;
     }
+
+    /**
+     * @return Collection|RecipeComment[]
+     */
+    public function getCommentRecipe(): Collection
+    {
+        return $this->commentRecipe;
+    }
+
+    public function addCommentRecipe(RecipeComment $commentRecipe): self
+    {
+        if (!$this->commentRecipe->contains($commentRecipe)) {
+            $this->commentRecipe[] = $commentRecipe;
+            $commentRecipe->setRecipe($this);
+        }
+
+        return $this;
+    }
+
+    public function removeCommentRecipe(RecipeComment $commentRecipe): self
+    {
+        if ($this->commentRecipe->contains($commentRecipe)) {
+            $this->commentRecipe->removeElement($commentRecipe);
+            // set the owning side to null (unless already changed)
+            if ($commentRecipe->getRecipe() === $this) {
+                $commentRecipe->setRecipe(null);
+            }
+        }
+
+        return $this;
+    }
+
+    public function getCreatedAt(): ?\DateTimeInterface
+    {
+        return $this->created_at;
+    }
+
+    public function setCreatedAt(\DateTimeInterface $created_at): self
+    {
+        $this->created_at = $created_at;
+
+        return $this;
+    }
+
 
 
 }

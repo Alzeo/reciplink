@@ -6,6 +6,7 @@ use App\Entity\Recipe;
 use App\Entity\RecipeSave;
 use App\Entity\User;
 use App\Form\UserType;
+use App\Repository\RecipeCommentRepository;
 use App\Repository\RecipeRepository;
 use App\Repository\RecipeSaveRepository;
 use App\Repository\UserRepository;
@@ -47,14 +48,64 @@ class UserController extends AbstractController
         );
 
 
-        $recipeSave = $saveRepo->findBy(['user' => $user]);
-        dump($recipeSave);
+        $recipeSave = $paginator->paginate($saveRepo->findBy(['user' => $user]),
+        $request->query->getInt('page', 1), 6);
 
 
         return $this->render('user/show.html.twig', [
             'user' => $user,
             'recipes' => $recipes,
-            'saveRecipes' => $recipeSave
+            'saveRecipes' => $recipeSave,
+            'current_path' => 'informations'
+        ]);
+    }
+
+
+    /**
+     * @Route("/{id}/recettes-enregistree", name="user_save_recipe", methods={"GET"})
+     * @param User $user
+     * @param RecipeRepository $recipeRepository
+     * @param PaginatorInterface $paginator
+     * @param Request $request
+     * @param RecipeSaveRepository $saveRepo
+     * @return Response
+     */
+    public function saveRecipe(User $user, UserRepository $userRepository, RecipeRepository $recipeRepository, PaginatorInterface $paginator, Request $request, RecipeSaveRepository $saveRepo): Response
+    {
+
+        $recipeSave = $paginator->paginate($saveRepo->findBy(['user' => $user]),
+            $request->query->getInt('page', 1), 6);
+
+
+        return $this->render('user/show.html.twig', [
+            'user' => $user,
+            'saveRecipes' => $recipeSave,
+            'current_path' => 'saveRecipe'
+        ]);
+    }
+
+    /**
+     * @Route("/{id}/mes-recettes", name="user_my_recipes", methods={"GET"})
+     * @param User $user
+     * @param RecipeRepository $recipeRepository
+     * @param PaginatorInterface $paginator
+     * @param Request $request
+     * @param RecipeSaveRepository $saveRepo
+     * @return Response
+     */
+    public function userRecipes(User $user, UserRepository $userRepository, RecipeRepository $recipeRepository, PaginatorInterface $paginator, Request $request, RecipeSaveRepository $saveRepo): Response
+    {
+
+        $userRecipes = $paginator->paginate($recipeRepository->findBy(['user' => $user]),
+            $request->query->getInt('page', 1),
+            6/*page number*/
+        );
+
+
+        return $this->render('user/show.html.twig', [
+            'user' => $user,
+            'userRecipes' => $userRecipes,
+            'current_path' => 'userRecipe'
         ]);
     }
 
@@ -91,4 +142,6 @@ class UserController extends AbstractController
 
         return $this->redirectToRoute('user_index');
     }
+
+
 }

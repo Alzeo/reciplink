@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}La cuisine de {{ user.username }}{% endblock %}
+
+{% block body %}
+<div class="jumbotron text-center" style="background-image: url({{ asset ('/assets/img/background-user.jpg') }});  background-repeat: no-repeat; background-size:cover; background-position: center">
+    <h1><i class="fa fa-user-circle"></i></h1>
+    <div class="typography-line"><h2>La cuisine de {{ user.username}}</h2></div>
+</div>

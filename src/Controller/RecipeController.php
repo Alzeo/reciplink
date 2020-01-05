@@ -4,18 +4,23 @@ namespace App\Controller;
 
 use App\Entity\Love;
 use App\Entity\Recipe;
+use App\Entity\RecipeComment;
 use App\Entity\RecipeFood;
 use App\Entity\RecipeLike;
 use App\Entity\RecipeSave;
 use App\Entity\User;
+use App\Form\RecipeCommentType;
 use App\Form\RecipeType;
 use App\Repository\LikeRepository;
 use App\Repository\LoveRepository;
+use App\Repository\RecipeCommentRepository;
 use App\Repository\RecipeLikeRepository;
 use App\Repository\RecipeRepository;
 use App\Repository\RecipeSaveRepository;
 use App\Repository\UserRepository;
 use Doctrine\Common\Persistence\ObjectManager;
+use Egulias\EmailValidator\Warning\CFWSNearAt;
+use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\File\Exception\FileException;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
@@ -62,15 +67,17 @@ class RecipeController extends AbstractController
         $user = $this->getUser();
         $username = $user->getUsername();
         $recipe = new Recipe();
-        $recipeLike = new RecipeLike();
-        $recipeLike->setRecipe($recipe);
-        $recipe->setUser($user);
-        $recipe->setPublish(true);
 
         $form = $this->createForm(RecipeType::class, $recipe);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+            $recipeLike = new RecipeLike();
+            $recipeLike->setRecipe($recipe);
+            $recipe->setUser($user);
+            $recipe->setPublish(false);
+            $recipe->setCreatedAt(new \DateTime('now'));
 
             /** @var UploadedFile $picture */
             $picture = $form['picture']->getData();
@@ -100,8 +107,9 @@ class RecipeController extends AbstractController
             $entityManager->persist($recipe);
             $entityManager->flush();
 
-            return $this->redirectToRoute('recipe_index', [
+            return $this->redirectToRoute('user_my_recipes', [
                 'user' => $user,
+                'id' => $user->getId(),
                 'username' => $username
             ]);
         }
@@ -114,23 +122,65 @@ class RecipeController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="recipe_show", methods={"GET"})
+     * @Route("/{id}", name="recipe_show", methods={"GET","POST"})
      * @param Recipe $recipe
+     * @param PaginatorInterface $paginator
      * @param RecipeRepository $recipeRepository
-     * @param Love $love
-     * @param LoveRepository $loveRepository
-     * @param UserRepository $userRepository
+     * @param RecipeCommentRepository $commentRepository
+     * @param Request $request
      * @return Response
+     * @throws \Exception
      */
-    public function show(Recipe $recipe, RecipeRepository $recipeRepository): Response
+    public function show(Recipe $recipe, PaginatorInterface $paginator, RecipeRepository $recipeRepository, RecipeCommentRepository $commentRepository, Request $request): Response
     {
+        $commentaires = $paginator->paginate($commentRepository->findBy([
+            'recipe' => $recipe,
+            'publish' => true
+        ],['created_at' => 'desc']),
+            $request->query->getInt('page', 1),
+            10/*page number*/
+        );
+
+        $countComments = $commentRepository->findBy(['recipe' => $recipe, 'publish' => true]);
 
         $user = $this->security->getUser();
+
+        $commentaire = new RecipeComment();
+
+        $form = $this->createForm(RecipeCommentType::class, $commentaire);
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+
+            $commentaire->setRecipe($recipe);
+            $commentaire->setUser($user);
+            $commentaire->setCreatedAt(new \DateTime('now'));
+            $commentaire->setPublish(false);
+            $doctrine = $this->getDoctrine()->getManager();
+            $doctrine->persist($commentaire);
+            $doctrine->flush();
+            $this->addFlash('success', "Merci pour votre commentaire ! Il sera visible lorsqu'il aura été vérifié.");
+            unset($commentaire);
+            unset($form);
+            $commentaire = new RecipeComment();
+            $form = $this->createForm(RecipeCommentType::class, $commentaire);
+            return $this->render('recipe/show.html.twig', [
+                'recipe' => $recipe,
+                'userRecipe' => $recipe->getUser(),
+                'user' => $user,
+                'commentaires' => $commentaires,
+                'form' => $form->createView(),
+                'id' => $recipe->getId(),
+                'countComments' => $countComments
+            ]);
+        }
 
         return $this->render('recipe/show.html.twig', [
             'recipe' => $recipe,
             'userRecipe' => $recipe->getUser(),
             'user' => $user,
+            'commentaires' => $commentaires,
+            'form' => $form->createView(),
+            'countComments' => $countComments
         ]);
     }
 

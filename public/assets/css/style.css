@@ -299,7 +299,6 @@ h1.images-title {
     background:#fbfbfbe8;
     margin-left:1px;
     margin-right:1px;
-    border-radius:12px 12px 0 0;
     padding:15px 0;
 }
 
@@ -353,4 +352,29 @@ h1.images-title {
 .btn-neutral {
     background-color: #DBDBDB !important;
     border-color: #DBDBDB !important;
+}
+
+.block-comment {
+    background:#f8f9fa;
+    padding: 15px;
+    text-align: left;
+}
+
+.alert {
+    border-radius: 4px 4px 0px 0px !important;
+}
+
+.alert-success {
+    background-color: #a6c3b3 !important;
+    margin-bottom:0px;
+}
+
+span.statut {
+    font-size: 12px;
+}
+
+.statut-i {
+    font-size:14px;
+    color:grey;
+    cursor: pointer;
 }

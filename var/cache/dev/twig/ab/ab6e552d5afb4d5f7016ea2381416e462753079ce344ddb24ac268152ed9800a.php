@@ -102,161 +102,189 @@ class __TwigTemplate_d9f3ace77f43931bfd62b5dbfbde4cdb96c84f3197baad701adfced32b9
     <div class=\"nav-tabs-wrapper\">
         <ul class=\"nav nav-tabs\" id=\"pills-tab\" role=\"tablist\">
             <li class=\"nav-item\">
-                <a class=\"nav-link active\" id=\"pills-home-tab\" data-toggle=\"pill\" href=\"#pills-home\" role=\"tab\"
-                   aria-controls=\"pills-home\" aria-selected=\"true\">Mes informations</a>
+                <a href=\"";
+        // line 15
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("user_show", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 15, $this->source); })()), "id", [], "any", false, false, false, 15)]), "html", null, true);
+        echo "\" class=\"nav-link\">Mes informations</a>
             </li>
             <li class=\"nav-item\">
-                <a class=\"nav-link\" id=\"pills-profile-tab\" data-toggle=\"pill\" href=\"#pills-profile\" role=\"tab\"
-                   aria-controls=\"pills-profile\" aria-selected=\"false\">Recettes enregistrés</a>
+                <a href=\"";
+        // line 18
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("user_save_recipe", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 18, $this->source); })()), "id", [], "any", false, false, false, 18)]), "html", null, true);
+        echo "\" class=\"nav-link\">Recettes enregistrés</a>
             </li>
             <li class=\"nav-item\">
-                <a class=\"nav-link\" id=\"pills-contact-tab\" data-toggle=\"pill\" href=\"#pills-contact\" role=\"tab\"
-                   aria-controls=\"pills-contact\" aria-selected=\"false\">Mes recettes</a>
+                <a href=\"";
+        // line 21
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("user_my_recipes", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 21, $this->source); })()), "id", [], "any", false, false, false, 21)]), "html", null, true);
+        echo "\" class=\"nav-link\">Mes recettes</a>
             </li>
         </ul>
     </div>
 </div>
 
-    <div class=\"tab-content pt-2 pl-1\" id=\"pills-tabContent\">
-        <div class=\"tab-pane fade show active\" id=\"pills-home\" role=\"tabpanel\" aria-labelledby=\"pills-home-tab\">
-            <div class=\"container-fluid\" style=\"width: 80%;\">
-                <p>Pseudonyme : ";
-        // line 33
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 33, $this->source); })()), "username", [], "any", false, false, false, 33), "html", null, true);
-        echo "</p>
-                <p>Email : ";
-        // line 34
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 34, $this->source); })()), "email", [], "any", false, false, false, 34), "html", null, true);
-        echo "</p>
-            </div>
-            </div>
-        <div class=\"tab-pane fade\" id=\"pills-profile\" role=\"tabpanel\" aria-labelledby=\"pills-profile-tab\"><div class=\"container-fluid text-center\" style=\"width: 80%;\">
+    ";
+        // line 27
+        if (((isset($context["current_path"]) || array_key_exists("current_path", $context) ? $context["current_path"] : (function () { throw new RuntimeError('Variable "current_path" does not exist.', 27, $this->source); })()) == "informations")) {
+            // line 28
+            echo "    <div class=\"tab-pane fade show active\">
+
+        <div class=\"container-fluid\" style=\"width: 80%;\">
+            <p>Pseudonyme : ";
+            // line 31
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 31, $this->source); })()), "username", [], "any", false, false, false, 31), "html", null, true);
+            echo "</p>
+            <p>Email : ";
+            // line 32
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 32, $this->source); })()), "email", [], "any", false, false, false, 32), "html", null, true);
+            echo "</p>
+            ";
+            // line 33
+            echo twig_include($this->env, $context, "user/_delete_form.html.twig");
+            echo "
+        </div>
+    </div>
+    ";
+        } elseif ((        // line 36
+(isset($context["current_path"]) || array_key_exists("current_path", $context) ? $context["current_path"] : (function () { throw new RuntimeError('Variable "current_path" does not exist.', 36, $this->source); })()) == "saveRecipe")) {
+            // line 37
+            echo "        <div class=\"\"><div class=\"container-fluid text-center\" style=\"width: 80%;\">
                 <div class=\"row\">
                     ";
-        // line 39
-        $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["saveRecipes"]) || array_key_exists("saveRecipes", $context) ? $context["saveRecipes"] : (function () { throw new RuntimeError('Variable "saveRecipes" does not exist.', 39, $this->source); })()));
-        foreach ($context['_seq'] as $context["_key"] => $context["saveRecipe"]) {
-            // line 40
-            echo "                        <div class=\"col-xs-12 col-md-6 col-lg-4\">
+            // line 39
+            $context['_parent'] = $context;
+            $context['_seq'] = twig_ensure_traversable((isset($context["saveRecipes"]) || array_key_exists("saveRecipes", $context) ? $context["saveRecipes"] : (function () { throw new RuntimeError('Variable "saveRecipes" does not exist.', 39, $this->source); })()));
+            foreach ($context['_seq'] as $context["_key"] => $context["saveRecipe"]) {
+                // line 40
+                echo "                        <div class=\"col-xs-12 col-md-6 col-lg-4\">
                             <div class=\"card\">
                                 <a href=\"";
-            // line 42
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("recipe_show", ["id" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["saveRecipe"], "recipe", [], "any", false, false, false, 42), "id", [], "any", false, false, false, 42)]), "html", null, true);
-            echo "\"><img class=\"card-img-top\" src=\"";
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/recipes/" . twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["saveRecipe"], "recipe", [], "any", false, false, false, 42), "picture", [], "any", false, false, false, 42))), "html", null, true);
-            echo "\" alt=\"recette ";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["saveRecipe"], "recipe", [], "any", false, false, false, 42), "name", [], "any", false, false, false, 42), "html", null, true);
-            echo "\"> </a>
+                // line 42
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("recipe_show", ["id" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["saveRecipe"], "recipe", [], "any", false, false, false, 42), "id", [], "any", false, false, false, 42)]), "html", null, true);
+                echo "\"><img class=\"card-img-top\" src=\"";
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/recipes/" . twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["saveRecipe"], "recipe", [], "any", false, false, false, 42), "picture", [], "any", false, false, false, 42))), "html", null, true);
+                echo "\" alt=\"recette ";
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["saveRecipe"], "recipe", [], "any", false, false, false, 42), "name", [], "any", false, false, false, 42), "html", null, true);
+                echo "\"> </a>
                                 <div class=\"top-right\"><label class=\"label label-danger\">";
-            // line 43
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["saveRecipe"], "recipe", [], "any", false, false, false, 43), "type", [], "any", false, false, false, 43), "html", null, true);
-            echo "</label></div>
+                // line 43
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["saveRecipe"], "recipe", [], "any", false, false, false, 43), "type", [], "any", false, false, false, 43), "html", null, true);
+                echo "</label></div>
                                 <div class=\"top-left\"><span class=\"like label-warning\"> <i class=\"fa fa-heart\" aria-hidden=\"true\"></i> ";
-            // line 44
-            echo twig_escape_filter($this->env, twig_length_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["saveRecipe"], "recipe", [], "any", false, false, false, 44), "likes", [], "any", false, false, false, 44)), "html", null, true);
-            echo "</span></div>
+                // line 44
+                echo twig_escape_filter($this->env, twig_length_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["saveRecipe"], "recipe", [], "any", false, false, false, 44), "likes", [], "any", false, false, false, 44)), "html", null, true);
+                echo "</span></div>
                                 <div class=\"card-body\">
                                     <h6 class=\"card-regime\">Régime : ";
-            // line 46
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["saveRecipe"], "recipe", [], "any", false, false, false, 46), "regime", [], "any", false, false, false, 46), "html", null, true);
-            echo "</h6>
+                // line 46
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["saveRecipe"], "recipe", [], "any", false, false, false, 46), "regime", [], "any", false, false, false, 46), "html", null, true);
+                echo "</h6>
 
                                     <h5 class=\"card-title\">";
-            // line 48
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["saveRecipe"], "recipe", [], "any", false, false, false, 48), "name", [], "any", false, false, false, 48), "html", null, true);
-            echo "</h5>
+                // line 48
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["saveRecipe"], "recipe", [], "any", false, false, false, 48), "name", [], "any", false, false, false, 48), "html", null, true);
+                echo "</h5>
                                     <p class=\"card-text\">
                                         ";
-            // line 50
-            $context['_parent'] = $context;
-            $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["saveRecipe"], "recipe", [], "any", false, false, false, 50), "tags", [], "any", false, false, false, 50));
-            foreach ($context['_seq'] as $context["_key"] => $context["tag"]) {
-                // line 51
-                echo "                                            <span class=\"tags\">
-                        <label class=\"label label-default mr-1\">#";
-                // line 52
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["tag"], "name", [], "any", false, false, false, 52), "html", null, true);
-                echo "</label>
-                    </span>
+                // line 50
+                $context['_parent'] = $context;
+                $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["saveRecipe"], "recipe", [], "any", false, false, false, 50), "tags", [], "any", false, false, false, 50));
+                foreach ($context['_seq'] as $context["_key"] => $context["tag"]) {
+                    // line 51
+                    echo "                                            <span class=\"tags\">
+                                                <label class=\"label label-default mr-1\">#";
+                    // line 52
+                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["tag"], "name", [], "any", false, false, false, 52), "html", null, true);
+                    echo "</label>
+                                            </span>
                                         ";
-            }
-            $_parent = $context['_parent'];
-            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['tag'], $context['_parent'], $context['loop']);
-            $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 55
-            echo "                                    </p>
+                }
+                $_parent = $context['_parent'];
+                unset($context['_seq'], $context['_iterated'], $context['_key'], $context['tag'], $context['_parent'], $context['loop']);
+                $context = array_intersect_key($context, $_parent) + $_parent;
+                // line 55
+                echo "                                    </p>
                                     <a href=\"";
-            // line 56
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("recipe_show", ["id" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["saveRecipe"], "recipe", [], "any", false, false, false, 56), "id", [], "any", false, false, false, 56)]), "html", null, true);
-            echo "\" class=\"btn btn-success\">Voir la recette</a>
+                // line 56
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("recipe_show", ["id" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["saveRecipe"], "recipe", [], "any", false, false, false, 56), "id", [], "any", false, false, false, 56)]), "html", null, true);
+                echo "\" class=\"btn btn-success\">Voir la recette</a>
                                 </div>
                             </div>
                         </div>
                     ";
-        }
-        $_parent = $context['_parent'];
-        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['saveRecipe'], $context['_parent'], $context['loop']);
-        $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 61
-        echo "                </div>
-
-            </div>
-        </div>
-        <div class=\"tab-pane fade\" id=\"pills-contact\" role=\"tabpanel\" aria-labelledby=\"pills-contact-tab\"><div class=\"container-fluid text-center\" style=\"width: 80%;\">
-               <div class=\"row\">
-                   ";
-        // line 67
-        $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["recipes"]) || array_key_exists("recipes", $context) ? $context["recipes"] : (function () { throw new RuntimeError('Variable "recipes" does not exist.', 67, $this->source); })()));
-        $context['loop'] = [
-          'parent' => $context['_parent'],
-          'index0' => 0,
-          'index'  => 1,
-          'first'  => true,
-        ];
-        if (is_array($context['_seq']) || (is_object($context['_seq']) && $context['_seq'] instanceof \Countable)) {
-            $length = count($context['_seq']);
-            $context['loop']['revindex0'] = $length - 1;
-            $context['loop']['revindex'] = $length;
-            $context['loop']['length'] = $length;
-            $context['loop']['last'] = 1 === $length;
-        }
-        foreach ($context['_seq'] as $context["_key"] => $context["recipe"]) {
-            // line 68
-            echo "                       ";
-            $this->loadTemplate("recipe/_recipe.html.twig", "user/show.html.twig", 68)->display($context);
-            // line 69
-            echo "                   ";
-            ++$context['loop']['index0'];
-            ++$context['loop']['index'];
-            $context['loop']['first'] = false;
-            if (isset($context['loop']['length'])) {
-                --$context['loop']['revindex0'];
-                --$context['loop']['revindex'];
-                $context['loop']['last'] = 0 === $context['loop']['revindex0'];
             }
-        }
-        $_parent = $context['_parent'];
-        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['recipe'], $context['_parent'], $context['loop']);
-        $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 70
-        echo "               </div>
+            $_parent = $context['_parent'];
+            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['saveRecipe'], $context['_parent'], $context['loop']);
+            $context = array_intersect_key($context, $_parent) + $_parent;
+            // line 61
+            echo "                </div>
                 <div class=\"pagination justify-content-center\">
                     ";
-        // line 72
-        echo $this->extensions['Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension']->render($this->env, (isset($context["recipes"]) || array_key_exists("recipes", $context) ? $context["recipes"] : (function () { throw new RuntimeError('Variable "recipes" does not exist.', 72, $this->source); })()));
-        echo "
+            // line 63
+            echo $this->extensions['Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension']->render($this->env, (isset($context["saveRecipes"]) || array_key_exists("saveRecipes", $context) ? $context["saveRecipes"] : (function () { throw new RuntimeError('Variable "saveRecipes" does not exist.', 63, $this->source); })()));
+            echo "
                 </div>
             </div>
         </div>
-    </div>
-
-
     ";
-        // line 79
-        echo twig_include($this->env, $context, "user/_delete_form.html.twig");
-        echo "
+        } elseif ((        // line 67
+(isset($context["current_path"]) || array_key_exists("current_path", $context) ? $context["current_path"] : (function () { throw new RuntimeError('Variable "current_path" does not exist.', 67, $this->source); })()) == "userRecipe")) {
+            // line 68
+            echo "        <div class=\"\"><div class=\"container-fluid text-center\" style=\"width: 80%;\">
+                <div class=\"row\">
+                    ";
+            // line 70
+            $context['_parent'] = $context;
+            $context['_seq'] = twig_ensure_traversable((isset($context["userRecipes"]) || array_key_exists("userRecipes", $context) ? $context["userRecipes"] : (function () { throw new RuntimeError('Variable "userRecipes" does not exist.', 70, $this->source); })()));
+            $context['loop'] = [
+              'parent' => $context['_parent'],
+              'index0' => 0,
+              'index'  => 1,
+              'first'  => true,
+            ];
+            if (is_array($context['_seq']) || (is_object($context['_seq']) && $context['_seq'] instanceof \Countable)) {
+                $length = count($context['_seq']);
+                $context['loop']['revindex0'] = $length - 1;
+                $context['loop']['revindex'] = $length;
+                $context['loop']['length'] = $length;
+                $context['loop']['last'] = 1 === $length;
+            }
+            foreach ($context['_seq'] as $context["_key"] => $context["recipe"]) {
+                // line 71
+                echo "                        ";
+                $this->loadTemplate("recipe/_recipesByUser.html.twig", "user/show.html.twig", 71)->display($context);
+                // line 72
+                echo "                    ";
+                ++$context['loop']['index0'];
+                ++$context['loop']['index'];
+                $context['loop']['first'] = false;
+                if (isset($context['loop']['length'])) {
+                    --$context['loop']['revindex0'];
+                    --$context['loop']['revindex'];
+                    $context['loop']['last'] = 0 === $context['loop']['revindex0'];
+                }
+            }
+            $_parent = $context['_parent'];
+            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['recipe'], $context['_parent'], $context['loop']);
+            $context = array_intersect_key($context, $_parent) + $_parent;
+            // line 73
+            echo "                </div>
+                <div class=\"pagination justify-content-center\">
+                    ";
+            // line 75
+            echo $this->extensions['Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension']->render($this->env, (isset($context["userRecipes"]) || array_key_exists("userRecipes", $context) ? $context["userRecipes"] : (function () { throw new RuntimeError('Variable "userRecipes" does not exist.', 75, $this->source); })()));
+            echo "
+                </div>
+            </div>
+        </div>
+    ";
+        } else {
+            // line 80
+            echo "        test
+    ";
+        }
+        // line 82
+        echo "    </div>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -278,7 +306,7 @@ class __TwigTemplate_d9f3ace77f43931bfd62b5dbfbde4cdb96c84f3197baad701adfced32b9
 
     public function getDebugInfo()
     {
-        return array (  258 => 79,  248 => 72,  244 => 70,  230 => 69,  227 => 68,  210 => 67,  202 => 61,  191 => 56,  188 => 55,  179 => 52,  176 => 51,  172 => 50,  167 => 48,  162 => 46,  157 => 44,  153 => 43,  145 => 42,  141 => 40,  137 => 39,  129 => 34,  125 => 33,  98 => 9,  94 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  287 => 82,  283 => 80,  275 => 75,  271 => 73,  257 => 72,  254 => 71,  237 => 70,  233 => 68,  231 => 67,  224 => 63,  220 => 61,  209 => 56,  206 => 55,  197 => 52,  194 => 51,  190 => 50,  185 => 48,  180 => 46,  175 => 44,  171 => 43,  163 => 42,  159 => 40,  155 => 39,  151 => 37,  149 => 36,  143 => 33,  139 => 32,  135 => 31,  130 => 28,  128 => 27,  119 => 21,  113 => 18,  107 => 15,  98 => 9,  94 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -297,29 +325,29 @@ class __TwigTemplate_d9f3ace77f43931bfd62b5dbfbde4cdb96c84f3197baad701adfced32b9
     <div class=\"nav-tabs-wrapper\">
         <ul class=\"nav nav-tabs\" id=\"pills-tab\" role=\"tablist\">
             <li class=\"nav-item\">
-                <a class=\"nav-link active\" id=\"pills-home-tab\" data-toggle=\"pill\" href=\"#pills-home\" role=\"tab\"
-                   aria-controls=\"pills-home\" aria-selected=\"true\">Mes informations</a>
+                <a href=\"{{ path('user_show', {'id': user.id}) }}\" class=\"nav-link\">Mes informations</a>
             </li>
             <li class=\"nav-item\">
-                <a class=\"nav-link\" id=\"pills-profile-tab\" data-toggle=\"pill\" href=\"#pills-profile\" role=\"tab\"
-                   aria-controls=\"pills-profile\" aria-selected=\"false\">Recettes enregistrés</a>
+                <a href=\"{{ path('user_save_recipe', {'id': user.id}) }}\" class=\"nav-link\">Recettes enregistrés</a>
             </li>
             <li class=\"nav-item\">
-                <a class=\"nav-link\" id=\"pills-contact-tab\" data-toggle=\"pill\" href=\"#pills-contact\" role=\"tab\"
-                   aria-controls=\"pills-contact\" aria-selected=\"false\">Mes recettes</a>
+                <a href=\"{{ path('user_my_recipes', {'id': user.id}) }}\" class=\"nav-link\">Mes recettes</a>
             </li>
         </ul>
     </div>
 </div>
 
-    <div class=\"tab-content pt-2 pl-1\" id=\"pills-tabContent\">
-        <div class=\"tab-pane fade show active\" id=\"pills-home\" role=\"tabpanel\" aria-labelledby=\"pills-home-tab\">
-            <div class=\"container-fluid\" style=\"width: 80%;\">
-                <p>Pseudonyme : {{ user.username }}</p>
-                <p>Email : {{ user.email }}</p>
-            </div>
-            </div>
-        <div class=\"tab-pane fade\" id=\"pills-profile\" role=\"tabpanel\" aria-labelledby=\"pills-profile-tab\"><div class=\"container-fluid text-center\" style=\"width: 80%;\">
+    {% if current_path == 'informations' %}
+    <div class=\"tab-pane fade show active\">
+
+        <div class=\"container-fluid\" style=\"width: 80%;\">
+            <p>Pseudonyme : {{ user.username }}</p>
+            <p>Email : {{ user.email }}</p>
+            {{ include('user/_delete_form.html.twig') }}
+        </div>
+    </div>
+    {% elseif current_path == 'saveRecipe' %}
+        <div class=\"\"><div class=\"container-fluid text-center\" style=\"width: 80%;\">
                 <div class=\"row\">
                     {% for saveRecipe in saveRecipes %}
                         <div class=\"col-xs-12 col-md-6 col-lg-4\">
@@ -334,8 +362,8 @@ class __TwigTemplate_d9f3ace77f43931bfd62b5dbfbde4cdb96c84f3197baad701adfced32b9
                                     <p class=\"card-text\">
                                         {% for tag in saveRecipe.recipe.tags %}
                                             <span class=\"tags\">
-                        <label class=\"label label-default mr-1\">#{{ tag.name }}</label>
-                    </span>
+                                                <label class=\"label label-default mr-1\">#{{ tag.name }}</label>
+                                            </span>
                                         {% endfor %}
                                     </p>
                                     <a href=\"{{ path ('recipe_show', {'id': saveRecipe.recipe.id })}}\" class=\"btn btn-success\">Voir la recette</a>
@@ -344,24 +372,27 @@ class __TwigTemplate_d9f3ace77f43931bfd62b5dbfbde4cdb96c84f3197baad701adfced32b9
                         </div>
                     {% endfor %}
                 </div>
-
-            </div>
-        </div>
-        <div class=\"tab-pane fade\" id=\"pills-contact\" role=\"tabpanel\" aria-labelledby=\"pills-contact-tab\"><div class=\"container-fluid text-center\" style=\"width: 80%;\">
-               <div class=\"row\">
-                   {% for recipe in recipes %}
-                       {% include 'recipe/_recipe.html.twig' %}
-                   {% endfor %}
-               </div>
                 <div class=\"pagination justify-content-center\">
-                    {{ knp_pagination_render(recipes) }}
+                    {{ knp_pagination_render(saveRecipes) }}
                 </div>
             </div>
         </div>
+    {% elseif current_path == 'userRecipe' %}
+        <div class=\"\"><div class=\"container-fluid text-center\" style=\"width: 80%;\">
+                <div class=\"row\">
+                    {% for recipe in userRecipes %}
+                        {% include 'recipe/_recipesByUser.html.twig' %}
+                    {% endfor %}
+                </div>
+                <div class=\"pagination justify-content-center\">
+                    {{ knp_pagination_render(userRecipes) }}
+                </div>
+            </div>
+        </div>
+    {% else %}
+        test
+    {% endif %}
     </div>
-
-
-    {{ include('user/_delete_form.html.twig') }}
 {% endblock %}
 ", "user/show.html.twig", "/Users/tomaccess/Documents/Sites/reciplink/templates/user/show.html.twig");
     }

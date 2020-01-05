@@ -3,6 +3,16 @@
 {% block title %}Recipe{% endblock %}
 
 {% block body %}
+    {% for message in app.flashes('success') %}
+        <div class="alert alert-success" style="background: #86d9ab !important;">
+            <div class="container">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <i class="fa fa-times"></i>
+                </button>
+                <span><i class="fa fa-bell"></i> {{ message }}</span>
+            </div>
+        </div>
+    {% endfor %}
 <div class="block-im-recipe text-center" style="background-image: url({{ asset ('/assets/img/select-program-background.jpg') }});  background-repeat: no-repeat; background-size: cover;">
     <div class="container">
         <div class="image_header pt-5">
@@ -15,7 +25,25 @@
                     </span>
                 {% endfor %}
             </p>
-            <div class="head-recip row mt-2">
+            <div class="alert alert-success mt-4">
+                <div class="container">
+                    <div class="row mt-2">
+                        <div class="col-3">
+                            <p style="font-weight: bold;">Kcal : {{ recipe.calorie }}</p>
+                        </div>
+                        <div class="col-3">
+                            <p style="font-weight: bold;">Protéine : {{recipe.protein }} gr</p>
+                        </div>
+                        <div class="col-3">
+                            <p style="font-weight: bold;">Glucide : {{ recipe.glucide }} gr</p>
+                        </div>
+                        <div class="col-3">
+                            <p style="font-weight: bold;">Lipide : {{ recipe.lipide }} gr</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="head-recip row">
                 <div class="col-6 author">
                     <p>Recette proposée par : <span class="user"><i class="fa fa-user" aria-hidden="true"></i> {{ recipe.user.username }}</span></p>
                 </div>
@@ -49,13 +77,16 @@
         </div>
         <div class="more-info-recipe">
                 <div class="row">
-                    <div class="col-4">
+                    <div class="col-3">
                         <p><i class="fa fa-cutlery"></i> {{ recipe.type }}</p>
                     </div>
-                    <div class="col-4">
+                    <div class="col-3">
                         <i class="fa fa-hourglass-half" aria-hidden="true"></i> {{recipe.time }} {{ recipe.timeUnity }}</p>
                     </div>
-                    <div class="col-4">
+                    <div class="col-3">
+                        <p><i class="fa fa-users"></i> {{ recipe.part }} part</p>
+                    </div>
+                    <div class="col-3">
                         <p><i class="fa fa-signal"></i> {{ recipe.dificulty }}</p>
                     </div>
                 </div>
@@ -83,6 +114,50 @@
             </div>
         </div>
     </div>
+        <div class="block-comment" style="background-image:url({{ asset('/assets/img/background-comment.jpg') }}); background-repeat: no-repeat; background-size: cover;">
+           <div class="container">
+               <h4 class="mb-4 text-center">Commentaires sur la recette {{ recipe.name }} <span class="label label-info"><i class="fa fa-comments"></i> {{ countComments|length }}</span></h4>
+               <div class="section-comments m-auto" style="width: 70%;">
+                   {% for commentaire in commentaires %}
+                       <div class="block-commentaire mb-3">
+                           <blockquote class="blockquote" style="background: white;">
+                               <p class="mt-3">le {{ commentaire.createdAt|date('d/m/y') }} <span class="user"><i class="fa fa-user" aria-hidden="true"></i> {{ commentaire.user.username }}</span> a dit :</p>
+                               <div class="blockquote-footer">
+                               </div>
+                               <p class="mb-0 text-left ml-5 mr-5 mt-2 mb-2"><i class="fa fa-quote-left"></i> {{ commentaire.content }} <i class="fa fa-quote-right"></i></p>
+                               <br>
+                           </blockquote>
+                           {% else %}
+                               <p>Aucun commentaire ici, soyez le premier !</p>
+                       </div>
+                   {% endfor %}
+               </div>
+           </div>
+               <div class="pagination justify-content-center">
+                   {{ knp_pagination_render(commentaires) }}
+               </div>
+           </div>
+               <div class="mt-2">
+                   <div class="container" style="background: #fff; padding:15px;">
+                       {% if is_granted('ROLE_USER') %}
+                           {{ form_start(form) }}
+                           <p class="text-left"><span class="user"><i class="fa fa-user" aria-hidden="true"></i> {{ app.user.username }}</p>
+                           {{ form_row(form.content) }}
+                           <div class="button-form">
+                               <button class="btn btn-success btn-lg btn-block mt-4">{{ button_label|default('Donner mon avis') }}</button>
+                           </div>
+                           {{ form_end(form) }}
+                       {% else %}
+                           <div class="container">
+                               <div class="section-comments m-auto" style="background: #fff; padding:15px; width: 70%">
+                                   <a href="{{ path('app_login') }}" class="btn btn-success btn-lg btn-block mt-4">Donner mon avis</a>
+                               </div>
+                           </div>
+                       {% endif %}
+                   </div>
+               </div>
+           </div>
+        </div>
 </div>
 {% endblock %}
 

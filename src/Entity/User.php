@@ -55,6 +55,11 @@ class User implements UserInterface
      */
     private $save;
 
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\RecipeComment", mappedBy="user")
+     */
+    private $commentUser;
+
 
 
     public function __construct()
@@ -62,6 +67,7 @@ class User implements UserInterface
         $this->recipes = new ArrayCollection();
         $this->likes = new ArrayCollection();
         $this->save = new ArrayCollection();
+        $this->commentUser = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -236,6 +242,37 @@ class User implements UserInterface
             // set the owning side to null (unless already changed)
             if ($save->getUser() === $this) {
                 $save->setUser(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|RecipeComment[]
+     */
+    public function getCommentUser(): Collection
+    {
+        return $this->commentUser;
+    }
+
+    public function addCommentUser(RecipeComment $commentUser): self
+    {
+        if (!$this->commentUser->contains($commentUser)) {
+            $this->commentUser[] = $commentUser;
+            $commentUser->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeCommentUser(RecipeComment $commentUser): self
+    {
+        if ($this->commentUser->contains($commentUser)) {
+            $this->commentUser->removeElement($commentUser);
+            // set the owning side to null (unless already changed)
+            if ($commentUser->getUser() === $this) {
+                $commentUser->setUser(null);
             }
         }
 

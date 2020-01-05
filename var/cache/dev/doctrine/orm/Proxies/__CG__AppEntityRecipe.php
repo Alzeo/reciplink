@@ -64,10 +64,10 @@ class Recipe extends \App\Entity\Recipe implements \Doctrine\ORM\Proxy\Proxy
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Recipe' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Recipe' . "\0" . 'name', '' . "\0" . 'App\\Entity\\Recipe' . "\0" . 'type', '' . "\0" . 'App\\Entity\\Recipe' . "\0" . 'dificulty', '' . "\0" . 'App\\Entity\\Recipe' . "\0" . 'time', '' . "\0" . 'App\\Entity\\Recipe' . "\0" . 'timeUnity', '' . "\0" . 'App\\Entity\\Recipe' . "\0" . 'part', '' . "\0" . 'App\\Entity\\Recipe' . "\0" . 'description', '' . "\0" . 'App\\Entity\\Recipe' . "\0" . 'protein', '' . "\0" . 'App\\Entity\\Recipe' . "\0" . 'glucide', '' . "\0" . 'App\\Entity\\Recipe' . "\0" . 'lipide', '' . "\0" . 'App\\Entity\\Recipe' . "\0" . 'calorie', '' . "\0" . 'App\\Entity\\Recipe' . "\0" . 'picture', '' . "\0" . 'App\\Entity\\Recipe' . "\0" . 'tags', '' . "\0" . 'App\\Entity\\Recipe' . "\0" . 'foods', '' . "\0" . 'App\\Entity\\Recipe' . "\0" . 'user', '' . "\0" . 'App\\Entity\\Recipe' . "\0" . 'publish', '' . "\0" . 'App\\Entity\\Recipe' . "\0" . 'regime', '' . "\0" . 'App\\Entity\\Recipe' . "\0" . 'likes', '' . "\0" . 'App\\Entity\\Recipe' . "\0" . 'save'];
+            return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Recipe' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Recipe' . "\0" . 'name', '' . "\0" . 'App\\Entity\\Recipe' . "\0" . 'type', '' . "\0" . 'App\\Entity\\Recipe' . "\0" . 'dificulty', '' . "\0" . 'App\\Entity\\Recipe' . "\0" . 'time', '' . "\0" . 'App\\Entity\\Recipe' . "\0" . 'timeUnity', '' . "\0" . 'App\\Entity\\Recipe' . "\0" . 'part', '' . "\0" . 'App\\Entity\\Recipe' . "\0" . 'description', '' . "\0" . 'App\\Entity\\Recipe' . "\0" . 'protein', '' . "\0" . 'App\\Entity\\Recipe' . "\0" . 'glucide', '' . "\0" . 'App\\Entity\\Recipe' . "\0" . 'lipide', '' . "\0" . 'App\\Entity\\Recipe' . "\0" . 'calorie', '' . "\0" . 'App\\Entity\\Recipe' . "\0" . 'picture', '' . "\0" . 'App\\Entity\\Recipe' . "\0" . 'tags', '' . "\0" . 'App\\Entity\\Recipe' . "\0" . 'foods', '' . "\0" . 'App\\Entity\\Recipe' . "\0" . 'user', '' . "\0" . 'App\\Entity\\Recipe' . "\0" . 'publish', '' . "\0" . 'App\\Entity\\Recipe' . "\0" . 'regime', '' . "\0" . 'App\\Entity\\Recipe' . "\0" . 'likes', '' . "\0" . 'App\\Entity\\Recipe' . "\0" . 'save', '' . "\0" . 'App\\Entity\\Recipe' . "\0" . 'commentRecipe'];
         }
 
-        return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Recipe' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Recipe' . "\0" . 'name', '' . "\0" . 'App\\Entity\\Recipe' . "\0" . 'type', '' . "\0" . 'App\\Entity\\Recipe' . "\0" . 'dificulty', '' . "\0" . 'App\\Entity\\Recipe' . "\0" . 'time', '' . "\0" . 'App\\Entity\\Recipe' . "\0" . 'timeUnity', '' . "\0" . 'App\\Entity\\Recipe' . "\0" . 'part', '' . "\0" . 'App\\Entity\\Recipe' . "\0" . 'description', '' . "\0" . 'App\\Entity\\Recipe' . "\0" . 'protein', '' . "\0" . 'App\\Entity\\Recipe' . "\0" . 'glucide', '' . "\0" . 'App\\Entity\\Recipe' . "\0" . 'lipide', '' . "\0" . 'App\\Entity\\Recipe' . "\0" . 'calorie', '' . "\0" . 'App\\Entity\\Recipe' . "\0" . 'picture', '' . "\0" . 'App\\Entity\\Recipe' . "\0" . 'tags', '' . "\0" . 'App\\Entity\\Recipe' . "\0" . 'foods', '' . "\0" . 'App\\Entity\\Recipe' . "\0" . 'user', '' . "\0" . 'App\\Entity\\Recipe' . "\0" . 'publish', '' . "\0" . 'App\\Entity\\Recipe' . "\0" . 'regime', '' . "\0" . 'App\\Entity\\Recipe' . "\0" . 'likes', '' . "\0" . 'App\\Entity\\Recipe' . "\0" . 'save'];
+        return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Recipe' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Recipe' . "\0" . 'name', '' . "\0" . 'App\\Entity\\Recipe' . "\0" . 'type', '' . "\0" . 'App\\Entity\\Recipe' . "\0" . 'dificulty', '' . "\0" . 'App\\Entity\\Recipe' . "\0" . 'time', '' . "\0" . 'App\\Entity\\Recipe' . "\0" . 'timeUnity', '' . "\0" . 'App\\Entity\\Recipe' . "\0" . 'part', '' . "\0" . 'App\\Entity\\Recipe' . "\0" . 'description', '' . "\0" . 'App\\Entity\\Recipe' . "\0" . 'protein', '' . "\0" . 'App\\Entity\\Recipe' . "\0" . 'glucide', '' . "\0" . 'App\\Entity\\Recipe' . "\0" . 'lipide', '' . "\0" . 'App\\Entity\\Recipe' . "\0" . 'calorie', '' . "\0" . 'App\\Entity\\Recipe' . "\0" . 'picture', '' . "\0" . 'App\\Entity\\Recipe' . "\0" . 'tags', '' . "\0" . 'App\\Entity\\Recipe' . "\0" . 'foods', '' . "\0" . 'App\\Entity\\Recipe' . "\0" . 'user', '' . "\0" . 'App\\Entity\\Recipe' . "\0" . 'publish', '' . "\0" . 'App\\Entity\\Recipe' . "\0" . 'regime', '' . "\0" . 'App\\Entity\\Recipe' . "\0" . 'likes', '' . "\0" . 'App\\Entity\\Recipe' . "\0" . 'save', '' . "\0" . 'App\\Entity\\Recipe' . "\0" . 'commentRecipe'];
     }
 
     /**
@@ -725,6 +725,39 @@ class Recipe extends \App\Entity\Recipe implements \Doctrine\ORM\Proxy\Proxy
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'removeSave', [$save]);
 
         return parent::removeSave($save);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getCommentRecipe(): \Doctrine\Common\Collections\Collection
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getCommentRecipe', []);
+
+        return parent::getCommentRecipe();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function addCommentRecipe(\App\Entity\RecipeComment $commentRecipe): \App\Entity\Recipe
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'addCommentRecipe', [$commentRecipe]);
+
+        return parent::addCommentRecipe($commentRecipe);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function removeCommentRecipe(\App\Entity\RecipeComment $commentRecipe): \App\Entity\Recipe
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'removeCommentRecipe', [$commentRecipe]);
+
+        return parent::removeCommentRecipe($commentRecipe);
     }
 
 }
