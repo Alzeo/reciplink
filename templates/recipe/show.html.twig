@@ -33,17 +33,6 @@
                 {% endfor %}
             </p>
             <div class="share-social-media mt-3 mb-3">
-                <div class="fb-share-button" data-href="http://127.0.0.1:8000/recette/{{ recipe.id }}" data-layout="button_count" data-size="large"><a target="_blank" href="http://127.0.0.1:8000/recette/{{ recipe.id }}" class="fb-xfbml-parse-ignore">Partager</a></div>
-                <a class="twitter-share-button"
-                   href="https://twitter.com/intent/tweet"
-                   data-size="large"
-                   data-text="J'ai découvert une super recette !"
-                   data-url="http://127.0.0.1:8000/recette/{{ recipe.id }}"
-                   data-hashtags="recipelink"
-                   data-via="@recipelink"
-                   data-related="twitterapi,twitter">
-                    Partager
-                </a>
                 <button type="button" class="share-insta" data-toggle="modal" data-target="#shareInsta"><i class="fa fa-instagram" ></i> Partager</button>
             </div>
             <div class="modal fade" id="shareInsta" tabindex="-1" role="dialog" aria-labelledby="PartageInstagram" aria-hidden="true">
@@ -169,12 +158,16 @@
                 </div>
             </div>
         </div>
+        <div class="share-social-media mt-3 mb-5">
+            <div class="sharethis-inline-share-buttons"></div>
+        </div>
     </div>
 
         <div class="block-comment" style="background-image:url({{ asset('/assets/img/background-comment.jpg') }}); background-repeat: no-repeat; background-size: cover;">
            <div class="container">
                <h4 class="mb-4 text-center">Commentaires sur la recette {{ recipe.name }} <span class="label label-info"><i class="fa fa-comments"></i> {{ countComments|length }}</span></h4>
                <div class="section-comments m-auto" style="width: 70%;">
+                   <div class="sharethis-inline-reaction-buttons"></div>
                    {% for commentaire in commentaires %}
                        <div class="block-commentaire mb-3">
                            <blockquote class="blockquote" style="background: white;">
