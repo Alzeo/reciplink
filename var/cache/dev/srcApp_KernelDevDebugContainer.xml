@@ -429,6 +429,9 @@
     <service id="App\Form\UserType" class="App\Form\UserType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
+    <service id="App\Form\editUserType" class="App\Form\editUserType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
     <service id="App\Repository\FoodRepository" class="App\Repository\FoodRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
@@ -891,6 +894,7 @@
         <argument>App\Form\RecipeType</argument>
         <argument>App\Form\RegisterType</argument>
         <argument>App\Form\UserType</argument>
+        <argument>App\Form\editUserType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\FormType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\ChoiceType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\FileType</argument>
@@ -1231,7 +1235,7 @@
       <argument type="service" id="form.registry"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension" public="false">
-      <argument type="service" id=".service_locator.Qvm5XDY"/>
+      <argument type="service" id=".service_locator.ItiGlEA"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.transformation_failure_handling"/>
@@ -5402,6 +5406,8 @@
     <service id=".abstract.instanceof.App\Form\RegisterType" class="App\Form\RegisterType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\UserType" class="App\Form\UserType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\UserType" class="App\Form\UserType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\editUserType" class="App\Form\editUserType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\editUserType" class="App\Form\editUserType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\FoodRepository" class="App\Repository\FoodRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\FoodRepository" class="App\Repository\FoodRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\NewsletterRepository" class="App\Repository\NewsletterRepository" autowire="true" abstract="true"/>
@@ -5622,6 +5628,14 @@
         <argument key="recipeRepository" type="service" id="App\Repository\RecipeRepository"/>
       </argument>
     </service>
+    <service id=".service_locator.KaD5QYu" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="paginator" type="service" id="knp_paginator"/>
+        <argument key="recipeRepository" type="service" id="App\Repository\RecipeRepository"/>
+        <argument key="userRepository" type="service" id="App\Repository\UserRepository"/>
+      </argument>
+    </service>
     <service id=".service_locator.TxrSGco" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -5679,12 +5693,13 @@
         <argument key="user" type="service" id=".errored..service_locator.tIQ5Q0N.App\Entity\User"/>
       </argument>
     </service>
-    <service id=".service_locator.Tajq6iO" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.oWOlpJV" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\MainController::allRecipes" type="service" id=".service_locator.MN_z1ND"/>
         <argument key="App\Controller\MainController::index" type="service" id=".service_locator.LPAUdgn"/>
         <argument key="App\Controller\MainController::register" type="service" id=".service_locator.ccM2MGC"/>
+        <argument key="App\Controller\MainController::userKitchen" type="service" id=".service_locator.KaD5QYu"/>
         <argument key="App\Controller\RecipeController::delete" type="service" id=".service_locator.g_QAUHN"/>
         <argument key="App\Controller\RecipeController::edit" type="service" id=".service_locator.g_QAUHN"/>
         <argument key="App\Controller\RecipeController::index" type="service" id=".service_locator.LPAUdgn"/>
@@ -5702,6 +5717,7 @@
         <argument key="App\Controller\MainController:allRecipes" type="service" id=".service_locator.MN_z1ND"/>
         <argument key="App\Controller\MainController:index" type="service" id=".service_locator.LPAUdgn"/>
         <argument key="App\Controller\MainController:register" type="service" id=".service_locator.ccM2MGC"/>
+        <argument key="App\Controller\MainController:userKitchen" type="service" id=".service_locator.KaD5QYu"/>
         <argument key="App\Controller\RecipeController:delete" type="service" id=".service_locator.g_QAUHN"/>
         <argument key="App\Controller\RecipeController:edit" type="service" id=".service_locator.g_QAUHN"/>
         <argument key="App\Controller\RecipeController:index" type="service" id=".service_locator.LPAUdgn"/>
@@ -5777,7 +5793,7 @@
       <argument type="service" id="debug.argument_resolver.not_tagged_controller.inner"/>
       <argument type="service" id="debug.stopwatch"/>
     </service>
-    <service id=".service_locator.Qvm5XDY" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.ItiGlEA" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Form\FoodType" type="service" id="App\Form\FoodType"/>
@@ -5787,6 +5803,7 @@
         <argument key="App\Form\RecipeType" type="service" id="App\Form\RecipeType"/>
         <argument key="App\Form\RegisterType" type="service" id="App\Form\RegisterType"/>
         <argument key="App\Form\UserType" type="service" id="App\Form\UserType"/>
+        <argument key="App\Form\editUserType" type="service" id="App\Form\editUserType"/>
         <argument key="Symfony\Bridge\Doctrine\Form\Type\EntityType" type="service" id="form.type.entity"/>
         <argument key="Symfony\Component\Form\Extension\Core\Type\ChoiceType" type="service" id="form.type.choice"/>
         <argument key="Symfony\Component\Form\Extension\Core\Type\FileType" type="service" id="form.type.file"/>
@@ -6137,12 +6154,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" public="false">
-      <argument type="service" id=".service_locator.Tajq6iO"/>
+      <argument type="service" id=".service_locator.oWOlpJV"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" public="false"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver" public="false"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver" public="false">
-      <argument type="service" id=".service_locator.Tajq6iO"/>
+      <argument type="service" id=".service_locator.oWOlpJV"/>
     </service>
     <service id=".debug.http_client.inner" class="Symfony\Contracts\HttpClient\HttpClientInterface" public="false">
       <argument type="collection"/>
@@ -6600,7 +6617,7 @@
     <service id="Vich\UploaderBundle\Twig\Extension\UploaderExtension" alias="vich_uploader.twig.extension.uploader" public="false"/>
     <service id="Knp\Component\Pager\PaginatorInterface" alias="knp_paginator"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.CmORmuK" public="true"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.Tajq6iO"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.oWOlpJV"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem" public="false"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>

@@ -3,11 +3,15 @@
 {% block title %}Edit User{% endblock %}
 
 {% block body %}
-    <h1>Edit User</h1>
+    <div class="jumbotron text-center" style="background-image: url({{ asset ('/assets/img/background-user.jpg') }});  background-repeat: no-repeat; background-size:cover; background-position: center">
+        <h1><i class="fa fa-user-circle"></i></h1>
+        <div class="typography-line"><h2>La cuisine de {{ user.username}}</h2></div>
+        <a class="btn btn-neutral mt-4" href="{{ path('user_show', {'id': user.id}) }}">Annuler les modifications</a>
 
-    {{ include('user/_form.html.twig', {'button_label': 'Update'}) }}
-
-    <a href="{{ path('user_index') }}">back to list</a>
-
-    {{ include('user/_delete_form.html.twig') }}
+    </div>
+    <div class="container mb-3">
+        <h3 class="mb-4">Modifier mes informations</h3>
+        {{ include('user/_form.html.twig', {'button_label': 'Sauvegarder'}) }}<br/>
+        {{ include('user/_delete_form.html.twig') }}
+    </div>
 {% endblock %}

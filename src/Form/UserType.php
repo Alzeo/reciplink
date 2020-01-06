@@ -15,6 +15,11 @@ class UserType extends AbstractType
             ->add('username')
             ->add('password')
             ->add('email')
+            ->add('regime')
+            ->add('facebook')
+            ->add('instagram')
+            ->add('pinterest')
+            ->add('snapchat')
         ;
     }
 

@@ -60,6 +60,31 @@ class User implements UserInterface
      */
     private $commentUser;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $facebook;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $instagram;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $pinterest;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $snapchat;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $regime;
+
 
 
     public function __construct()
@@ -275,6 +300,66 @@ class User implements UserInterface
                 $commentUser->setUser(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getFacebook(): ?string
+    {
+        return $this->facebook;
+    }
+
+    public function setFacebook(?string $facebook): self
+    {
+        $this->facebook = $facebook;
+
+        return $this;
+    }
+
+    public function getInstagram(): ?string
+    {
+        return $this->instagram;
+    }
+
+    public function setInstagram(?string $instagram): self
+    {
+        $this->instagram = $instagram;
+
+        return $this;
+    }
+
+    public function getPinterest(): ?string
+    {
+        return $this->pinterest;
+    }
+
+    public function setPinterest(?string $pinterest): self
+    {
+        $this->pinterest = $pinterest;
+
+        return $this;
+    }
+
+    public function getSnapchat(): ?string
+    {
+        return $this->snapchat;
+    }
+
+    public function setSnapchat(?string $snapchat): self
+    {
+        $this->snapchat = $snapchat;
+
+        return $this;
+    }
+
+    public function getRegime(): ?string
+    {
+        return $this->regime;
+    }
+
+    public function setRegime(?string $regime): self
+    {
+        $this->regime = $regime;
 
         return $this;
     }

@@ -18,6 +18,7 @@ return [
     'home' => [[], ['_controller' => 'App\\Controller\\MainController::index'], [], [['text', '/']], [], []],
     'register' => [[], ['_controller' => 'App\\Controller\\MainController::register'], [], [['text', '/register']], [], []],
     'discover' => [[], ['_controller' => 'App\\Controller\\MainController::allRecipes'], [], [['text', '/recettes']], [], []],
+    'kitchen_user' => [['idUser'], ['_controller' => 'App\\Controller\\MainController::userKitchen'], [], [['variable', '/', '[^/]++', 'idUser'], ['text', '/profil']], [], []],
     'recipe_index' => [[], ['_controller' => 'App\\Controller\\RecipeController::index'], [], [['text', '/recette/']], [], []],
     'recipe_new' => [[], ['_controller' => 'App\\Controller\\RecipeController::new'], [], [['text', '/recette/nouvelle']], [], []],
     'recipe_show' => [['id'], ['_controller' => 'App\\Controller\\RecipeController::show'], [], [['variable', '/', '[^/]++', 'id'], ['text', '/recette']], [], []],

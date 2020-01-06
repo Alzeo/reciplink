@@ -64,10 +64,10 @@ class User extends \App\Entity\User implements \Doctrine\ORM\Proxy\Proxy
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return ['__isInitialized__', '' . "\0" . 'App\\Entity\\User' . "\0" . 'id', '' . "\0" . 'App\\Entity\\User' . "\0" . 'username', '' . "\0" . 'App\\Entity\\User' . "\0" . 'roles', '' . "\0" . 'App\\Entity\\User' . "\0" . 'password', '' . "\0" . 'App\\Entity\\User' . "\0" . 'email', '' . "\0" . 'App\\Entity\\User' . "\0" . 'recipes', '' . "\0" . 'App\\Entity\\User' . "\0" . 'likes', '' . "\0" . 'App\\Entity\\User' . "\0" . 'save', '' . "\0" . 'App\\Entity\\User' . "\0" . 'commentUser'];
+            return ['__isInitialized__', '' . "\0" . 'App\\Entity\\User' . "\0" . 'id', '' . "\0" . 'App\\Entity\\User' . "\0" . 'username', '' . "\0" . 'App\\Entity\\User' . "\0" . 'roles', '' . "\0" . 'App\\Entity\\User' . "\0" . 'password', '' . "\0" . 'App\\Entity\\User' . "\0" . 'email', '' . "\0" . 'App\\Entity\\User' . "\0" . 'recipes', '' . "\0" . 'App\\Entity\\User' . "\0" . 'likes', '' . "\0" . 'App\\Entity\\User' . "\0" . 'save', '' . "\0" . 'App\\Entity\\User' . "\0" . 'commentUser', '' . "\0" . 'App\\Entity\\User' . "\0" . 'facebook', '' . "\0" . 'App\\Entity\\User' . "\0" . 'instagram', '' . "\0" . 'App\\Entity\\User' . "\0" . 'pinterest', '' . "\0" . 'App\\Entity\\User' . "\0" . 'snapchat', '' . "\0" . 'App\\Entity\\User' . "\0" . 'regime'];
         }
 
-        return ['__isInitialized__', '' . "\0" . 'App\\Entity\\User' . "\0" . 'id', '' . "\0" . 'App\\Entity\\User' . "\0" . 'username', '' . "\0" . 'App\\Entity\\User' . "\0" . 'roles', '' . "\0" . 'App\\Entity\\User' . "\0" . 'password', '' . "\0" . 'App\\Entity\\User' . "\0" . 'email', '' . "\0" . 'App\\Entity\\User' . "\0" . 'recipes', '' . "\0" . 'App\\Entity\\User' . "\0" . 'likes', '' . "\0" . 'App\\Entity\\User' . "\0" . 'save', '' . "\0" . 'App\\Entity\\User' . "\0" . 'commentUser'];
+        return ['__isInitialized__', '' . "\0" . 'App\\Entity\\User' . "\0" . 'id', '' . "\0" . 'App\\Entity\\User' . "\0" . 'username', '' . "\0" . 'App\\Entity\\User' . "\0" . 'roles', '' . "\0" . 'App\\Entity\\User' . "\0" . 'password', '' . "\0" . 'App\\Entity\\User' . "\0" . 'email', '' . "\0" . 'App\\Entity\\User' . "\0" . 'recipes', '' . "\0" . 'App\\Entity\\User' . "\0" . 'likes', '' . "\0" . 'App\\Entity\\User' . "\0" . 'save', '' . "\0" . 'App\\Entity\\User' . "\0" . 'commentUser', '' . "\0" . 'App\\Entity\\User' . "\0" . 'facebook', '' . "\0" . 'App\\Entity\\User' . "\0" . 'instagram', '' . "\0" . 'App\\Entity\\User' . "\0" . 'pinterest', '' . "\0" . 'App\\Entity\\User' . "\0" . 'snapchat', '' . "\0" . 'App\\Entity\\User' . "\0" . 'regime'];
     }
 
     /**
@@ -428,6 +428,116 @@ class User extends \App\Entity\User implements \Doctrine\ORM\Proxy\Proxy
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'removeCommentUser', [$commentUser]);
 
         return parent::removeCommentUser($commentUser);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getFacebook(): ?string
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getFacebook', []);
+
+        return parent::getFacebook();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setFacebook(?string $facebook): \App\Entity\User
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setFacebook', [$facebook]);
+
+        return parent::setFacebook($facebook);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getInstagram(): ?string
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getInstagram', []);
+
+        return parent::getInstagram();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setInstagram(?string $instagram): \App\Entity\User
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setInstagram', [$instagram]);
+
+        return parent::setInstagram($instagram);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getPinterest(): ?string
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getPinterest', []);
+
+        return parent::getPinterest();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setPinterest(?string $pinterest): \App\Entity\User
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setPinterest', [$pinterest]);
+
+        return parent::setPinterest($pinterest);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getSnapchat(): ?string
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getSnapchat', []);
+
+        return parent::getSnapchat();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setSnapchat(?string $snapchat): \App\Entity\User
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setSnapchat', [$snapchat]);
+
+        return parent::setSnapchat($snapchat);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getRegime(): ?string
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getRegime', []);
+
+        return parent::getRegime();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setRegime(?string $regime): \App\Entity\User
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setRegime', [$regime]);
+
+        return parent::setRegime($regime);
     }
 
 }

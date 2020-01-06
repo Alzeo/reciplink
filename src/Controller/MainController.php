@@ -10,6 +10,7 @@ use App\Form\NewsType;
 use App\Form\RecipeSearchType;
 use App\Form\RegisterType;
 use App\Repository\RecipeRepository;
+use App\Repository\UserRepository;
 use Knp\Component\Pager\Pagination\PaginationInterface;
 use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -104,5 +105,27 @@ class MainController extends AbstractController
             'form' => $form->createView()
         ]);
 
+    }
+
+    /**
+     * @Route("/profil/{idUser}", name="kitchen_user")
+     * @Entity("User", expr="repository.find(idUser)")
+     * @return Response
+     */
+    public function userKitchen($idUser, PaginatorInterface $paginator, RecipeRepository $recipeRepository, UserRepository $userRepository, Request $request) {
+
+        $currentUser = $this->getUser();
+        $profil = $userRepository->findOneBy(['id' => $idUser]);
+        $profilRecipes = $paginator->paginate($recipeRepository->findBy(['user' => $profil, 'publish' => true]),
+            $request->query->getInt('page', 1),
+            6/*page number*/
+        );
+
+        return $this->render('main/profilUser.html.twig', [
+            'controller_name' => 'MainController',
+            'profilRecipes' => $profilRecipes,
+            'user' => $currentUser,
+            'profile' => $profil
+        ]);
     }
 }

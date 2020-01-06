@@ -173,10 +173,12 @@ class __TwigTemplate_c296a2bbaeaaf562e63eeada08f023009758847de2160a8a3b27c919c9a
             </div>
             <div class=\"head-recip row\">
                 <div class=\"col-6 author\">
-                    <p>Recette proposée par : <span class=\"user\"><i class=\"fa fa-user\" aria-hidden=\"true\"></i> ";
+                    <p>Recette proposée par : <a href=\"";
         // line 48
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("kitchen_user", ["idUser" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["recipe"]) || array_key_exists("recipe", $context) ? $context["recipe"] : (function () { throw new RuntimeError('Variable "recipe" does not exist.', 48, $this->source); })()), "user", [], "any", false, false, false, 48), "id", [], "any", false, false, false, 48)]), "html", null, true);
+        echo "\"><span class=\"user\"><i class=\"fa fa-user\" aria-hidden=\"true\"></i> ";
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["recipe"]) || array_key_exists("recipe", $context) ? $context["recipe"] : (function () { throw new RuntimeError('Variable "recipe" does not exist.', 48, $this->source); })()), "user", [], "any", false, false, false, 48), "username", [], "any", false, false, false, 48), "html", null, true);
-        echo "</span></p>
+        echo "</span></a></p>
                 </div>
                 <div class=\"col-6\">
                     ";
@@ -459,7 +461,7 @@ class __TwigTemplate_c296a2bbaeaaf562e63eeada08f023009758847de2160a8a3b27c919c9a
 
     public function getDebugInfo()
     {
-        return array (  433 => 164,  418 => 157,  411 => 153,  407 => 151,  402 => 149,  397 => 147,  392 => 145,  388 => 144,  383 => 143,  381 => 142,  373 => 137,  368 => 134,  360 => 131,  351 => 127,  343 => 124,  339 => 122,  334 => 121,  327 => 119,  322 => 117,  313 => 111,  306 => 106,  292 => 102,  288 => 100,  284 => 99,  272 => 90,  266 => 87,  258 => 84,  252 => 81,  242 => 76,  238 => 74,  231 => 70,  225 => 68,  216 => 63,  212 => 61,  208 => 59,  206 => 58,  201 => 57,  195 => 55,  189 => 53,  186 => 52,  184 => 51,  178 => 48,  168 => 41,  162 => 38,  156 => 35,  150 => 32,  143 => 27,  134 => 24,  131 => 23,  127 => 22,  122 => 20,  118 => 19,  111 => 16,  101 => 12,  94 => 7,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
+        return array (  435 => 164,  420 => 157,  413 => 153,  409 => 151,  404 => 149,  399 => 147,  394 => 145,  390 => 144,  385 => 143,  383 => 142,  375 => 137,  370 => 134,  362 => 131,  353 => 127,  345 => 124,  341 => 122,  336 => 121,  329 => 119,  324 => 117,  315 => 111,  308 => 106,  294 => 102,  290 => 100,  286 => 99,  274 => 90,  268 => 87,  260 => 84,  254 => 81,  244 => 76,  240 => 74,  233 => 70,  227 => 68,  218 => 63,  214 => 61,  210 => 59,  208 => 58,  203 => 57,  197 => 55,  191 => 53,  188 => 52,  186 => 51,  178 => 48,  168 => 41,  162 => 38,  156 => 35,  150 => 32,  143 => 27,  134 => 24,  131 => 23,  127 => 22,  122 => 20,  118 => 19,  111 => 16,  101 => 12,  94 => 7,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -511,7 +513,7 @@ class __TwigTemplate_c296a2bbaeaaf562e63eeada08f023009758847de2160a8a3b27c919c9a
             </div>
             <div class=\"head-recip row\">
                 <div class=\"col-6 author\">
-                    <p>Recette proposée par : <span class=\"user\"><i class=\"fa fa-user\" aria-hidden=\"true\"></i> {{ recipe.user.username }}</span></p>
+                    <p>Recette proposée par : <a href=\"{{ path('kitchen_user', {'idUser': recipe.user.id}) }}\"><span class=\"user\"><i class=\"fa fa-user\" aria-hidden=\"true\"></i> {{ recipe.user.username }}</span></a></p>
                 </div>
                 <div class=\"col-6\">
                     {% if is_granted('ROLE_USER') %}

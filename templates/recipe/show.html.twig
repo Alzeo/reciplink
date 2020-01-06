@@ -45,7 +45,7 @@
             </div>
             <div class="head-recip row">
                 <div class="col-6 author">
-                    <p>Recette proposée par : <span class="user"><i class="fa fa-user" aria-hidden="true"></i> {{ recipe.user.username }}</span></p>
+                    <p>Recette proposée par : <a href="{{ path('kitchen_user', {'idUser': recipe.user.id}) }}"><span class="user"><i class="fa fa-user" aria-hidden="true"></i> {{ recipe.user.username }}</span></a></p>
                 </div>
                 <div class="col-6">
                     {% if is_granted('ROLE_USER') %}

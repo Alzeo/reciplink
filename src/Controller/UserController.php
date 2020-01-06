@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Recipe;
 use App\Entity\RecipeSave;
 use App\Entity\User;
+use App\Form\editUserType;
 use App\Form\UserType;
 use App\Repository\RecipeCommentRepository;
 use App\Repository\RecipeRepository;
@@ -114,13 +115,17 @@ class UserController extends AbstractController
      */
     public function edit(Request $request, User $user): Response
     {
-        $form = $this->createForm(UserType::class, $user);
+        $form = $this->createForm(editUserType::class, $user);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('user_index');
+            return $this->redirectToRoute('user_show', [
+                'user' => $user,
+                'form' => $form->createView(),
+                'id' => $user->getId()
+            ]);
         }
 
         return $this->render('user/edit.html.twig', [

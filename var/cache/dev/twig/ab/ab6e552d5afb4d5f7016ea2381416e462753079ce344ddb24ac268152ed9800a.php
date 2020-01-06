@@ -93,11 +93,17 @@ class __TwigTemplate_d9f3ace77f43931bfd62b5dbfbde4cdb96c84f3197baad701adfced32b9
         // line 8
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 8, $this->source); })()), "username", [], "any", false, false, false, 8), "html", null, true);
         echo "</h2></div>
-        <a class=\"btn btn-neutral mt-4\" href=\"";
+        ";
         // line 9
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("user_edit", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 9, $this->source); })()), "id", [], "any", false, false, false, 9)]), "html", null, true);
-        echo "\">Modifier mon profil</a>
-    </div>
+        if ((twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 9, $this->source); })()), "user", [], "any", false, false, false, 9) == (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 9, $this->source); })()))) {
+            echo "<a class=\"btn btn-neutral mt-4\" href=\"";
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("user_edit", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 9, $this->source); })()), "id", [], "any", false, false, false, 9)]), "html", null, true);
+            echo "\">Modifier mon profil</a>";
+        } else {
+            echo " ";
+        }
+        // line 10
+        echo "    </div>
 <div class=\"nav-tabs-navigation container\">
     <div class=\"nav-tabs-wrapper\">
         <ul class=\"nav nav-tabs\" id=\"pills-tab\" role=\"tablist\">
@@ -129,72 +135,85 @@ class __TwigTemplate_d9f3ace77f43931bfd62b5dbfbde4cdb96c84f3197baad701adfced32b9
             // line 28
             echo "    <div class=\"tab-pane fade show active\">
 
-        <div class=\"container-fluid\" style=\"width: 80%;\">
-            <p>Pseudonyme : ";
-            // line 31
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 31, $this->source); })()), "username", [], "any", false, false, false, 31), "html", null, true);
-            echo "</p>
+        <div class=\"container\">
             <p>Email : ";
-            // line 32
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 32, $this->source); })()), "email", [], "any", false, false, false, 32), "html", null, true);
+            // line 31
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 31, $this->source); })()), "email", [], "any", false, false, false, 31), "html", null, true);
             echo "</p>
-            ";
+            <p>Regime alimentaire : ";
+            // line 32
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 32, $this->source); })()), "regime", [], "any", false, false, false, 32), "html", null, true);
+            echo "</p>
+            <p>facebook : ";
             // line 33
-            echo twig_include($this->env, $context, "user/_delete_form.html.twig");
-            echo "
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 33, $this->source); })()), "facebook", [], "any", false, false, false, 33), "html", null, true);
+            echo "</p>
+            <p>Instagram : ";
+            // line 34
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 34, $this->source); })()), "instagram", [], "any", false, false, false, 34), "html", null, true);
+            echo "</p>
+            <p>Pinterest : ";
+            // line 35
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 35, $this->source); })()), "pinterest", [], "any", false, false, false, 35), "html", null, true);
+            echo "</p>
+            <p>Snapchat : ";
+            // line 36
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 36, $this->source); })()), "snapchat", [], "any", false, false, false, 36), "html", null, true);
+            echo "</p>
         </div>
     </div>
     ";
-        } elseif ((        // line 36
-(isset($context["current_path"]) || array_key_exists("current_path", $context) ? $context["current_path"] : (function () { throw new RuntimeError('Variable "current_path" does not exist.', 36, $this->source); })()) == "saveRecipe")) {
-            // line 37
+        } elseif ((        // line 39
+(isset($context["current_path"]) || array_key_exists("current_path", $context) ? $context["current_path"] : (function () { throw new RuntimeError('Variable "current_path" does not exist.', 39, $this->source); })()) == "saveRecipe")) {
+            // line 40
             echo "        <div class=\"\"><div class=\"container-fluid text-center\" style=\"width: 80%;\">
                 <div class=\"row\">
                     ";
-            // line 39
+            // line 42
             $context['_parent'] = $context;
-            $context['_seq'] = twig_ensure_traversable((isset($context["saveRecipes"]) || array_key_exists("saveRecipes", $context) ? $context["saveRecipes"] : (function () { throw new RuntimeError('Variable "saveRecipes" does not exist.', 39, $this->source); })()));
+            $context['_seq'] = twig_ensure_traversable((isset($context["saveRecipes"]) || array_key_exists("saveRecipes", $context) ? $context["saveRecipes"] : (function () { throw new RuntimeError('Variable "saveRecipes" does not exist.', 42, $this->source); })()));
+            $context['_iterated'] = false;
             foreach ($context['_seq'] as $context["_key"] => $context["saveRecipe"]) {
-                // line 40
+                // line 43
                 echo "                        <div class=\"col-xs-12 col-md-6 col-lg-4\">
                             <div class=\"card\">
                                 <a href=\"";
-                // line 42
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("recipe_show", ["id" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["saveRecipe"], "recipe", [], "any", false, false, false, 42), "id", [], "any", false, false, false, 42)]), "html", null, true);
+                // line 45
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("recipe_show", ["id" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["saveRecipe"], "recipe", [], "any", false, false, false, 45), "id", [], "any", false, false, false, 45)]), "html", null, true);
                 echo "\"><img class=\"card-img-top\" src=\"";
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/recipes/" . twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["saveRecipe"], "recipe", [], "any", false, false, false, 42), "picture", [], "any", false, false, false, 42))), "html", null, true);
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/recipes/" . twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["saveRecipe"], "recipe", [], "any", false, false, false, 45), "picture", [], "any", false, false, false, 45))), "html", null, true);
                 echo "\" alt=\"recette ";
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["saveRecipe"], "recipe", [], "any", false, false, false, 42), "name", [], "any", false, false, false, 42), "html", null, true);
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["saveRecipe"], "recipe", [], "any", false, false, false, 45), "name", [], "any", false, false, false, 45), "html", null, true);
                 echo "\"> </a>
                                 <div class=\"top-right\"><label class=\"label label-danger\">";
-                // line 43
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["saveRecipe"], "recipe", [], "any", false, false, false, 43), "type", [], "any", false, false, false, 43), "html", null, true);
+                // line 46
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["saveRecipe"], "recipe", [], "any", false, false, false, 46), "type", [], "any", false, false, false, 46), "html", null, true);
                 echo "</label></div>
                                 <div class=\"top-left\"><span class=\"like label-warning\"> <i class=\"fa fa-heart\" aria-hidden=\"true\"></i> ";
-                // line 44
-                echo twig_escape_filter($this->env, twig_length_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["saveRecipe"], "recipe", [], "any", false, false, false, 44), "likes", [], "any", false, false, false, 44)), "html", null, true);
+                // line 47
+                echo twig_escape_filter($this->env, twig_length_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["saveRecipe"], "recipe", [], "any", false, false, false, 47), "likes", [], "any", false, false, false, 47)), "html", null, true);
                 echo "</span></div>
                                 <div class=\"card-body\">
                                     <h6 class=\"card-regime\">Régime : ";
-                // line 46
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["saveRecipe"], "recipe", [], "any", false, false, false, 46), "regime", [], "any", false, false, false, 46), "html", null, true);
+                // line 49
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["saveRecipe"], "recipe", [], "any", false, false, false, 49), "regime", [], "any", false, false, false, 49), "html", null, true);
                 echo "</h6>
 
                                     <h5 class=\"card-title\">";
-                // line 48
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["saveRecipe"], "recipe", [], "any", false, false, false, 48), "name", [], "any", false, false, false, 48), "html", null, true);
+                // line 51
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["saveRecipe"], "recipe", [], "any", false, false, false, 51), "name", [], "any", false, false, false, 51), "html", null, true);
                 echo "</h5>
                                     <p class=\"card-text\">
                                         ";
-                // line 50
+                // line 53
                 $context['_parent'] = $context;
-                $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["saveRecipe"], "recipe", [], "any", false, false, false, 50), "tags", [], "any", false, false, false, 50));
+                $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["saveRecipe"], "recipe", [], "any", false, false, false, 53), "tags", [], "any", false, false, false, 53));
                 foreach ($context['_seq'] as $context["_key"] => $context["tag"]) {
-                    // line 51
+                    // line 54
                     echo "                                            <span class=\"tags\">
                                                 <label class=\"label label-default mr-1\">#";
-                    // line 52
-                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["tag"], "name", [], "any", false, false, false, 52), "html", null, true);
+                    // line 55
+                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["tag"], "name", [], "any", false, false, false, 55), "html", null, true);
                     echo "</label>
                                             </span>
                                         ";
@@ -202,40 +221,49 @@ class __TwigTemplate_d9f3ace77f43931bfd62b5dbfbde4cdb96c84f3197baad701adfced32b9
                 $_parent = $context['_parent'];
                 unset($context['_seq'], $context['_iterated'], $context['_key'], $context['tag'], $context['_parent'], $context['loop']);
                 $context = array_intersect_key($context, $_parent) + $_parent;
-                // line 55
+                // line 58
                 echo "                                    </p>
                                     <a href=\"";
-                // line 56
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("recipe_show", ["id" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["saveRecipe"], "recipe", [], "any", false, false, false, 56), "id", [], "any", false, false, false, 56)]), "html", null, true);
+                // line 59
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("recipe_show", ["id" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["saveRecipe"], "recipe", [], "any", false, false, false, 59), "id", [], "any", false, false, false, 59)]), "html", null, true);
                 echo "\" class=\"btn btn-success\">Voir la recette</a>
                                 </div>
                             </div>
                         </div>
+                        ";
+                $context['_iterated'] = true;
+            }
+            if (!$context['_iterated']) {
+                // line 64
+                echo "                            <div class=\"container mb-4\">
+                                <p>Vous n'avez aucune recette enregistrée</p>
+                            </div>
                     ";
             }
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['saveRecipe'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 61
+            // line 68
             echo "                </div>
                 <div class=\"pagination justify-content-center\">
                     ";
-            // line 63
-            echo $this->extensions['Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension']->render($this->env, (isset($context["saveRecipes"]) || array_key_exists("saveRecipes", $context) ? $context["saveRecipes"] : (function () { throw new RuntimeError('Variable "saveRecipes" does not exist.', 63, $this->source); })()));
+            // line 70
+            echo $this->extensions['Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension']->render($this->env, (isset($context["saveRecipes"]) || array_key_exists("saveRecipes", $context) ? $context["saveRecipes"] : (function () { throw new RuntimeError('Variable "saveRecipes" does not exist.', 70, $this->source); })()));
             echo "
                 </div>
             </div>
         </div>
     ";
-        } elseif ((        // line 67
-(isset($context["current_path"]) || array_key_exists("current_path", $context) ? $context["current_path"] : (function () { throw new RuntimeError('Variable "current_path" does not exist.', 67, $this->source); })()) == "userRecipe")) {
-            // line 68
+        } elseif ((        // line 74
+(isset($context["current_path"]) || array_key_exists("current_path", $context) ? $context["current_path"] : (function () { throw new RuntimeError('Variable "current_path" does not exist.', 74, $this->source); })()) == "userRecipe")) {
+            // line 75
             echo "        <div class=\"\"><div class=\"container-fluid text-center\" style=\"width: 80%;\">
                 <div class=\"row\">
                     ";
-            // line 70
+            // line 77
             $context['_parent'] = $context;
-            $context['_seq'] = twig_ensure_traversable((isset($context["userRecipes"]) || array_key_exists("userRecipes", $context) ? $context["userRecipes"] : (function () { throw new RuntimeError('Variable "userRecipes" does not exist.', 70, $this->source); })()));
+            $context['_seq'] = twig_ensure_traversable((isset($context["userRecipes"]) || array_key_exists("userRecipes", $context) ? $context["userRecipes"] : (function () { throw new RuntimeError('Variable "userRecipes" does not exist.', 77, $this->source); })()));
+            $context['_iterated'] = false;
             $context['loop'] = [
               'parent' => $context['_parent'],
               'index0' => 0,
@@ -250,11 +278,12 @@ class __TwigTemplate_d9f3ace77f43931bfd62b5dbfbde4cdb96c84f3197baad701adfced32b9
                 $context['loop']['last'] = 1 === $length;
             }
             foreach ($context['_seq'] as $context["_key"] => $context["recipe"]) {
-                // line 71
+                // line 78
                 echo "                        ";
-                $this->loadTemplate("recipe/_recipesByUser.html.twig", "user/show.html.twig", 71)->display($context);
-                // line 72
+                $this->loadTemplate("recipe/_recipesByUser.html.twig", "user/show.html.twig", 78)->display($context);
+                // line 79
                 echo "                    ";
+                $context['_iterated'] = true;
                 ++$context['loop']['index0'];
                 ++$context['loop']['index'];
                 $context['loop']['first'] = false;
@@ -264,26 +293,29 @@ class __TwigTemplate_d9f3ace77f43931bfd62b5dbfbde4cdb96c84f3197baad701adfced32b9
                     $context['loop']['last'] = 0 === $context['loop']['revindex0'];
                 }
             }
+            if (!$context['_iterated']) {
+                // line 80
+                echo "                        <div class=\"container mb-4\">
+                            <p>Vous n'avez partager aucune recette</p>
+                        </div>
+                    ";
+            }
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['recipe'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 73
+            // line 84
             echo "                </div>
                 <div class=\"pagination justify-content-center\">
                     ";
-            // line 75
-            echo $this->extensions['Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension']->render($this->env, (isset($context["userRecipes"]) || array_key_exists("userRecipes", $context) ? $context["userRecipes"] : (function () { throw new RuntimeError('Variable "userRecipes" does not exist.', 75, $this->source); })()));
+            // line 86
+            echo $this->extensions['Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension']->render($this->env, (isset($context["userRecipes"]) || array_key_exists("userRecipes", $context) ? $context["userRecipes"] : (function () { throw new RuntimeError('Variable "userRecipes" does not exist.', 86, $this->source); })()));
             echo "
                 </div>
             </div>
         </div>
     ";
-        } else {
-            // line 80
-            echo "        test
-    ";
         }
-        // line 82
+        // line 91
         echo "    </div>
 ";
         
@@ -306,7 +338,7 @@ class __TwigTemplate_d9f3ace77f43931bfd62b5dbfbde4cdb96c84f3197baad701adfced32b9
 
     public function getDebugInfo()
     {
-        return array (  287 => 82,  283 => 80,  275 => 75,  271 => 73,  257 => 72,  254 => 71,  237 => 70,  233 => 68,  231 => 67,  224 => 63,  220 => 61,  209 => 56,  206 => 55,  197 => 52,  194 => 51,  190 => 50,  185 => 48,  180 => 46,  175 => 44,  171 => 43,  163 => 42,  159 => 40,  155 => 39,  151 => 37,  149 => 36,  143 => 33,  139 => 32,  135 => 31,  130 => 28,  128 => 27,  119 => 21,  113 => 18,  107 => 15,  98 => 9,  94 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  319 => 91,  311 => 86,  307 => 84,  298 => 80,  285 => 79,  282 => 78,  264 => 77,  260 => 75,  258 => 74,  251 => 70,  247 => 68,  238 => 64,  228 => 59,  225 => 58,  216 => 55,  213 => 54,  209 => 53,  204 => 51,  199 => 49,  194 => 47,  190 => 46,  182 => 45,  178 => 43,  173 => 42,  169 => 40,  167 => 39,  161 => 36,  157 => 35,  153 => 34,  149 => 33,  145 => 32,  141 => 31,  136 => 28,  134 => 27,  125 => 21,  119 => 18,  113 => 15,  106 => 10,  98 => 9,  94 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -319,7 +351,7 @@ class __TwigTemplate_d9f3ace77f43931bfd62b5dbfbde4cdb96c84f3197baad701adfced32b9
     <div class=\"jumbotron text-center\" style=\"background-image: url({{ asset ('/assets/img/background-user.jpg') }});  background-repeat: no-repeat; background-size:cover; background-position: center\">
         <h1><i class=\"fa fa-user-circle\"></i></h1>
         <div class=\"typography-line\"><h2>La cuisine de {{ user.username}}</h2></div>
-        <a class=\"btn btn-neutral mt-4\" href=\"{{ path('user_edit', {'id': user.id}) }}\">Modifier mon profil</a>
+        {% if app.user == user %}<a class=\"btn btn-neutral mt-4\" href=\"{{ path('user_edit', {'id': user.id}) }}\">Modifier mon profil</a>{% else %} {% endif %}
     </div>
 <div class=\"nav-tabs-navigation container\">
     <div class=\"nav-tabs-wrapper\">
@@ -340,10 +372,13 @@ class __TwigTemplate_d9f3ace77f43931bfd62b5dbfbde4cdb96c84f3197baad701adfced32b9
     {% if current_path == 'informations' %}
     <div class=\"tab-pane fade show active\">
 
-        <div class=\"container-fluid\" style=\"width: 80%;\">
-            <p>Pseudonyme : {{ user.username }}</p>
+        <div class=\"container\">
             <p>Email : {{ user.email }}</p>
-            {{ include('user/_delete_form.html.twig') }}
+            <p>Regime alimentaire : {{ user.regime }}</p>
+            <p>facebook : {{ user.facebook }}</p>
+            <p>Instagram : {{ user.instagram }}</p>
+            <p>Pinterest : {{ user.pinterest }}</p>
+            <p>Snapchat : {{ user.snapchat }}</p>
         </div>
     </div>
     {% elseif current_path == 'saveRecipe' %}
@@ -370,6 +405,10 @@ class __TwigTemplate_d9f3ace77f43931bfd62b5dbfbde4cdb96c84f3197baad701adfced32b9
                                 </div>
                             </div>
                         </div>
+                        {% else %}
+                            <div class=\"container mb-4\">
+                                <p>Vous n'avez aucune recette enregistrée</p>
+                            </div>
                     {% endfor %}
                 </div>
                 <div class=\"pagination justify-content-center\">
@@ -382,6 +421,10 @@ class __TwigTemplate_d9f3ace77f43931bfd62b5dbfbde4cdb96c84f3197baad701adfced32b9
                 <div class=\"row\">
                     {% for recipe in userRecipes %}
                         {% include 'recipe/_recipesByUser.html.twig' %}
+                    {% else %}
+                        <div class=\"container mb-4\">
+                            <p>Vous n'avez partager aucune recette</p>
+                        </div>
                     {% endfor %}
                 </div>
                 <div class=\"pagination justify-content-center\">
@@ -389,8 +432,6 @@ class __TwigTemplate_d9f3ace77f43931bfd62b5dbfbde4cdb96c84f3197baad701adfced32b9
                 </div>
             </div>
         </div>
-    {% else %}
-        test
     {% endif %}
     </div>
 {% endblock %}
