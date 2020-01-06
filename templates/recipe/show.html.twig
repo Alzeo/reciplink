@@ -1,6 +1,13 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}Recipe{% endblock %}
+{% block meta %}
+    <meta property="og:url"           content="http://127.0.0.1:8000/recette/{{ recipe.id }}" />
+    <meta property="og:type"          content="website" />
+    <meta property="og:title"         content="RecipeLink - http://127.0.0.1:8000/recette/{{ recipe.id }}" />
+    <meta property="og:description"   content="Recette {{ recipe.regime }} - {{ recipe.name }}" />
+    <meta property="og:image"         content="https://127.0.0.1:800/recette/{{ recipe.picture }}" />
+{% endblock %}
 
 {% block body %}
     {% for message in app.flashes('success') %}
@@ -25,6 +32,55 @@
                     </span>
                 {% endfor %}
             </p>
+            <div class="share-social-media mt-3 mb-3">
+                <div class="fb-share-button" data-href="http://127.0.0.1:8000/recette/{{ recipe.id }}" data-layout="button_count" data-size="large"><a target="_blank" href="http://127.0.0.1:8000/recette/{{ recipe.id }}" class="fb-xfbml-parse-ignore">Partager</a></div>
+                <a class="twitter-share-button"
+                   href="https://twitter.com/intent/tweet"
+                   data-size="large"
+                   data-text="J'ai découvert une super recette !"
+                   data-url="http://127.0.0.1:8000/recette/{{ recipe.id }}"
+                   data-hashtags="recipelink"
+                   data-via="@recipelink"
+                   data-related="twitterapi,twitter">
+                    Partager
+                </a>
+                <button type="button" class="share-insta" data-toggle="modal" data-target="#shareInsta"><i class="fa fa-instagram" ></i> Partager</button>
+            </div>
+            <div class="modal fade" id="shareInsta" tabindex="-1" role="dialog" aria-labelledby="PartageInstagram" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="PartageInstagram">Texte formater pour instagram
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button></h5>
+                        </div>
+                        <div class="modal-body text-left">
+                            <p>{{ recipe.name }}</p>
+                            <br/>
+                            <p>Ingrédients : </p>
+                            {% for food in recipe.foods %}
+                                <p>{{ food.quantity }} {{ food.quantityUnity }} {{ food.name }}</p>
+                                </ul>
+                            {% endfor %}
+                            <br/>
+                            <p>Préparation :</p>
+                            <p>{{ recipe.description|raw }}</p><br>
+                            <p>Valeur nutritionnelle :</p>
+                            <p>{{ recipe.calorie }} kcal | {{ recipe.protein }} gr protéine | {{ recipe.glucide }} gr glucide | {{ recipe.lipide }} gr lipide</p>
+                            <p>{% for tag in recipe.tags %}
+                                #{{ tag.name }}
+                                {% endfor %}
+                                #recipelink @recipelink
+                            </p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary">Copier</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div class="alert alert-success mt-4">
                 <div class="container">
                     <div class="row mt-2">
@@ -114,6 +170,7 @@
             </div>
         </div>
     </div>
+
         <div class="block-comment" style="background-image:url({{ asset('/assets/img/background-comment.jpg') }}); background-repeat: no-repeat; background-size: cover;">
            <div class="container">
                <h4 class="mb-4 text-center">Commentaires sur la recette {{ recipe.name }} <span class="label label-info"><i class="fa fa-comments"></i> {{ countComments|length }}</span></h4>
@@ -129,34 +186,30 @@
                            </blockquote>
                            {% else %}
                                <p>Aucun commentaire ici, soyez le premier !</p>
-                       </div>
-                   {% endfor %}
-               </div>
-           </div>
+                            {% endfor %}
                <div class="pagination justify-content-center">
                    {{ knp_pagination_render(commentaires) }}
                </div>
-           </div>
-               <div class="mt-2">
-                   <div class="container" style="background: #fff; padding:15px;">
-                       {% if is_granted('ROLE_USER') %}
-                           {{ form_start(form) }}
-                           <p class="text-left"><span class="user"><i class="fa fa-user" aria-hidden="true"></i> {{ app.user.username }}</p>
-                           {{ form_row(form.content) }}
-                           <div class="button-form">
-                               <button class="btn btn-success btn-lg btn-block mt-4">{{ button_label|default('Donner mon avis') }}</button>
-                           </div>
-                           {{ form_end(form) }}
-                       {% else %}
-                           <div class="container">
-                               <div class="section-comments m-auto" style="background: #fff; padding:15px; width: 70%">
-                                   <a href="{{ path('app_login') }}" class="btn btn-success btn-lg btn-block mt-4">Donner mon avis</a>
+               <div class="mt-4">
+                       <div class="section-form-comment m-auto" style="background: #fff; padding:15px;">
+                           {% if is_granted('ROLE_USER') %}
+                               {{ form_start(form) }}
+                               <p class="text-left"><span class="user"><i class="fa fa-user" aria-hidden="true"></i> {{ app.user.username }}</p>
+                               {{ form_row(form.content) }}
+                               <div class="button-form">
+                                   <button class="btn btn-success btn-lg btn-block mt-4">{{ button_label|default('Donner mon avis') }}</button>
                                </div>
-                           </div>
-                       {% endif %}
+                               {{ form_end(form) }}
+                           {% else %}
+                                   <div class="section-comments m-auto" style="background: #fff; padding:15px;">
+                                       <a href="{{ path('app_login') }}" class="btn btn-success btn-lg btn-block mt-4">Donner mon avis</a>
+                                   </div>
+                           {% endif %}
                    </div>
                </div>
            </div>
+        </div>
+</div>
         </div>
 </div>
 {% endblock %}

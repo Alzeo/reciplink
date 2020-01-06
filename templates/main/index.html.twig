@@ -7,6 +7,16 @@
         .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
         .example-wrapper code { ; padding: 2px 6px; }
     </style>
+    {% for message in app.flashes('success') %}
+        <div class="alert alert-success" style="background: #86d9ab !important;">
+            <div class="container">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <i class="fa fa-times"></i>
+                </button>
+                <span><i class="fa fa-bell"></i> {{ message }}</span>
+            </div>
+        </div>
+    {% endfor %}
     <div class="jumbotron position-relative overflow-hidden text-center bg-light" style="background-image: url({{ asset ('/assets/img/2533.jpg') }});  background-repeat: no-repeat; background-size: cover;">
         <div class="col-md-6 p-lg-6 mx-auto my-6" style="padding-top:120px; padding-bottom:120px; line-height: 60px">
             <h1 class="display-4 font-weight-normal" >Que des recettes saines <span class="green"> avec des ingrédients sains </span></h1>
@@ -93,11 +103,19 @@
            </div>
         </div>
     </section>
-<section class="block-blog text-center container mt-5" style="padding-top: 40px; padding-bottom: 40px;">
+<section class="block-newsletter text-center container-fluid mt-5" style="padding-top: 40px; padding-bottom: 40px; background: #f7f7f7">
+    <img src="{{ asset ('/assets/img/paper-plane.png') }}" alt="" height="200px;">
+
+    </div>
     <h4>Restez informé(e)</h4>
-    <h5>Vous souhaitez recevoir les nouvelles recettes par mail ?</h5>
-    <div class="container">
+    <h5 class="mt-2">Vous souhaitez recevoir les nouvelles recettes par mail ?</h5>
+    <div class="container mt-5" style="width:40rem;">
         {{ form_start(form) }}
+        {{ form_row(form.categorie) }}
+        {{ form_row(form.mail) }}
+        <div class="button-form text-center mb-5">
+            <button class="btn btn-success btn-lg mt-4 btn-block">{{ button_label|default("M'Ajouter") }}</button>
+        </div>
         {{ form_end(form) }}
     </div>
 </section>

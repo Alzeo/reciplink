@@ -422,3 +422,15 @@ strong {
 .regime-link a {
     color:#6bd098;
 }
+
+.share-insta {
+    border-radius: 4px;
+    font-size: 13px;
+    height: 28px;
+    padding: 0 8px;
+    background: #f84d76;
+    color: #fff;
+     border:none;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: 600;
+}

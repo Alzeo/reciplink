@@ -100,7 +100,7 @@ class RecipeRepository extends ServiceEntityRepository
     public function findAllVegetalienVisibleQuery(RecipeSearchPlat $search): Query
     {
 
-        $query = $this->findVegatalienVisibleQuery();
+        $query = $this->findVegetalienVisibleQuery();
 
         if($search->getType()){
             $query = $query->andwhere('p.type = :type')
@@ -151,7 +151,7 @@ class RecipeRepository extends ServiceEntityRepository
             ->setParameter('vegetarien', 'Végétarien');
     }
 
-    private function findVegatalienVisibleQuery(): QueryBuilder {
+    private function findVegetalienVisibleQuery(): QueryBuilder {
         return $this->createQueryBuilder('p')
             ->andWhere('p.publish = true')
             ->andWhere('p.regime = :vegetalien')

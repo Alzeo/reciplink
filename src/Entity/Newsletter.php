@@ -24,11 +24,6 @@ class Newsletter
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $type;
-
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
     private $mail;
 
     public function getId(): ?int
@@ -48,17 +43,6 @@ class Newsletter
         return $this;
     }
 
-    public function getType(): ?string
-    {
-        return $this->type;
-    }
-
-    public function setType(string $type): self
-    {
-        $this->type = $type;
-
-        return $this;
-    }
 
     public function getMail(): ?string
     {

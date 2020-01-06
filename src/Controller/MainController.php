@@ -47,6 +47,7 @@ class MainController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($news);
             $entityManager->flush();
+            $this->addFlash('success', 'Vous avez été ajouté à la newsletter');
             return $this->redirectToRoute('home');
         }
 
@@ -211,7 +212,7 @@ class MainController extends AbstractController
         $search = new RecipeSearchPlat();
         $form = $this->createForm(RecipeSearchPlatType::class, $search);
         $form->handleRequest($request);
-        $recipes = $paginator->paginate($recipeRepository->findAllVeganVisibleQuery($search),
+        $recipes = $paginator->paginate($recipeRepository->findAllVegetalienVisibleQuery($search),
             $request->query->getInt('page', 1),
             12/*page number*/
         );

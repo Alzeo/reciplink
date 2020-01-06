@@ -89,15 +89,37 @@ class __TwigTemplate_6e78fa8948c50a5bb78a2479ead4a16065f44f31f04133074f27a8760b1
         .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
         .example-wrapper code { ; padding: 2px 6px; }
     </style>
-    <div class=\"jumbotron position-relative overflow-hidden text-center bg-light\" style=\"background-image: url(";
+    ";
         // line 10
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 10, $this->source); })()), "flashes", [0 => "success"], "method", false, false, false, 10));
+        foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
+            // line 11
+            echo "        <div class=\"alert alert-success\" style=\"background: #86d9ab !important;\">
+            <div class=\"container\">
+                <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">
+                    <i class=\"fa fa-times\"></i>
+                </button>
+                <span><i class=\"fa fa-bell\"></i> ";
+            // line 16
+            echo twig_escape_filter($this->env, $context["message"], "html", null, true);
+            echo "</span>
+            </div>
+        </div>
+    ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['message'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 20
+        echo "    <div class=\"jumbotron position-relative overflow-hidden text-center bg-light\" style=\"background-image: url(";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/assets/img/2533.jpg"), "html", null, true);
         echo ");  background-repeat: no-repeat; background-size: cover;\">
         <div class=\"col-md-6 p-lg-6 mx-auto my-6\" style=\"padding-top:120px; padding-bottom:120px; line-height: 60px\">
             <h1 class=\"display-4 font-weight-normal\" >Que des recettes saines <span class=\"green\"> avec des ingrédients sains </span></h1>
             <p class=\"lead font-weight-normal\" style=\"margin-top:10px; margin-bottom:30px;\">Une manière simple de partager vos recettes</p>
             <a class=\"btn btn-success btn-lg\" href=\"";
-        // line 14
+        // line 24
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("recipe_new");
         echo "\"><i class=\"fa fa-leaf\"></i> Commencer</a>
         </div>
@@ -106,9 +128,9 @@ class __TwigTemplate_6e78fa8948c50a5bb78a2479ead4a16065f44f31f04133074f27a8760b1
         <h4>Dernières recettes</h4>
         <div class=\"row text-center\" style=\"margin-top:80px;\">
                 ";
-        // line 20
+        // line 30
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["recipes"]) || array_key_exists("recipes", $context) ? $context["recipes"] : (function () { throw new RuntimeError('Variable "recipes" does not exist.', 20, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["recipes"]) || array_key_exists("recipes", $context) ? $context["recipes"] : (function () { throw new RuntimeError('Variable "recipes" does not exist.', 30, $this->source); })()));
         $context['loop'] = [
           'parent' => $context['_parent'],
           'index0' => 0,
@@ -123,10 +145,10 @@ class __TwigTemplate_6e78fa8948c50a5bb78a2479ead4a16065f44f31f04133074f27a8760b1
             $context['loop']['last'] = 1 === $length;
         }
         foreach ($context['_seq'] as $context["_key"] => $context["recipe"]) {
-            // line 21
+            // line 31
             echo "                    ";
-            $this->loadTemplate("recipe/_recipe.html.twig", "main/index.html.twig", 21)->display($context);
-            // line 22
+            $this->loadTemplate("recipe/_recipe.html.twig", "main/index.html.twig", 31)->display($context);
+            // line 32
             echo "                ";
             ++$context['loop']['index0'];
             ++$context['loop']['index'];
@@ -140,11 +162,11 @@ class __TwigTemplate_6e78fa8948c50a5bb78a2479ead4a16065f44f31f04133074f27a8760b1
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['recipe'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 23
+        // line 33
         echo "        </div>
     </section>
     <section class=\"block-regime\" style=\"background-image: url(";
-        // line 25
+        // line 35
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/assets/img/select-program-background.jpg"), "html", null, true);
         echo ");  background-repeat: no-repeat; background-size: cover;\">
        <div class=\"container\">
@@ -152,7 +174,7 @@ class __TwigTemplate_6e78fa8948c50a5bb78a2479ead4a16065f44f31f04133074f27a8760b1
                <div class=\"col-6\">
                    <figure style=\"margin-left:-140px;\">
                        <img src=\"";
-        // line 30
+        // line 40
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/assets/img/select-program-image.png"), "html", null, true);
         echo "\"/>
                    </figure>
@@ -160,19 +182,19 @@ class __TwigTemplate_6e78fa8948c50a5bb78a2479ead4a16065f44f31f04133074f27a8760b1
                <div class=\"col-6 regime-link\">
                    <h2>Quel régime suivez-vous ?</h2>
                    <a href=\"";
-        // line 35
+        // line 45
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("paleo_recipe");
         echo "\" class=\"btn btn-success btn-block btn-outline-success\"> Paléovore </a>
                    <a href=\"";
-        // line 36
+        // line 46
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("vegetarien_recipe");
         echo "\" class=\"btn btn-success btn-block btn-outline-success\"> Végétarien </a>
                    <a href=\"";
-        // line 37
+        // line 47
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("vegetalien_recipe");
         echo "\" class=\"btn btn-success btn-block btn-outline-success\"> Végétalien </a>
                    <a href=\"";
-        // line 38
+        // line 48
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("vegan_recipe");
         echo "\" class=\"btn btn-success btn-block btn-outline-success\"> Végan </a>
                </div>
@@ -188,7 +210,7 @@ class __TwigTemplate_6e78fa8948c50a5bb78a2479ead4a16065f44f31f04133074f27a8760b1
                        CATÉGORIE : PALÉO
                    </div>
                    <img class=\"card-img-top\" src=\"";
-        // line 51
+        // line 61
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/assets/img/2873066.jpg"), "html", null, true);
         echo "\" alt=\"recette\">
                    <div class=\"card-body\">
@@ -207,7 +229,7 @@ class __TwigTemplate_6e78fa8948c50a5bb78a2479ead4a16065f44f31f04133074f27a8760b1
                        CATÉGORIE : PALÉO
                    </div>
                    <img class=\"card-img-top\" src=\"";
-        // line 67
+        // line 77
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/assets/img/2873066.jpg"), "html", null, true);
         echo "\" alt=\"recette\">
                    <div class=\"card-body\">
@@ -226,7 +248,7 @@ class __TwigTemplate_6e78fa8948c50a5bb78a2479ead4a16065f44f31f04133074f27a8760b1
                        CATÉGORIE : PALÉO
                    </div>
                    <img class=\"card-img-top\" src=\"";
-        // line 83
+        // line 93
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/assets/img/2873066.jpg"), "html", null, true);
         echo "\" alt=\"recette\">
                    <div class=\"card-body\">
@@ -241,17 +263,37 @@ class __TwigTemplate_6e78fa8948c50a5bb78a2479ead4a16065f44f31f04133074f27a8760b1
            </div>
         </div>
     </section>
-<section class=\"block-blog text-center container mt-5\" style=\"padding-top: 40px; padding-bottom: 40px;\">
+<section class=\"block-newsletter text-center container-fluid mt-5\" style=\"padding-top: 40px; padding-bottom: 40px; background: #f7f7f7\">
+    <img src=\"";
+        // line 107
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/assets/img/paper-plane.png"), "html", null, true);
+        echo "\" alt=\"\" height=\"200px;\">
+
+    </div>
     <h4>Restez informé(e)</h4>
-    <h5>Vous souhaitez recevoir les nouvelles recettes par mail ?</h5>
-    <div class=\"container\">
+    <h5 class=\"mt-2\">Vous souhaitez recevoir les nouvelles recettes par mail ?</h5>
+    <div class=\"container mt-5\" style=\"width:40rem;\">
         ";
-        // line 100
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 100, $this->source); })()), 'form_start');
+        // line 113
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 113, $this->source); })()), 'form_start');
         echo "
         ";
-        // line 101
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 101, $this->source); })()), 'form_end');
+        // line 114
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 114, $this->source); })()), "categorie", [], "any", false, false, false, 114), 'row');
+        echo "
+        ";
+        // line 115
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 115, $this->source); })()), "mail", [], "any", false, false, false, 115), 'row');
+        echo "
+        <div class=\"button-form text-center mb-5\">
+            <button class=\"btn btn-success btn-lg mt-4 btn-block\">";
+        // line 117
+        echo twig_escape_filter($this->env, (((isset($context["button_label"]) || array_key_exists("button_label", $context))) ? (_twig_default_filter((isset($context["button_label"]) || array_key_exists("button_label", $context) ? $context["button_label"] : (function () { throw new RuntimeError('Variable "button_label" does not exist.', 117, $this->source); })()), "M'Ajouter")) : ("M'Ajouter")), "html", null, true);
+        echo "</button>
+        </div>
+        ";
+        // line 119
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 119, $this->source); })()), 'form_end');
         echo "
     </div>
 </section>
@@ -276,7 +318,7 @@ class __TwigTemplate_6e78fa8948c50a5bb78a2479ead4a16065f44f31f04133074f27a8760b1
 
     public function getDebugInfo()
     {
-        return array (  254 => 101,  250 => 100,  230 => 83,  211 => 67,  192 => 51,  176 => 38,  172 => 37,  168 => 36,  164 => 35,  156 => 30,  148 => 25,  144 => 23,  130 => 22,  127 => 21,  110 => 20,  101 => 14,  94 => 10,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  296 => 119,  291 => 117,  286 => 115,  282 => 114,  278 => 113,  269 => 107,  252 => 93,  233 => 77,  214 => 61,  198 => 48,  194 => 47,  190 => 46,  186 => 45,  178 => 40,  170 => 35,  166 => 33,  152 => 32,  149 => 31,  132 => 30,  123 => 24,  115 => 20,  105 => 16,  98 => 11,  94 => 10,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -290,6 +332,16 @@ class __TwigTemplate_6e78fa8948c50a5bb78a2479ead4a16065f44f31f04133074f27a8760b1
         .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
         .example-wrapper code { ; padding: 2px 6px; }
     </style>
+    {% for message in app.flashes('success') %}
+        <div class=\"alert alert-success\" style=\"background: #86d9ab !important;\">
+            <div class=\"container\">
+                <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">
+                    <i class=\"fa fa-times\"></i>
+                </button>
+                <span><i class=\"fa fa-bell\"></i> {{ message }}</span>
+            </div>
+        </div>
+    {% endfor %}
     <div class=\"jumbotron position-relative overflow-hidden text-center bg-light\" style=\"background-image: url({{ asset ('/assets/img/2533.jpg') }});  background-repeat: no-repeat; background-size: cover;\">
         <div class=\"col-md-6 p-lg-6 mx-auto my-6\" style=\"padding-top:120px; padding-bottom:120px; line-height: 60px\">
             <h1 class=\"display-4 font-weight-normal\" >Que des recettes saines <span class=\"green\"> avec des ingrédients sains </span></h1>
@@ -376,11 +428,19 @@ class __TwigTemplate_6e78fa8948c50a5bb78a2479ead4a16065f44f31f04133074f27a8760b1
            </div>
         </div>
     </section>
-<section class=\"block-blog text-center container mt-5\" style=\"padding-top: 40px; padding-bottom: 40px;\">
+<section class=\"block-newsletter text-center container-fluid mt-5\" style=\"padding-top: 40px; padding-bottom: 40px; background: #f7f7f7\">
+    <img src=\"{{ asset ('/assets/img/paper-plane.png') }}\" alt=\"\" height=\"200px;\">
+
+    </div>
     <h4>Restez informé(e)</h4>
-    <h5>Vous souhaitez recevoir les nouvelles recettes par mail ?</h5>
-    <div class=\"container\">
+    <h5 class=\"mt-2\">Vous souhaitez recevoir les nouvelles recettes par mail ?</h5>
+    <div class=\"container mt-5\" style=\"width:40rem;\">
         {{ form_start(form) }}
+        {{ form_row(form.categorie) }}
+        {{ form_row(form.mail) }}
+        <div class=\"button-form text-center mb-5\">
+            <button class=\"btn btn-success btn-lg mt-4 btn-block\">{{ button_label|default(\"M'Ajouter\") }}</button>
+        </div>
         {{ form_end(form) }}
     </div>
 </section>
