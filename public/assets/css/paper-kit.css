@@ -3054,7 +3054,7 @@ License - nucleoapp.com/license/
     position: relative;
     right: 5px; }
   .navbar .navbar-nav .dropdown-menu {
-    border-radius: 12px;
+
     margin-top: 1px; }
   .navbar .navbar-nav .nav-item .btn i {
     color: #FFFFFF; }
@@ -3260,7 +3260,6 @@ License - nucleoapp.com/license/
 .dropdown-menu {
   background-color: #FFFFFF;
   border: 0 none;
-  border-radius: 12px;
   margin-top: 10px;
   padding: 0px; }
   .dropdown-menu .divider {
@@ -3276,8 +3275,9 @@ License - nucleoapp.com/license/
     padding: 30px 30px;
     text-align: center; }
   .dropdown-menu .dropdown-item {
-    color: #66615b;
-    font-size: 14px;
+    color: #9c9995;
+    font-size: 12px;
+    font-weight: 600;
     padding: 10px 45px 10px 15px;
     clear: both;
     white-space: nowrap;
@@ -3289,6 +3289,8 @@ License - nucleoapp.com/license/
     outline: 0 !important; }
   .btn-group.select .dropdown-menu {
     min-width: 100%; }
+
+  /**
   .dropdown-menu .dropdown-item:first-child {
     border-top-left-radius: 12px;
     border-top-right-radius: 12px; }
@@ -3308,6 +3310,7 @@ License - nucleoapp.com/license/
       border-top-right-radius: 0;
       border-bottom-left-radius: 12px;
       border-bottom-right-radius: 12px; }
+      **/
   .select .dropdown-menu .dropdown-item:first-child {
     border-radius: 0;
     border-bottom: 0 none; }

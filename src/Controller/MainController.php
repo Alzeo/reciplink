@@ -5,8 +5,10 @@ namespace App\Controller;
 use App\Entity\Newsletter;
 use App\Entity\Recipe;
 use App\Entity\RecipeSearch;
+use App\Entity\RecipeSearchPlat;
 use App\Entity\User;
 use App\Form\NewsType;
+use App\Form\RecipeSearchPlatType;
 use App\Form\RecipeSearchType;
 use App\Form\RegisterType;
 use App\Repository\RecipeRepository;
@@ -127,5 +129,101 @@ class MainController extends AbstractController
             'user' => $currentUser,
             'profile' => $profil
         ]);
+    }
+
+    /**
+     * @Route("/recettes/paleo", name="paleo_recipe")
+     */
+    public function paleoRecipes(Request $request, RecipeRepository $recipeRepository, PaginatorInterface $paginator): Response {
+        $user = $this->security->getUser();
+        $search = new RecipeSearchPlat();
+        $form = $this->createForm(RecipeSearchPlatType::class, $search);
+        $form->handleRequest($request);
+        $recipes = $paginator->paginate($recipeRepository->findAllPaleoVisibleQuery($search),
+            $request->query->getInt('page', 1),
+            12/*page number*/
+        );
+        $totalRecipe = count($recipes);
+        dump($totalRecipe);
+
+        return $this->render('main/paleo.html.twig', [
+            'controller_name' => 'MainController',
+            'user' => $user,
+            'recipes' => $recipes,
+            'form' => $form->createView()
+        ]);
+
+    }
+
+    /**
+     * @Route("/recettes/vegan", name="vegan_recipe")
+     */
+    public function veganRecipes(Request $request, RecipeRepository $recipeRepository, PaginatorInterface $paginator): Response {
+        $user = $this->security->getUser();
+        $search = new RecipeSearchPlat();
+        $form = $this->createForm(RecipeSearchPlatType::class, $search);
+        $form->handleRequest($request);
+        $recipes = $paginator->paginate($recipeRepository->findAllVeganVisibleQuery($search),
+            $request->query->getInt('page', 1),
+            12/*page number*/
+        );
+        $totalRecipe = count($recipes);
+        dump($totalRecipe);
+
+        return $this->render('main/vegan.html.twig', [
+            'controller_name' => 'MainController',
+            'user' => $user,
+            'recipes' => $recipes,
+            'form' => $form->createView()
+        ]);
+
+    }
+
+    /**
+     * @Route("/recettes/vegetarien", name="vegetarien_recipe")
+     */
+    public function vegetarienRecipes(Request $request, RecipeRepository $recipeRepository, PaginatorInterface $paginator): Response {
+        $user = $this->security->getUser();
+        $search = new RecipeSearchPlat();
+        $form = $this->createForm(RecipeSearchPlatType::class, $search);
+        $form->handleRequest($request);
+        $recipes = $paginator->paginate($recipeRepository->findAllVeganVisibleQuery($search),
+            $request->query->getInt('page', 1),
+            12/*page number*/
+        );
+        $totalRecipe = count($recipes);
+        dump($totalRecipe);
+
+        return $this->render('main/vegetarien.html.twig', [
+            'controller_name' => 'MainController',
+            'user' => $user,
+            'recipes' => $recipes,
+            'form' => $form->createView()
+        ]);
+
+    }
+
+    /**
+     * @Route("/recettes/vegetalien", name="vegetalien_recipe")
+     */
+    public function vegetalienRecipes(Request $request, RecipeRepository $recipeRepository, PaginatorInterface $paginator): Response {
+        $user = $this->security->getUser();
+        $search = new RecipeSearchPlat();
+        $form = $this->createForm(RecipeSearchPlatType::class, $search);
+        $form->handleRequest($request);
+        $recipes = $paginator->paginate($recipeRepository->findAllVeganVisibleQuery($search),
+            $request->query->getInt('page', 1),
+            12/*page number*/
+        );
+        $totalRecipe = count($recipes);
+        dump($totalRecipe);
+
+        return $this->render('main/vegetalien.html.twig', [
+            'controller_name' => 'MainController',
+            'user' => $user,
+            'recipes' => $recipes,
+            'form' => $form->createView()
+        ]);
+
     }
 }

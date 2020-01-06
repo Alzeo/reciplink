@@ -378,3 +378,47 @@ span.statut {
     color:grey;
     cursor: pointer;
 }
+
+.social-media {
+    margin-top:30px;
+}
+
+
+.btn-media {
+    border-radius:50px;
+    color:#fff !important;
+}
+
+.instagram {
+    background: #b231a7 !important;
+    border-color: #b231a7 !important;
+}
+
+.snapchat {
+    background: #f7e925 !important;
+    border-color: #f7e925 !important;
+}
+
+strong {
+    font-weight: 600;
+}
+
+.sub-label {
+    font-size:13px;
+}
+
+#regime .invisible {
+    display: none;
+}
+
+.dropdown-menu.dropdown-perso .dropdown-item:hover, .dropdown-menu.dropdown-info .dropdown-item:focus {
+    background-color: #8bdaae;
+}
+
+.dropdown-menu {
+    border-radius:0px !important;
+}
+
+.regime-link a {
+    color:#6bd098;
+}

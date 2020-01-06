@@ -27,13 +27,23 @@
     {% if current_path == 'informations' %}
     <div class="tab-pane fade show active">
 
-        <div class="container">
-            <p>Email : {{ user.email }}</p>
-            <p>Regime alimentaire : {{ user.regime }}</p>
-            <p>facebook : {{ user.facebook }}</p>
-            <p>Instagram : {{ user.instagram }}</p>
-            <p>Pinterest : {{ user.pinterest }}</p>
-            <p>Snapchat : {{ user.snapchat }}</p>
+        <div class="container mb-5 user-informations">
+            <div class="row">
+                <div class="col">
+                    <label class="mb-4">Informations de compte</label>
+                    <p><strong>Email</strong> : {{ user.email }}</p>
+                    <p><strong>Regime alimentaire</strong> : {{ user.regime }}</p>
+                </div>
+                <div class="col">
+                    <label>Réseaux sociaux
+                        <p class="sub-label mb-4">Vous pouvez ajouter vos profils sur les différents réseaux sociaux<br>
+                            pour inciter les utilisateurs à vous suivre.</p></label>
+                    <p><strong>facebook</strong> : {{ user.facebook }}</p>
+                    <p><strong>Instagram</strong> : {{ user.instagram }}</p>
+                    <p><strong>Pinterest</strong> : {{ user.pinterest }}</p>
+                    <p><strong>Snapchat</strong> : {{ user.snapchat }}</p>
+                </div>
+            </div>
         </div>
     </div>
     {% elseif current_path == 'saveRecipe' %}

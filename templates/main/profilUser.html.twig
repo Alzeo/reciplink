@@ -7,19 +7,19 @@
     <h1><i class="fa fa-user-circle"></i></h1>
     <div class="typography-line"><h2>La cuisine de {{ profile.username }}</h2></div>
     {% if profile.regime != null %} <h6 class="card-regime mt-3">Régime : {{ profile.regime }}</h6>{% else %}{% endif %}
-    <div class="container">
+    <div class="container social-media">
         <div class="row">
             <div class="col-3">
-                {% if profile.facebook != null %}<i class="fa fa-facebook-square"></i><a href="{{ profile.facebook }}" class="">Voir le profil</a>  </h6>{% else %}{% endif %}
+                {% if profile.facebook != null %}<a href="{{ profile.facebook }}" class="sharrre btn-round ml-2 btn btn-github-bg"><i class="fa fa-facebook-square"></i> Facebook</a>  </h6>{% else %}{% endif %}
             </div>
             <div class="col-3">
-                {% if profile.instagram != null %} {{ profile.instagram }}</h6>{% else %}{% endif %}
+                {% if profile.instagram != null %} <a href="{{ profile.instagram }}" class="sharrre btn-round ml-2 btn btn-github-bg"><i class="fa fa-instagram"></i> Instagram</a>{% else %}{% endif %}
             </div>
             <div class="col-3">
-                {% if profile.pinterest != null %} {{ profile.pinterest }}</h6>{% else %}{% endif %}
+                {% if profile.pinterest != null %} <a href="{{ profile.pinterest }}" class="sharrre btn-round ml-2 btn btn-github-bg"><i class="fa fa-pinterest-square"></i> Pinterest</a></h6>{% else %}{% endif %}
             </div>
             <div class="col-3">
-                {% if profile.snapchat != null %} {{ profile.snapchat }}</h6>{% else %}{% endif %}
+                {% if profile.snapchat != null %} <a href="{{ profile.snapchat }}" class="sharrre btn-round ml-2 btn btn-github-bg"><i class="fa fa-snapchat-square"></i> Snapchat</a></h6>{% else %}{% endif %}
             </div>
         </div>
     </div>

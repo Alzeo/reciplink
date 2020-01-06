@@ -157,12 +157,24 @@ class __TwigTemplate_6e78fa8948c50a5bb78a2479ead4a16065f44f31f04133074f27a8760b1
         echo "\"/>
                    </figure>
                </div>
-               <div class=\"col-6\">
+               <div class=\"col-6 regime-link\">
                    <h2>Quel régime suivez-vous ?</h2>
-                   <button class=\"btn btn-success btn-block btn-outline-success\"> Paléovore </button>
-                   <button class=\"btn btn-success btn-block btn-outline-success\"> Végétarien </button>
-                   <button class=\"btn btn-success btn-block btn-outline-success\"> Végétalien </button>
-                   <button class=\"btn btn-success btn-block btn-outline-success\"> Végan </button>
+                   <a href=\"";
+        // line 35
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("paleo_recipe");
+        echo "\" class=\"btn btn-success btn-block btn-outline-success\"> Paléovore </a>
+                   <a href=\"";
+        // line 36
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("vegetarien_recipe");
+        echo "\" class=\"btn btn-success btn-block btn-outline-success\"> Végétarien </a>
+                   <a href=\"";
+        // line 37
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("vegetalien_recipe");
+        echo "\" class=\"btn btn-success btn-block btn-outline-success\"> Végétalien </a>
+                   <a href=\"";
+        // line 38
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("vegan_recipe");
+        echo "\" class=\"btn btn-success btn-block btn-outline-success\"> Végan </a>
                </div>
            </div>
        </div>
@@ -264,7 +276,7 @@ class __TwigTemplate_6e78fa8948c50a5bb78a2479ead4a16065f44f31f04133074f27a8760b1
 
     public function getDebugInfo()
     {
-        return array (  242 => 101,  238 => 100,  218 => 83,  199 => 67,  180 => 51,  156 => 30,  148 => 25,  144 => 23,  130 => 22,  127 => 21,  110 => 20,  101 => 14,  94 => 10,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  254 => 101,  250 => 100,  230 => 83,  211 => 67,  192 => 51,  176 => 38,  172 => 37,  168 => 36,  164 => 35,  156 => 30,  148 => 25,  144 => 23,  130 => 22,  127 => 21,  110 => 20,  101 => 14,  94 => 10,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -301,12 +313,12 @@ class __TwigTemplate_6e78fa8948c50a5bb78a2479ead4a16065f44f31f04133074f27a8760b1
                        <img src=\"{{ asset('/assets/img/select-program-image.png') }}\"/>
                    </figure>
                </div>
-               <div class=\"col-6\">
+               <div class=\"col-6 regime-link\">
                    <h2>Quel régime suivez-vous ?</h2>
-                   <button class=\"btn btn-success btn-block btn-outline-success\"> Paléovore </button>
-                   <button class=\"btn btn-success btn-block btn-outline-success\"> Végétarien </button>
-                   <button class=\"btn btn-success btn-block btn-outline-success\"> Végétalien </button>
-                   <button class=\"btn btn-success btn-block btn-outline-success\"> Végan </button>
+                   <a href=\"{{path('paleo_recipe')}}\" class=\"btn btn-success btn-block btn-outline-success\"> Paléovore </a>
+                   <a href=\"{{path('vegetarien_recipe')}}\" class=\"btn btn-success btn-block btn-outline-success\"> Végétarien </a>
+                   <a href=\"{{path('vegetalien_recipe')}}\" class=\"btn btn-success btn-block btn-outline-success\"> Végétalien </a>
+                   <a href=\"{{path('vegan_recipe')}}\" class=\"btn btn-success btn-block btn-outline-success\"> Végan </a>
                </div>
            </div>
        </div>

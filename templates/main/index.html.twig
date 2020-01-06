@@ -30,12 +30,12 @@
                        <img src="{{ asset('/assets/img/select-program-image.png') }}"/>
                    </figure>
                </div>
-               <div class="col-6">
+               <div class="col-6 regime-link">
                    <h2>Quel régime suivez-vous ?</h2>
-                   <button class="btn btn-success btn-block btn-outline-success"> Paléovore </button>
-                   <button class="btn btn-success btn-block btn-outline-success"> Végétarien </button>
-                   <button class="btn btn-success btn-block btn-outline-success"> Végétalien </button>
-                   <button class="btn btn-success btn-block btn-outline-success"> Végan </button>
+                   <a href="{{path('paleo_recipe')}}" class="btn btn-success btn-block btn-outline-success"> Paléovore </a>
+                   <a href="{{path('vegetarien_recipe')}}" class="btn btn-success btn-block btn-outline-success"> Végétarien </a>
+                   <a href="{{path('vegetalien_recipe')}}" class="btn btn-success btn-block btn-outline-success"> Végétalien </a>
+                   <a href="{{path('vegan_recipe')}}" class="btn btn-success btn-block btn-outline-success"> Végan </a>
                </div>
            </div>
        </div>

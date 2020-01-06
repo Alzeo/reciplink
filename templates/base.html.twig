@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>{% block title %}Welcome!{% endblock %}</title>
+    <title>RecipeLink - {% block title %}{% endblock %}</title>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.10/css/select2.min.css" rel="stylesheet" />
@@ -48,8 +48,16 @@
                 <li class="nav-item">
                     <a href="{{ path('home') }}" class="nav-link"><i class="fa fa-home" aria-hidden="true"></i> Accueil</a>
                 </li>
-                <li class="nav-item">
-                    <a href="{{ path('discover') }}" class="nav-link"><i class="fa fa-cutlery" aria-hidden="true"></i> Découvrir</a>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-cutlery" aria-hidden="true"></i> Recettes</a>
+                    <div class="dropdown-perso dropdown-menu" role="menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{{path('paleo_recipe')}}">Paléo</a>
+                        <a class="dropdown-item" href="{{path('vegetarien_recipe')}}">Végétarien</a>
+                        <a class="dropdown-item" href="{{path('vegetalien_recipe')}}">Végétalien</a>
+                        <a class="dropdown-item" href="{{path('vegan_recipe')}}">Végan</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="{{path('discover')}}">Découvrir</a>
+                    </div>
                 </li>
                 <li class="nav-item">
                     <a href="{{ path('recipe_new') }}" class="nav-link"><i class="fa fa-heart" aria-hidden="true"></i> Partager une recette</a>

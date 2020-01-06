@@ -4,6 +4,7 @@ namespace App\Repository;
 
 use App\Entity\Recipe;
 use App\Entity\RecipeSearch;
+use App\Entity\RecipeSearchPlat;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Common\Persistence\ManagerRegistry;
 use Doctrine\ORM\Query;
@@ -54,9 +55,114 @@ class RecipeRepository extends ServiceEntityRepository
 
     }
 
+    public function findAllPaleoVisibleQuery(RecipeSearchPlat $search): Query
+    {
+
+        $query = $this->findPaleoVisibleQuery();
+
+        if($search->getType()){
+            $query = $query->andwhere('p.type = :type')
+                ->setParameter('type', $search->getType());
+        }
+
+        return $query->getQuery();
+
+    }
+
+    public function findAllVeganVisibleQuery(RecipeSearchPlat $search): Query
+    {
+
+        $query = $this->findVeganVisibleQuery();
+
+        if($search->getType()){
+            $query = $query->andwhere('p.type = :type')
+                ->setParameter('type', $search->getType());
+        }
+
+        return $query->getQuery();
+
+    }
+
+    public function findAllVegetarienVisibleQuery(RecipeSearchPlat $search): Query
+    {
+
+        $query = $this->findVegatarienVisibleQuery();
+
+        if($search->getType()){
+            $query = $query->andwhere('p.type = :type')
+                ->setParameter('type', $search->getType());
+        }
+
+        return $query->getQuery();
+
+    }
+
+    public function findAllVegetalienVisibleQuery(RecipeSearchPlat $search): Query
+    {
+
+        $query = $this->findVegatalienVisibleQuery();
+
+        if($search->getType()){
+            $query = $query->andwhere('p.type = :type')
+                ->setParameter('type', $search->getType());
+        }
+
+        return $query->getQuery();
+
+    }
+
+    public function findAllGlutenVisibleQuery(RecipeSearchPlat $search): Query
+    {
+
+        $query = $this->findGlutenVisibleQuery();
+
+        if($search->getType()){
+            $query = $query->andwhere('p.type = :type')
+                ->setParameter('type', $search->getType());
+        }
+
+        return $query->getQuery();
+
+    }
+
     private function findVisibleQuery(): QueryBuilder {
         return $this->createQueryBuilder('p')
             ->where('p.publish = true');
+    }
+
+    private function findPaleoVisibleQuery(): QueryBuilder {
+        return $this->createQueryBuilder('p')
+            ->andWhere('p.publish = true')
+            ->andWhere('p.regime = :paleo')
+            ->setParameter('paleo', 'Paléo');
+    }
+
+    private function findVeganVisibleQuery(): QueryBuilder {
+        return $this->createQueryBuilder('p')
+            ->andWhere('p.publish = true')
+            ->andWhere('p.regime = :vegan')
+            ->setParameter('vegan', 'Végan');
+    }
+
+    private function findVegatarienVisibleQuery(): QueryBuilder {
+        return $this->createQueryBuilder('p')
+            ->andWhere('p.publish = true')
+            ->andWhere('p.regime = :vegetarien')
+            ->setParameter('vegetarien', 'Végétarien');
+    }
+
+    private function findVegatalienVisibleQuery(): QueryBuilder {
+        return $this->createQueryBuilder('p')
+            ->andWhere('p.publish = true')
+            ->andWhere('p.regime = :vegetalien')
+            ->setParameter('vegetalien', 'Végétalien');
+    }
+
+    private function findGlutenVisibleQuery(): QueryBuilder {
+        return $this->createQueryBuilder('p')
+            ->andWhere('p.publish = true')
+            ->andWhere('p.regime = :gluten')
+            ->setParameter('gluten', 'Sans gluten');
     }
 
     public function findByLikes($value)
