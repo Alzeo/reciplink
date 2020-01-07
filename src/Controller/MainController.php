@@ -188,7 +188,7 @@ class MainController extends AbstractController
         $search = new RecipeSearchPlat();
         $form = $this->createForm(RecipeSearchPlatType::class, $search);
         $form->handleRequest($request);
-        $recipes = $paginator->paginate($recipeRepository->findAllVeganVisibleQuery($search),
+        $recipes = $paginator->paginate($recipeRepository->findAllVegetarienVisibleQuery($search),
             $request->query->getInt('page', 1),
             12/*page number*/
         );

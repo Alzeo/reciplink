@@ -44,7 +44,7 @@ class __TwigTemplate_436d4f4049bf94e785fa900b6e0347f7bbe79bd4179e6b4d7197076b5b5
     <div class=\"card\">
         <a href=\"";
         // line 3
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("recipe_show", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["recipe"]) || array_key_exists("recipe", $context) ? $context["recipe"] : (function () { throw new RuntimeError('Variable "recipe" does not exist.', 3, $this->source); })()), "id", [], "any", false, false, false, 3)]), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("recipe_show", ["slug" => twig_get_attribute($this->env, $this->source, (isset($context["recipe"]) || array_key_exists("recipe", $context) ? $context["recipe"] : (function () { throw new RuntimeError('Variable "recipe" does not exist.', 3, $this->source); })()), "slug", [], "any", false, false, false, 3)]), "html", null, true);
         echo "\"><img class=\"card-img-top\" src=\"";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/recipes/" . twig_get_attribute($this->env, $this->source, (isset($context["recipe"]) || array_key_exists("recipe", $context) ? $context["recipe"] : (function () { throw new RuntimeError('Variable "recipe" does not exist.', 3, $this->source); })()), "picture", [], "any", false, false, false, 3))), "html", null, true);
         echo "\" alt=\"recette ";
@@ -90,7 +90,7 @@ class __TwigTemplate_436d4f4049bf94e785fa900b6e0347f7bbe79bd4179e6b4d7197076b5b5
         echo "            </p>
             <a href=\"";
         // line 17
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("recipe_show", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["recipe"]) || array_key_exists("recipe", $context) ? $context["recipe"] : (function () { throw new RuntimeError('Variable "recipe" does not exist.', 17, $this->source); })()), "id", [], "any", false, false, false, 17)]), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("recipe_show", ["slug" => twig_get_attribute($this->env, $this->source, (isset($context["recipe"]) || array_key_exists("recipe", $context) ? $context["recipe"] : (function () { throw new RuntimeError('Variable "recipe" does not exist.', 17, $this->source); })()), "slug", [], "any", false, false, false, 17)]), "html", null, true);
         echo "\" class=\"btn btn-success\">Voir la recette</a>
         </div>
     </div>
@@ -123,7 +123,7 @@ class __TwigTemplate_436d4f4049bf94e785fa900b6e0347f7bbe79bd4179e6b4d7197076b5b5
     {
         return new Source("<div class=\"col-xs-12 col-md-6 col-lg-4\">
     <div class=\"card\">
-        <a href=\"{{ path('recipe_show', {'id': recipe.id}) }}\"><img class=\"card-img-top\" src=\"{{ asset('uploads/recipes/' ~ recipe.picture) }}\" alt=\"recette {{ recipe.name }}\"> </a>
+        <a href=\"{{ path('recipe_show', {'slug': recipe.slug}) }}\"><img class=\"card-img-top\" src=\"{{ asset('uploads/recipes/' ~ recipe.picture) }}\" alt=\"recette {{ recipe.name }}\"> </a>
         <div class=\"top-right\"><label class=\"label label-danger\">{{ recipe.type }}</label></div>
         <div class=\"top-left\"><span class=\"like label-warning\"> <i class=\"fa fa-heart\" aria-hidden=\"true\"></i> {{ recipe.likes|length }}</span></div>
         <div class=\"card-body\">
@@ -137,7 +137,7 @@ class __TwigTemplate_436d4f4049bf94e785fa900b6e0347f7bbe79bd4179e6b4d7197076b5b5
                     </span>
                 {% endfor %}
             </p>
-            <a href=\"{{ path ('recipe_show', {'id': recipe.id })}}\" class=\"btn btn-success\">Voir la recette</a>
+            <a href=\"{{ path ('recipe_show', {'slug': recipe.slug })}}\" class=\"btn btn-success\">Voir la recette</a>
         </div>
     </div>
 </div>

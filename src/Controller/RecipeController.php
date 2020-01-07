@@ -122,7 +122,7 @@ class RecipeController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="recipe_show", methods={"GET","POST"})
+     * @Route("/{slug}", name="recipe_show", methods={"GET","POST"})
      * @param Recipe $recipe
      * @param PaginatorInterface $paginator
      * @param RecipeRepository $recipeRepository

@@ -18,7 +18,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/user")
+ * @Route("/compte")
  */
 class UserController extends AbstractController
 {
@@ -33,7 +33,7 @@ class UserController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="user_show", methods={"GET"})
+     * @Route("/{username}", name="user_show", methods={"GET"})
      * @param User $user
      * @param RecipeRepository $recipeRepository
      * @param PaginatorInterface $paginator
@@ -63,7 +63,7 @@ class UserController extends AbstractController
 
 
     /**
-     * @Route("/{id}/recettes-enregistree", name="user_save_recipe", methods={"GET"})
+     * @Route("/{username}/recettes-enregistree", name="user_save_recipe", methods={"GET"})
      * @param User $user
      * @param RecipeRepository $recipeRepository
      * @param PaginatorInterface $paginator
@@ -86,7 +86,7 @@ class UserController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/mes-recettes", name="user_my_recipes", methods={"GET"})
+     * @Route("/{username}/mes-recettes", name="user_my_recipes", methods={"GET"})
      * @param User $user
      * @param RecipeRepository $recipeRepository
      * @param PaginatorInterface $paginator

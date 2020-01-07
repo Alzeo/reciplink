@@ -111,7 +111,7 @@ class __TwigTemplate_fd65ebb6919330cfe56efda597ecd07d4dfba6249f1f682b186eb6a9af3
         if ((twig_get_attribute($this->env, $this->source, (isset($context["profile"]) || array_key_exists("profile", $context) ? $context["profile"] : (function () { throw new RuntimeError('Variable "profile" does not exist.', 13, $this->source); })()), "facebook", [], "any", false, false, false, 13) != null)) {
             echo "<a href=\"";
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["profile"]) || array_key_exists("profile", $context) ? $context["profile"] : (function () { throw new RuntimeError('Variable "profile" does not exist.', 13, $this->source); })()), "facebook", [], "any", false, false, false, 13), "html", null, true);
-            echo "\" class=\"sharrre btn-round ml-2 btn btn-github-bg\"><i class=\"fa fa-facebook-square\"></i> Facebook</a>  </h6>";
+            echo "\" class=\"facebook sharrre btn-round ml-2 btn btn-github-bg\"><i class=\"fa fa-facebook-square\"></i> Facebook</a>  </h6>";
         } else {
         }
         // line 14
@@ -122,7 +122,7 @@ class __TwigTemplate_fd65ebb6919330cfe56efda597ecd07d4dfba6249f1f682b186eb6a9af3
         if ((twig_get_attribute($this->env, $this->source, (isset($context["profile"]) || array_key_exists("profile", $context) ? $context["profile"] : (function () { throw new RuntimeError('Variable "profile" does not exist.', 16, $this->source); })()), "instagram", [], "any", false, false, false, 16) != null)) {
             echo " <a href=\"";
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["profile"]) || array_key_exists("profile", $context) ? $context["profile"] : (function () { throw new RuntimeError('Variable "profile" does not exist.', 16, $this->source); })()), "instagram", [], "any", false, false, false, 16), "html", null, true);
-            echo "\" class=\"sharrre btn-round ml-2 btn btn-github-bg\"><i class=\"fa fa-instagram\"></i> Instagram</a>";
+            echo "\" class=\"instagram sharrre btn-round ml-2 btn btn-github-bg\"><i class=\"fa fa-instagram\"></i> Instagram</a>";
         } else {
         }
         // line 17
@@ -133,7 +133,7 @@ class __TwigTemplate_fd65ebb6919330cfe56efda597ecd07d4dfba6249f1f682b186eb6a9af3
         if ((twig_get_attribute($this->env, $this->source, (isset($context["profile"]) || array_key_exists("profile", $context) ? $context["profile"] : (function () { throw new RuntimeError('Variable "profile" does not exist.', 19, $this->source); })()), "pinterest", [], "any", false, false, false, 19) != null)) {
             echo " <a href=\"";
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["profile"]) || array_key_exists("profile", $context) ? $context["profile"] : (function () { throw new RuntimeError('Variable "profile" does not exist.', 19, $this->source); })()), "pinterest", [], "any", false, false, false, 19), "html", null, true);
-            echo "\" class=\"sharrre btn-round ml-2 btn btn-github-bg\"><i class=\"fa fa-pinterest-square\"></i> Pinterest</a></h6>";
+            echo "\" class=\"pinterest sharrre btn-round ml-2 btn btn-github-bg\"><i class=\"fa fa-pinterest-square\"></i> Pinterest</a></h6>";
         } else {
         }
         // line 20
@@ -144,7 +144,7 @@ class __TwigTemplate_fd65ebb6919330cfe56efda597ecd07d4dfba6249f1f682b186eb6a9af3
         if ((twig_get_attribute($this->env, $this->source, (isset($context["profile"]) || array_key_exists("profile", $context) ? $context["profile"] : (function () { throw new RuntimeError('Variable "profile" does not exist.', 22, $this->source); })()), "snapchat", [], "any", false, false, false, 22) != null)) {
             echo " <a href=\"";
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["profile"]) || array_key_exists("profile", $context) ? $context["profile"] : (function () { throw new RuntimeError('Variable "profile" does not exist.', 22, $this->source); })()), "snapchat", [], "any", false, false, false, 22), "html", null, true);
-            echo "\" class=\"sharrre btn-round ml-2 btn btn-github-bg\"><i class=\"fa fa-snapchat-square\"></i> Snapchat</a></h6>";
+            echo "\" class=\"snapchat sharrre btn-round ml-2 btn btn-github-bg\"><i class=\"fa fa-snapchat-square\"></i> Snapchat</a></h6>";
         } else {
         }
         // line 23
@@ -165,7 +165,7 @@ class __TwigTemplate_fd65ebb6919330cfe56efda597ecd07d4dfba6249f1f682b186eb6a9af3
                         <div class=\"card\">
                             <a href=\"";
             // line 33
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("recipe_show", ["id" => twig_get_attribute($this->env, $this->source, $context["recipe"], "id", [], "any", false, false, false, 33)]), "html", null, true);
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("recipe_show", ["slug" => twig_get_attribute($this->env, $this->source, $context["recipe"], "slug", [], "any", false, false, false, 33)]), "html", null, true);
             echo "\"><img class=\"card-img-top\" src=\"";
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/recipes/" . twig_get_attribute($this->env, $this->source, $context["recipe"], "picture", [], "any", false, false, false, 33))), "html", null, true);
             echo "\" alt=\"recette ";
@@ -211,7 +211,7 @@ class __TwigTemplate_fd65ebb6919330cfe56efda597ecd07d4dfba6249f1f682b186eb6a9af3
             echo "                                </p>
                                 <a href=\"";
             // line 47
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("recipe_show", ["id" => twig_get_attribute($this->env, $this->source, $context["recipe"], "id", [], "any", false, false, false, 47)]), "html", null, true);
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("recipe_show", ["slug" => twig_get_attribute($this->env, $this->source, $context["recipe"], "slug", [], "any", false, false, false, 47)]), "html", null, true);
             echo "\" class=\"btn btn-success\">Voir la recette</a>
                             </div>
                         </div>
@@ -270,16 +270,16 @@ class __TwigTemplate_fd65ebb6919330cfe56efda597ecd07d4dfba6249f1f682b186eb6a9af3
     <div class=\"container social-media\">
         <div class=\"row\">
             <div class=\"col-3\">
-                {% if profile.facebook != null %}<a href=\"{{ profile.facebook }}\" class=\"sharrre btn-round ml-2 btn btn-github-bg\"><i class=\"fa fa-facebook-square\"></i> Facebook</a>  </h6>{% else %}{% endif %}
+                {% if profile.facebook != null %}<a href=\"{{ profile.facebook }}\" class=\"facebook sharrre btn-round ml-2 btn btn-github-bg\"><i class=\"fa fa-facebook-square\"></i> Facebook</a>  </h6>{% else %}{% endif %}
             </div>
             <div class=\"col-3\">
-                {% if profile.instagram != null %} <a href=\"{{ profile.instagram }}\" class=\"sharrre btn-round ml-2 btn btn-github-bg\"><i class=\"fa fa-instagram\"></i> Instagram</a>{% else %}{% endif %}
+                {% if profile.instagram != null %} <a href=\"{{ profile.instagram }}\" class=\"instagram sharrre btn-round ml-2 btn btn-github-bg\"><i class=\"fa fa-instagram\"></i> Instagram</a>{% else %}{% endif %}
             </div>
             <div class=\"col-3\">
-                {% if profile.pinterest != null %} <a href=\"{{ profile.pinterest }}\" class=\"sharrre btn-round ml-2 btn btn-github-bg\"><i class=\"fa fa-pinterest-square\"></i> Pinterest</a></h6>{% else %}{% endif %}
+                {% if profile.pinterest != null %} <a href=\"{{ profile.pinterest }}\" class=\"pinterest sharrre btn-round ml-2 btn btn-github-bg\"><i class=\"fa fa-pinterest-square\"></i> Pinterest</a></h6>{% else %}{% endif %}
             </div>
             <div class=\"col-3\">
-                {% if profile.snapchat != null %} <a href=\"{{ profile.snapchat }}\" class=\"sharrre btn-round ml-2 btn btn-github-bg\"><i class=\"fa fa-snapchat-square\"></i> Snapchat</a></h6>{% else %}{% endif %}
+                {% if profile.snapchat != null %} <a href=\"{{ profile.snapchat }}\" class=\"snapchat sharrre btn-round ml-2 btn btn-github-bg\"><i class=\"fa fa-snapchat-square\"></i> Snapchat</a></h6>{% else %}{% endif %}
             </div>
         </div>
     </div>
@@ -290,7 +290,7 @@ class __TwigTemplate_fd65ebb6919330cfe56efda597ecd07d4dfba6249f1f682b186eb6a9af3
                 {% for recipe in profilRecipes %}
                     <div class=\"col-xs-12 col-md-6 col-lg-4\">
                         <div class=\"card\">
-                            <a href=\"{{ path('recipe_show', {'id': recipe.id}) }}\"><img class=\"card-img-top\" src=\"{{ asset('uploads/recipes/' ~ recipe.picture) }}\" alt=\"recette {{ recipe.name }}\"> </a>
+                            <a href=\"{{ path('recipe_show', {'slug': recipe.slug}) }}\"><img class=\"card-img-top\" src=\"{{ asset('uploads/recipes/' ~ recipe.picture) }}\" alt=\"recette {{ recipe.name }}\"> </a>
                             <div class=\"top-right\"><label class=\"label label-danger\">{{ recipe.type }}</label></div>
                             <div class=\"top-left\"><span class=\"like label-warning\"> <i class=\"fa fa-heart\" aria-hidden=\"true\"></i> {{ recipe.likes|length }}</span></div>
                             <div class=\"card-body\">
@@ -304,7 +304,7 @@ class __TwigTemplate_fd65ebb6919330cfe56efda597ecd07d4dfba6249f1f682b186eb6a9af3
                                             </span>
                                     {% endfor %}
                                 </p>
-                                <a href=\"{{ path ('recipe_show', {'id': recipe.id })}}\" class=\"btn btn-success\">Voir la recette</a>
+                                <a href=\"{{ path ('recipe_show', {'slug': recipe.slug })}}\" class=\"btn btn-success\">Voir la recette</a>
                             </div>
                         </div>
                     </div>

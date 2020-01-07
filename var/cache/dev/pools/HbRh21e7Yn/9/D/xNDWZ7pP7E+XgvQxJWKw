@@ -6,6 +6,7 @@ return $getExpiry ? PHP_INT_MAX : Hydrator::hydrate(
     $o = [
         clone (($p = &Registry::$prototypes)['Doctrine\\ORM\\Mapping\\Entity'] ?? Registry::p('Doctrine\\ORM\\Mapping\\Entity')),
         clone ($p['Vich\\UploaderBundle\\Mapping\\Annotation\\Uploadable'] ?? Registry::p('Vich\\UploaderBundle\\Mapping\\Annotation\\Uploadable')),
+        clone ($p['Doctrine\\ORM\\Mapping\\HasLifecycleCallbacks'] ?? Registry::p('Doctrine\\ORM\\Mapping\\HasLifecycleCallbacks')),
     ],
     null,
     [
@@ -18,6 +19,7 @@ return $getExpiry ? PHP_INT_MAX : Hydrator::hydrate(
     [
         $o[0],
         $o[1],
+        $o[2],
     ],
     []
 );

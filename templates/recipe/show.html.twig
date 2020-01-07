@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Recipe{% endblock %}
+{% block title %}{{recipe.name}} | recette {{ recipe.regime }}{% endblock %}
 {% block meta %}
     <meta property="og:url"           content="http://127.0.0.1:8000/recette/{{ recipe.id }}" />
     <meta property="og:type"          content="website" />

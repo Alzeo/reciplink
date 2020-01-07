@@ -158,12 +158,6 @@ class RecipeRepository extends ServiceEntityRepository
             ->setParameter('vegetalien', 'Végétalien');
     }
 
-    private function findGlutenVisibleQuery(): QueryBuilder {
-        return $this->createQueryBuilder('p')
-            ->andWhere('p.publish = true')
-            ->andWhere('p.regime = :gluten')
-            ->setParameter('gluten', 'Sans gluten');
-    }
 
     public function findByLikes($value)
     {

@@ -157,7 +157,7 @@ class __TwigTemplate_6fa38e5a2e106cfea1e585f1e4c51458daff0a752968ecaa1ed2da3b182
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("IS_AUTHENTICATED_FULLY")) {
             // line 69
             echo "                    <li class=\"nav-item\"><a href=\"";
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("user_show", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 69, $this->source); })()), "id", [], "any", false, false, false, 69)]), "html", null, true);
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("user_show", ["username" => twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 69, $this->source); })()), "username", [], "any", false, false, false, 69)]), "html", null, true);
             echo "\" class=\"nav-link\"><i class=\"fa fa-user\" aria-hidden=\"true\"></i>";
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 69, $this->source); })()), "username", [], "any", false, false, false, 69), "html", null, true);
             echo "</a></li>
@@ -277,14 +277,12 @@ class __TwigTemplate_6fa38e5a2e106cfea1e585f1e4c51458daff0a752968ecaa1ed2da3b182
         \$('[data-toggle=\"popover\"]').popover()
     })
 </script>
-<script async defer crossorigin=\"anonymous\" src=\"https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v5.0\"></script>
-<script async src=\"https://platform.twitter.com/widgets.js\" charset=\"utf-8\">
-</script>
+<script type=\"text/javascript\" src=\"https://platform-api.sharethis.com/js/sharethis.js#property=5e13b83fdd527900136b177a&product=inline-share-buttons\" async=\"async\"></script>
 
 ";
-        // line 181
+        // line 179
         $this->displayBlock('javascript', $context, $blocks);
-        // line 183
+        // line 181
         echo "</body>
 </html>
 
@@ -372,7 +370,7 @@ class __TwigTemplate_6fa38e5a2e106cfea1e585f1e4c51458daff0a752968ecaa1ed2da3b182
 
     }
 
-    // line 181
+    // line 179
     public function block_javascript($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -402,7 +400,7 @@ class __TwigTemplate_6fa38e5a2e106cfea1e585f1e4c51458daff0a752968ecaa1ed2da3b182
 
     public function getDebugInfo()
     {
-        return array (  376 => 181,  358 => 78,  348 => 19,  338 => 18,  319 => 17,  301 => 5,  288 => 183,  286 => 181,  183 => 80,  181 => 78,  175 => 74,  170 => 72,  167 => 71,  159 => 69,  157 => 68,  150 => 64,  143 => 60,  138 => 58,  134 => 57,  130 => 56,  126 => 55,  118 => 50,  106 => 41,  83 => 20,  80 => 18,  78 => 17,  72 => 14,  68 => 13,  64 => 12,  54 => 5,  48 => 1,);
+        return array (  374 => 179,  356 => 78,  346 => 19,  336 => 18,  317 => 17,  299 => 5,  286 => 181,  284 => 179,  183 => 80,  181 => 78,  175 => 74,  170 => 72,  167 => 71,  159 => 69,  157 => 68,  150 => 64,  143 => 60,  138 => 58,  134 => 57,  130 => 56,  126 => 55,  118 => 50,  106 => 41,  83 => 20,  80 => 18,  78 => 17,  72 => 14,  68 => 13,  64 => 12,  54 => 5,  48 => 1,);
     }
 
     public function getSourceContext()
@@ -475,7 +473,7 @@ class __TwigTemplate_6fa38e5a2e106cfea1e585f1e4c51458daff0a752968ecaa1ed2da3b182
             </ul>
             <ul class=\"ml-auto navbar-nav pull-right\">
                 {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-                    <li class=\"nav-item\"><a href=\"{{ path('user_show', {'id': user.id}) }}\" class=\"nav-link\"><i class=\"fa fa-user\" aria-hidden=\"true\"></i>{{ user.username}}</a></li>
+                    <li class=\"nav-item\"><a href=\"{{ path('user_show', {'username': user.username}) }}\" class=\"nav-link\"><i class=\"fa fa-user\" aria-hidden=\"true\"></i>{{ user.username}}</a></li>
                 {% else %}
 
                    <a href=\"{{ path('app_login') }}\"type=\"button\" class=\"btn-round mr-1 btn btn-outline-success\"><i class=\"fa fa-sign-in\" aria-hidden=\"true\"></i> Se connecter</a>
@@ -583,9 +581,7 @@ class __TwigTemplate_6fa38e5a2e106cfea1e585f1e4c51458daff0a752968ecaa1ed2da3b182
         \$('[data-toggle=\"popover\"]').popover()
     })
 </script>
-<script async defer crossorigin=\"anonymous\" src=\"https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v5.0\"></script>
-<script async src=\"https://platform.twitter.com/widgets.js\" charset=\"utf-8\">
-</script>
+<script type=\"text/javascript\" src=\"https://platform-api.sharethis.com/js/sharethis.js#property=5e13b83fdd527900136b177a&product=inline-share-buttons\" async=\"async\"></script>
 
 {% block javascript %}
 {% endblock %}

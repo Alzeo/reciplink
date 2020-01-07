@@ -65,7 +65,7 @@ class __TwigTemplate_13a3097e41d5ff08b717e8909bafb6ff145926cdd3dd2768546090b29f9
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo "User";
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 3, $this->source); })()), "user", [], "any", false, false, false, 3), "username", [], "any", false, false, false, 3), "html", null, true);
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -110,19 +110,19 @@ class __TwigTemplate_13a3097e41d5ff08b717e8909bafb6ff145926cdd3dd2768546090b29f9
             <li class=\"nav-item\">
                 <a href=\"";
         // line 15
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("user_show", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 15, $this->source); })()), "id", [], "any", false, false, false, 15)]), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("user_show", ["username" => twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 15, $this->source); })()), "username", [], "any", false, false, false, 15)]), "html", null, true);
         echo "\" class=\"nav-link\">Mes informations</a>
             </li>
             <li class=\"nav-item\">
                 <a href=\"";
         // line 18
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("user_save_recipe", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 18, $this->source); })()), "id", [], "any", false, false, false, 18)]), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("user_save_recipe", ["username" => twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 18, $this->source); })()), "username", [], "any", false, false, false, 18)]), "html", null, true);
         echo "\" class=\"nav-link\">Recettes enregistrés</a>
             </li>
             <li class=\"nav-item\">
                 <a href=\"";
         // line 21
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("user_my_recipes", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 21, $this->source); })()), "id", [], "any", false, false, false, 21)]), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("user_my_recipes", ["username" => twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 21, $this->source); })()), "username", [], "any", false, false, false, 21)]), "html", null, true);
         echo "\" class=\"nav-link\">Mes recettes</a>
             </li>
         </ul>
@@ -189,7 +189,7 @@ class __TwigTemplate_13a3097e41d5ff08b717e8909bafb6ff145926cdd3dd2768546090b29f9
                             <div class=\"card\">
                                 <a href=\"";
                 // line 55
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("recipe_show", ["id" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["saveRecipe"], "recipe", [], "any", false, false, false, 55), "id", [], "any", false, false, false, 55)]), "html", null, true);
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("recipe_show", ["slug" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["saveRecipe"], "recipe", [], "any", false, false, false, 55), "slug", [], "any", false, false, false, 55)]), "html", null, true);
                 echo "\"><img class=\"card-img-top\" src=\"";
                 echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/recipes/" . twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["saveRecipe"], "recipe", [], "any", false, false, false, 55), "picture", [], "any", false, false, false, 55))), "html", null, true);
                 echo "\" alt=\"recette ";
@@ -235,7 +235,7 @@ class __TwigTemplate_13a3097e41d5ff08b717e8909bafb6ff145926cdd3dd2768546090b29f9
                 echo "                                    </p>
                                     <a href=\"";
                 // line 69
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("recipe_show", ["id" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["saveRecipe"], "recipe", [], "any", false, false, false, 69), "id", [], "any", false, false, false, 69)]), "html", null, true);
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("recipe_show", ["slug" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["saveRecipe"], "recipe", [], "any", false, false, false, 69), "slug", [], "any", false, false, false, 69)]), "html", null, true);
                 echo "\" class=\"btn btn-success\">Voir la recette</a>
                                 </div>
                             </div>
@@ -355,7 +355,7 @@ class __TwigTemplate_13a3097e41d5ff08b717e8909bafb6ff145926cdd3dd2768546090b29f9
     {
         return new Source("{% extends 'base.html.twig' %}
 
-{% block title %}User{% endblock %}
+{% block title %}{{ app.user.username }}{% endblock %}
 
 {% block body %}
     <div class=\"jumbotron text-center\" style=\"background-image: url({{ asset ('/assets/img/background-user.jpg') }});  background-repeat: no-repeat; background-size:cover; background-position: center\">
@@ -367,13 +367,13 @@ class __TwigTemplate_13a3097e41d5ff08b717e8909bafb6ff145926cdd3dd2768546090b29f9
     <div class=\"nav-tabs-wrapper\">
         <ul class=\"nav nav-tabs\" id=\"pills-tab\" role=\"tablist\">
             <li class=\"nav-item\">
-                <a href=\"{{ path('user_show', {'id': user.id}) }}\" class=\"nav-link\">Mes informations</a>
+                <a href=\"{{ path('user_show', {'username': user.username}) }}\" class=\"nav-link\">Mes informations</a>
             </li>
             <li class=\"nav-item\">
-                <a href=\"{{ path('user_save_recipe', {'id': user.id}) }}\" class=\"nav-link\">Recettes enregistrés</a>
+                <a href=\"{{ path('user_save_recipe', {'username': user.username}) }}\" class=\"nav-link\">Recettes enregistrés</a>
             </li>
             <li class=\"nav-item\">
-                <a href=\"{{ path('user_my_recipes', {'id': user.id}) }}\" class=\"nav-link\">Mes recettes</a>
+                <a href=\"{{ path('user_my_recipes', {'username': user.username}) }}\" class=\"nav-link\">Mes recettes</a>
             </li>
         </ul>
     </div>
@@ -407,7 +407,7 @@ class __TwigTemplate_13a3097e41d5ff08b717e8909bafb6ff145926cdd3dd2768546090b29f9
                     {% for saveRecipe in saveRecipes %}
                         <div class=\"col-xs-12 col-md-6 col-lg-4\">
                             <div class=\"card\">
-                                <a href=\"{{ path('recipe_show', {'id': saveRecipe.recipe.id}) }}\"><img class=\"card-img-top\" src=\"{{ asset('uploads/recipes/' ~ saveRecipe.recipe.picture) }}\" alt=\"recette {{ saveRecipe.recipe.name }}\"> </a>
+                                <a href=\"{{ path('recipe_show', {'slug': saveRecipe.recipe.slug}) }}\"><img class=\"card-img-top\" src=\"{{ asset('uploads/recipes/' ~ saveRecipe.recipe.picture) }}\" alt=\"recette {{ saveRecipe.recipe.name }}\"> </a>
                                 <div class=\"top-right\"><label class=\"label label-danger\">{{ saveRecipe.recipe.type }}</label></div>
                                 <div class=\"top-left\"><span class=\"like label-warning\"> <i class=\"fa fa-heart\" aria-hidden=\"true\"></i> {{ saveRecipe.recipe.likes|length }}</span></div>
                                 <div class=\"card-body\">
@@ -421,7 +421,7 @@ class __TwigTemplate_13a3097e41d5ff08b717e8909bafb6ff145926cdd3dd2768546090b29f9
                                             </span>
                                         {% endfor %}
                                     </p>
-                                    <a href=\"{{ path ('recipe_show', {'id': saveRecipe.recipe.id })}}\" class=\"btn btn-success\">Voir la recette</a>
+                                    <a href=\"{{ path ('recipe_show', {'slug': saveRecipe.recipe.slug })}}\" class=\"btn btn-success\">Voir la recette</a>
                                 </div>
                             </div>
                         </div>

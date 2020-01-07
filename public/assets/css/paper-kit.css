@@ -6470,3 +6470,23 @@ td.rdtYear:hover {
 .card-text .container .alert-success {
   background-color: #a6c3b3 !important;
 }
+
+.facebook:hover {
+  background: blue !important;
+  border-color: blue !important;
+}
+
+.instagram:hover {
+  background: #ff18fc !important;
+  border-color: #ff18fc !important;
+}
+
+.pinterest:hover {
+  background: #ff2a36 !important;
+  border-color: #FF2A36 !important;
+}
+
+.snapchat:hover {
+  background: #ffda40 !important;
+  border-color: #FFDA40 !important;
+}

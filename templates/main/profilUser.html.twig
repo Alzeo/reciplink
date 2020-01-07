@@ -10,16 +10,16 @@
     <div class="container social-media">
         <div class="row">
             <div class="col-3">
-                {% if profile.facebook != null %}<a href="{{ profile.facebook }}" class="sharrre btn-round ml-2 btn btn-github-bg"><i class="fa fa-facebook-square"></i> Facebook</a>  </h6>{% else %}{% endif %}
+                {% if profile.facebook != null %}<a href="{{ profile.facebook }}" class="facebook sharrre btn-round ml-2 btn btn-github-bg"><i class="fa fa-facebook-square"></i> Facebook</a>  </h6>{% else %}{% endif %}
             </div>
             <div class="col-3">
-                {% if profile.instagram != null %} <a href="{{ profile.instagram }}" class="sharrre btn-round ml-2 btn btn-github-bg"><i class="fa fa-instagram"></i> Instagram</a>{% else %}{% endif %}
+                {% if profile.instagram != null %} <a href="{{ profile.instagram }}" class="instagram sharrre btn-round ml-2 btn btn-github-bg"><i class="fa fa-instagram"></i> Instagram</a>{% else %}{% endif %}
             </div>
             <div class="col-3">
-                {% if profile.pinterest != null %} <a href="{{ profile.pinterest }}" class="sharrre btn-round ml-2 btn btn-github-bg"><i class="fa fa-pinterest-square"></i> Pinterest</a></h6>{% else %}{% endif %}
+                {% if profile.pinterest != null %} <a href="{{ profile.pinterest }}" class="pinterest sharrre btn-round ml-2 btn btn-github-bg"><i class="fa fa-pinterest-square"></i> Pinterest</a></h6>{% else %}{% endif %}
             </div>
             <div class="col-3">
-                {% if profile.snapchat != null %} <a href="{{ profile.snapchat }}" class="sharrre btn-round ml-2 btn btn-github-bg"><i class="fa fa-snapchat-square"></i> Snapchat</a></h6>{% else %}{% endif %}
+                {% if profile.snapchat != null %} <a href="{{ profile.snapchat }}" class="snapchat sharrre btn-round ml-2 btn btn-github-bg"><i class="fa fa-snapchat-square"></i> Snapchat</a></h6>{% else %}{% endif %}
             </div>
         </div>
     </div>
@@ -30,7 +30,7 @@
                 {% for recipe in profilRecipes %}
                     <div class="col-xs-12 col-md-6 col-lg-4">
                         <div class="card">
-                            <a href="{{ path('recipe_show', {'id': recipe.id}) }}"><img class="card-img-top" src="{{ asset('uploads/recipes/' ~ recipe.picture) }}" alt="recette {{ recipe.name }}"> </a>
+                            <a href="{{ path('recipe_show', {'slug': recipe.slug}) }}"><img class="card-img-top" src="{{ asset('uploads/recipes/' ~ recipe.picture) }}" alt="recette {{ recipe.name }}"> </a>
                             <div class="top-right"><label class="label label-danger">{{ recipe.type }}</label></div>
                             <div class="top-left"><span class="like label-warning"> <i class="fa fa-heart" aria-hidden="true"></i> {{ recipe.likes|length }}</span></div>
                             <div class="card-body">
@@ -44,7 +44,7 @@
                                             </span>
                                     {% endfor %}
                                 </p>
-                                <a href="{{ path ('recipe_show', {'id': recipe.id })}}" class="btn btn-success">Voir la recette</a>
+                                <a href="{{ path ('recipe_show', {'slug': recipe.slug })}}" class="btn btn-success">Voir la recette</a>
                             </div>
                         </div>
                     </div>

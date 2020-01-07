@@ -65,7 +65,7 @@ class __TwigTemplate_6e78fa8948c50a5bb78a2479ead4a16065f44f31f04133074f27a8760b1
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo "RecipeLink - Accueil";
+        echo "Accueil";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -176,7 +176,7 @@ class __TwigTemplate_6e78fa8948c50a5bb78a2479ead4a16065f44f31f04133074f27a8760b1
                        <img src=\"";
         // line 40
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/assets/img/select-program-image.png"), "html", null, true);
-        echo "\"/>
+        echo "\" height=\"420rem\"/>
                    </figure>
                </div>
                <div class=\"col-6 regime-link\">
@@ -272,29 +272,8 @@ class __TwigTemplate_6e78fa8948c50a5bb78a2479ead4a16065f44f31f04133074f27a8760b1
     </div>
     <h4>Restez informé(e)</h4>
     <h5 class=\"mt-2\">Vous souhaitez recevoir les nouvelles recettes par mail ?</h5>
-    <div class=\"container mt-5\" style=\"width:40rem;\">
-        ";
-        // line 113
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 113, $this->source); })()), 'form_start');
-        echo "
-        ";
-        // line 114
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 114, $this->source); })()), "categorie", [], "any", false, false, false, 114), 'row');
-        echo "
-        ";
-        // line 115
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 115, $this->source); })()), "mail", [], "any", false, false, false, 115), 'row');
-        echo "
-        <div class=\"button-form text-center mb-5\">
-            <button class=\"btn btn-success btn-lg mt-4 btn-block\">";
-        // line 117
-        echo twig_escape_filter($this->env, (((isset($context["button_label"]) || array_key_exists("button_label", $context))) ? (_twig_default_filter((isset($context["button_label"]) || array_key_exists("button_label", $context) ? $context["button_label"] : (function () { throw new RuntimeError('Variable "button_label" does not exist.', 117, $this->source); })()), "M'Ajouter")) : ("M'Ajouter")), "html", null, true);
-        echo "</button>
-        </div>
-        ";
-        // line 119
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 119, $this->source); })()), 'form_end');
-        echo "
+    <div class=\"container\" style=\"width:40rem;\">
+        <iframe width=\"540\" height=\"305\" src=\"https://e319caef.sibforms.com/serve/MUIEAPp8HwrpPpJdgDhdQkGG0bCqiBtNoK-L59Vle-q86ZyE9yEip7TdZln0U8opR_7SY65Y_7W-BA_-yNuK5B4UMoTAG9gU_cVCaann1zOTToPUCLJBviiUVk1XO_lq14zITBMWpxPCgs5jBEIlYLGB9ZPAO-L_C5AgP7bUbWGv5UobW6JgAXyB8wCPfytOr8watmjXqOSA_3DG\" frameborder=\"0\" scrolling=\"auto\" allowfullscreen style=\"display: block;margin-left: auto;margin-right: auto;max-width: 100%;\"></iframe>
     </div>
 </section>
 ";
@@ -318,14 +297,14 @@ class __TwigTemplate_6e78fa8948c50a5bb78a2479ead4a16065f44f31f04133074f27a8760b1
 
     public function getDebugInfo()
     {
-        return array (  296 => 119,  291 => 117,  286 => 115,  282 => 114,  278 => 113,  269 => 107,  252 => 93,  233 => 77,  214 => 61,  198 => 48,  194 => 47,  190 => 46,  186 => 45,  178 => 40,  170 => 35,  166 => 33,  152 => 32,  149 => 31,  132 => 30,  123 => 24,  115 => 20,  105 => 16,  98 => 11,  94 => 10,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  269 => 107,  252 => 93,  233 => 77,  214 => 61,  198 => 48,  194 => 47,  190 => 46,  186 => 45,  178 => 40,  170 => 35,  166 => 33,  152 => 32,  149 => 31,  132 => 30,  123 => 24,  115 => 20,  105 => 16,  98 => 11,  94 => 10,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{% extends 'base.html.twig' %}
 
-{% block title %}RecipeLink - Accueil{% endblock %}
+{% block title %}Accueil{% endblock %}
 
 {% block body %}
     <style>
@@ -362,7 +341,7 @@ class __TwigTemplate_6e78fa8948c50a5bb78a2479ead4a16065f44f31f04133074f27a8760b1
            <div class=\"row\">
                <div class=\"col-6\">
                    <figure style=\"margin-left:-140px;\">
-                       <img src=\"{{ asset('/assets/img/select-program-image.png') }}\"/>
+                       <img src=\"{{ asset('/assets/img/select-program-image.png') }}\" height=\"420rem\"/>
                    </figure>
                </div>
                <div class=\"col-6 regime-link\">
@@ -434,14 +413,8 @@ class __TwigTemplate_6e78fa8948c50a5bb78a2479ead4a16065f44f31f04133074f27a8760b1
     </div>
     <h4>Restez informé(e)</h4>
     <h5 class=\"mt-2\">Vous souhaitez recevoir les nouvelles recettes par mail ?</h5>
-    <div class=\"container mt-5\" style=\"width:40rem;\">
-        {{ form_start(form) }}
-        {{ form_row(form.categorie) }}
-        {{ form_row(form.mail) }}
-        <div class=\"button-form text-center mb-5\">
-            <button class=\"btn btn-success btn-lg mt-4 btn-block\">{{ button_label|default(\"M'Ajouter\") }}</button>
-        </div>
-        {{ form_end(form) }}
+    <div class=\"container\" style=\"width:40rem;\">
+        <iframe width=\"540\" height=\"305\" src=\"https://e319caef.sibforms.com/serve/MUIEAPp8HwrpPpJdgDhdQkGG0bCqiBtNoK-L59Vle-q86ZyE9yEip7TdZln0U8opR_7SY65Y_7W-BA_-yNuK5B4UMoTAG9gU_cVCaann1zOTToPUCLJBviiUVk1XO_lq14zITBMWpxPCgs5jBEIlYLGB9ZPAO-L_C5AgP7bUbWGv5UobW6JgAXyB8wCPfytOr8watmjXqOSA_3DG\" frameborder=\"0\" scrolling=\"auto\" allowfullscreen style=\"display: block;margin-left: auto;margin-right: auto;max-width: 100%;\"></iframe>
     </div>
 </section>
 {% endblock %}
