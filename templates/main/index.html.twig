@@ -37,7 +37,7 @@
            <div class="row">
                <div class="col-6">
                    <figure style="margin-left:-140px;">
-                       <img src="{{ asset('/assets/img/select-program-image.png') }}"/>
+                       <img src="{{ asset('/assets/img/select-program-image.png') }}" height="420rem"/>
                    </figure>
                </div>
                <div class="col-6 regime-link">
@@ -109,14 +109,8 @@
     </div>
     <h4>Restez informé(e)</h4>
     <h5 class="mt-2">Vous souhaitez recevoir les nouvelles recettes par mail ?</h5>
-    <div class="container mt-5" style="width:40rem;">
-        {{ form_start(form) }}
-        {{ form_row(form.categorie) }}
-        {{ form_row(form.mail) }}
-        <div class="button-form text-center mb-5">
-            <button class="btn btn-success btn-lg mt-4 btn-block">{{ button_label|default("M'Ajouter") }}</button>
-        </div>
-        {{ form_end(form) }}
+    <div class="container" style="width:40rem;">
+        <iframe width="540" height="305" src="https://e319caef.sibforms.com/serve/MUIEAPp8HwrpPpJdgDhdQkGG0bCqiBtNoK-L59Vle-q86ZyE9yEip7TdZln0U8opR_7SY65Y_7W-BA_-yNuK5B4UMoTAG9gU_cVCaann1zOTToPUCLJBviiUVk1XO_lq14zITBMWpxPCgs5jBEIlYLGB9ZPAO-L_C5AgP7bUbWGv5UobW6JgAXyB8wCPfytOr8watmjXqOSA_3DG" frameborder="0" scrolling="auto" allowfullscreen style="display: block;margin-left: auto;margin-right: auto;max-width: 100%;"></iframe>
     </div>
 </section>
 {% endblock %}
