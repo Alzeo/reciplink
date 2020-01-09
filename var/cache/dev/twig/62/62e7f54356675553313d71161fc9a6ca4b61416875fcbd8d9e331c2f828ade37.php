@@ -157,7 +157,7 @@ class __TwigTemplate_6fa38e5a2e106cfea1e585f1e4c51458daff0a752968ecaa1ed2da3b182
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("IS_AUTHENTICATED_FULLY")) {
             // line 69
             echo "                    <li class=\"nav-item\"><a href=\"";
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("user_show", ["username" => twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 69, $this->source); })()), "username", [], "any", false, false, false, 69)]), "html", null, true);
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("user_show");
             echo "\" class=\"nav-link\"><i class=\"fa fa-user\" aria-hidden=\"true\"></i>";
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 69, $this->source); })()), "username", [], "any", false, false, false, 69), "html", null, true);
             echo "</a></li>
@@ -473,7 +473,7 @@ class __TwigTemplate_6fa38e5a2e106cfea1e585f1e4c51458daff0a752968ecaa1ed2da3b182
             </ul>
             <ul class=\"ml-auto navbar-nav pull-right\">
                 {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-                    <li class=\"nav-item\"><a href=\"{{ path('user_show', {'username': user.username}) }}\" class=\"nav-link\"><i class=\"fa fa-user\" aria-hidden=\"true\"></i>{{ user.username}}</a></li>
+                    <li class=\"nav-item\"><a href=\"{{ path('user_show') }}\" class=\"nav-link\"><i class=\"fa fa-user\" aria-hidden=\"true\"></i>{{ user.username}}</a></li>
                 {% else %}
 
                    <a href=\"{{ path('app_login') }}\"type=\"button\" class=\"btn-round mr-1 btn btn-outline-success\"><i class=\"fa fa-sign-in\" aria-hidden=\"true\"></i> Se connecter</a>

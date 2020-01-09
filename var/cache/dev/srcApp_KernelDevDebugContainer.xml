@@ -372,6 +372,13 @@
     <service id="EasyCorp\EasyLog\EasyLogHandler" class="EasyCorp\EasyLog\EasyLogHandler" public="false">
       <argument>/home/cortez/Sites/reciplink/var/log/dev.log</argument>
     </service>
+    <service id="App\Controller\AdminRecipeController" class="App\Controller\AdminRecipeController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.WkgBPi_.App\Controller\AdminRecipeController"/>
+      </call>
+    </service>
     <service id="App\Controller\MainController" class="App\Controller\MainController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
@@ -404,6 +411,7 @@
     </service>
     <service id="App\DataFixtures\AppFixtures" class="App\DataFixtures\AppFixtures" autowire="true" autoconfigure="true">
       <tag name="doctrine.fixture.orm"/>
+      <argument type="service" id="security.user_password_encoder.generic"/>
     </service>
     <service id="App\DataFixtures\RecipeFixtures" class="App\DataFixtures\RecipeFixtures" autowire="true" autoconfigure="true">
       <tag name="doctrine.fixture.orm"/>
@@ -439,6 +447,10 @@
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
+    <service id="App\Repository\LolRepository" class="App\Repository\LolRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
     <service id="App\Repository\NewsletterRepository" class="App\Repository\NewsletterRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
@@ -464,6 +476,10 @@
       <argument type="service" id="doctrine"/>
     </service>
     <service id="App\Repository\RecipeSaveRepository" class="App\Repository\RecipeSaveRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\RoleRepository" class="App\Repository\RoleRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
@@ -2575,14 +2591,6 @@
         <argument>2048</argument>
       </call>
       <call method="addListener">
-        <argument>console.command</argument>
-        <argument type="collection">
-          <argument type="service" id="debug.debug_handlers_listener"/>
-          <argument>configure</argument>
-        </argument>
-        <argument>2048</argument>
-      </call>
-      <call method="addListener">
         <argument>kernel.request</argument>
         <argument type="collection">
           <argument type="service" id="router_listener"/>
@@ -3726,7 +3734,7 @@
       <factory class="Doctrine\ORM\EntityManager" method="create"/>
     </service>
     <service id="doctrine.orm.container_repository_factory" class="Doctrine\Bundle\DoctrineBundle\Repository\ContainerRepositoryFactory" public="false">
-      <argument type="service" id=".service_locator.08ZghSO"/>
+      <argument type="service" id=".service_locator.OgBWMxq"/>
     </service>
     <service id="doctrine.orm.manager_configurator.abstract" class="Doctrine\Bundle\DoctrineBundle\ManagerConfigurator" abstract="true">
       <argument type="collection"/>
@@ -5392,6 +5400,9 @@
       <tag name="twig.extension"/>
       <argument type="service" id="knp_paginator.helper.processor"/>
     </service>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\AdminRecipeController" class="App\Controller\AdminRecipeController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\AdminRecipeController" class="App\Controller\AdminRecipeController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\AdminRecipeController" class="App\Controller\AdminRecipeController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\MainController" class="App\Controller\MainController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\MainController" class="App\Controller\MainController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\MainController" class="App\Controller\MainController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -5428,6 +5439,8 @@
     <service id=".abstract.instanceof.App\Form\editUserType" class="App\Form\editUserType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\FoodRepository" class="App\Repository\FoodRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\FoodRepository" class="App\Repository\FoodRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\LolRepository" class="App\Repository\LolRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\LolRepository" class="App\Repository\LolRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\NewsletterRepository" class="App\Repository\NewsletterRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\NewsletterRepository" class="App\Repository\NewsletterRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\PostRepository" class="App\Repository\PostRepository" autowire="true" abstract="true"/>
@@ -5442,6 +5455,8 @@
     <service id=".abstract.instanceof.App\Repository\RecipeRepository" class="App\Repository\RecipeRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\RecipeSaveRepository" class="App\Repository\RecipeSaveRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\RecipeSaveRepository" class="App\Repository\RecipeSaveRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\RoleRepository" class="App\Repository\RoleRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\RoleRepository" class="App\Repository\RoleRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\TagsRepository" class="App\Repository\TagsRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\TagsRepository" class="App\Repository\TagsRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\UserRepository" class="App\Repository\UserRepository" autowire="true" abstract="true"/>
@@ -5629,6 +5644,12 @@
         <argument>make:migration</argument>
       </call>
     </service>
+    <service id=".service_locator.JqXngIc" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="repository" type="service" id="App\Repository\RecipeRepository"/>
+      </argument>
+    </service>
     <service id=".service_locator.LPAUdgn" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -5691,9 +5712,12 @@
         <argument key="authenticationUtils" type="service" id="security.authentication_utils"/>
       </argument>
     </service>
-    <service id=".service_locator.1UuH9tO" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.33Bw4rw" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="paginator" type="service" id="knp_paginator"/>
+        <argument key="recipeRepository" type="service" id="App\Repository\RecipeRepository"/>
+        <argument key="saveRepo" type="service" id="App\Repository\RecipeSaveRepository"/>
         <argument key="userRepository" type="service" id="App\Repository\UserRepository"/>
       </argument>
     </service>
@@ -5713,9 +5737,10 @@
         <argument key="user" type="service" id=".errored..service_locator.tIQ5Q0N.App\Entity\User"/>
       </argument>
     </service>
-    <service id=".service_locator.DJQLBUl" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.XVrGciU" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="App\Controller\AdminRecipeController::index" type="service" id=".service_locator.JqXngIc"/>
         <argument key="App\Controller\MainController::allRecipes" type="service" id=".service_locator.MN_z1ND"/>
         <argument key="App\Controller\MainController::index" type="service" id=".service_locator.LPAUdgn"/>
         <argument key="App\Controller\MainController::paleoRecipes" type="service" id=".service_locator.MN_z1ND"/>
@@ -5733,11 +5758,10 @@
         <argument key="App\Controller\RecipeController::unsave" type="service" id=".service_locator.VHcM_9o"/>
         <argument key="App\Controller\SecurityController::login" type="service" id=".service_locator.g.xob4v"/>
         <argument key="App\Controller\UserController::delete" type="service" id=".service_locator.tIQ5Q0N"/>
-        <argument key="App\Controller\UserController::edit" type="service" id=".service_locator.tIQ5Q0N"/>
-        <argument key="App\Controller\UserController::index" type="service" id=".service_locator.1UuH9tO"/>
         <argument key="App\Controller\UserController::saveRecipe" type="service" id=".service_locator.LqLSGoO"/>
-        <argument key="App\Controller\UserController::show" type="service" id=".service_locator.LqLSGoO"/>
+        <argument key="App\Controller\UserController::show" type="service" id=".service_locator.33Bw4rw"/>
         <argument key="App\Controller\UserController::userRecipes" type="service" id=".service_locator.LqLSGoO"/>
+        <argument key="App\Controller\AdminRecipeController:index" type="service" id=".service_locator.JqXngIc"/>
         <argument key="App\Controller\MainController:allRecipes" type="service" id=".service_locator.MN_z1ND"/>
         <argument key="App\Controller\MainController:index" type="service" id=".service_locator.LPAUdgn"/>
         <argument key="App\Controller\MainController:paleoRecipes" type="service" id=".service_locator.MN_z1ND"/>
@@ -5755,10 +5779,8 @@
         <argument key="App\Controller\RecipeController:unsave" type="service" id=".service_locator.VHcM_9o"/>
         <argument key="App\Controller\SecurityController:login" type="service" id=".service_locator.g.xob4v"/>
         <argument key="App\Controller\UserController:delete" type="service" id=".service_locator.tIQ5Q0N"/>
-        <argument key="App\Controller\UserController:edit" type="service" id=".service_locator.tIQ5Q0N"/>
-        <argument key="App\Controller\UserController:index" type="service" id=".service_locator.1UuH9tO"/>
         <argument key="App\Controller\UserController:saveRecipe" type="service" id=".service_locator.LqLSGoO"/>
-        <argument key="App\Controller\UserController:show" type="service" id=".service_locator.LqLSGoO"/>
+        <argument key="App\Controller\UserController:show" type="service" id=".service_locator.33Bw4rw"/>
         <argument key="App\Controller\UserController:userRecipes" type="service" id=".service_locator.LqLSGoO"/>
       </argument>
     </service>
@@ -5852,10 +5874,11 @@
         <argument key="doctrine.orm.default_listeners.attach_entity_listeners" type="service" id="doctrine.orm.default_listeners.attach_entity_listeners"/>
       </argument>
     </service>
-    <service id=".service_locator.08ZghSO" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.OgBWMxq" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Repository\FoodRepository" type="service" id="App\Repository\FoodRepository"/>
+        <argument key="App\Repository\LolRepository" type="service" id="App\Repository\LolRepository"/>
         <argument key="App\Repository\NewsletterRepository" type="service" id="App\Repository\NewsletterRepository"/>
         <argument key="App\Repository\PostRepository" type="service" id="App\Repository\PostRepository"/>
         <argument key="App\Repository\RecipeCommentRepository" type="service" id="App\Repository\RecipeCommentRepository"/>
@@ -5863,6 +5886,7 @@
         <argument key="App\Repository\RecipeLikeRepository" type="service" id="App\Repository\RecipeLikeRepository"/>
         <argument key="App\Repository\RecipeRepository" type="service" id="App\Repository\RecipeRepository"/>
         <argument key="App\Repository\RecipeSaveRepository" type="service" id="App\Repository\RecipeSaveRepository"/>
+        <argument key="App\Repository\RoleRepository" type="service" id="App\Repository\RoleRepository"/>
         <argument key="App\Repository\TagsRepository" type="service" id="App\Repository\TagsRepository"/>
         <argument key="App\Repository\UserRepository" type="service" id="App\Repository\UserRepository"/>
       </argument>
@@ -6063,6 +6087,12 @@
         <argument key="twig" type="service" id="twig" on-invalid="ignore"/>
       </argument>
     </service>
+    <service id=".service_locator.WkgBPi_.App\Controller\AdminRecipeController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator_context" id="App\Controller\AdminRecipeController"/>
+      <argument>App\Controller\AdminRecipeController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.WkgBPi_" method="withContext"/>
+    </service>
     <service id=".service_locator.WkgBPi_.App\Controller\MainController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator_context" id="App\Controller\MainController"/>
       <argument>App\Controller\MainController</argument>
@@ -6184,12 +6214,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" public="false">
-      <argument type="service" id=".service_locator.DJQLBUl"/>
+      <argument type="service" id=".service_locator.XVrGciU"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" public="false"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver" public="false"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver" public="false">
-      <argument type="service" id=".service_locator.DJQLBUl"/>
+      <argument type="service" id=".service_locator.XVrGciU"/>
     </service>
     <service id=".debug.http_client.inner" class="Symfony\Contracts\HttpClient\HttpClientInterface" public="false">
       <argument type="collection"/>
@@ -6647,7 +6677,7 @@
     <service id="Vich\UploaderBundle\Twig\Extension\UploaderExtension" alias="vich_uploader.twig.extension.uploader" public="false"/>
     <service id="Knp\Component\Pager\PaginatorInterface" alias="knp_paginator"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.CmORmuK" public="true"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.DJQLBUl"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.XVrGciU"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem" public="false"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>

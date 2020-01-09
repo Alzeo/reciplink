@@ -4,13 +4,14 @@ namespace Symfony\Component\VarExporter\Internal;
 
 return $getExpiry ? PHP_INT_MAX : Hydrator::hydrate(
     $o = [
-        clone (Registry::$prototypes['Symfony\\Component\\Routing\\Annotation\\Route'] ?? Registry::p('Symfony\\Component\\Routing\\Annotation\\Route')),
+        clone (($p = &Registry::$prototypes)['Symfony\\Component\\Routing\\Annotation\\Route'] ?? Registry::p('Symfony\\Component\\Routing\\Annotation\\Route')),
+        clone ($p['Sensio\\Bundle\\FrameworkExtraBundle\\Configuration\\Security'] ?? Registry::p('Sensio\\Bundle\\FrameworkExtraBundle\\Configuration\\Security')),
     ],
     null,
     [
         'Symfony\\Component\\Routing\\Annotation\\Route' => [
             'path' => [
-                '/{id}/edit',
+                '/{slug}/edit',
             ],
             'name' => [
                 'recipe_edit',
@@ -22,9 +23,18 @@ return $getExpiry ? PHP_INT_MAX : Hydrator::hydrate(
                 ],
             ],
         ],
+        'Sensio\\Bundle\\FrameworkExtraBundle\\Configuration\\Security' => [
+            'expression' => [
+                1 => 'is_granted(\'ROLE_USER\') and user === recipe.getUser()',
+            ],
+            'message' => [
+                1 => 'Vous n\'êtes pas l\'auteur de cette recette vous ne pouvez donc pas la modifier',
+            ],
+        ],
     ],
     [
         $o[0],
+        $o[1],
     ],
     []
 );

@@ -16,7 +16,7 @@
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                     <i class="fa fa-times"></i>
                 </button>
-                <span><i class="fa fa-bell"></i> {{ message }}</span>
+                <span><i class="fa fa-bell"></i> {{ message|raw }}</span>
             </div>
         </div>
     {% endfor %}
@@ -33,8 +33,12 @@
                 {% endfor %}
             </p>
             <div class="share-social-media mt-3 mb-3">
-                <button type="button" class="share-insta" data-toggle="modal" data-target="#shareInsta"><i class="fa fa-instagram" ></i> Partager</button>
+                {% if  app.user and app.user == recipe.user %}
+                    <a href="{{ path('recipe_edit', {'slug': recipe.slug}) }}" class="btn btn-neutral">Modifier ma recette</a>
+                    <a href="{{ path('recipe_delete', {'slug': recipe.slug}) }}" class="btn btn-danger" onclick="return confirm('Êtes-vous sûr de vouloir supprimer votre recette ?')"><i class="fa fa-times-circle"></i></a>
+                {% endif %}
             </div>
+
             <div class="modal fade" id="shareInsta" tabindex="-1" role="dialog" aria-labelledby="PartageInstagram" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
@@ -90,7 +94,7 @@
             </div>
             <div class="head-recip row">
                 <div class="col-6 author">
-                    <p>Recette proposée par : <a href="{{ path('kitchen_user', {'idUser': recipe.user.id}) }}"><span class="user"><i class="fa fa-user" aria-hidden="true"></i> {{ recipe.user.username }}</span></a></p>
+                    <p>Recette proposée par : <a href="{{ path('kitchen_user', {'username': recipe.user.username}) }}"><span class="user"><i class="fa fa-user" aria-hidden="true"></i> {{ recipe.user.username }}</span></a></p>
                 </div>
                 <div class="col-6">
                     {% if is_granted('ROLE_USER') %}
@@ -158,6 +162,8 @@
                 </div>
             </div>
         </div>
+        <button type="button" class="share-insta" data-toggle="modal" data-target="#shareInsta"><i class="fa fa-instagram" ></i> Partager</button>
+
         <div class="share-social-media mt-3 mb-5">
             <div class="sharethis-inline-share-buttons"></div>
         </div>

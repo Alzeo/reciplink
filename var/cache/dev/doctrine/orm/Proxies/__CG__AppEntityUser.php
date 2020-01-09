@@ -64,10 +64,10 @@ class User extends \App\Entity\User implements \Doctrine\ORM\Proxy\Proxy
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return ['__isInitialized__', '' . "\0" . 'App\\Entity\\User' . "\0" . 'id', '' . "\0" . 'App\\Entity\\User' . "\0" . 'username', '' . "\0" . 'App\\Entity\\User' . "\0" . 'roles', '' . "\0" . 'App\\Entity\\User' . "\0" . 'password', '' . "\0" . 'App\\Entity\\User' . "\0" . 'email', '' . "\0" . 'App\\Entity\\User' . "\0" . 'recipes', '' . "\0" . 'App\\Entity\\User' . "\0" . 'likes', '' . "\0" . 'App\\Entity\\User' . "\0" . 'save', '' . "\0" . 'App\\Entity\\User' . "\0" . 'commentUser', '' . "\0" . 'App\\Entity\\User' . "\0" . 'facebook', '' . "\0" . 'App\\Entity\\User' . "\0" . 'instagram', '' . "\0" . 'App\\Entity\\User' . "\0" . 'pinterest', '' . "\0" . 'App\\Entity\\User' . "\0" . 'snapchat', '' . "\0" . 'App\\Entity\\User' . "\0" . 'regime'];
+            return ['__isInitialized__', '' . "\0" . 'App\\Entity\\User' . "\0" . 'id', '' . "\0" . 'App\\Entity\\User' . "\0" . 'username', '' . "\0" . 'App\\Entity\\User' . "\0" . 'roles', '' . "\0" . 'App\\Entity\\User' . "\0" . 'password', '' . "\0" . 'App\\Entity\\User' . "\0" . 'email', '' . "\0" . 'App\\Entity\\User' . "\0" . 'recipes', '' . "\0" . 'App\\Entity\\User' . "\0" . 'likes', '' . "\0" . 'App\\Entity\\User' . "\0" . 'save', '' . "\0" . 'App\\Entity\\User' . "\0" . 'commentUser', '' . "\0" . 'App\\Entity\\User' . "\0" . 'facebook', '' . "\0" . 'App\\Entity\\User' . "\0" . 'instagram', '' . "\0" . 'App\\Entity\\User' . "\0" . 'pinterest', '' . "\0" . 'App\\Entity\\User' . "\0" . 'snapchat', '' . "\0" . 'App\\Entity\\User' . "\0" . 'regime', '' . "\0" . 'App\\Entity\\User' . "\0" . 'userRoles'];
         }
 
-        return ['__isInitialized__', '' . "\0" . 'App\\Entity\\User' . "\0" . 'id', '' . "\0" . 'App\\Entity\\User' . "\0" . 'username', '' . "\0" . 'App\\Entity\\User' . "\0" . 'roles', '' . "\0" . 'App\\Entity\\User' . "\0" . 'password', '' . "\0" . 'App\\Entity\\User' . "\0" . 'email', '' . "\0" . 'App\\Entity\\User' . "\0" . 'recipes', '' . "\0" . 'App\\Entity\\User' . "\0" . 'likes', '' . "\0" . 'App\\Entity\\User' . "\0" . 'save', '' . "\0" . 'App\\Entity\\User' . "\0" . 'commentUser', '' . "\0" . 'App\\Entity\\User' . "\0" . 'facebook', '' . "\0" . 'App\\Entity\\User' . "\0" . 'instagram', '' . "\0" . 'App\\Entity\\User' . "\0" . 'pinterest', '' . "\0" . 'App\\Entity\\User' . "\0" . 'snapchat', '' . "\0" . 'App\\Entity\\User' . "\0" . 'regime'];
+        return ['__isInitialized__', '' . "\0" . 'App\\Entity\\User' . "\0" . 'id', '' . "\0" . 'App\\Entity\\User' . "\0" . 'username', '' . "\0" . 'App\\Entity\\User' . "\0" . 'roles', '' . "\0" . 'App\\Entity\\User' . "\0" . 'password', '' . "\0" . 'App\\Entity\\User' . "\0" . 'email', '' . "\0" . 'App\\Entity\\User' . "\0" . 'recipes', '' . "\0" . 'App\\Entity\\User' . "\0" . 'likes', '' . "\0" . 'App\\Entity\\User' . "\0" . 'save', '' . "\0" . 'App\\Entity\\User' . "\0" . 'commentUser', '' . "\0" . 'App\\Entity\\User' . "\0" . 'facebook', '' . "\0" . 'App\\Entity\\User' . "\0" . 'instagram', '' . "\0" . 'App\\Entity\\User' . "\0" . 'pinterest', '' . "\0" . 'App\\Entity\\User' . "\0" . 'snapchat', '' . "\0" . 'App\\Entity\\User' . "\0" . 'regime', '' . "\0" . 'App\\Entity\\User' . "\0" . 'userRoles'];
     }
 
     /**
@@ -538,6 +538,39 @@ class User extends \App\Entity\User implements \Doctrine\ORM\Proxy\Proxy
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'setRegime', [$regime]);
 
         return parent::setRegime($regime);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getUserRoles(): \Doctrine\Common\Collections\Collection
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getUserRoles', []);
+
+        return parent::getUserRoles();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function addUserRole(\App\Entity\Role $userRole): \App\Entity\User
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'addUserRole', [$userRole]);
+
+        return parent::addUserRole($userRole);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function removeUserRole(\App\Entity\Role $userRole): \App\Entity\User
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'removeUserRole', [$userRole]);
+
+        return parent::removeUserRole($userRole);
     }
 
 }

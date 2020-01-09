@@ -111,14 +111,14 @@ class MainController extends AbstractController
     }
 
     /**
-     * @Route("/profil/{idUser}", name="kitchen_user")
+     * @Route("/cuisine/{username}", name="kitchen_user")
      * @Entity("User", expr="repository.find(idUser)")
      * @return Response
      */
-    public function userKitchen($idUser, PaginatorInterface $paginator, RecipeRepository $recipeRepository, UserRepository $userRepository, Request $request) {
+    public function userKitchen($username, PaginatorInterface $paginator, RecipeRepository $recipeRepository, UserRepository $userRepository, Request $request) {
 
         $currentUser = $this->getUser();
-        $profil = $userRepository->findOneBy(['id' => $idUser]);
+        $profil = $userRepository->findOneBy(['username' => $username]);
         $profilRecipes = $paginator->paginate($recipeRepository->findBy(['user' => $profil, 'publish' => true]),
             $request->query->getInt('page', 1),
             6/*page number*/

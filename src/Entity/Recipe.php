@@ -97,7 +97,7 @@ class Recipe
     private $foods;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\User", inversedBy="recipes")
+     * @ORM\ManyToOne(targetEntity="App\Entity\User", inversedBy="recipes" )
      */
     private $user;
 
@@ -112,17 +112,17 @@ class Recipe
     private $regime;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\RecipeLike", mappedBy="recipe")
+     * @ORM\OneToMany(targetEntity="App\Entity\RecipeLike", mappedBy="recipe", orphanRemoval=true)
      */
     private $likes;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\RecipeSave", mappedBy="recipe")
+     * @ORM\OneToMany(targetEntity="App\Entity\RecipeSave", mappedBy="recipe", orphanRemoval=true)
      */
     private $save;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\RecipeComment", mappedBy="recipe")
+     * @ORM\OneToMany(targetEntity="App\Entity\RecipeComment", mappedBy="recipe", orphanRemoval=true)
      */
     private $commentRecipe;
 

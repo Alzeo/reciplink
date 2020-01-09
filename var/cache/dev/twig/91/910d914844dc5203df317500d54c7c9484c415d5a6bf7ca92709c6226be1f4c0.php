@@ -97,7 +97,7 @@ class __TwigTemplate_13a3097e41d5ff08b717e8909bafb6ff145926cdd3dd2768546090b29f9
         // line 9
         if ((twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 9, $this->source); })()), "user", [], "any", false, false, false, 9) == (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 9, $this->source); })()))) {
             echo "<a class=\"btn btn-neutral mt-4\" href=\"";
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("user_edit", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 9, $this->source); })()), "id", [], "any", false, false, false, 9)]), "html", null, true);
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("user_edit");
             echo "\">Modifier mon profil</a>";
         } else {
             echo " ";
@@ -361,7 +361,7 @@ class __TwigTemplate_13a3097e41d5ff08b717e8909bafb6ff145926cdd3dd2768546090b29f9
     <div class=\"jumbotron text-center\" style=\"background-image: url({{ asset ('/assets/img/background-user.jpg') }});  background-repeat: no-repeat; background-size:cover; background-position: center\">
         <h1><i class=\"fa fa-user-circle\"></i></h1>
         <div class=\"typography-line\"><h2>La cuisine de {{ user.username}}</h2></div>
-        {% if app.user == user %}<a class=\"btn btn-neutral mt-4\" href=\"{{ path('user_edit', {'id': user.id}) }}\">Modifier mon profil</a>{% else %} {% endif %}
+        {% if app.user == user %}<a class=\"btn btn-neutral mt-4\" href=\"{{ path('user_edit') }}\">Modifier mon profil</a>{% else %} {% endif %}
     </div>
 <div class=\"nav-tabs-navigation container\">
     <div class=\"nav-tabs-wrapper\">

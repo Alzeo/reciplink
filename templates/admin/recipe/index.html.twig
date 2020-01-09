@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Administration des recettes{% endblock %}
+
+{% block body %}
+<div class="container-fluid">
+    <h1 class="my-5">
+        Gestion des recettes
+    </h1>
+
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th>id</th>
+            <th>Nom</th>
+            <th>Utilisateur</th>
+            <th class="text-center">Commentaires</th>
+            <th class="text-center">Likes</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for recipe in recipes %}
+        <tr>
+            <td>{{ recipe.id }}</td>
+            <td>{{ recipe.name }}</td>
+            <td>{{ recipe.user.username }}</td>
+            <td class="text-center"><span class="badge badge-primary rounded">{{ recipe.commentRecipe|length }}</span> </td>
+            <td class="text-center"><span class="badge badge-primary rounded">{{ recipe.likes|length }}</span></td>
+            <td>
+                <a href="#" class="btn btn-neutral"><i class="fa fa-edit"></i></a>
+                <a href="#" class="btn btn-danger"><i class="fa fa-trash"></i></a>
+            </td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

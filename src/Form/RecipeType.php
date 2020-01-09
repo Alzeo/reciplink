@@ -102,7 +102,8 @@ class RecipeType extends AbstractType
             ))
             ->add('picture', FileType::class, [
                 'required' => false,
-                'label' => 'Photo du plat'
+                'label' => 'Photo du plat',
+                'data_class' => null
                 ])
             ;
     }

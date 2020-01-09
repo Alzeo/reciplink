@@ -16,24 +16,18 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security as Secur;
 
 /**
  * @Route("/compte")
  */
 class UserController extends AbstractController
 {
-    /**
-     * @Route("/", name="user_index", methods={"GET"})
-     */
-    public function index(UserRepository $userRepository): Response
-    {
-        return $this->render('user/index.html.twig', [
-            'users' => $userRepository->findAll(),
-        ]);
-    }
 
     /**
-     * @Route("/{username}", name="user_show", methods={"GET"})
+     * @Route("/", name="user_show")
+     * @IsGranted("ROLE_USER")
      * @param User $user
      * @param RecipeRepository $recipeRepository
      * @param PaginatorInterface $paginator
@@ -41,8 +35,9 @@ class UserController extends AbstractController
      * @param RecipeSaveRepository $saveRepo
      * @return Response
      */
-    public function show(User $user, UserRepository $userRepository, RecipeRepository $recipeRepository, PaginatorInterface $paginator, Request $request, RecipeSaveRepository $saveRepo): Response
+    public function show(UserRepository $userRepository, RecipeRepository $recipeRepository, PaginatorInterface $paginator, Request $request, RecipeSaveRepository $saveRepo): Response
     {
+        $user = $this->getUser();
         $recipes = $paginator->paginate($recipeRepository->findBy(['user' => $user]),
             $request->query->getInt('page', 1),
             6/*page number*/
@@ -111,10 +106,12 @@ class UserController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/edit", name="user_edit", methods={"GET","POST"})
+     * @Route("/edit", name="user_edit")
+     * @IsGranted("ROLE_USER")
      */
-    public function edit(Request $request, User $user): Response
+    public function edit(Request $request): Response
     {
+        $user = $this->getUser();
         $form = $this->createForm(editUserType::class, $user);
         $form->handleRequest($request);
 

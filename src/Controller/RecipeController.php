@@ -2,17 +2,13 @@
 
 namespace App\Controller;
 
-use App\Entity\Love;
 use App\Entity\Recipe;
 use App\Entity\RecipeComment;
-use App\Entity\RecipeFood;
 use App\Entity\RecipeLike;
 use App\Entity\RecipeSave;
 use App\Entity\User;
 use App\Form\RecipeCommentType;
 use App\Form\RecipeType;
-use App\Repository\LikeRepository;
-use App\Repository\LoveRepository;
 use App\Repository\RecipeCommentRepository;
 use App\Repository\RecipeLikeRepository;
 use App\Repository\RecipeRepository;
@@ -27,10 +23,11 @@ use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\Security\Core\Security;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Entity;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter ;
-
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security as Secur;
+use Symfony\Component\Security\Core\Security;
 /**
  * @Route("/recette")
  */
@@ -60,10 +57,10 @@ class RecipeController extends AbstractController
 
     /**
      * @Route("/nouvelle", name="recipe_new", methods={"GET","POST"})
+     * @IsGranted("ROLE_USER")
      */
     public function new(Request $request): Response
     {
-        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
         $user = $this->getUser();
         $username = $user->getUsername();
         $recipe = new Recipe();
@@ -185,10 +182,13 @@ class RecipeController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/edit", name="recipe_edit", methods={"GET","POST"})
+     * @Route("/{slug}/edit", name="recipe_edit", methods={"GET","POST"})
+     * @Secur("is_granted('ROLE_USER') and user === recipe.getUser()", message="Vous n'êtes pas l'auteur de cette recette vous ne pouvez donc pas la modifier")
      */
     public function edit(Request $request, Recipe $recipe): Response
     {
+        $user = $this->security->getUser();
+
         $form = $this->createForm(RecipeType::class, $recipe);
         $form->handleRequest($request);
 
@@ -201,21 +201,22 @@ class RecipeController extends AbstractController
         return $this->render('recipe/edit.html.twig', [
             'recipe' => $recipe,
             'form' => $form->createView(),
+            'user' => $user
         ]);
     }
 
     /**
-     * @Route("/{id}", name="recipe_delete", methods={"DELETE"})
+     * @Route("/{slug}/delete", name="recipe_delete")
+     * $Secur("is_granted("ROLE_USER") and user === recipe.getUser())
      */
     public function delete(Request $request, Recipe $recipe): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$recipe->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($recipe);
             $entityManager->flush();
-        }
+            $this->addFlash('success', "La recette {$recipe->getName()}a bien été supprimé !");
 
-        return $this->redirectToRoute('recipe_index');
+            return $this->redirectToRoute('home');
     }
 
     /**
