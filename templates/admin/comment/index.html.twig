@@ -1,0 +1,45 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %}Administration des recettes{% endblock %}
+
+{% block body %}
+    {% for message in app.flashes('success') %}
+        <div class="alert alert-success" style="background: #86d9ab !important;">
+            <div class="container">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <i class="fa fa-times"></i>
+                </button>
+                <span><i class="fa fa-bell"></i> {{ message|raw }}</span>
+            </div>
+        </div>
+    {% endfor %}
+    <div class="container-fluid">
+        <h1 class="my-5">
+            Gestion des recettes
+        </h1>
+
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th>id</th>
+                <th>Utilisateur</th>
+                <th>Recettes</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for comment in comments %}
+                <tr>
+                    <td>{{ comment.id }}</td>
+                    <td>{{ comment.user.username }}</td>
+                    <td>{{ comment.recipe.name }}</td>
+                    <td>
+                        <a href="{{ path('admin_comments_edit', {'id': comment.id}) }}" class="btn btn-primary"><i class="fa fa-edit"></i></a>
+                        <a href="#" class="btn btn-danger"><i class="fa fa-trash"></i></a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

@@ -4,18 +4,22 @@ namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
 class AdminAccountController extends AbstractController
 {
     /**
-     * @Route("/admin/login", name="admin_account_account")
+     * @Route("/admin/login", name="admin_account_login")
      */
     public function login()
     {
-        $user = $this->getUser();
+         if ($this->getUser()) {
+           return $this->redirectToRoute('admin_recipes_index', ['user' =>  $this->getUser()]);
+        }
+
+         $user = $this->getUser();
         return $this->render('admin/account/login.html.twig', [
-            'controller_name' => 'AdminAccountController',
-            'user' => $user
+            'user' => $user,
         ]);
     }
 }

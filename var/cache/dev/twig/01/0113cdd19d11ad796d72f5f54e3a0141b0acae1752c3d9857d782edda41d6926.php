@@ -33,7 +33,7 @@ class __TwigTemplate_be21d0e236dc4821178d6fb99f3ab879fcb3d1b3314f60d537cff16fe85
     protected function doGetParent(array $context)
     {
         // line 1
-        return "base.html.twig";
+        return "admin/base.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = [])
@@ -45,7 +45,7 @@ class __TwigTemplate_be21d0e236dc4821178d6fb99f3ab879fcb3d1b3314f60d537cff16fe85
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "admin/recipe/index.html.twig"));
 
-        $this->parent = $this->loadTemplate("base.html.twig", "admin/recipe/index.html.twig", 1);
+        $this->parent = $this->loadTemplate("admin/base.html.twig", "admin/recipe/index.html.twig", 1);
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
@@ -130,8 +130,14 @@ class __TwigTemplate_be21d0e236dc4821178d6fb99f3ab879fcb3d1b3314f60d537cff16fe85
             echo twig_escape_filter($this->env, twig_length_filter($this->env, twig_get_attribute($this->env, $this->source, $context["recipe"], "likes", [], "any", false, false, false, 29)), "html", null, true);
             echo "</span></td>
             <td>
-                <a href=\"#\" class=\"btn btn-neutral\"><i class=\"fa fa-edit\"></i></a>
-                <a href=\"#\" class=\"btn btn-danger\"><i class=\"fa fa-trash\"></i></a>
+                <a href=\"";
+            // line 31
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_recipes_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["recipe"], "id", [], "any", false, false, false, 31)]), "html", null, true);
+            echo "\" class=\"btn btn-primary\"><i class=\"fa fa-edit\"></i></a>
+                <a href=\"";
+            // line 32
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_recipes_delete", ["id" => twig_get_attribute($this->env, $this->source, $context["recipe"], "id", [], "any", false, false, false, 32)]), "html", null, true);
+            echo "\" class=\"btn btn-danger\"><i class=\"fa fa-trash\"></i></a>
             </td>
         </tr>
         ";
@@ -164,12 +170,12 @@ class __TwigTemplate_be21d0e236dc4821178d6fb99f3ab879fcb3d1b3314f60d537cff16fe85
 
     public function getDebugInfo()
     {
-        return array (  143 => 36,  130 => 29,  126 => 28,  122 => 27,  118 => 26,  114 => 25,  111 => 24,  107 => 23,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  149 => 36,  139 => 32,  135 => 31,  130 => 29,  126 => 28,  122 => 27,  118 => 26,  114 => 25,  111 => 24,  107 => 23,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source("{% extends 'base.html.twig' %}
+        return new Source("{% extends 'admin/base.html.twig' %}
 
 {% block title %}Administration des recettes{% endblock %}
 
@@ -199,8 +205,8 @@ class __TwigTemplate_be21d0e236dc4821178d6fb99f3ab879fcb3d1b3314f60d537cff16fe85
             <td class=\"text-center\"><span class=\"badge badge-primary rounded\">{{ recipe.commentRecipe|length }}</span> </td>
             <td class=\"text-center\"><span class=\"badge badge-primary rounded\">{{ recipe.likes|length }}</span></td>
             <td>
-                <a href=\"#\" class=\"btn btn-neutral\"><i class=\"fa fa-edit\"></i></a>
-                <a href=\"#\" class=\"btn btn-danger\"><i class=\"fa fa-trash\"></i></a>
+                <a href=\"{{path('admin_recipes_edit', {'id': recipe.id})}}\" class=\"btn btn-primary\"><i class=\"fa fa-edit\"></i></a>
+                <a href=\"{{path('admin_recipes_delete', {'id': recipe.id})}}\" class=\"btn btn-danger\"><i class=\"fa fa-trash\"></i></a>
             </td>
         </tr>
         {% endfor %}

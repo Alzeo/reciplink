@@ -1,0 +1,22 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %}Nouveau tag{% endblock %}
+
+{% block body %}
+   <div class="container">
+       <div class="card bg-light mt-5">
+           <div class="card-header">
+               <div class="card-title">
+                   <h4>Création d'un tag</h4>
+               </div>
+           </div>
+           <div class="card-body">
+               {{ form_start(form) }}
+               {{ form_widget(form) }}
+                   <button class="btn btn-primary mt-4">{{ button_label|default('Modifier le tag') }}</button>
+               <a onclick="return confirm('êtes vous sûr de supprimer le tag ?')" href="{{path('admin_tags_delete', {'id': tag.id})}}" class="btn btn-danger mt-4"><i class="fa fa-trash"></i></a>
+               {{ form_end(form) }}
+           </div>
+       </div>
+   </div>
+{% endblock %}

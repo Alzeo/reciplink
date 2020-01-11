@@ -23,7 +23,13 @@ class RegisterType extends AbstractType
             ->add('password', PasswordType::class, [
                 'label' => false,
                 'attr' => [
-                    'placeholder' => '******'
+                    'placeholder' => 'Votre mot de passe'
+                ]
+            ])
+            ->add('passwordConfirm', PasswordType::class, [
+                'label' => false,
+                'attr' => [
+                    "placeholder" => 'Confirmez votre mot de passe'
                 ]
             ])
             ->add('email', TextType::class, [

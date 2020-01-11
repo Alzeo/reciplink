@@ -114,15 +114,19 @@ class __TwigTemplate_0dc44158f3cd74ddf99a73302ab3d10ea34828543c88245652746c272e3
         // line 50
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 50, $this->source); })()), "password", [], "any", false, false, false, 50), 'row');
         echo "
+        ";
+        // line 51
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 51, $this->source); })()), "passwordConfirm", [], "any", false, false, false, 51), 'row');
+        echo "
         <div class=\"form-group\">
             <button class=\"btn btn-primary btn-lg mt-4\">";
-        // line 52
-        echo twig_escape_filter($this->env, (((isset($context["button_label"]) || array_key_exists("button_label", $context))) ? (_twig_default_filter((isset($context["button_label"]) || array_key_exists("button_label", $context) ? $context["button_label"] : (function () { throw new RuntimeError('Variable "button_label" does not exist.', 52, $this->source); })()), "S'inscrire")) : ("S'inscrire")), "html", null, true);
+        // line 53
+        echo twig_escape_filter($this->env, (((isset($context["button_label"]) || array_key_exists("button_label", $context))) ? (_twig_default_filter((isset($context["button_label"]) || array_key_exists("button_label", $context) ? $context["button_label"] : (function () { throw new RuntimeError('Variable "button_label" does not exist.', 53, $this->source); })()), "S'inscrire")) : ("S'inscrire")), "html", null, true);
         echo "</button>
         </div>
         ";
-        // line 54
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 54, $this->source); })()), 'form_end');
+        // line 55
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 55, $this->source); })()), 'form_end');
         echo "
     </div>
 </div>";
@@ -146,7 +150,7 @@ class __TwigTemplate_0dc44158f3cd74ddf99a73302ab3d10ea34828543c88245652746c272e3
 
     public function getDebugInfo()
     {
-        return array (  125 => 54,  120 => 52,  115 => 50,  111 => 49,  107 => 48,  103 => 47,  99 => 46,  92 => 42,  65 => 18,  61 => 17,  43 => 1,);
+        return array (  129 => 55,  124 => 53,  119 => 51,  115 => 50,  111 => 49,  107 => 48,  103 => 47,  99 => 46,  92 => 42,  65 => 18,  61 => 17,  43 => 1,);
     }
 
     public function getSourceContext()
@@ -201,6 +205,7 @@ class __TwigTemplate_0dc44158f3cd74ddf99a73302ab3d10ea34828543c88245652746c272e3
         {{ form_row(form.username) }}
         {{ form_row(form.email) }}
         {{ form_row(form.password) }}
+        {{ form_row(form.passwordConfirm) }}
         <div class=\"form-group\">
             <button class=\"btn btn-primary btn-lg mt-4\">{{ button_label|default(\"S'inscrire\") }}</button>
         </div>

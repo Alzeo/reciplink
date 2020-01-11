@@ -28,8 +28,8 @@
             <td class="text-center"><span class="badge badge-primary rounded">{{ recipe.commentRecipe|length }}</span> </td>
             <td class="text-center"><span class="badge badge-primary rounded">{{ recipe.likes|length }}</span></td>
             <td>
-                <a href="#" class="btn btn-neutral"><i class="fa fa-edit"></i></a>
-                <a href="#" class="btn btn-danger"><i class="fa fa-trash"></i></a>
+                <a href="{{path('admin_recipes_edit', {'id': recipe.id})}}" class="btn btn-primary"><i class="fa fa-edit"></i></a>
+                <a href="{{path('admin_recipes_delete', {'id': recipe.id})}}" class="btn btn-danger"><i class="fa fa-trash"></i></a>
             </td>
         </tr>
         {% endfor %}

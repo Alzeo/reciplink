@@ -1,0 +1,43 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %}Modification du commentaire numéro {{ comment.id }}{% endblock %}
+
+{% form_theme form _self %}
+
+{% block body %}
+    <div class="container-fluid mt-4" style="width: 80%;">
+        <h1>Modification du commentaire de {{ comment.user.username }}</h1>
+        {{ form_start(form) }}
+                <div class="card bg-light">
+                    <div class="card-header">
+                        <h4 class="card-title">
+                            Modifier le commentaire pour la recette : {{ comment.recipe.name }}
+                            <a href="{{ path('recipe_show', { 'slug': comment.recipe.slug}) }}" target="_blank" class="btn btn-secondary">Voir la recette</a>
+                        </h4>
+                    </div>
+                    <div class="card-body">
+                        {{ form_widget(form) }}
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fa fa-check"></i>
+                            Enregistrer les modifications
+                        </button>
+                        <a onclick="return confirm('êtes vous sûr de supprimer la recette ?')" href="{{path('admin_comments_delete', {'id': comment.id})}}" class="btn btn-danger"><i class="fa fa-trash"></i></a>
+                    </div>
+
+        {{form_end(form)}}
+    </div>
+{% endblock %}
+{% block javascripts %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.10/js/select2.min.js"></script>
+    <script>
+        $('select').select2();
+    </script>
+    <script>
+        $('#recipe_picture').on('change',function(){
+            //get the file name
+            var fileName = $(this).val().replace('C:\\fakepath\\', " ");
+            //replace the "Choose a file" label
+            $(this).next('.custom-file-label').html(fileName);
+        })
+    </script>
+{% endblock %}

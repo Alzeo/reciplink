@@ -97,7 +97,7 @@ class Recipe
     private $foods;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\User", inversedBy="recipes" )
+     * @ORM\ManyToOne(targetEntity="App\Entity\User", inversedBy="recipes", cascade={"persist"} )
      */
     private $user;
 

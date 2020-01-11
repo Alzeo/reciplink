@@ -51,10 +51,13 @@
                     <a href="{{ path('admin_recipes_index') }}" class="nav-link"><i class="fa fa-cutlery" aria-hidden="true"></i> Recettes</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link"><i class="fa fa-comments"></i> Commentaires</a>
+                    <a href="{{ path('admin_comments_index')}}" class="nav-link"><i class="fa fa-comments"></i> Commentaires</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link"><i class="fa fa-users"></i> Utilisateurs</a>
+                    <a href="{{ path('admin_tags_index')}}" class="nav-link"><i class="fa fa-tag"></i> Tags</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ path('admin_users_index') }}" class="nav-link"><i class="fa fa-users"></i> Utilisateurs</a>
                 </li>
             </ul>
                 <ul class="ml-auto navbar-nav">
@@ -62,12 +65,8 @@
                     <li class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user" aria-hidden="true"></i> {{ user.username}}</a>
                         <div class="dropdown-perso dropdown-menu" role="menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{path('home')}}" target="_blank">Voir le site</a>
-                            <a class="dropdown-item" href="{{path('vegetarien_recipe')}}">Végétarien</a>
-                            <a class="dropdown-item" href="{{path('vegetalien_recipe')}}">Végétalien</a>
-                            <a class="dropdown-item" href="{{path('vegan_recipe')}}">Végan</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="{{path('discover')}}">Découvrir</a>
+                            <a class="dropdown-item" href="{{path('home')}}" target="_blank"><i class="fa fa-eye"></i> Voir le site</a>
+                            <a class="dropdown-item" href="{{path('app_logout')}}"><i class="fa fa-sign-out"></i> Deconnexion</a>
                         </div>
                     </li>
                 </ul>
@@ -76,6 +75,16 @@
         </div>
     </div>
 </nav>
+{% for message in app.flashes('success') %}
+    <div class="alert alert-success" style="background: #86d9ab !important;">
+        <div class="container">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <i class="fa fa-times"></i>
+            </button>
+            <span><i class="fa fa-bell"></i> {{ message|raw }}</span>
+        </div>
+    </div>
+{% endfor %}
 {% block body  %}
 {% endblock %}
 <div id="fb-root"></div>

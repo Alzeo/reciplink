@@ -6,9 +6,15 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
+ * @UniqueEntity(
+ *     fields={"username"},
+ *     message="Ce pseudonyme est déjà utilisé."
+ * )
  */
 class User implements UserInterface
 {
@@ -36,12 +42,17 @@ class User implements UserInterface
     private $password;
 
     /**
+     * @Assert\EqualTo(propertyPath="password", message="Les mots de passes ne sont pas similaires")
+     */
+    public $passwordConfirm;
+
+    /**
      * @ORM\Column(type="string", length=255)
      */
     private $email;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Recipe", mappedBy="user", orphanRemoval=true)
+     * @ORM\OneToMany(targetEntity="App\Entity\Recipe", mappedBy="user", cascade={"persist"}, orphanRemoval=true)
      */
     private $recipes;
 
@@ -86,7 +97,7 @@ class User implements UserInterface
     private $regime;
 
     /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\Role", mappedBy="users")
+     * @ORM\ManyToMany(targetEntity="App\Entity\Role", mappedBy="users", cascade={"persist"})
      */
     private $userRoles;
 

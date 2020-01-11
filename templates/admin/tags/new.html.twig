@@ -1,0 +1,22 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %}Nouveau tag{% endblock %}
+
+{% block body %}
+   <div class="container">
+       <div class="card bg-light mt-5">
+           <div class="card-header">
+               <div class="card-title">
+                   <h4>Création d'un tag</h4>
+               </div>
+           </div>
+           <div class="card-body">
+               {{ form_start(form) }}
+               {{ form_widget(form) }}
+
+                   <button class="btn btn-success btn-lg mt-4">{{ button_label|default('Créer le tag') }}</button>
+               {{ form_end(form) }}
+           </div>
+       </div>
+   </div>
+{% endblock %}
