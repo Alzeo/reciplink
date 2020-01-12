@@ -130,8 +130,14 @@ class __TwigTemplate_2a85034f2486abac12ff4c4efce942f32313af242c31b04ba32703af9d3
             echo twig_escape_filter($this->env, twig_length_filter($this->env, twig_get_attribute($this->env, $this->source, $context["recipe"], "likes", [], "any", false, false, false, 29)), "html", null, true);
             echo "</span></td>
             <td>
-                <a href=\"#\" class=\"btn btn-neutral\"><i class=\"fa fa-edit\"></i></a>
-                <a href=\"#\" class=\"btn btn-danger\"><i class=\"fa fa-trash\"></i></a>
+                <a href=\"";
+            // line 31
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_recipes_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["recipe"], "id", [], "any", false, false, false, 31)]), "html", null, true);
+            echo "\" class=\"btn btn-primary\"><i class=\"fa fa-edit\"></i></a>
+                <a href=\"";
+            // line 32
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_recipes_delete", ["id" => twig_get_attribute($this->env, $this->source, $context["recipe"], "id", [], "any", false, false, false, 32)]), "html", null, true);
+            echo "\" class=\"btn btn-danger\"><i class=\"fa fa-trash\"></i></a>
             </td>
         </tr>
         ";
@@ -164,7 +170,7 @@ class __TwigTemplate_2a85034f2486abac12ff4c4efce942f32313af242c31b04ba32703af9d3
 
     public function getDebugInfo()
     {
-        return array (  143 => 36,  130 => 29,  126 => 28,  122 => 27,  118 => 26,  114 => 25,  111 => 24,  107 => 23,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  149 => 36,  139 => 32,  135 => 31,  130 => 29,  126 => 28,  122 => 27,  118 => 26,  114 => 25,  111 => 24,  107 => 23,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -199,8 +205,8 @@ class __TwigTemplate_2a85034f2486abac12ff4c4efce942f32313af242c31b04ba32703af9d3
             <td class=\"text-center\"><span class=\"badge badge-primary rounded\">{{ recipe.commentRecipe|length }}</span> </td>
             <td class=\"text-center\"><span class=\"badge badge-primary rounded\">{{ recipe.likes|length }}</span></td>
             <td>
-                <a href=\"#\" class=\"btn btn-neutral\"><i class=\"fa fa-edit\"></i></a>
-                <a href=\"#\" class=\"btn btn-danger\"><i class=\"fa fa-trash\"></i></a>
+                <a href=\"{{path('admin_recipes_edit', {'id': recipe.id})}}\" class=\"btn btn-primary\"><i class=\"fa fa-edit\"></i></a>
+                <a href=\"{{path('admin_recipes_delete', {'id': recipe.id})}}\" class=\"btn btn-danger\"><i class=\"fa fa-trash\"></i></a>
             </td>
         </tr>
         {% endfor %}

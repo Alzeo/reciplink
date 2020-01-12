@@ -28,10 +28,11 @@ security:
             form_login:
                 login_path: admin_account_login
                 check_path: admin_account_login
+                default_target_path : admin_recipes_index
 
             logout:
                 path: account_logout
-                target: homme
+                target: home
         main:
             pattern: ^/
             anonymous: true

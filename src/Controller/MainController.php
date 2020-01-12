@@ -11,6 +11,7 @@ use App\Form\NewsType;
 use App\Form\RecipeSearchPlatType;
 use App\Form\RecipeSearchType;
 use App\Form\RegisterType;
+use App\Repository\PostRepository;
 use App\Repository\RecipeRepository;
 use App\Repository\UserRepository;
 use Knp\Component\Pager\Pagination\PaginationInterface;
@@ -37,7 +38,7 @@ class MainController extends AbstractController
      * @param RecipeRepository $recipeRepository
      * @param Recipe $recipe
      */
-    public function index(Request $request, RecipeRepository $recipeRepository)
+    public function index(Request $request, RecipeRepository $recipeRepository, PostRepository $postRepository)
     {
 
         $news = new Newsletter();
@@ -51,6 +52,8 @@ class MainController extends AbstractController
             return $this->redirectToRoute('home');
         }
 
+        $posts = $postRepository->findByPublish(true);
+
 
         $recipes = $recipeRepository->findLatest();
 
@@ -59,7 +62,8 @@ class MainController extends AbstractController
             'controller_name' => 'MainController',
             'user' => $user,
             'recipes' => $recipes,
-            'form' => $form->createView()
+            'form' => $form->createView(),
+            'posts' => $posts
         ]);
     }
 

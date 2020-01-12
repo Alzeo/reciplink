@@ -70,8 +70,11 @@
                     {{ form_row(form.calorie) }}
                 </div>
             </div>
+            <p class="mb-3">Les valeurs nutritionnelles sont définies pour une seule portion, ces champs ne sont pas obligatoire mais permettent
+                d'aiguiller les personnes suivant un régimes particulier.</p>
             <hr/>
             {{ form_row(form.tags) }}
+            <p class="mb-3">Les tags permettent d'apporter des indications supplémentaires concernant votre recette.</p>
             <div class="button-form text-center">
                 <button class="btn btn-success btn-lg mt-4">{{ button_label|default('Ajouter') }}</button>
             </div>

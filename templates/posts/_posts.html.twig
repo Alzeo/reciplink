@@ -1,0 +1,12 @@
+<div class="col-xs-12 col-md-6 col-lg-4">
+    <div class="card">
+        <a href="#"><img class="card-img-top" src="{{ asset('uploads/posts/' ~ post.Image) }}" alt="{{ post.title }}"> </a>
+      <div class="card-body">
+            <h5 class="card-title">{{ post.title }}</h5>
+            <p class="card-text">
+                {{ post.extract }}
+            </p>
+            <a href="#" class="btn btn-success">Voir l'article</a>
+        </div>
+    </div>
+</div>

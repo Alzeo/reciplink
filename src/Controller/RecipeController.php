@@ -284,7 +284,7 @@ class RecipeController extends AbstractController
                 'recipe' => $recipe,
                 'userRecipe' => $recipe->getUser(),
                 'user' => $user,
-                'id' => $recipe->getId(),
+                'slug' => $recipe->getSlug(),
             ]);
 
         }
@@ -311,7 +311,7 @@ class RecipeController extends AbstractController
             'recipe' => $recipe,
             'userRecipe' => $recipe->getUser(),
             'user' => $user,
-            'id' => $recipe->getId(),
+            'slug' => $recipe->getSlug(),
         ]);
     }
 

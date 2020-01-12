@@ -12,6 +12,11 @@ return $getExpiry ? PHP_INT_MAX : Hydrator::hydrate(
             'targetEntity' => [
                 'App\\Entity\\User',
             ],
+            'cascade' => [
+                [
+                    'persist',
+                ],
+            ],
             'inversedBy' => [
                 'recipes',
             ],

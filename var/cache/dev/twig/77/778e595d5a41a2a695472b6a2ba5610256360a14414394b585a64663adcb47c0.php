@@ -204,68 +204,47 @@ class __TwigTemplate_cf3b9b60aa756b0288664e7fcc2b55a1fd378d78e5df19d810488af5409
     <section class=\"block-blog text-center container-fluid mt-5\" style=\"padding-top: 40px; padding-bottom: 40px; width: 80%;\">
         <h4 class=\"mb-5\">Dernièrs articles</h4>
         <div class=\"row text-center\" style=\"margin-top:80px;\">
-           <div class=\"col-4\">
-               <div class=\"card text-center\">
-                   <div class=\"card-header\">
-                       CATÉGORIE : PALÉO
-                   </div>
-                   <img class=\"card-img-top\" src=\"";
-        // line 61
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/assets/img/2873066.jpg"), "html", null, true);
-        echo "\" alt=\"recette\">
-                   <div class=\"card-body\">
-                       <h5 class=\"card-title\">Special title treatment</h5>
-                       <p class=\"card-text\">With supporting text below as a natural lead-in to additional content.</p>
-                       <a href=\"#\" class=\"btn btn-primary\">Go somewhere</a>
-                   </div>
-                   <div class=\"card-footer text-muted\">
-                       2 days ago
-                   </div>
-               </div>
-           </div>
-           <div class=\"col-4\">
-               <div class=\"card text-center\">
-                   <div class=\"card-header\">
-                       CATÉGORIE : PALÉO
-                   </div>
-                   <img class=\"card-img-top\" src=\"";
-        // line 77
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/assets/img/2873066.jpg"), "html", null, true);
-        echo "\" alt=\"recette\">
-                   <div class=\"card-body\">
-                       <h5 class=\"card-title\">Special title treatment</h5>
-                       <p class=\"card-text\">With supporting text below as a natural lead-in to additional content.</p>
-                       <a href=\"#\" class=\"btn btn-primary\">Go somewhere</a>
-                   </div>
-                   <div class=\"card-footer text-muted\">
-                       2 days ago
-                   </div>
-               </div>
-           </div>
-           <div class=\"col-4\">
-               <div class=\"card text-center\">
-                   <div class=\"card-header\">
-                       CATÉGORIE : PALÉO
-                   </div>
-                   <img class=\"card-img-top\" src=\"";
-        // line 93
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/assets/img/2873066.jpg"), "html", null, true);
-        echo "\" alt=\"recette\">
-                   <div class=\"card-body\">
-                       <h5 class=\"card-title\">Special title treatment</h5>
-                       <p class=\"card-text\">With supporting text below as a natural lead-in to additional content.</p>
-                       <a href=\"#\" class=\"btn btn-primary\">Go somewhere</a>
-                   </div>
-                   <div class=\"card-footer text-muted\">
-                       2 days ago
-                   </div>
-               </div>
-           </div>
-        </div>
+            ";
+        // line 56
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["posts"]) || array_key_exists("posts", $context) ? $context["posts"] : (function () { throw new RuntimeError('Variable "posts" does not exist.', 56, $this->source); })()));
+        $context['loop'] = [
+          'parent' => $context['_parent'],
+          'index0' => 0,
+          'index'  => 1,
+          'first'  => true,
+        ];
+        if (is_array($context['_seq']) || (is_object($context['_seq']) && $context['_seq'] instanceof \Countable)) {
+            $length = count($context['_seq']);
+            $context['loop']['revindex0'] = $length - 1;
+            $context['loop']['revindex'] = $length;
+            $context['loop']['length'] = $length;
+            $context['loop']['last'] = 1 === $length;
+        }
+        foreach ($context['_seq'] as $context["_key"] => $context["post"]) {
+            // line 57
+            echo "                ";
+            echo twig_include($this->env, $context, "posts/_posts.html.twig");
+            echo "
+            ";
+            ++$context['loop']['index0'];
+            ++$context['loop']['index'];
+            $context['loop']['first'] = false;
+            if (isset($context['loop']['length'])) {
+                --$context['loop']['revindex0'];
+                --$context['loop']['revindex'];
+                $context['loop']['last'] = 0 === $context['loop']['revindex0'];
+            }
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['post'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 59
+        echo "        </div>
     </section>
 <section class=\"block-newsletter text-center container-fluid mt-5\" style=\"padding-top: 40px; padding-bottom: 40px; background: #f7f7f7\">
     <img src=\"";
-        // line 107
+        // line 62
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/assets/img/paper-plane.png"), "html", null, true);
         echo "\" alt=\"\" height=\"200px;\">
 
@@ -297,7 +276,7 @@ class __TwigTemplate_cf3b9b60aa756b0288664e7fcc2b55a1fd378d78e5df19d810488af5409
 
     public function getDebugInfo()
     {
-        return array (  269 => 107,  252 => 93,  233 => 77,  214 => 61,  198 => 48,  194 => 47,  190 => 46,  186 => 45,  178 => 40,  170 => 35,  166 => 33,  152 => 32,  149 => 31,  132 => 30,  123 => 24,  115 => 20,  105 => 16,  98 => 11,  94 => 10,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  248 => 62,  243 => 59,  226 => 57,  209 => 56,  198 => 48,  194 => 47,  190 => 46,  186 => 45,  178 => 40,  170 => 35,  166 => 33,  152 => 32,  149 => 31,  132 => 30,  123 => 24,  115 => 20,  105 => 16,  98 => 11,  94 => 10,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -357,54 +336,9 @@ class __TwigTemplate_cf3b9b60aa756b0288664e7fcc2b55a1fd378d78e5df19d810488af5409
     <section class=\"block-blog text-center container-fluid mt-5\" style=\"padding-top: 40px; padding-bottom: 40px; width: 80%;\">
         <h4 class=\"mb-5\">Dernièrs articles</h4>
         <div class=\"row text-center\" style=\"margin-top:80px;\">
-           <div class=\"col-4\">
-               <div class=\"card text-center\">
-                   <div class=\"card-header\">
-                       CATÉGORIE : PALÉO
-                   </div>
-                   <img class=\"card-img-top\" src=\"{{ asset('/assets/img/2873066.jpg')}}\" alt=\"recette\">
-                   <div class=\"card-body\">
-                       <h5 class=\"card-title\">Special title treatment</h5>
-                       <p class=\"card-text\">With supporting text below as a natural lead-in to additional content.</p>
-                       <a href=\"#\" class=\"btn btn-primary\">Go somewhere</a>
-                   </div>
-                   <div class=\"card-footer text-muted\">
-                       2 days ago
-                   </div>
-               </div>
-           </div>
-           <div class=\"col-4\">
-               <div class=\"card text-center\">
-                   <div class=\"card-header\">
-                       CATÉGORIE : PALÉO
-                   </div>
-                   <img class=\"card-img-top\" src=\"{{ asset('/assets/img/2873066.jpg')}}\" alt=\"recette\">
-                   <div class=\"card-body\">
-                       <h5 class=\"card-title\">Special title treatment</h5>
-                       <p class=\"card-text\">With supporting text below as a natural lead-in to additional content.</p>
-                       <a href=\"#\" class=\"btn btn-primary\">Go somewhere</a>
-                   </div>
-                   <div class=\"card-footer text-muted\">
-                       2 days ago
-                   </div>
-               </div>
-           </div>
-           <div class=\"col-4\">
-               <div class=\"card text-center\">
-                   <div class=\"card-header\">
-                       CATÉGORIE : PALÉO
-                   </div>
-                   <img class=\"card-img-top\" src=\"{{ asset('/assets/img/2873066.jpg')}}\" alt=\"recette\">
-                   <div class=\"card-body\">
-                       <h5 class=\"card-title\">Special title treatment</h5>
-                       <p class=\"card-text\">With supporting text below as a natural lead-in to additional content.</p>
-                       <a href=\"#\" class=\"btn btn-primary\">Go somewhere</a>
-                   </div>
-                   <div class=\"card-footer text-muted\">
-                       2 days ago
-                   </div>
-               </div>
-           </div>
+            {% for post in posts %}
+                {{ include('posts/_posts.html.twig') }}
+            {% endfor %}
         </div>
     </section>
 <section class=\"block-newsletter text-center container-fluid mt-5\" style=\"padding-top: 40px; padding-bottom: 40px; background: #f7f7f7\">

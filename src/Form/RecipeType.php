@@ -64,10 +64,12 @@ class RecipeType extends AbstractType
                 'label' => 'Détaillez votre recette'
             ])
             ->add('protein', IntegerType::class, [
-                'label' => 'Protéine'
+                'label' => 'Protéine',
+                'required' => false
             ])
             ->add('glucide', IntegerType::class, [
-                'label' => 'Glucide'
+                'label' => 'Glucide',
+                'required' => false
             ])
             ->add('regime', ChoiceType::class, [
                 'label' => 'Régime alimentaire',
@@ -80,16 +82,19 @@ class RecipeType extends AbstractType
                 ]
             ])
             ->add('lipide', IntegerType::class, [
-                'label' => 'Lipide'
+                'label' => 'Lipide',
+                'required' => false
             ])
             ->add('calorie', IntegerType::class, [
-                'label' => 'Calorie'
+                'label' => 'Calorie',
+                'required' => false
             ])
             ->add('tags', EntityType::class, [
                 'class' => Tags::class,
                 'label' => 'Tags',
                 'multiple' => true,
-                'choice_label' => 'name'
+                'choice_label' => 'name',
+                'required' => false
             ])
             ->add('foods', CollectionType::class, array(
                 'entry_type'   => FoodType::class,

@@ -5,6 +5,7 @@
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
     recipes_image_directory: '%kernel.project_dir%/public/uploads/recipes'
+    posts_image_directory: '%kernel.project_dir%/public/uploads/posts'
 
 services:
     # default configuration for services in *this* file
