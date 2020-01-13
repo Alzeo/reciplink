@@ -438,3 +438,7 @@ strong {
 .block-blog .card img {
     border-radius: 12px 12px 0 0;
 }
+
+.navbar .navbar-nav .nav-item .nav-link {
+    color: #14202a !important;
+}

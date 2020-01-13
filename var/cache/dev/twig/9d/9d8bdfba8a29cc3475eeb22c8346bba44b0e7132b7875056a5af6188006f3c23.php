@@ -103,8 +103,8 @@ class __TwigTemplate_b46297f18e917ea1ac4c1835d252acde93d5a6c2d57037d852affaca0f8
     <div class=\"container\">
         <a href=\"#pablo\" class=\"navbar-brand\"><img src=\"";
         // line 41
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/assets/img/cauldron.png"), "html", null, true);
-        echo "\" width=\"60px\" alt=\"Card image cap\"></a>
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/assets/img/figuy.png"), "html", null, true);
+        echo "\" width=\"170px\" alt=\"Card image cap\"></a>
         <button aria-controls=\"navbarNav\" aria-expanded=\"true\" aria-label=\"Toggle navigation\" class=\"navbar-toggler navbar-toggler-right\" data-target=\"#navbar-success\" data-toggle=\"collapse\" id=\"navbar-success\" type=\"button\">
             <span class=\"navbar-toggler-bar\"></span>
             <span class=\"navbar-toggler-bar\"></span>
@@ -445,7 +445,7 @@ class __TwigTemplate_b46297f18e917ea1ac4c1835d252acde93d5a6c2d57037d852affaca0f8
 <body>
 <nav class=\"site-header sticky-top navbar navbar navbar-expand\">
     <div class=\"container\">
-        <a href=\"#pablo\" class=\"navbar-brand\"><img src=\"{{ asset('/assets/img/cauldron.png') }}\" width=\"60px\" alt=\"Card image cap\"></a>
+        <a href=\"#pablo\" class=\"navbar-brand\"><img src=\"{{ asset('/assets/img/figuy.png') }}\" width=\"170px\" alt=\"Card image cap\"></a>
         <button aria-controls=\"navbarNav\" aria-expanded=\"true\" aria-label=\"Toggle navigation\" class=\"navbar-toggler navbar-toggler-right\" data-target=\"#navbar-success\" data-toggle=\"collapse\" id=\"navbar-success\" type=\"button\">
             <span class=\"navbar-toggler-bar\"></span>
             <span class=\"navbar-toggler-bar\"></span>

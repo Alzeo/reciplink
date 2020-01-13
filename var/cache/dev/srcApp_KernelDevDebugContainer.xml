@@ -1500,6 +1500,12 @@
       <argument type="service" id=".debug.http_client" on-invalid="ignore"/>
       <argument type="service" id="monolog.logger" on-invalid="ignore"/>
     </service>
+    <service id="mailer.transport_factory.gmail" class="Symfony\Component\Mailer\Bridge\Google\Transport\GmailTransportFactory">
+      <tag name="mailer.transport_factory"/>
+      <argument type="service" id="debug.event_dispatcher"/>
+      <argument type="service" id=".debug.http_client" on-invalid="ignore"/>
+      <argument type="service" id="monolog.logger" on-invalid="ignore"/>
+    </service>
     <service id="mailer.transport_factory.null" class="Symfony\Component\Mailer\Transport\NullTransportFactory">
       <tag name="mailer.transport_factory"/>
       <argument type="service" id="debug.event_dispatcher"/>
@@ -5773,12 +5779,12 @@
         <argument key="username">null</argument>
         <argument key="password">null</argument>
         <argument key="host">localhost</argument>
-        <argument key="port">1025</argument>
+        <argument key="port">null</argument>
         <argument key="timeout">30</argument>
         <argument key="source_ip">null</argument>
         <argument key="local_domain">null</argument>
-        <argument key="encryption">ssl</argument>
-        <argument key="auth_mode">login</argument>
+        <argument key="encryption">null</argument>
+        <argument key="auth_mode">null</argument>
         <argument key="command">/usr/sbin/sendmail -bs</argument>
       </argument>
       <argument type="service" id="router.request_context" on-invalid="null"/>
@@ -6206,9 +6212,11 @@
         <argument key="recipeSaveRepository" type="service" id="App\Repository\RecipeSaveRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.2iTCiE0" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.Cz1EmPU" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="environment" type="service" id="twig"/>
+        <argument key="mailer" type="service" id="mailer.mailer"/>
         <argument key="notifications" type="service" id="App\Notifications\PasswordNotifications"/>
         <argument key="userRepository" type="service" id="App\Repository\UserRepository"/>
       </argument>
@@ -6244,7 +6252,7 @@
         <argument key="user" type="service" id=".errored..service_locator.tIQ5Q0N.App\Entity\User"/>
       </argument>
     </service>
-    <service id=".service_locator.QpijfTk" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.8k9V5YH" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\AdminCommentController::delete" type="service" id=".service_locator.I0wrEZ3"/>
@@ -6275,7 +6283,7 @@
         <argument key="App\Controller\RecipeController::save" type="service" id=".service_locator.VHcM_9o"/>
         <argument key="App\Controller\RecipeController::show" type="service" id=".service_locator.TxrSGco"/>
         <argument key="App\Controller\RecipeController::unsave" type="service" id=".service_locator.VHcM_9o"/>
-        <argument key="App\Controller\ResetPasswordController::reset" type="service" id=".service_locator.2iTCiE0"/>
+        <argument key="App\Controller\ResetPasswordController::reset" type="service" id=".service_locator.Cz1EmPU"/>
         <argument key="App\Controller\SecurityController::login" type="service" id=".service_locator.g.xob4v"/>
         <argument key="App\Controller\UserController::delete" type="service" id=".service_locator.tIQ5Q0N"/>
         <argument key="App\Controller\UserController::saveRecipe" type="service" id=".service_locator.LqLSGoO"/>
@@ -6309,7 +6317,7 @@
         <argument key="App\Controller\RecipeController:save" type="service" id=".service_locator.VHcM_9o"/>
         <argument key="App\Controller\RecipeController:show" type="service" id=".service_locator.TxrSGco"/>
         <argument key="App\Controller\RecipeController:unsave" type="service" id=".service_locator.VHcM_9o"/>
-        <argument key="App\Controller\ResetPasswordController:reset" type="service" id=".service_locator.2iTCiE0"/>
+        <argument key="App\Controller\ResetPasswordController:reset" type="service" id=".service_locator.Cz1EmPU"/>
         <argument key="App\Controller\SecurityController:login" type="service" id=".service_locator.g.xob4v"/>
         <argument key="App\Controller\UserController:delete" type="service" id=".service_locator.tIQ5Q0N"/>
         <argument key="App\Controller\UserController:saveRecipe" type="service" id=".service_locator.LqLSGoO"/>
@@ -6787,12 +6795,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" public="false">
-      <argument type="service" id=".service_locator.QpijfTk"/>
+      <argument type="service" id=".service_locator.8k9V5YH"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" public="false"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver" public="false"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver" public="false">
-      <argument type="service" id=".service_locator.QpijfTk"/>
+      <argument type="service" id=".service_locator.8k9V5YH"/>
     </service>
     <service id=".debug.http_client.inner" class="Symfony\Contracts\HttpClient\HttpClientInterface" public="false">
       <argument type="collection"/>
@@ -7275,7 +7283,7 @@
     <service id="Swift_Mailer" alias="swiftmailer.mailer.default" public="false"/>
     <service id="Swift_Transport" alias="swiftmailer.mailer.default.transport.spool" public="false"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.CmORmuK" public="true"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.QpijfTk"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.8k9V5YH"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem" public="false"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>

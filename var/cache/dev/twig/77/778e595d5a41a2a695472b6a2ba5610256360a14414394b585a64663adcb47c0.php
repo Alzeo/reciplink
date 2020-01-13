@@ -202,7 +202,7 @@ class __TwigTemplate_cf3b9b60aa756b0288664e7fcc2b55a1fd378d78e5df19d810488af5409
        </div>
     </section>
     <section class=\"block-blog text-center container-fluid mt-5\" style=\"padding-top: 40px; padding-bottom: 40px; width: 80%;\">
-        <h4 class=\"mb-5\">Dernièrs articles</h4>
+        <h4 class=\"mb-5\">Derniers articles</h4>
         <div class=\"row text-center\" style=\"margin-top:80px;\">
             ";
         // line 56
@@ -334,7 +334,7 @@ class __TwigTemplate_cf3b9b60aa756b0288664e7fcc2b55a1fd378d78e5df19d810488af5409
        </div>
     </section>
     <section class=\"block-blog text-center container-fluid mt-5\" style=\"padding-top: 40px; padding-bottom: 40px; width: 80%;\">
-        <h4 class=\"mb-5\">Dernièrs articles</h4>
+        <h4 class=\"mb-5\">Derniers articles</h4>
         <div class=\"row text-center\" style=\"margin-top:80px;\">
             {% for post in posts %}
                 {{ include('posts/_posts.html.twig') }}
