@@ -92,46 +92,67 @@ class __TwigTemplate_39649199bb4d14a07b635054383a592e9b1abee151fabb2dd4a859f89cd
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/assets/img/home-banner2.jpg"), "html", null, true);
         echo ");  background-repeat: no-repeat; background-size: cover;\">
 <form class=\"form-signin\" method=\"post\">
-
     ";
-        // line 45
-        if ((isset($context["error"]) || array_key_exists("error", $context) ? $context["error"] : (function () { throw new RuntimeError('Variable "error" does not exist.', 45, $this->source); })())) {
-            // line 46
+        // line 44
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 44, $this->source); })()), "flashes", [0 => "success"], "method", false, false, false, 44));
+        foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
+            // line 45
+            echo "        <div class=\"alert alert-success\" style=\"background: #86d9ab !important;\">
+            <div class=\"container\">
+                <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">
+                    <i class=\"fa fa-times\"></i>
+                </button>
+                <span><i class=\"fa fa-bell\"></i> ";
+            // line 50
+            echo $context["message"];
+            echo "</span>
+            </div>
+        </div>
+    ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['message'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 54
+        echo "    ";
+        if ((isset($context["error"]) || array_key_exists("error", $context) ? $context["error"] : (function () { throw new RuntimeError('Variable "error" does not exist.', 54, $this->source); })())) {
+            // line 55
             echo "        <div class=\"alert alert-danger\"><i class=\"fa fa-bell-o\" aria-hidden=\"true\"></i>";
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans(twig_get_attribute($this->env, $this->source, (isset($context["error"]) || array_key_exists("error", $context) ? $context["error"] : (function () { throw new RuntimeError('Variable "error" does not exist.', 46, $this->source); })()), "messageKey", [], "any", false, false, false, 46), twig_get_attribute($this->env, $this->source, (isset($context["error"]) || array_key_exists("error", $context) ? $context["error"] : (function () { throw new RuntimeError('Variable "error" does not exist.', 46, $this->source); })()), "messageData", [], "any", false, false, false, 46), "security"), "html", null, true);
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans(twig_get_attribute($this->env, $this->source, (isset($context["error"]) || array_key_exists("error", $context) ? $context["error"] : (function () { throw new RuntimeError('Variable "error" does not exist.', 55, $this->source); })()), "messageKey", [], "any", false, false, false, 55), twig_get_attribute($this->env, $this->source, (isset($context["error"]) || array_key_exists("error", $context) ? $context["error"] : (function () { throw new RuntimeError('Variable "error" does not exist.', 55, $this->source); })()), "messageData", [], "any", false, false, false, 55), "security"), "html", null, true);
             echo "</div>
     ";
         }
-        // line 48
+        // line 57
         echo "
     ";
-        // line 49
-        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 49, $this->source); })()), "user", [], "any", false, false, false, 49)) {
-            // line 50
+        // line 58
+        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 58, $this->source); })()), "user", [], "any", false, false, false, 58)) {
+            // line 59
             echo "        <div class=\"mb-3\">
             Vous êtes connecté(e) en tant que ";
-            // line 51
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 51, $this->source); })()), "user", [], "any", false, false, false, 51), "username", [], "any", false, false, false, 51), "html", null, true);
+            // line 60
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 60, $this->source); })()), "user", [], "any", false, false, false, 60), "username", [], "any", false, false, false, 60), "html", null, true);
             echo ", <a href=\"";
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
             echo "\">Déconnexion</a>
         </div>
     ";
         }
-        // line 54
+        // line 63
         echo "    <img src=\"";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/assets/img/cauldron.png"), "html", null, true);
         echo "\" width=\"60px\" alt=\"Card image cap\">
     <h1 class=\"h3 mb-3 font-weight-normal\">Connectez vous</h1>
     <input type=\"text\" value=\"";
-        // line 56
-        echo twig_escape_filter($this->env, (isset($context["last_username"]) || array_key_exists("last_username", $context) ? $context["last_username"] : (function () { throw new RuntimeError('Variable "last_username" does not exist.', 56, $this->source); })()), "html", null, true);
+        // line 65
+        echo twig_escape_filter($this->env, (isset($context["last_username"]) || array_key_exists("last_username", $context) ? $context["last_username"] : (function () { throw new RuntimeError('Variable "last_username" does not exist.', 65, $this->source); })()), "html", null, true);
         echo "\" name=\"username\" placeholder=\"Username\" id=\"inputUsername\" class=\"form-control mb-4\" required autofocus>
     <input type=\"password\" name=\"password\" id=\"inputPassword\"  placeholder=\"********\" class=\"form-control\" required>
 
     <input type=\"hidden\" name=\"_csrf_token\"
            value=\"";
-        // line 60
+        // line 69
         echo twig_escape_filter($this->env, $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderCsrfToken("authenticate"), "html", null, true);
         echo "\"
     >
@@ -148,7 +169,7 @@ class __TwigTemplate_39649199bb4d14a07b635054383a592e9b1abee151fabb2dd4a859f89cd
 \t\t\t\t\t\t</span>
 
         <a class=\"txt1 bo1 hov1\" href=\"";
-        // line 74
+        // line 83
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("register");
         echo "\">
             Créez en un.
@@ -180,7 +201,7 @@ class __TwigTemplate_39649199bb4d14a07b635054383a592e9b1abee151fabb2dd4a859f89cd
 
     public function getDebugInfo()
     {
-        return array (  152 => 74,  135 => 60,  128 => 56,  122 => 54,  114 => 51,  111 => 50,  109 => 49,  106 => 48,  100 => 46,  98 => 45,  92 => 42,  65 => 18,  61 => 17,  43 => 1,);
+        return array (  173 => 83,  156 => 69,  149 => 65,  143 => 63,  135 => 60,  132 => 59,  130 => 58,  127 => 57,  121 => 55,  118 => 54,  108 => 50,  101 => 45,  97 => 44,  92 => 42,  65 => 18,  61 => 17,  43 => 1,);
     }
 
     public function getSourceContext()
@@ -228,7 +249,16 @@ class __TwigTemplate_39649199bb4d14a07b635054383a592e9b1abee151fabb2dd4a859f89cd
 </head>
 <body class=\"text-center\" style=\"background-image: url({{ asset ('/assets/img/home-banner2.jpg') }});  background-repeat: no-repeat; background-size: cover;\">
 <form class=\"form-signin\" method=\"post\">
-
+    {% for message in app.flashes('success') %}
+        <div class=\"alert alert-success\" style=\"background: #86d9ab !important;\">
+            <div class=\"container\">
+                <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">
+                    <i class=\"fa fa-times\"></i>
+                </button>
+                <span><i class=\"fa fa-bell\"></i> {{ message|raw }}</span>
+            </div>
+        </div>
+    {% endfor %}
     {% if error %}
         <div class=\"alert alert-danger\"><i class=\"fa fa-bell-o\" aria-hidden=\"true\"></i>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
     {% endif %}

@@ -1,6 +1,6 @@
 <?php
 
-namespace ContainerHFIyGeZ;
+namespace Container9uixx87;
 
 use Symfony\Component\DependencyInjection\Argument\RewindableGenerator;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -1443,9 +1443,6 @@ class srcApp_KernelDevDebugContainer extends Container
         $instance->addListener('kernel.request', [0 => function () {
             return ($this->privates['debug.debug_handlers_listener'] ?? $this->getDebug_DebugHandlersListenerService());
         }, 1 => 'configure'], 2048);
-        $instance->addListener('console.command', [0 => function () {
-            return ($this->privates['debug.debug_handlers_listener'] ?? $this->getDebug_DebugHandlersListenerService());
-        }, 1 => 'configure'], 2048);
         $instance->addListener('kernel.request', [0 => function () {
             return ($this->privates['router_listener'] ?? $this->getRouterListenerService());
         }, 1 => 'onKernelRequest'], 32);
@@ -2532,22 +2529,166 @@ class srcApp_KernelDevDebugContainer extends Container
     }
 
     /**
-     * Gets the private '.service_locator.BW58p0X' shared service.
+     * Gets the private '.service_locator.7GY8gU6' shared service.
      *
      * @return \Symfony\Component\DependencyInjection\ServiceLocator
      */
-    protected function get_ServiceLocator_BW58p0XService()
+    protected function get_ServiceLocator_7GY8gU6Service()
     {
-        return $this->privates['.service_locator.BW58p0X'] = new \Symfony\Component\DependencyInjection\Argument\ServiceLocator($this->getService, [
-            'environment' => ['services', 'twig', 'getTwigService', false],
-            'mailer' => ['services', 'swiftmailer.mailer.default', 'getSwiftmailer_Mailer_DefaultService', false],
-            'notifications' => ['privates', 'App\\Notifications\\PasswordNotifications', 'getPasswordNotificationsService', false],
-            'userRepository' => ['privates', 'App\\Repository\\UserRepository', 'getUserRepositoryService', false],
+        return $this->privates['.service_locator.7GY8gU6'] = new \Symfony\Component\DependencyInjection\Argument\ServiceLocator($this->getService, [
+            'App\\Controller\\AdminCommentController::delete' => ['privates', '.service_locator.I0wrEZ3', 'get_ServiceLocator_I0wrEZ3Service', false],
+            'App\\Controller\\AdminCommentController::edit' => ['privates', '.service_locator.yQdqVk8', 'get_ServiceLocator_YQdqVk8Service', false],
+            'App\\Controller\\AdminCommentController::index' => ['privates', '.service_locator.mx6LQUD', 'get_ServiceLocator_Mx6LQUDService', false],
+            'App\\Controller\\AdminPostController::index' => ['privates', '.service_locator.cgJD7DL', 'get_ServiceLocator_CgJD7DLService', false],
+            'App\\Controller\\AdminPostController::new' => ['privates', '.service_locator.s.tJs.w', 'get_ServiceLocator_S_TJs_WService', false],
+            'App\\Controller\\AdminRecipeController::delete' => ['privates', '.service_locator.IEzAIE5', 'get_ServiceLocator_IEzAIE5Service', false],
+            'App\\Controller\\AdminRecipeController::edit' => ['privates', '.service_locator.g_QAUHN', 'get_ServiceLocator_GQAUHNService', false],
+            'App\\Controller\\AdminRecipeController::index' => ['privates', '.service_locator.JqXngIc', 'get_ServiceLocator_JqXngIcService', false],
+            'App\\Controller\\AdminTagsController::delete' => ['privates', '.service_locator.ZuapGlU', 'get_ServiceLocator_ZuapGlUService', false],
+            'App\\Controller\\AdminTagsController::edit' => ['privates', '.service_locator.oobyxGC', 'get_ServiceLocator_OobyxGCService', false],
+            'App\\Controller\\AdminTagsController::index' => ['privates', '.service_locator.Rol.ydx', 'get_ServiceLocator_Rol_YdxService', false],
+            'App\\Controller\\AdminUserController::delete' => ['privates', '.service_locator.fx3nj2M', 'get_ServiceLocator_Fx3nj2MService', false],
+            'App\\Controller\\AdminUserController::index' => ['privates', '.service_locator.wgX78kv', 'get_ServiceLocator_WgX78kvService', false],
+            'App\\Controller\\MainController::allRecipes' => ['privates', '.service_locator.MN_z1ND', 'get_ServiceLocator_MNZ1NDService', false],
+            'App\\Controller\\MainController::index' => ['privates', '.service_locator.V6jaZWv', 'get_ServiceLocator_V6jaZWvService', false],
+            'App\\Controller\\MainController::paleoRecipes' => ['privates', '.service_locator.MN_z1ND', 'get_ServiceLocator_MNZ1NDService', false],
+            'App\\Controller\\MainController::register' => ['privates', '.service_locator.8oMmtrZ', 'get_ServiceLocator_8oMmtrZService', false],
+            'App\\Controller\\MainController::userKitchen' => ['privates', '.service_locator.KaD5QYu', 'get_ServiceLocator_KaD5QYuService', false],
+            'App\\Controller\\MainController::veganRecipes' => ['privates', '.service_locator.MN_z1ND', 'get_ServiceLocator_MNZ1NDService', false],
+            'App\\Controller\\MainController::vegetalienRecipes' => ['privates', '.service_locator.MN_z1ND', 'get_ServiceLocator_MNZ1NDService', false],
+            'App\\Controller\\MainController::vegetarienRecipes' => ['privates', '.service_locator.MN_z1ND', 'get_ServiceLocator_MNZ1NDService', false],
+            'App\\Controller\\RecipeController::delete' => ['privates', '.service_locator.g_QAUHN', 'get_ServiceLocator_GQAUHNService', false],
+            'App\\Controller\\RecipeController::edit' => ['privates', '.service_locator.g_QAUHN', 'get_ServiceLocator_GQAUHNService', false],
+            'App\\Controller\\RecipeController::index' => ['privates', '.service_locator.LPAUdgn', 'get_ServiceLocator_LPAUdgnService', false],
+            'App\\Controller\\RecipeController::like' => ['privates', '.service_locator.BuazTGE', 'get_ServiceLocator_BuazTGEService', false],
+            'App\\Controller\\RecipeController::save' => ['privates', '.service_locator.VHcM_9o', 'get_ServiceLocator_VHcM9oService', false],
+            'App\\Controller\\RecipeController::show' => ['privates', '.service_locator.TxrSGco', 'get_ServiceLocator_TxrSGcoService', false],
+            'App\\Controller\\RecipeController::unsave' => ['privates', '.service_locator.VHcM_9o', 'get_ServiceLocator_VHcM9oService', false],
+            'App\\Controller\\ResetPasswordController::reset' => ['privates', '.service_locator.Cz1EmPU', 'get_ServiceLocator_Cz1EmPUService', false],
+            'App\\Controller\\SecurityController::login' => ['privates', '.service_locator.g.xob4v', 'get_ServiceLocator_G_Xob4vService', false],
+            'App\\Controller\\UserController::delete' => ['privates', '.service_locator.tIQ5Q0N', 'get_ServiceLocator_TIQ5Q0NService', false],
+            'App\\Controller\\UserController::saveRecipe' => ['privates', '.service_locator.LqLSGoO', 'get_ServiceLocator_LqLSGoOService', false],
+            'App\\Controller\\UserController::show' => ['privates', '.service_locator.33Bw4rw', 'get_ServiceLocator_33Bw4rwService', false],
+            'App\\Controller\\UserController::userRecipes' => ['privates', '.service_locator.LqLSGoO', 'get_ServiceLocator_LqLSGoOService', false],
+            'App\\Controller\\AdminCommentController:delete' => ['privates', '.service_locator.I0wrEZ3', 'get_ServiceLocator_I0wrEZ3Service', false],
+            'App\\Controller\\AdminCommentController:edit' => ['privates', '.service_locator.yQdqVk8', 'get_ServiceLocator_YQdqVk8Service', false],
+            'App\\Controller\\AdminCommentController:index' => ['privates', '.service_locator.mx6LQUD', 'get_ServiceLocator_Mx6LQUDService', false],
+            'App\\Controller\\AdminPostController:index' => ['privates', '.service_locator.cgJD7DL', 'get_ServiceLocator_CgJD7DLService', false],
+            'App\\Controller\\AdminPostController:new' => ['privates', '.service_locator.s.tJs.w', 'get_ServiceLocator_S_TJs_WService', false],
+            'App\\Controller\\AdminRecipeController:delete' => ['privates', '.service_locator.IEzAIE5', 'get_ServiceLocator_IEzAIE5Service', false],
+            'App\\Controller\\AdminRecipeController:edit' => ['privates', '.service_locator.g_QAUHN', 'get_ServiceLocator_GQAUHNService', false],
+            'App\\Controller\\AdminRecipeController:index' => ['privates', '.service_locator.JqXngIc', 'get_ServiceLocator_JqXngIcService', false],
+            'App\\Controller\\AdminTagsController:delete' => ['privates', '.service_locator.ZuapGlU', 'get_ServiceLocator_ZuapGlUService', false],
+            'App\\Controller\\AdminTagsController:edit' => ['privates', '.service_locator.oobyxGC', 'get_ServiceLocator_OobyxGCService', false],
+            'App\\Controller\\AdminTagsController:index' => ['privates', '.service_locator.Rol.ydx', 'get_ServiceLocator_Rol_YdxService', false],
+            'App\\Controller\\AdminUserController:delete' => ['privates', '.service_locator.fx3nj2M', 'get_ServiceLocator_Fx3nj2MService', false],
+            'App\\Controller\\AdminUserController:index' => ['privates', '.service_locator.wgX78kv', 'get_ServiceLocator_WgX78kvService', false],
+            'App\\Controller\\MainController:allRecipes' => ['privates', '.service_locator.MN_z1ND', 'get_ServiceLocator_MNZ1NDService', false],
+            'App\\Controller\\MainController:index' => ['privates', '.service_locator.V6jaZWv', 'get_ServiceLocator_V6jaZWvService', false],
+            'App\\Controller\\MainController:paleoRecipes' => ['privates', '.service_locator.MN_z1ND', 'get_ServiceLocator_MNZ1NDService', false],
+            'App\\Controller\\MainController:register' => ['privates', '.service_locator.8oMmtrZ', 'get_ServiceLocator_8oMmtrZService', false],
+            'App\\Controller\\MainController:userKitchen' => ['privates', '.service_locator.KaD5QYu', 'get_ServiceLocator_KaD5QYuService', false],
+            'App\\Controller\\MainController:veganRecipes' => ['privates', '.service_locator.MN_z1ND', 'get_ServiceLocator_MNZ1NDService', false],
+            'App\\Controller\\MainController:vegetalienRecipes' => ['privates', '.service_locator.MN_z1ND', 'get_ServiceLocator_MNZ1NDService', false],
+            'App\\Controller\\MainController:vegetarienRecipes' => ['privates', '.service_locator.MN_z1ND', 'get_ServiceLocator_MNZ1NDService', false],
+            'App\\Controller\\RecipeController:delete' => ['privates', '.service_locator.g_QAUHN', 'get_ServiceLocator_GQAUHNService', false],
+            'App\\Controller\\RecipeController:edit' => ['privates', '.service_locator.g_QAUHN', 'get_ServiceLocator_GQAUHNService', false],
+            'App\\Controller\\RecipeController:index' => ['privates', '.service_locator.LPAUdgn', 'get_ServiceLocator_LPAUdgnService', false],
+            'App\\Controller\\RecipeController:like' => ['privates', '.service_locator.BuazTGE', 'get_ServiceLocator_BuazTGEService', false],
+            'App\\Controller\\RecipeController:save' => ['privates', '.service_locator.VHcM_9o', 'get_ServiceLocator_VHcM9oService', false],
+            'App\\Controller\\RecipeController:show' => ['privates', '.service_locator.TxrSGco', 'get_ServiceLocator_TxrSGcoService', false],
+            'App\\Controller\\RecipeController:unsave' => ['privates', '.service_locator.VHcM_9o', 'get_ServiceLocator_VHcM9oService', false],
+            'App\\Controller\\ResetPasswordController:reset' => ['privates', '.service_locator.Cz1EmPU', 'get_ServiceLocator_Cz1EmPUService', false],
+            'App\\Controller\\SecurityController:login' => ['privates', '.service_locator.g.xob4v', 'get_ServiceLocator_G_Xob4vService', false],
+            'App\\Controller\\UserController:delete' => ['privates', '.service_locator.tIQ5Q0N', 'get_ServiceLocator_TIQ5Q0NService', false],
+            'App\\Controller\\UserController:saveRecipe' => ['privates', '.service_locator.LqLSGoO', 'get_ServiceLocator_LqLSGoOService', false],
+            'App\\Controller\\UserController:show' => ['privates', '.service_locator.33Bw4rw', 'get_ServiceLocator_33Bw4rwService', false],
+            'App\\Controller\\UserController:userRecipes' => ['privates', '.service_locator.LqLSGoO', 'get_ServiceLocator_LqLSGoOService', false],
         ], [
-            'environment' => '?',
+            'App\\Controller\\AdminCommentController::delete' => '?',
+            'App\\Controller\\AdminCommentController::edit' => '?',
+            'App\\Controller\\AdminCommentController::index' => '?',
+            'App\\Controller\\AdminPostController::index' => '?',
+            'App\\Controller\\AdminPostController::new' => '?',
+            'App\\Controller\\AdminRecipeController::delete' => '?',
+            'App\\Controller\\AdminRecipeController::edit' => '?',
+            'App\\Controller\\AdminRecipeController::index' => '?',
+            'App\\Controller\\AdminTagsController::delete' => '?',
+            'App\\Controller\\AdminTagsController::edit' => '?',
+            'App\\Controller\\AdminTagsController::index' => '?',
+            'App\\Controller\\AdminUserController::delete' => '?',
+            'App\\Controller\\AdminUserController::index' => '?',
+            'App\\Controller\\MainController::allRecipes' => '?',
+            'App\\Controller\\MainController::index' => '?',
+            'App\\Controller\\MainController::paleoRecipes' => '?',
+            'App\\Controller\\MainController::register' => '?',
+            'App\\Controller\\MainController::userKitchen' => '?',
+            'App\\Controller\\MainController::veganRecipes' => '?',
+            'App\\Controller\\MainController::vegetalienRecipes' => '?',
+            'App\\Controller\\MainController::vegetarienRecipes' => '?',
+            'App\\Controller\\RecipeController::delete' => '?',
+            'App\\Controller\\RecipeController::edit' => '?',
+            'App\\Controller\\RecipeController::index' => '?',
+            'App\\Controller\\RecipeController::like' => '?',
+            'App\\Controller\\RecipeController::save' => '?',
+            'App\\Controller\\RecipeController::show' => '?',
+            'App\\Controller\\RecipeController::unsave' => '?',
+            'App\\Controller\\ResetPasswordController::reset' => '?',
+            'App\\Controller\\SecurityController::login' => '?',
+            'App\\Controller\\UserController::delete' => '?',
+            'App\\Controller\\UserController::saveRecipe' => '?',
+            'App\\Controller\\UserController::show' => '?',
+            'App\\Controller\\UserController::userRecipes' => '?',
+            'App\\Controller\\AdminCommentController:delete' => '?',
+            'App\\Controller\\AdminCommentController:edit' => '?',
+            'App\\Controller\\AdminCommentController:index' => '?',
+            'App\\Controller\\AdminPostController:index' => '?',
+            'App\\Controller\\AdminPostController:new' => '?',
+            'App\\Controller\\AdminRecipeController:delete' => '?',
+            'App\\Controller\\AdminRecipeController:edit' => '?',
+            'App\\Controller\\AdminRecipeController:index' => '?',
+            'App\\Controller\\AdminTagsController:delete' => '?',
+            'App\\Controller\\AdminTagsController:edit' => '?',
+            'App\\Controller\\AdminTagsController:index' => '?',
+            'App\\Controller\\AdminUserController:delete' => '?',
+            'App\\Controller\\AdminUserController:index' => '?',
+            'App\\Controller\\MainController:allRecipes' => '?',
+            'App\\Controller\\MainController:index' => '?',
+            'App\\Controller\\MainController:paleoRecipes' => '?',
+            'App\\Controller\\MainController:register' => '?',
+            'App\\Controller\\MainController:userKitchen' => '?',
+            'App\\Controller\\MainController:veganRecipes' => '?',
+            'App\\Controller\\MainController:vegetalienRecipes' => '?',
+            'App\\Controller\\MainController:vegetarienRecipes' => '?',
+            'App\\Controller\\RecipeController:delete' => '?',
+            'App\\Controller\\RecipeController:edit' => '?',
+            'App\\Controller\\RecipeController:index' => '?',
+            'App\\Controller\\RecipeController:like' => '?',
+            'App\\Controller\\RecipeController:save' => '?',
+            'App\\Controller\\RecipeController:show' => '?',
+            'App\\Controller\\RecipeController:unsave' => '?',
+            'App\\Controller\\ResetPasswordController:reset' => '?',
+            'App\\Controller\\SecurityController:login' => '?',
+            'App\\Controller\\UserController:delete' => '?',
+            'App\\Controller\\UserController:saveRecipe' => '?',
+            'App\\Controller\\UserController:show' => '?',
+            'App\\Controller\\UserController:userRecipes' => '?',
+        ]);
+    }
+
+    /**
+     * Gets the private '.service_locator.8oMmtrZ' shared service.
+     *
+     * @return \Symfony\Component\DependencyInjection\ServiceLocator
+     */
+    protected function get_ServiceLocator_8oMmtrZService()
+    {
+        return $this->privates['.service_locator.8oMmtrZ'] = new \Symfony\Component\DependencyInjection\Argument\ServiceLocator($this->getService, [
+            'mailer' => ['privates', 'mailer.mailer', 'getMailer_MailerService', false],
+            'passwordEncoder' => ['services', 'security.password_encoder', 'getSecurity_PasswordEncoderService', false],
+        ], [
             'mailer' => '?',
-            'notifications' => 'App\\Notifications\\PasswordNotifications',
-            'userRepository' => 'App\\Repository\\UserRepository',
+            'passwordEncoder' => '?',
         ]);
     }
 
@@ -2564,6 +2705,26 @@ class srcApp_KernelDevDebugContainer extends Container
         ], [
             'likeRepo' => 'App\\Repository\\RecipeLikeRepository',
             'recipe' => 'App\\Entity\\Recipe',
+        ]);
+    }
+
+    /**
+     * Gets the private '.service_locator.Cz1EmPU' shared service.
+     *
+     * @return \Symfony\Component\DependencyInjection\ServiceLocator
+     */
+    protected function get_ServiceLocator_Cz1EmPUService()
+    {
+        return $this->privates['.service_locator.Cz1EmPU'] = new \Symfony\Component\DependencyInjection\Argument\ServiceLocator($this->getService, [
+            'environment' => ['services', 'twig', 'getTwigService', false],
+            'mailer' => ['privates', 'mailer.mailer', 'getMailer_MailerService', false],
+            'notifications' => ['privates', 'App\\Notifications\\PasswordNotifications', 'getPasswordNotificationsService', false],
+            'userRepository' => ['privates', 'App\\Repository\\UserRepository', 'getUserRepositoryService', false],
+        ], [
+            'environment' => '?',
+            'mailer' => '?',
+            'notifications' => 'App\\Notifications\\PasswordNotifications',
+            'userRepository' => 'App\\Repository\\UserRepository',
         ]);
     }
 
@@ -2802,20 +2963,6 @@ class srcApp_KernelDevDebugContainer extends Container
     }
 
     /**
-     * Gets the private '.service_locator.ccM2MGC' shared service.
-     *
-     * @return \Symfony\Component\DependencyInjection\ServiceLocator
-     */
-    protected function get_ServiceLocator_CcM2MGCService()
-    {
-        return $this->privates['.service_locator.ccM2MGC'] = new \Symfony\Component\DependencyInjection\Argument\ServiceLocator($this->getService, [
-            'passwordEncoder' => ['services', 'security.password_encoder', 'getSecurity_PasswordEncoderService', false],
-        ], [
-            'passwordEncoder' => '?',
-        ]);
-    }
-
-    /**
      * Gets the private '.service_locator.cgJD7DL' shared service.
      *
      * @return \Symfony\Component\DependencyInjection\ServiceLocator
@@ -2826,154 +2973,6 @@ class srcApp_KernelDevDebugContainer extends Container
             'repository' => ['privates', 'App\\Repository\\PostRepository', 'getPostRepositoryService', false],
         ], [
             'repository' => 'App\\Repository\\PostRepository',
-        ]);
-    }
-
-    /**
-     * Gets the private '.service_locator.fsRWaQW' shared service.
-     *
-     * @return \Symfony\Component\DependencyInjection\ServiceLocator
-     */
-    protected function get_ServiceLocator_FsRWaQWService()
-    {
-        return $this->privates['.service_locator.fsRWaQW'] = new \Symfony\Component\DependencyInjection\Argument\ServiceLocator($this->getService, [
-            'App\\Controller\\AdminCommentController::delete' => ['privates', '.service_locator.I0wrEZ3', 'get_ServiceLocator_I0wrEZ3Service', false],
-            'App\\Controller\\AdminCommentController::edit' => ['privates', '.service_locator.yQdqVk8', 'get_ServiceLocator_YQdqVk8Service', false],
-            'App\\Controller\\AdminCommentController::index' => ['privates', '.service_locator.mx6LQUD', 'get_ServiceLocator_Mx6LQUDService', false],
-            'App\\Controller\\AdminPostController::index' => ['privates', '.service_locator.cgJD7DL', 'get_ServiceLocator_CgJD7DLService', false],
-            'App\\Controller\\AdminPostController::new' => ['privates', '.service_locator.s.tJs.w', 'get_ServiceLocator_S_TJs_WService', false],
-            'App\\Controller\\AdminRecipeController::delete' => ['privates', '.service_locator.IEzAIE5', 'get_ServiceLocator_IEzAIE5Service', false],
-            'App\\Controller\\AdminRecipeController::edit' => ['privates', '.service_locator.g_QAUHN', 'get_ServiceLocator_GQAUHNService', false],
-            'App\\Controller\\AdminRecipeController::index' => ['privates', '.service_locator.JqXngIc', 'get_ServiceLocator_JqXngIcService', false],
-            'App\\Controller\\AdminTagsController::delete' => ['privates', '.service_locator.ZuapGlU', 'get_ServiceLocator_ZuapGlUService', false],
-            'App\\Controller\\AdminTagsController::edit' => ['privates', '.service_locator.oobyxGC', 'get_ServiceLocator_OobyxGCService', false],
-            'App\\Controller\\AdminTagsController::index' => ['privates', '.service_locator.Rol.ydx', 'get_ServiceLocator_Rol_YdxService', false],
-            'App\\Controller\\AdminUserController::delete' => ['privates', '.service_locator.fx3nj2M', 'get_ServiceLocator_Fx3nj2MService', false],
-            'App\\Controller\\AdminUserController::index' => ['privates', '.service_locator.wgX78kv', 'get_ServiceLocator_WgX78kvService', false],
-            'App\\Controller\\MainController::allRecipes' => ['privates', '.service_locator.MN_z1ND', 'get_ServiceLocator_MNZ1NDService', false],
-            'App\\Controller\\MainController::index' => ['privates', '.service_locator.V6jaZWv', 'get_ServiceLocator_V6jaZWvService', false],
-            'App\\Controller\\MainController::paleoRecipes' => ['privates', '.service_locator.MN_z1ND', 'get_ServiceLocator_MNZ1NDService', false],
-            'App\\Controller\\MainController::register' => ['privates', '.service_locator.ccM2MGC', 'get_ServiceLocator_CcM2MGCService', false],
-            'App\\Controller\\MainController::userKitchen' => ['privates', '.service_locator.KaD5QYu', 'get_ServiceLocator_KaD5QYuService', false],
-            'App\\Controller\\MainController::veganRecipes' => ['privates', '.service_locator.MN_z1ND', 'get_ServiceLocator_MNZ1NDService', false],
-            'App\\Controller\\MainController::vegetalienRecipes' => ['privates', '.service_locator.MN_z1ND', 'get_ServiceLocator_MNZ1NDService', false],
-            'App\\Controller\\MainController::vegetarienRecipes' => ['privates', '.service_locator.MN_z1ND', 'get_ServiceLocator_MNZ1NDService', false],
-            'App\\Controller\\RecipeController::delete' => ['privates', '.service_locator.g_QAUHN', 'get_ServiceLocator_GQAUHNService', false],
-            'App\\Controller\\RecipeController::edit' => ['privates', '.service_locator.g_QAUHN', 'get_ServiceLocator_GQAUHNService', false],
-            'App\\Controller\\RecipeController::index' => ['privates', '.service_locator.LPAUdgn', 'get_ServiceLocator_LPAUdgnService', false],
-            'App\\Controller\\RecipeController::like' => ['privates', '.service_locator.BuazTGE', 'get_ServiceLocator_BuazTGEService', false],
-            'App\\Controller\\RecipeController::save' => ['privates', '.service_locator.VHcM_9o', 'get_ServiceLocator_VHcM9oService', false],
-            'App\\Controller\\RecipeController::show' => ['privates', '.service_locator.TxrSGco', 'get_ServiceLocator_TxrSGcoService', false],
-            'App\\Controller\\RecipeController::unsave' => ['privates', '.service_locator.VHcM_9o', 'get_ServiceLocator_VHcM9oService', false],
-            'App\\Controller\\ResetPasswordController::reset' => ['privates', '.service_locator.BW58p0X', 'get_ServiceLocator_BW58p0XService', false],
-            'App\\Controller\\SecurityController::login' => ['privates', '.service_locator.g.xob4v', 'get_ServiceLocator_G_Xob4vService', false],
-            'App\\Controller\\UserController::delete' => ['privates', '.service_locator.tIQ5Q0N', 'get_ServiceLocator_TIQ5Q0NService', false],
-            'App\\Controller\\UserController::saveRecipe' => ['privates', '.service_locator.LqLSGoO', 'get_ServiceLocator_LqLSGoOService', false],
-            'App\\Controller\\UserController::show' => ['privates', '.service_locator.33Bw4rw', 'get_ServiceLocator_33Bw4rwService', false],
-            'App\\Controller\\UserController::userRecipes' => ['privates', '.service_locator.LqLSGoO', 'get_ServiceLocator_LqLSGoOService', false],
-            'App\\Controller\\AdminCommentController:delete' => ['privates', '.service_locator.I0wrEZ3', 'get_ServiceLocator_I0wrEZ3Service', false],
-            'App\\Controller\\AdminCommentController:edit' => ['privates', '.service_locator.yQdqVk8', 'get_ServiceLocator_YQdqVk8Service', false],
-            'App\\Controller\\AdminCommentController:index' => ['privates', '.service_locator.mx6LQUD', 'get_ServiceLocator_Mx6LQUDService', false],
-            'App\\Controller\\AdminPostController:index' => ['privates', '.service_locator.cgJD7DL', 'get_ServiceLocator_CgJD7DLService', false],
-            'App\\Controller\\AdminPostController:new' => ['privates', '.service_locator.s.tJs.w', 'get_ServiceLocator_S_TJs_WService', false],
-            'App\\Controller\\AdminRecipeController:delete' => ['privates', '.service_locator.IEzAIE5', 'get_ServiceLocator_IEzAIE5Service', false],
-            'App\\Controller\\AdminRecipeController:edit' => ['privates', '.service_locator.g_QAUHN', 'get_ServiceLocator_GQAUHNService', false],
-            'App\\Controller\\AdminRecipeController:index' => ['privates', '.service_locator.JqXngIc', 'get_ServiceLocator_JqXngIcService', false],
-            'App\\Controller\\AdminTagsController:delete' => ['privates', '.service_locator.ZuapGlU', 'get_ServiceLocator_ZuapGlUService', false],
-            'App\\Controller\\AdminTagsController:edit' => ['privates', '.service_locator.oobyxGC', 'get_ServiceLocator_OobyxGCService', false],
-            'App\\Controller\\AdminTagsController:index' => ['privates', '.service_locator.Rol.ydx', 'get_ServiceLocator_Rol_YdxService', false],
-            'App\\Controller\\AdminUserController:delete' => ['privates', '.service_locator.fx3nj2M', 'get_ServiceLocator_Fx3nj2MService', false],
-            'App\\Controller\\AdminUserController:index' => ['privates', '.service_locator.wgX78kv', 'get_ServiceLocator_WgX78kvService', false],
-            'App\\Controller\\MainController:allRecipes' => ['privates', '.service_locator.MN_z1ND', 'get_ServiceLocator_MNZ1NDService', false],
-            'App\\Controller\\MainController:index' => ['privates', '.service_locator.V6jaZWv', 'get_ServiceLocator_V6jaZWvService', false],
-            'App\\Controller\\MainController:paleoRecipes' => ['privates', '.service_locator.MN_z1ND', 'get_ServiceLocator_MNZ1NDService', false],
-            'App\\Controller\\MainController:register' => ['privates', '.service_locator.ccM2MGC', 'get_ServiceLocator_CcM2MGCService', false],
-            'App\\Controller\\MainController:userKitchen' => ['privates', '.service_locator.KaD5QYu', 'get_ServiceLocator_KaD5QYuService', false],
-            'App\\Controller\\MainController:veganRecipes' => ['privates', '.service_locator.MN_z1ND', 'get_ServiceLocator_MNZ1NDService', false],
-            'App\\Controller\\MainController:vegetalienRecipes' => ['privates', '.service_locator.MN_z1ND', 'get_ServiceLocator_MNZ1NDService', false],
-            'App\\Controller\\MainController:vegetarienRecipes' => ['privates', '.service_locator.MN_z1ND', 'get_ServiceLocator_MNZ1NDService', false],
-            'App\\Controller\\RecipeController:delete' => ['privates', '.service_locator.g_QAUHN', 'get_ServiceLocator_GQAUHNService', false],
-            'App\\Controller\\RecipeController:edit' => ['privates', '.service_locator.g_QAUHN', 'get_ServiceLocator_GQAUHNService', false],
-            'App\\Controller\\RecipeController:index' => ['privates', '.service_locator.LPAUdgn', 'get_ServiceLocator_LPAUdgnService', false],
-            'App\\Controller\\RecipeController:like' => ['privates', '.service_locator.BuazTGE', 'get_ServiceLocator_BuazTGEService', false],
-            'App\\Controller\\RecipeController:save' => ['privates', '.service_locator.VHcM_9o', 'get_ServiceLocator_VHcM9oService', false],
-            'App\\Controller\\RecipeController:show' => ['privates', '.service_locator.TxrSGco', 'get_ServiceLocator_TxrSGcoService', false],
-            'App\\Controller\\RecipeController:unsave' => ['privates', '.service_locator.VHcM_9o', 'get_ServiceLocator_VHcM9oService', false],
-            'App\\Controller\\ResetPasswordController:reset' => ['privates', '.service_locator.BW58p0X', 'get_ServiceLocator_BW58p0XService', false],
-            'App\\Controller\\SecurityController:login' => ['privates', '.service_locator.g.xob4v', 'get_ServiceLocator_G_Xob4vService', false],
-            'App\\Controller\\UserController:delete' => ['privates', '.service_locator.tIQ5Q0N', 'get_ServiceLocator_TIQ5Q0NService', false],
-            'App\\Controller\\UserController:saveRecipe' => ['privates', '.service_locator.LqLSGoO', 'get_ServiceLocator_LqLSGoOService', false],
-            'App\\Controller\\UserController:show' => ['privates', '.service_locator.33Bw4rw', 'get_ServiceLocator_33Bw4rwService', false],
-            'App\\Controller\\UserController:userRecipes' => ['privates', '.service_locator.LqLSGoO', 'get_ServiceLocator_LqLSGoOService', false],
-        ], [
-            'App\\Controller\\AdminCommentController::delete' => '?',
-            'App\\Controller\\AdminCommentController::edit' => '?',
-            'App\\Controller\\AdminCommentController::index' => '?',
-            'App\\Controller\\AdminPostController::index' => '?',
-            'App\\Controller\\AdminPostController::new' => '?',
-            'App\\Controller\\AdminRecipeController::delete' => '?',
-            'App\\Controller\\AdminRecipeController::edit' => '?',
-            'App\\Controller\\AdminRecipeController::index' => '?',
-            'App\\Controller\\AdminTagsController::delete' => '?',
-            'App\\Controller\\AdminTagsController::edit' => '?',
-            'App\\Controller\\AdminTagsController::index' => '?',
-            'App\\Controller\\AdminUserController::delete' => '?',
-            'App\\Controller\\AdminUserController::index' => '?',
-            'App\\Controller\\MainController::allRecipes' => '?',
-            'App\\Controller\\MainController::index' => '?',
-            'App\\Controller\\MainController::paleoRecipes' => '?',
-            'App\\Controller\\MainController::register' => '?',
-            'App\\Controller\\MainController::userKitchen' => '?',
-            'App\\Controller\\MainController::veganRecipes' => '?',
-            'App\\Controller\\MainController::vegetalienRecipes' => '?',
-            'App\\Controller\\MainController::vegetarienRecipes' => '?',
-            'App\\Controller\\RecipeController::delete' => '?',
-            'App\\Controller\\RecipeController::edit' => '?',
-            'App\\Controller\\RecipeController::index' => '?',
-            'App\\Controller\\RecipeController::like' => '?',
-            'App\\Controller\\RecipeController::save' => '?',
-            'App\\Controller\\RecipeController::show' => '?',
-            'App\\Controller\\RecipeController::unsave' => '?',
-            'App\\Controller\\ResetPasswordController::reset' => '?',
-            'App\\Controller\\SecurityController::login' => '?',
-            'App\\Controller\\UserController::delete' => '?',
-            'App\\Controller\\UserController::saveRecipe' => '?',
-            'App\\Controller\\UserController::show' => '?',
-            'App\\Controller\\UserController::userRecipes' => '?',
-            'App\\Controller\\AdminCommentController:delete' => '?',
-            'App\\Controller\\AdminCommentController:edit' => '?',
-            'App\\Controller\\AdminCommentController:index' => '?',
-            'App\\Controller\\AdminPostController:index' => '?',
-            'App\\Controller\\AdminPostController:new' => '?',
-            'App\\Controller\\AdminRecipeController:delete' => '?',
-            'App\\Controller\\AdminRecipeController:edit' => '?',
-            'App\\Controller\\AdminRecipeController:index' => '?',
-            'App\\Controller\\AdminTagsController:delete' => '?',
-            'App\\Controller\\AdminTagsController:edit' => '?',
-            'App\\Controller\\AdminTagsController:index' => '?',
-            'App\\Controller\\AdminUserController:delete' => '?',
-            'App\\Controller\\AdminUserController:index' => '?',
-            'App\\Controller\\MainController:allRecipes' => '?',
-            'App\\Controller\\MainController:index' => '?',
-            'App\\Controller\\MainController:paleoRecipes' => '?',
-            'App\\Controller\\MainController:register' => '?',
-            'App\\Controller\\MainController:userKitchen' => '?',
-            'App\\Controller\\MainController:veganRecipes' => '?',
-            'App\\Controller\\MainController:vegetalienRecipes' => '?',
-            'App\\Controller\\MainController:vegetarienRecipes' => '?',
-            'App\\Controller\\RecipeController:delete' => '?',
-            'App\\Controller\\RecipeController:edit' => '?',
-            'App\\Controller\\RecipeController:index' => '?',
-            'App\\Controller\\RecipeController:like' => '?',
-            'App\\Controller\\RecipeController:save' => '?',
-            'App\\Controller\\RecipeController:show' => '?',
-            'App\\Controller\\RecipeController:unsave' => '?',
-            'App\\Controller\\ResetPasswordController:reset' => '?',
-            'App\\Controller\\SecurityController:login' => '?',
-            'App\\Controller\\UserController:delete' => '?',
-            'App\\Controller\\UserController:saveRecipe' => '?',
-            'App\\Controller\\UserController:show' => '?',
-            'App\\Controller\\UserController:userRecipes' => '?',
         ]);
     }
 
@@ -4257,7 +4256,7 @@ class srcApp_KernelDevDebugContainer extends Container
         include_once \dirname(__DIR__, 4).'/vendor/symfony/http-kernel/Controller/ArgumentResolver/TraceableValueResolver.php';
         include_once \dirname(__DIR__, 4).'/vendor/symfony/http-kernel/Controller/ArgumentResolver/NotTaggedControllerValueResolver.php';
 
-        return $this->privates['debug.argument_resolver.not_tagged_controller'] = new \Symfony\Component\HttpKernel\Controller\ArgumentResolver\TraceableValueResolver(new \Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver(($this->privates['.service_locator.fsRWaQW'] ?? $this->get_ServiceLocator_FsRWaQWService())), ($this->privates['debug.stopwatch'] ?? ($this->privates['debug.stopwatch'] = new \Symfony\Component\Stopwatch\Stopwatch(true))));
+        return $this->privates['debug.argument_resolver.not_tagged_controller'] = new \Symfony\Component\HttpKernel\Controller\ArgumentResolver\TraceableValueResolver(new \Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver(($this->privates['.service_locator.7GY8gU6'] ?? $this->get_ServiceLocator_7GY8gU6Service())), ($this->privates['debug.stopwatch'] ?? ($this->privates['debug.stopwatch'] = new \Symfony\Component\Stopwatch\Stopwatch(true))));
     }
 
     /**
@@ -4299,7 +4298,7 @@ class srcApp_KernelDevDebugContainer extends Container
         include_once \dirname(__DIR__, 4).'/vendor/symfony/http-kernel/Controller/ArgumentResolver/TraceableValueResolver.php';
         include_once \dirname(__DIR__, 4).'/vendor/symfony/http-kernel/Controller/ArgumentResolver/ServiceValueResolver.php';
 
-        return $this->privates['debug.argument_resolver.service'] = new \Symfony\Component\HttpKernel\Controller\ArgumentResolver\TraceableValueResolver(new \Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver(($this->privates['.service_locator.fsRWaQW'] ?? $this->get_ServiceLocator_FsRWaQWService())), ($this->privates['debug.stopwatch'] ?? ($this->privates['debug.stopwatch'] = new \Symfony\Component\Stopwatch\Stopwatch(true))));
+        return $this->privates['debug.argument_resolver.service'] = new \Symfony\Component\HttpKernel\Controller\ArgumentResolver\TraceableValueResolver(new \Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver(($this->privates['.service_locator.7GY8gU6'] ?? $this->get_ServiceLocator_7GY8gU6Service())), ($this->privates['debug.stopwatch'] ?? ($this->privates['debug.stopwatch'] = new \Symfony\Component\Stopwatch\Stopwatch(true))));
     }
 
     /**
@@ -5454,6 +5453,83 @@ class srcApp_KernelDevDebugContainer extends Container
     protected function getLocaleListenerService()
     {
         return $this->privates['locale_listener'] = new \Symfony\Component\HttpKernel\EventListener\LocaleListener(($this->services['request_stack'] ?? ($this->services['request_stack'] = new \Symfony\Component\HttpFoundation\RequestStack())), 'en', ($this->services['router'] ?? $this->getRouterService()));
+    }
+
+    /**
+     * Gets the private 'mailer.mailer' shared service.
+     *
+     * @return \Symfony\Component\Mailer\Mailer
+     */
+    protected function getMailer_MailerService()
+    {
+        include_once \dirname(__DIR__, 4).'/vendor/symfony/mailer/MailerInterface.php';
+        include_once \dirname(__DIR__, 4).'/vendor/symfony/mailer/Mailer.php';
+        include_once \dirname(__DIR__, 4).'/vendor/symfony/mailer/Transport/TransportInterface.php';
+        include_once \dirname(__DIR__, 4).'/vendor/symfony/mailer/Transport/Transports.php';
+        include_once \dirname(__DIR__, 4).'/vendor/symfony/mailer/Transport.php';
+
+        return $this->privates['mailer.mailer'] = new \Symfony\Component\Mailer\Mailer((new \Symfony\Component\Mailer\Transport(new RewindableGenerator(function () {
+            yield 0 => ($this->privates['mailer.transport_factory.gmail'] ?? $this->getMailer_TransportFactory_GmailService());
+            yield 1 => ($this->privates['mailer.transport_factory.null'] ?? $this->getMailer_TransportFactory_NullService());
+            yield 2 => ($this->privates['mailer.transport_factory.sendmail'] ?? $this->getMailer_TransportFactory_SendmailService());
+            yield 3 => ($this->privates['mailer.transport_factory.smtp'] ?? $this->getMailer_TransportFactory_SmtpService());
+        }, 4)))->fromStrings(['main' => $this->getEnv('MAILER_DSN')]), NULL, ($this->services['event_dispatcher'] ?? $this->getEventDispatcherService()));
+    }
+
+    /**
+     * Gets the private 'mailer.transport_factory.gmail' shared service.
+     *
+     * @return \Symfony\Component\Mailer\Bridge\Google\Transport\GmailTransportFactory
+     */
+    protected function getMailer_TransportFactory_GmailService()
+    {
+        include_once \dirname(__DIR__, 4).'/vendor/symfony/mailer/Transport/TransportFactoryInterface.php';
+        include_once \dirname(__DIR__, 4).'/vendor/symfony/mailer/Transport/AbstractTransportFactory.php';
+        include_once \dirname(__DIR__, 4).'/vendor/symfony/google-mailer/Transport/GmailTransportFactory.php';
+
+        return $this->privates['mailer.transport_factory.gmail'] = new \Symfony\Component\Mailer\Bridge\Google\Transport\GmailTransportFactory(($this->services['event_dispatcher'] ?? $this->getEventDispatcherService()), ($this->privates['.debug.http_client'] ?? $this->get_Debug_HttpClientService()), ($this->privates['monolog.logger'] ?? $this->getMonolog_LoggerService()));
+    }
+
+    /**
+     * Gets the private 'mailer.transport_factory.null' shared service.
+     *
+     * @return \Symfony\Component\Mailer\Transport\NullTransportFactory
+     */
+    protected function getMailer_TransportFactory_NullService()
+    {
+        include_once \dirname(__DIR__, 4).'/vendor/symfony/mailer/Transport/TransportFactoryInterface.php';
+        include_once \dirname(__DIR__, 4).'/vendor/symfony/mailer/Transport/AbstractTransportFactory.php';
+        include_once \dirname(__DIR__, 4).'/vendor/symfony/mailer/Transport/NullTransportFactory.php';
+
+        return $this->privates['mailer.transport_factory.null'] = new \Symfony\Component\Mailer\Transport\NullTransportFactory(($this->services['event_dispatcher'] ?? $this->getEventDispatcherService()), ($this->privates['.debug.http_client'] ?? $this->get_Debug_HttpClientService()), ($this->privates['monolog.logger'] ?? $this->getMonolog_LoggerService()));
+    }
+
+    /**
+     * Gets the private 'mailer.transport_factory.sendmail' shared service.
+     *
+     * @return \Symfony\Component\Mailer\Transport\SendmailTransportFactory
+     */
+    protected function getMailer_TransportFactory_SendmailService()
+    {
+        include_once \dirname(__DIR__, 4).'/vendor/symfony/mailer/Transport/TransportFactoryInterface.php';
+        include_once \dirname(__DIR__, 4).'/vendor/symfony/mailer/Transport/AbstractTransportFactory.php';
+        include_once \dirname(__DIR__, 4).'/vendor/symfony/mailer/Transport/SendmailTransportFactory.php';
+
+        return $this->privates['mailer.transport_factory.sendmail'] = new \Symfony\Component\Mailer\Transport\SendmailTransportFactory(($this->services['event_dispatcher'] ?? $this->getEventDispatcherService()), ($this->privates['.debug.http_client'] ?? $this->get_Debug_HttpClientService()), ($this->privates['monolog.logger'] ?? $this->getMonolog_LoggerService()));
+    }
+
+    /**
+     * Gets the private 'mailer.transport_factory.smtp' shared service.
+     *
+     * @return \Symfony\Component\Mailer\Transport\Smtp\EsmtpTransportFactory
+     */
+    protected function getMailer_TransportFactory_SmtpService()
+    {
+        include_once \dirname(__DIR__, 4).'/vendor/symfony/mailer/Transport/TransportFactoryInterface.php';
+        include_once \dirname(__DIR__, 4).'/vendor/symfony/mailer/Transport/AbstractTransportFactory.php';
+        include_once \dirname(__DIR__, 4).'/vendor/symfony/mailer/Transport/Smtp/EsmtpTransportFactory.php';
+
+        return $this->privates['mailer.transport_factory.smtp'] = new \Symfony\Component\Mailer\Transport\Smtp\EsmtpTransportFactory(($this->services['event_dispatcher'] ?? $this->getEventDispatcherService()), ($this->privates['.debug.http_client'] ?? $this->get_Debug_HttpClientService()), ($this->privates['monolog.logger'] ?? $this->getMonolog_LoggerService()));
     }
 
     /**

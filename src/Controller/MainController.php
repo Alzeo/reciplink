@@ -19,6 +19,8 @@ use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Mailer\MailerInterface;
+use Symfony\Component\Mime\Email;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use Symfony\Component\Security\Core\Security;
@@ -70,7 +72,7 @@ class MainController extends AbstractController
     /**
      * @Route("/register", name="register")
      */
-    public function register(Request $request, UserPasswordEncoderInterface $passwordEncoder){
+    public function register(Request $request, UserPasswordEncoderInterface $passwordEncoder, MailerInterface $mailer){
         $register = new User();
         $register->setRoles(['ROLE_ADMIN']);
         $form = $this->createForm(RegisterType::class, $register);
@@ -81,6 +83,13 @@ class MainController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($register);
             $entityManager->flush();
+            $email = (new Email())
+                ->from('contact@figuy.fr')
+                ->to('jardisindustrie@gmail.com')
+                ->subject('Nouvel inscription sur le site !')
+                ->html("<h3>Un nouveau membre parmis nous !</h3><p>Bienvenue à" . $register->getUsername() .  "</p>");
+            $mailer->send($email);
+            $this->addFlash('success', "Vous êtes inscrit ! Vous pouvez maintenant vous connecter.");
             return $this->redirectToRoute('app_login', [ 'user' => 'null'
             ]);
         }

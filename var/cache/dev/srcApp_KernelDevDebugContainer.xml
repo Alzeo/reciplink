@@ -6162,9 +6162,10 @@
         <argument key="recipeRepository" type="service" id="App\Repository\RecipeRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.ccM2MGC" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.8oMmtrZ" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="mailer" type="service" id="mailer.mailer"/>
         <argument key="passwordEncoder" type="service" id="security.user_password_encoder.generic"/>
       </argument>
     </service>
@@ -6252,7 +6253,7 @@
         <argument key="user" type="service" id=".errored..service_locator.tIQ5Q0N.App\Entity\User"/>
       </argument>
     </service>
-    <service id=".service_locator.8k9V5YH" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.7GY8gU6" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\AdminCommentController::delete" type="service" id=".service_locator.I0wrEZ3"/>
@@ -6271,7 +6272,7 @@
         <argument key="App\Controller\MainController::allRecipes" type="service" id=".service_locator.MN_z1ND"/>
         <argument key="App\Controller\MainController::index" type="service" id=".service_locator.V6jaZWv"/>
         <argument key="App\Controller\MainController::paleoRecipes" type="service" id=".service_locator.MN_z1ND"/>
-        <argument key="App\Controller\MainController::register" type="service" id=".service_locator.ccM2MGC"/>
+        <argument key="App\Controller\MainController::register" type="service" id=".service_locator.8oMmtrZ"/>
         <argument key="App\Controller\MainController::userKitchen" type="service" id=".service_locator.KaD5QYu"/>
         <argument key="App\Controller\MainController::veganRecipes" type="service" id=".service_locator.MN_z1ND"/>
         <argument key="App\Controller\MainController::vegetalienRecipes" type="service" id=".service_locator.MN_z1ND"/>
@@ -6305,7 +6306,7 @@
         <argument key="App\Controller\MainController:allRecipes" type="service" id=".service_locator.MN_z1ND"/>
         <argument key="App\Controller\MainController:index" type="service" id=".service_locator.V6jaZWv"/>
         <argument key="App\Controller\MainController:paleoRecipes" type="service" id=".service_locator.MN_z1ND"/>
-        <argument key="App\Controller\MainController:register" type="service" id=".service_locator.ccM2MGC"/>
+        <argument key="App\Controller\MainController:register" type="service" id=".service_locator.8oMmtrZ"/>
         <argument key="App\Controller\MainController:userKitchen" type="service" id=".service_locator.KaD5QYu"/>
         <argument key="App\Controller\MainController:veganRecipes" type="service" id=".service_locator.MN_z1ND"/>
         <argument key="App\Controller\MainController:vegetalienRecipes" type="service" id=".service_locator.MN_z1ND"/>
@@ -6795,12 +6796,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" public="false">
-      <argument type="service" id=".service_locator.8k9V5YH"/>
+      <argument type="service" id=".service_locator.7GY8gU6"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" public="false"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver" public="false"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver" public="false">
-      <argument type="service" id=".service_locator.8k9V5YH"/>
+      <argument type="service" id=".service_locator.7GY8gU6"/>
     </service>
     <service id=".debug.http_client.inner" class="Symfony\Contracts\HttpClient\HttpClientInterface" public="false">
       <argument type="collection"/>
@@ -7283,7 +7284,7 @@
     <service id="Swift_Mailer" alias="swiftmailer.mailer.default" public="false"/>
     <service id="Swift_Transport" alias="swiftmailer.mailer.default.transport.spool" public="false"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.CmORmuK" public="true"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.8k9V5YH"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.7GY8gU6"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem" public="false"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
