@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ post.title }}{% endblock %}
+
+{% block body %}
+
+
+<div class="jumbotron position-relative overflow-hidden text-center bg-light" style="background-image: url({{ asset ('/assets/img/12451.jpg') }});  background-repeat: no-repeat; background-size: cover;">
+    <div class="col-md-6 p-lg-6 mx-auto my-6" style="padding-top:30px; padding-bottom:30px; line-height: 60px;">
+        <h1 class="display-4 font-weight-bold" style=" color: #fff;">{{ post.title }}</h1>
+        <p class="lead font-weight-normal" style="margin-top:10px;  color: #fff;">{{ post.extract }}</p>
+    </div>
+</div>
+<section class="content container text-justify shadow-sm mb-5" style="padding:20px;">
+    {{ post.content|raw }}
+</section>
+{% endblock %}

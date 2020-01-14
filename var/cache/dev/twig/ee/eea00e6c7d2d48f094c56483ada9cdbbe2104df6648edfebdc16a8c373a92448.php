@@ -127,52 +127,30 @@ class __TwigTemplate_c296a2bbaeaaf562e63eeada08f023009758847de2160a8a3b27c919c9a
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 13
-        echo "    ";
-        $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 13, $this->source); })()), "flashes", [0 => "success"], "method", false, false, false, 13));
-        foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
-            // line 14
-            echo "        <div class=\"alert alert-success\" style=\"background: #86d9ab !important;\">
-            <div class=\"container\">
-                <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">
-                    <i class=\"fa fa-times\"></i>
-                </button>
-                <span><i class=\"fa fa-bell\"></i> ";
-            // line 19
-            echo $context["message"];
-            echo "</span>
-            </div>
-        </div>
-    ";
-        }
-        $_parent = $context['_parent'];
-        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['message'], $context['_parent'], $context['loop']);
-        $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 23
         echo "<div class=\"block-im-recipe text-center\" style=\"background-image: url(";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/assets/img/select-program-background.jpg"), "html", null, true);
         echo ");  background-repeat: no-repeat; background-size: cover;\">
     <div class=\"container\">
         <div class=\"image_header pt-5\">
             <h1 class=\"images-title text-center\">";
-        // line 26
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["recipe"]) || array_key_exists("recipe", $context) ? $context["recipe"] : (function () { throw new RuntimeError('Variable "recipe" does not exist.', 26, $this->source); })()), "name", [], "any", false, false, false, 26), "html", null, true);
+        // line 16
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["recipe"]) || array_key_exists("recipe", $context) ? $context["recipe"] : (function () { throw new RuntimeError('Variable "recipe" does not exist.', 16, $this->source); })()), "name", [], "any", false, false, false, 16), "html", null, true);
         echo "</h1>
             <h6 class=\"card-regime\">Régime : ";
-        // line 27
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["recipe"]) || array_key_exists("recipe", $context) ? $context["recipe"] : (function () { throw new RuntimeError('Variable "recipe" does not exist.', 27, $this->source); })()), "regime", [], "any", false, false, false, 27), "html", null, true);
+        // line 17
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["recipe"]) || array_key_exists("recipe", $context) ? $context["recipe"] : (function () { throw new RuntimeError('Variable "recipe" does not exist.', 17, $this->source); })()), "regime", [], "any", false, false, false, 17), "html", null, true);
         echo "</h6>
             <p class=\"card-text\">
                 ";
-        // line 29
+        // line 19
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["recipe"]) || array_key_exists("recipe", $context) ? $context["recipe"] : (function () { throw new RuntimeError('Variable "recipe" does not exist.', 29, $this->source); })()), "tags", [], "any", false, false, false, 29));
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["recipe"]) || array_key_exists("recipe", $context) ? $context["recipe"] : (function () { throw new RuntimeError('Variable "recipe" does not exist.', 19, $this->source); })()), "tags", [], "any", false, false, false, 19));
         foreach ($context['_seq'] as $context["_key"] => $context["tag"]) {
-            // line 30
+            // line 20
             echo "                    <span class=\"tags\">
                         <label class=\"label label-default mr-1\">#";
-            // line 31
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["tag"], "name", [], "any", false, false, false, 31), "html", null, true);
+            // line 21
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["tag"], "name", [], "any", false, false, false, 21), "html", null, true);
             echo "</label>
                     </span>
                 ";
@@ -180,23 +158,23 @@ class __TwigTemplate_c296a2bbaeaaf562e63eeada08f023009758847de2160a8a3b27c919c9a
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['tag'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 34
+        // line 24
         echo "            </p>
             <div class=\"share-social-media mt-3 mb-3\">
                 ";
-        // line 36
-        if ((twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 36, $this->source); })()), "user", [], "any", false, false, false, 36) && (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 36, $this->source); })()), "user", [], "any", false, false, false, 36) == twig_get_attribute($this->env, $this->source, (isset($context["recipe"]) || array_key_exists("recipe", $context) ? $context["recipe"] : (function () { throw new RuntimeError('Variable "recipe" does not exist.', 36, $this->source); })()), "user", [], "any", false, false, false, 36)))) {
-            // line 37
+        // line 26
+        if ((twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 26, $this->source); })()), "user", [], "any", false, false, false, 26) && (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 26, $this->source); })()), "user", [], "any", false, false, false, 26) == twig_get_attribute($this->env, $this->source, (isset($context["recipe"]) || array_key_exists("recipe", $context) ? $context["recipe"] : (function () { throw new RuntimeError('Variable "recipe" does not exist.', 26, $this->source); })()), "user", [], "any", false, false, false, 26)))) {
+            // line 27
             echo "                    <a href=\"";
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("recipe_edit", ["slug" => twig_get_attribute($this->env, $this->source, (isset($context["recipe"]) || array_key_exists("recipe", $context) ? $context["recipe"] : (function () { throw new RuntimeError('Variable "recipe" does not exist.', 37, $this->source); })()), "slug", [], "any", false, false, false, 37)]), "html", null, true);
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("recipe_edit", ["slug" => twig_get_attribute($this->env, $this->source, (isset($context["recipe"]) || array_key_exists("recipe", $context) ? $context["recipe"] : (function () { throw new RuntimeError('Variable "recipe" does not exist.', 27, $this->source); })()), "slug", [], "any", false, false, false, 27)]), "html", null, true);
             echo "\" class=\"btn btn-neutral\">Modifier ma recette</a>
                     <a href=\"";
-            // line 38
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("recipe_delete", ["slug" => twig_get_attribute($this->env, $this->source, (isset($context["recipe"]) || array_key_exists("recipe", $context) ? $context["recipe"] : (function () { throw new RuntimeError('Variable "recipe" does not exist.', 38, $this->source); })()), "slug", [], "any", false, false, false, 38)]), "html", null, true);
+            // line 28
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("recipe_delete", ["slug" => twig_get_attribute($this->env, $this->source, (isset($context["recipe"]) || array_key_exists("recipe", $context) ? $context["recipe"] : (function () { throw new RuntimeError('Variable "recipe" does not exist.', 28, $this->source); })()), "slug", [], "any", false, false, false, 28)]), "html", null, true);
             echo "\" class=\"btn btn-danger\" onclick=\"return confirm('Êtes-vous sûr de vouloir supprimer votre recette ?')\"><i class=\"fa fa-times-circle\"></i></a>
                 ";
         }
-        // line 40
+        // line 30
         echo "            </div>
 
             <div class=\"modal fade\" id=\"shareInsta\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"PartageInstagram\" aria-hidden=\"true\">
@@ -210,23 +188,23 @@ class __TwigTemplate_c296a2bbaeaaf562e63eeada08f023009758847de2160a8a3b27c919c9a
                         </div>
                         <div class=\"modal-body text-left\">
                             <p>";
-        // line 52
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["recipe"]) || array_key_exists("recipe", $context) ? $context["recipe"] : (function () { throw new RuntimeError('Variable "recipe" does not exist.', 52, $this->source); })()), "name", [], "any", false, false, false, 52), "html", null, true);
+        // line 42
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["recipe"]) || array_key_exists("recipe", $context) ? $context["recipe"] : (function () { throw new RuntimeError('Variable "recipe" does not exist.', 42, $this->source); })()), "name", [], "any", false, false, false, 42), "html", null, true);
         echo "</p>
                             <br/>
                             <p>Ingrédients : </p>
                             ";
-        // line 55
+        // line 45
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["recipe"]) || array_key_exists("recipe", $context) ? $context["recipe"] : (function () { throw new RuntimeError('Variable "recipe" does not exist.', 55, $this->source); })()), "foods", [], "any", false, false, false, 55));
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["recipe"]) || array_key_exists("recipe", $context) ? $context["recipe"] : (function () { throw new RuntimeError('Variable "recipe" does not exist.', 45, $this->source); })()), "foods", [], "any", false, false, false, 45));
         foreach ($context['_seq'] as $context["_key"] => $context["food"]) {
-            // line 56
+            // line 46
             echo "                                <p>";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["food"], "quantity", [], "any", false, false, false, 56), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["food"], "quantity", [], "any", false, false, false, 46), "html", null, true);
             echo " ";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["food"], "quantityUnity", [], "any", false, false, false, 56), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["food"], "quantityUnity", [], "any", false, false, false, 46), "html", null, true);
             echo " ";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["food"], "name", [], "any", false, false, false, 56), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["food"], "name", [], "any", false, false, false, 46), "html", null, true);
             echo "</p>
                                 </ul>
                             ";
@@ -234,39 +212,39 @@ class __TwigTemplate_c296a2bbaeaaf562e63eeada08f023009758847de2160a8a3b27c919c9a
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['food'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 59
+        // line 49
         echo "                            <br/>
                             <p>Préparation :</p>
                             <p>";
-        // line 61
-        echo twig_get_attribute($this->env, $this->source, (isset($context["recipe"]) || array_key_exists("recipe", $context) ? $context["recipe"] : (function () { throw new RuntimeError('Variable "recipe" does not exist.', 61, $this->source); })()), "description", [], "any", false, false, false, 61);
+        // line 51
+        echo twig_get_attribute($this->env, $this->source, (isset($context["recipe"]) || array_key_exists("recipe", $context) ? $context["recipe"] : (function () { throw new RuntimeError('Variable "recipe" does not exist.', 51, $this->source); })()), "description", [], "any", false, false, false, 51);
         echo "</p><br>
                             <p>Valeur nutritionnelle :</p>
                             <p>";
-        // line 63
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["recipe"]) || array_key_exists("recipe", $context) ? $context["recipe"] : (function () { throw new RuntimeError('Variable "recipe" does not exist.', 63, $this->source); })()), "calorie", [], "any", false, false, false, 63), "html", null, true);
+        // line 53
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["recipe"]) || array_key_exists("recipe", $context) ? $context["recipe"] : (function () { throw new RuntimeError('Variable "recipe" does not exist.', 53, $this->source); })()), "calorie", [], "any", false, false, false, 53), "html", null, true);
         echo " kcal | ";
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["recipe"]) || array_key_exists("recipe", $context) ? $context["recipe"] : (function () { throw new RuntimeError('Variable "recipe" does not exist.', 63, $this->source); })()), "protein", [], "any", false, false, false, 63), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["recipe"]) || array_key_exists("recipe", $context) ? $context["recipe"] : (function () { throw new RuntimeError('Variable "recipe" does not exist.', 53, $this->source); })()), "protein", [], "any", false, false, false, 53), "html", null, true);
         echo " gr protéine | ";
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["recipe"]) || array_key_exists("recipe", $context) ? $context["recipe"] : (function () { throw new RuntimeError('Variable "recipe" does not exist.', 63, $this->source); })()), "glucide", [], "any", false, false, false, 63), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["recipe"]) || array_key_exists("recipe", $context) ? $context["recipe"] : (function () { throw new RuntimeError('Variable "recipe" does not exist.', 53, $this->source); })()), "glucide", [], "any", false, false, false, 53), "html", null, true);
         echo " gr glucide | ";
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["recipe"]) || array_key_exists("recipe", $context) ? $context["recipe"] : (function () { throw new RuntimeError('Variable "recipe" does not exist.', 63, $this->source); })()), "lipide", [], "any", false, false, false, 63), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["recipe"]) || array_key_exists("recipe", $context) ? $context["recipe"] : (function () { throw new RuntimeError('Variable "recipe" does not exist.', 53, $this->source); })()), "lipide", [], "any", false, false, false, 53), "html", null, true);
         echo " gr lipide</p>
                             <p>";
-        // line 64
+        // line 54
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["recipe"]) || array_key_exists("recipe", $context) ? $context["recipe"] : (function () { throw new RuntimeError('Variable "recipe" does not exist.', 64, $this->source); })()), "tags", [], "any", false, false, false, 64));
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["recipe"]) || array_key_exists("recipe", $context) ? $context["recipe"] : (function () { throw new RuntimeError('Variable "recipe" does not exist.', 54, $this->source); })()), "tags", [], "any", false, false, false, 54));
         foreach ($context['_seq'] as $context["_key"] => $context["tag"]) {
-            // line 65
+            // line 55
             echo "                                #";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["tag"], "name", [], "any", false, false, false, 65), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["tag"], "name", [], "any", false, false, false, 55), "html", null, true);
             echo "
                                 ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['tag'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 67
+        // line 57
         echo "                                #recipelink @recipelink
                             </p>
                         </div>
@@ -282,26 +260,26 @@ class __TwigTemplate_c296a2bbaeaaf562e63eeada08f023009758847de2160a8a3b27c919c9a
                     <div class=\"row mt-2\">
                         <div class=\"col-3\">
                             <p style=\"font-weight: bold;\">Kcal : ";
-        // line 81
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["recipe"]) || array_key_exists("recipe", $context) ? $context["recipe"] : (function () { throw new RuntimeError('Variable "recipe" does not exist.', 81, $this->source); })()), "calorie", [], "any", false, false, false, 81), "html", null, true);
+        // line 71
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["recipe"]) || array_key_exists("recipe", $context) ? $context["recipe"] : (function () { throw new RuntimeError('Variable "recipe" does not exist.', 71, $this->source); })()), "calorie", [], "any", false, false, false, 71), "html", null, true);
         echo "</p>
                         </div>
                         <div class=\"col-3\">
                             <p style=\"font-weight: bold;\">Protéine : ";
-        // line 84
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["recipe"]) || array_key_exists("recipe", $context) ? $context["recipe"] : (function () { throw new RuntimeError('Variable "recipe" does not exist.', 84, $this->source); })()), "protein", [], "any", false, false, false, 84), "html", null, true);
+        // line 74
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["recipe"]) || array_key_exists("recipe", $context) ? $context["recipe"] : (function () { throw new RuntimeError('Variable "recipe" does not exist.', 74, $this->source); })()), "protein", [], "any", false, false, false, 74), "html", null, true);
         echo " gr</p>
                         </div>
                         <div class=\"col-3\">
                             <p style=\"font-weight: bold;\">Glucide : ";
-        // line 87
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["recipe"]) || array_key_exists("recipe", $context) ? $context["recipe"] : (function () { throw new RuntimeError('Variable "recipe" does not exist.', 87, $this->source); })()), "glucide", [], "any", false, false, false, 87), "html", null, true);
+        // line 77
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["recipe"]) || array_key_exists("recipe", $context) ? $context["recipe"] : (function () { throw new RuntimeError('Variable "recipe" does not exist.', 77, $this->source); })()), "glucide", [], "any", false, false, false, 77), "html", null, true);
         echo " gr</p>
                         </div>
                         <div class=\"col-3\">
                             <p style=\"font-weight: bold;\">Lipide : ";
-        // line 90
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["recipe"]) || array_key_exists("recipe", $context) ? $context["recipe"] : (function () { throw new RuntimeError('Variable "recipe" does not exist.', 90, $this->source); })()), "lipide", [], "any", false, false, false, 90), "html", null, true);
+        // line 80
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["recipe"]) || array_key_exists("recipe", $context) ? $context["recipe"] : (function () { throw new RuntimeError('Variable "recipe" does not exist.', 80, $this->source); })()), "lipide", [], "any", false, false, false, 80), "html", null, true);
         echo " gr</p>
                         </div>
                     </div>
@@ -310,104 +288,104 @@ class __TwigTemplate_c296a2bbaeaaf562e63eeada08f023009758847de2160a8a3b27c919c9a
             <div class=\"head-recip row\">
                 <div class=\"col-6 author\">
                     <p>Recette proposée par : <a href=\"";
-        // line 97
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("kitchen_user", ["username" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["recipe"]) || array_key_exists("recipe", $context) ? $context["recipe"] : (function () { throw new RuntimeError('Variable "recipe" does not exist.', 97, $this->source); })()), "user", [], "any", false, false, false, 97), "username", [], "any", false, false, false, 97)]), "html", null, true);
+        // line 87
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("kitchen_user", ["username" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["recipe"]) || array_key_exists("recipe", $context) ? $context["recipe"] : (function () { throw new RuntimeError('Variable "recipe" does not exist.', 87, $this->source); })()), "user", [], "any", false, false, false, 87), "username", [], "any", false, false, false, 87)]), "html", null, true);
         echo "\"><span class=\"user\"><i class=\"fa fa-user\" aria-hidden=\"true\"></i> ";
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["recipe"]) || array_key_exists("recipe", $context) ? $context["recipe"] : (function () { throw new RuntimeError('Variable "recipe" does not exist.', 97, $this->source); })()), "user", [], "any", false, false, false, 97), "username", [], "any", false, false, false, 97), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["recipe"]) || array_key_exists("recipe", $context) ? $context["recipe"] : (function () { throw new RuntimeError('Variable "recipe" does not exist.', 87, $this->source); })()), "user", [], "any", false, false, false, 87), "username", [], "any", false, false, false, 87), "html", null, true);
         echo "</span></a></p>
                 </div>
                 <div class=\"col-6\">
                     ";
-        // line 100
+        // line 90
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_USER")) {
-            // line 101
+            // line 91
             echo "                        ";
-            if ((twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 101, $this->source); })()), "user", [], "any", false, false, false, 101) && twig_get_attribute($this->env, $this->source, (isset($context["recipe"]) || array_key_exists("recipe", $context) ? $context["recipe"] : (function () { throw new RuntimeError('Variable "recipe" does not exist.', 101, $this->source); })()), "isSaveByUser", [0 => twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 101, $this->source); })()), "user", [], "any", false, false, false, 101)], "method", false, false, false, 101))) {
-                // line 102
+            if ((twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 91, $this->source); })()), "user", [], "any", false, false, false, 91) && twig_get_attribute($this->env, $this->source, (isset($context["recipe"]) || array_key_exists("recipe", $context) ? $context["recipe"] : (function () { throw new RuntimeError('Variable "recipe" does not exist.', 91, $this->source); })()), "isSaveByUser", [0 => twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 91, $this->source); })()), "user", [], "any", false, false, false, 91)], "method", false, false, false, 91))) {
+                // line 92
                 echo "                            <a href=\"";
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("recipe_unsave", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["recipe"]) || array_key_exists("recipe", $context) ? $context["recipe"] : (function () { throw new RuntimeError('Variable "recipe" does not exist.', 102, $this->source); })()), "id", [], "any", false, false, false, 102)]), "html", null, true);
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("recipe_unsave", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["recipe"]) || array_key_exists("recipe", $context) ? $context["recipe"] : (function () { throw new RuntimeError('Variable "recipe" does not exist.', 92, $this->source); })()), "id", [], "any", false, false, false, 92)]), "html", null, true);
                 echo "\" class=\"btn btn-round btn-danger \"><i class=\"fa fa-bookmark-o\"></i> Retirer la recette</a>
                         ";
             } else {
-                // line 104
+                // line 94
                 echo "                            <a href=\"";
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("recipe_save", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["recipe"]) || array_key_exists("recipe", $context) ? $context["recipe"] : (function () { throw new RuntimeError('Variable "recipe" does not exist.', 104, $this->source); })()), "id", [], "any", false, false, false, 104)]), "html", null, true);
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("recipe_save", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["recipe"]) || array_key_exists("recipe", $context) ? $context["recipe"] : (function () { throw new RuntimeError('Variable "recipe" does not exist.', 94, $this->source); })()), "id", [], "any", false, false, false, 94)]), "html", null, true);
                 echo "\" class=\"btn btn-outline-danger btn-round\"> <i class=\"fa fa-bookmark-o\"></i>Enregistrer la recette</a>
                         ";
             }
-            // line 106
+            // line 96
             echo "                        <a href=\"";
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("recipe_like", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["recipe"]) || array_key_exists("recipe", $context) ? $context["recipe"] : (function () { throw new RuntimeError('Variable "recipe" does not exist.', 106, $this->source); })()), "id", [], "any", false, false, false, 106)]), "html", null, true);
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("recipe_like", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["recipe"]) || array_key_exists("recipe", $context) ? $context["recipe"] : (function () { throw new RuntimeError('Variable "recipe" does not exist.', 96, $this->source); })()), "id", [], "any", false, false, false, 96)]), "html", null, true);
             echo "\" class=\"btn btn-round btn-warning js-like\">
                         ";
-            // line 107
-            if ((twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 107, $this->source); })()), "user", [], "any", false, false, false, 107) && twig_get_attribute($this->env, $this->source, (isset($context["recipe"]) || array_key_exists("recipe", $context) ? $context["recipe"] : (function () { throw new RuntimeError('Variable "recipe" does not exist.', 107, $this->source); })()), "isLikeByUser", [0 => twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 107, $this->source); })()), "user", [], "any", false, false, false, 107)], "method", false, false, false, 107))) {
-                // line 108
+            // line 97
+            if ((twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 97, $this->source); })()), "user", [], "any", false, false, false, 97) && twig_get_attribute($this->env, $this->source, (isset($context["recipe"]) || array_key_exists("recipe", $context) ? $context["recipe"] : (function () { throw new RuntimeError('Variable "recipe" does not exist.', 97, $this->source); })()), "isLikeByUser", [0 => twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 97, $this->source); })()), "user", [], "any", false, false, false, 97)], "method", false, false, false, 97))) {
+                // line 98
                 echo "                                <i class=\"fa fa-heart\"></i>
                             ";
             } else {
-                // line 110
+                // line 100
                 echo "                                <i class=\"fa fa-heart-o\"></i>
                             ";
             }
-            // line 112
+            // line 102
             echo "                            <span class=\"js-likes\">";
-            echo twig_escape_filter($this->env, twig_length_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["recipe"]) || array_key_exists("recipe", $context) ? $context["recipe"] : (function () { throw new RuntimeError('Variable "recipe" does not exist.', 112, $this->source); })()), "likes", [], "any", false, false, false, 112)), "html", null, true);
+            echo twig_escape_filter($this->env, twig_length_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["recipe"]) || array_key_exists("recipe", $context) ? $context["recipe"] : (function () { throw new RuntimeError('Variable "recipe" does not exist.', 102, $this->source); })()), "likes", [], "any", false, false, false, 102)), "html", null, true);
             echo "</span>
                             <span class=\"js-label\">j'aime</span>
                         </a>
 
                         ";
         } else {
-            // line 117
+            // line 107
             echo "                            <a href=\"";
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
             echo "\" class=\"btn btn-round btn-warning btn-primary\">
                                     <i class=\"fa fa-heart-o\"></i>
                                 <span class=\"js-likes\">";
-            // line 119
-            echo twig_escape_filter($this->env, twig_length_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["recipe"]) || array_key_exists("recipe", $context) ? $context["recipe"] : (function () { throw new RuntimeError('Variable "recipe" does not exist.', 119, $this->source); })()), "likes", [], "any", false, false, false, 119)), "html", null, true);
+            // line 109
+            echo twig_escape_filter($this->env, twig_length_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["recipe"]) || array_key_exists("recipe", $context) ? $context["recipe"] : (function () { throw new RuntimeError('Variable "recipe" does not exist.', 109, $this->source); })()), "likes", [], "any", false, false, false, 109)), "html", null, true);
             echo "</span>
                                 <span class=\"js-label\">j'aime</span>
                             </a>
                     ";
         }
-        // line 123
+        // line 113
         echo "                </div>
             </div>
             <img class=\"img-responsive img-recipe\" src=\"";
-        // line 125
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/recipes/" . twig_get_attribute($this->env, $this->source, (isset($context["recipe"]) || array_key_exists("recipe", $context) ? $context["recipe"] : (function () { throw new RuntimeError('Variable "recipe" does not exist.', 125, $this->source); })()), "picture", [], "any", false, false, false, 125))), "html", null, true);
+        // line 115
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/recipes/" . twig_get_attribute($this->env, $this->source, (isset($context["recipe"]) || array_key_exists("recipe", $context) ? $context["recipe"] : (function () { throw new RuntimeError('Variable "recipe" does not exist.', 115, $this->source); })()), "picture", [], "any", false, false, false, 115))), "html", null, true);
         echo "\" alt=\"recette ";
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["recipe"]) || array_key_exists("recipe", $context) ? $context["recipe"] : (function () { throw new RuntimeError('Variable "recipe" does not exist.', 125, $this->source); })()), "name", [], "any", false, false, false, 125), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["recipe"]) || array_key_exists("recipe", $context) ? $context["recipe"] : (function () { throw new RuntimeError('Variable "recipe" does not exist.', 115, $this->source); })()), "name", [], "any", false, false, false, 115), "html", null, true);
         echo "\">
         </div>
         <div class=\"more-info-recipe\">
                 <div class=\"row\">
                     <div class=\"col-3\">
                         <p><i class=\"fa fa-cutlery\"></i> ";
-        // line 130
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["recipe"]) || array_key_exists("recipe", $context) ? $context["recipe"] : (function () { throw new RuntimeError('Variable "recipe" does not exist.', 130, $this->source); })()), "type", [], "any", false, false, false, 130), "html", null, true);
+        // line 120
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["recipe"]) || array_key_exists("recipe", $context) ? $context["recipe"] : (function () { throw new RuntimeError('Variable "recipe" does not exist.', 120, $this->source); })()), "type", [], "any", false, false, false, 120), "html", null, true);
         echo "</p>
                     </div>
                     <div class=\"col-3\">
                         <i class=\"fa fa-hourglass-half\" aria-hidden=\"true\"></i> ";
-        // line 133
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["recipe"]) || array_key_exists("recipe", $context) ? $context["recipe"] : (function () { throw new RuntimeError('Variable "recipe" does not exist.', 133, $this->source); })()), "time", [], "any", false, false, false, 133), "html", null, true);
+        // line 123
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["recipe"]) || array_key_exists("recipe", $context) ? $context["recipe"] : (function () { throw new RuntimeError('Variable "recipe" does not exist.', 123, $this->source); })()), "time", [], "any", false, false, false, 123), "html", null, true);
         echo " ";
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["recipe"]) || array_key_exists("recipe", $context) ? $context["recipe"] : (function () { throw new RuntimeError('Variable "recipe" does not exist.', 133, $this->source); })()), "timeUnity", [], "any", false, false, false, 133), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["recipe"]) || array_key_exists("recipe", $context) ? $context["recipe"] : (function () { throw new RuntimeError('Variable "recipe" does not exist.', 123, $this->source); })()), "timeUnity", [], "any", false, false, false, 123), "html", null, true);
         echo "</p>
                     </div>
                     <div class=\"col-3\">
                         <p><i class=\"fa fa-users\"></i> ";
-        // line 136
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["recipe"]) || array_key_exists("recipe", $context) ? $context["recipe"] : (function () { throw new RuntimeError('Variable "recipe" does not exist.', 136, $this->source); })()), "part", [], "any", false, false, false, 136), "html", null, true);
+        // line 126
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["recipe"]) || array_key_exists("recipe", $context) ? $context["recipe"] : (function () { throw new RuntimeError('Variable "recipe" does not exist.', 126, $this->source); })()), "part", [], "any", false, false, false, 126), "html", null, true);
         echo " part</p>
                     </div>
                     <div class=\"col-3\">
                         <p><i class=\"fa fa-signal\"></i> ";
-        // line 139
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["recipe"]) || array_key_exists("recipe", $context) ? $context["recipe"] : (function () { throw new RuntimeError('Variable "recipe" does not exist.', 139, $this->source); })()), "dificulty", [], "any", false, false, false, 139), "html", null, true);
+        // line 129
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["recipe"]) || array_key_exists("recipe", $context) ? $context["recipe"] : (function () { throw new RuntimeError('Variable "recipe" does not exist.', 129, $this->source); })()), "dificulty", [], "any", false, false, false, 129), "html", null, true);
         echo "</p>
                     </div>
                 </div>
@@ -418,20 +396,20 @@ class __TwigTemplate_c296a2bbaeaaf562e63eeada08f023009758847de2160a8a3b27c919c9a
                     <h4>Ingrédients</h4>
                     <div class=\"foods mt-4\">
                         ";
-        // line 148
+        // line 138
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["recipe"]) || array_key_exists("recipe", $context) ? $context["recipe"] : (function () { throw new RuntimeError('Variable "recipe" does not exist.', 148, $this->source); })()), "foods", [], "any", false, false, false, 148));
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["recipe"]) || array_key_exists("recipe", $context) ? $context["recipe"] : (function () { throw new RuntimeError('Variable "recipe" does not exist.', 138, $this->source); })()), "foods", [], "any", false, false, false, 138));
         foreach ($context['_seq'] as $context["_key"] => $context["food"]) {
-            // line 149
+            // line 139
             echo "                            <ul class=\"list-group list-group-flush\">
                                 <li class=\"list-group-item\">
                                     ";
-            // line 151
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["food"], "quantity", [], "any", false, false, false, 151), "html", null, true);
+            // line 141
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["food"], "quantity", [], "any", false, false, false, 141), "html", null, true);
             echo " ";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["food"], "quantityUnity", [], "any", false, false, false, 151), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["food"], "quantityUnity", [], "any", false, false, false, 141), "html", null, true);
             echo " ";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["food"], "name", [], "any", false, false, false, 151), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["food"], "name", [], "any", false, false, false, 141), "html", null, true);
             echo "
                                 </li>
                             </ul>
@@ -440,15 +418,15 @@ class __TwigTemplate_c296a2bbaeaaf562e63eeada08f023009758847de2160a8a3b27c919c9a
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['food'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 155
+        // line 145
         echo "                    </div>
                 </div>
                 <div class=\"col-8\">
                     <h4>Préparation</h4>
                     <p class=\"text-justify text-left mt-4\">
                         ";
-        // line 160
-        echo twig_get_attribute($this->env, $this->source, (isset($context["recipe"]) || array_key_exists("recipe", $context) ? $context["recipe"] : (function () { throw new RuntimeError('Variable "recipe" does not exist.', 160, $this->source); })()), "description", [], "any", false, false, false, 160);
+        // line 150
+        echo twig_get_attribute($this->env, $this->source, (isset($context["recipe"]) || array_key_exists("recipe", $context) ? $context["recipe"] : (function () { throw new RuntimeError('Variable "recipe" does not exist.', 150, $this->source); })()), "description", [], "any", false, false, false, 150);
         echo "
                     </p>
                 </div>
@@ -462,38 +440,38 @@ class __TwigTemplate_c296a2bbaeaaf562e63eeada08f023009758847de2160a8a3b27c919c9a
     </div>
 
         <div class=\"block-comment\" style=\"background-image:url(";
-        // line 172
+        // line 162
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/assets/img/background-comment.jpg"), "html", null, true);
         echo "); background-repeat: no-repeat; background-size: cover;\">
            <div class=\"container\">
                <h4 class=\"mb-4 text-center\">Commentaires sur la recette ";
-        // line 174
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["recipe"]) || array_key_exists("recipe", $context) ? $context["recipe"] : (function () { throw new RuntimeError('Variable "recipe" does not exist.', 174, $this->source); })()), "name", [], "any", false, false, false, 174), "html", null, true);
+        // line 164
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["recipe"]) || array_key_exists("recipe", $context) ? $context["recipe"] : (function () { throw new RuntimeError('Variable "recipe" does not exist.', 164, $this->source); })()), "name", [], "any", false, false, false, 164), "html", null, true);
         echo " <span class=\"label label-info\"><i class=\"fa fa-comments\"></i> ";
-        echo twig_escape_filter($this->env, twig_length_filter($this->env, (isset($context["countComments"]) || array_key_exists("countComments", $context) ? $context["countComments"] : (function () { throw new RuntimeError('Variable "countComments" does not exist.', 174, $this->source); })())), "html", null, true);
+        echo twig_escape_filter($this->env, twig_length_filter($this->env, (isset($context["countComments"]) || array_key_exists("countComments", $context) ? $context["countComments"] : (function () { throw new RuntimeError('Variable "countComments" does not exist.', 164, $this->source); })())), "html", null, true);
         echo "</span></h4>
                <div class=\"section-comments m-auto\" style=\"width: 70%;\">
                    <div class=\"sharethis-inline-reaction-buttons\"></div>
                    ";
-        // line 177
+        // line 167
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["commentaires"]) || array_key_exists("commentaires", $context) ? $context["commentaires"] : (function () { throw new RuntimeError('Variable "commentaires" does not exist.', 177, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["commentaires"]) || array_key_exists("commentaires", $context) ? $context["commentaires"] : (function () { throw new RuntimeError('Variable "commentaires" does not exist.', 167, $this->source); })()));
         $context['_iterated'] = false;
         foreach ($context['_seq'] as $context["_key"] => $context["commentaire"]) {
-            // line 178
+            // line 168
             echo "                       <div class=\"block-commentaire mb-3\">
                            <blockquote class=\"blockquote\" style=\"background: white;\">
                                <p class=\"mt-3\">le ";
-            // line 180
-            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["commentaire"], "createdAt", [], "any", false, false, false, 180), "d/m/y"), "html", null, true);
+            // line 170
+            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["commentaire"], "createdAt", [], "any", false, false, false, 170), "d/m/y"), "html", null, true);
             echo " <span class=\"user\"><i class=\"fa fa-user\" aria-hidden=\"true\"></i> ";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["commentaire"], "user", [], "any", false, false, false, 180), "username", [], "any", false, false, false, 180), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["commentaire"], "user", [], "any", false, false, false, 170), "username", [], "any", false, false, false, 170), "html", null, true);
             echo "</span> a dit :</p>
                                <div class=\"blockquote-footer\">
                                </div>
                                <p class=\"mb-0 text-left ml-5 mr-5 mt-2 mb-2\"><i class=\"fa fa-quote-left\"></i> ";
-            // line 183
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["commentaire"], "content", [], "any", false, false, false, 183), "html", null, true);
+            // line 173
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["commentaire"], "content", [], "any", false, false, false, 173), "html", null, true);
             echo " <i class=\"fa fa-quote-right\"></i></p>
                                <br>
                            </blockquote>
@@ -501,59 +479,59 @@ class __TwigTemplate_c296a2bbaeaaf562e63eeada08f023009758847de2160a8a3b27c919c9a
             $context['_iterated'] = true;
         }
         if (!$context['_iterated']) {
-            // line 187
+            // line 177
             echo "                               <p>Aucun commentaire ici, soyez le premier !</p>
                             ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['commentaire'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 189
+        // line 179
         echo "               <div class=\"pagination justify-content-center\">
                    ";
-        // line 190
-        echo $this->extensions['Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension']->render($this->env, (isset($context["commentaires"]) || array_key_exists("commentaires", $context) ? $context["commentaires"] : (function () { throw new RuntimeError('Variable "commentaires" does not exist.', 190, $this->source); })()));
+        // line 180
+        echo $this->extensions['Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension']->render($this->env, (isset($context["commentaires"]) || array_key_exists("commentaires", $context) ? $context["commentaires"] : (function () { throw new RuntimeError('Variable "commentaires" does not exist.', 180, $this->source); })()));
         echo "
                </div>
                <div class=\"mt-4\">
                        <div class=\"section-form-comment m-auto\" style=\"background: #fff; padding:15px;\">
                            ";
-        // line 194
+        // line 184
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_USER")) {
-            // line 195
+            // line 185
             echo "                               ";
-            echo             $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 195, $this->source); })()), 'form_start');
+            echo             $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 185, $this->source); })()), 'form_start');
             echo "
                                <p class=\"text-left\"><span class=\"user\"><i class=\"fa fa-user\" aria-hidden=\"true\"></i> ";
-            // line 196
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 196, $this->source); })()), "user", [], "any", false, false, false, 196), "username", [], "any", false, false, false, 196), "html", null, true);
+            // line 186
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 186, $this->source); })()), "user", [], "any", false, false, false, 186), "username", [], "any", false, false, false, 186), "html", null, true);
             echo "</p>
                                ";
-            // line 197
-            echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 197, $this->source); })()), "content", [], "any", false, false, false, 197), 'row');
+            // line 187
+            echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 187, $this->source); })()), "content", [], "any", false, false, false, 187), 'row');
             echo "
                                <div class=\"button-form\">
                                    <button class=\"btn btn-success btn-lg btn-block mt-4\">";
-            // line 199
-            echo twig_escape_filter($this->env, (((isset($context["button_label"]) || array_key_exists("button_label", $context))) ? (_twig_default_filter((isset($context["button_label"]) || array_key_exists("button_label", $context) ? $context["button_label"] : (function () { throw new RuntimeError('Variable "button_label" does not exist.', 199, $this->source); })()), "Donner mon avis")) : ("Donner mon avis")), "html", null, true);
+            // line 189
+            echo twig_escape_filter($this->env, (((isset($context["button_label"]) || array_key_exists("button_label", $context))) ? (_twig_default_filter((isset($context["button_label"]) || array_key_exists("button_label", $context) ? $context["button_label"] : (function () { throw new RuntimeError('Variable "button_label" does not exist.', 189, $this->source); })()), "Donner mon avis")) : ("Donner mon avis")), "html", null, true);
             echo "</button>
                                </div>
                                ";
-            // line 201
-            echo             $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 201, $this->source); })()), 'form_end');
+            // line 191
+            echo             $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 191, $this->source); })()), 'form_end');
             echo "
                            ";
         } else {
-            // line 203
+            // line 193
             echo "                                   <div class=\"section-comments m-auto\" style=\"background: #fff; padding:15px;\">
                                        <a href=\"";
-            // line 204
+            // line 194
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
             echo "\" class=\"btn btn-success btn-lg btn-block mt-4\">Donner mon avis</a>
                                    </div>
                            ";
         }
-        // line 207
+        // line 197
         echo "                   </div>
                </div>
            </div>
@@ -570,7 +548,7 @@ class __TwigTemplate_c296a2bbaeaaf562e63eeada08f023009758847de2160a8a3b27c919c9a
 
     }
 
-    // line 216
+    // line 206
     public function block_javascript($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -600,7 +578,7 @@ class __TwigTemplate_c296a2bbaeaaf562e63eeada08f023009758847de2160a8a3b27c919c9a
 
     public function getDebugInfo()
     {
-        return array (  574 => 216,  557 => 207,  551 => 204,  548 => 203,  543 => 201,  538 => 199,  533 => 197,  529 => 196,  524 => 195,  522 => 194,  515 => 190,  512 => 189,  505 => 187,  496 => 183,  488 => 180,  484 => 178,  479 => 177,  471 => 174,  466 => 172,  451 => 160,  444 => 155,  430 => 151,  426 => 149,  422 => 148,  410 => 139,  404 => 136,  396 => 133,  390 => 130,  380 => 125,  376 => 123,  369 => 119,  363 => 117,  354 => 112,  350 => 110,  346 => 108,  344 => 107,  339 => 106,  333 => 104,  327 => 102,  324 => 101,  322 => 100,  314 => 97,  304 => 90,  298 => 87,  292 => 84,  286 => 81,  270 => 67,  261 => 65,  257 => 64,  247 => 63,  242 => 61,  238 => 59,  224 => 56,  220 => 55,  214 => 52,  200 => 40,  195 => 38,  190 => 37,  188 => 36,  184 => 34,  175 => 31,  172 => 30,  168 => 29,  163 => 27,  159 => 26,  152 => 23,  142 => 19,  135 => 14,  130 => 13,  120 => 12,  108 => 9,  102 => 8,  98 => 7,  92 => 5,  82 => 4,  61 => 3,  38 => 1,);
+        return array (  552 => 206,  535 => 197,  529 => 194,  526 => 193,  521 => 191,  516 => 189,  511 => 187,  507 => 186,  502 => 185,  500 => 184,  493 => 180,  490 => 179,  483 => 177,  474 => 173,  466 => 170,  462 => 168,  457 => 167,  449 => 164,  444 => 162,  429 => 150,  422 => 145,  408 => 141,  404 => 139,  400 => 138,  388 => 129,  382 => 126,  374 => 123,  368 => 120,  358 => 115,  354 => 113,  347 => 109,  341 => 107,  332 => 102,  328 => 100,  324 => 98,  322 => 97,  317 => 96,  311 => 94,  305 => 92,  302 => 91,  300 => 90,  292 => 87,  282 => 80,  276 => 77,  270 => 74,  264 => 71,  248 => 57,  239 => 55,  235 => 54,  225 => 53,  220 => 51,  216 => 49,  202 => 46,  198 => 45,  192 => 42,  178 => 30,  173 => 28,  168 => 27,  166 => 26,  162 => 24,  153 => 21,  150 => 20,  146 => 19,  141 => 17,  137 => 16,  130 => 13,  120 => 12,  108 => 9,  102 => 8,  98 => 7,  92 => 5,  82 => 4,  61 => 3,  38 => 1,);
     }
 
     public function getSourceContext()
@@ -617,16 +595,6 @@ class __TwigTemplate_c296a2bbaeaaf562e63eeada08f023009758847de2160a8a3b27c919c9a
 {% endblock %}
 
 {% block body %}
-    {% for message in app.flashes('success') %}
-        <div class=\"alert alert-success\" style=\"background: #86d9ab !important;\">
-            <div class=\"container\">
-                <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">
-                    <i class=\"fa fa-times\"></i>
-                </button>
-                <span><i class=\"fa fa-bell\"></i> {{ message|raw }}</span>
-            </div>
-        </div>
-    {% endfor %}
 <div class=\"block-im-recipe text-center\" style=\"background-image: url({{ asset ('/assets/img/select-program-background.jpg') }});  background-repeat: no-repeat; background-size: cover;\">
     <div class=\"container\">
         <div class=\"image_header pt-5\">

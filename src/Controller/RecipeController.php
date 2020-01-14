@@ -22,6 +22,8 @@ use Symfony\Component\HttpFoundation\File\Exception\FileException;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Mailer\MailerInterface;
+use Symfony\Component\Mime\Email;
 use Symfony\Component\Routing\Annotation\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Entity;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter ;
@@ -128,7 +130,7 @@ class RecipeController extends AbstractController
      * @return Response
      * @throws \Exception
      */
-    public function show(Recipe $recipe, PaginatorInterface $paginator, RecipeRepository $recipeRepository, RecipeCommentRepository $commentRepository, Request $request): Response
+    public function show($slug, Recipe $recipe, PaginatorInterface $paginator, RecipeRepository $recipeRepository, RecipeCommentRepository $commentRepository, MailerInterface $mailer, Request $request): Response
     {
         $commentaires = $paginator->paginate($commentRepository->findBy([
             'recipe' => $recipe,
@@ -141,6 +143,8 @@ class RecipeController extends AbstractController
         $countComments = $commentRepository->findBy(['recipe' => $recipe, 'publish' => true]);
 
         $user = $this->security->getUser();
+        $author = $recipeRepository->findOneBySlug($slug);
+        $author = $author->getUser()->getEmail();
 
         $commentaire = new RecipeComment();
 

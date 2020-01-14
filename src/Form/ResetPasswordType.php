@@ -14,7 +14,10 @@ class ResetPasswordType extends AbstractType
     {
         $builder
             ->add('email', EmailType::class, [
-                'label' => 'Quel email utilisez vous pour votre compte ?'
+                'label' => false,
+                'attr' => [
+                    'placeholder' => 'Adresse mail'
+                ]
             ])
         ;
     }

@@ -13,10 +13,19 @@
             </div>
         </div>
     {% endfor %}
+    <div class="jumbotron text-center" style="background-image: url({{ asset ('/assets/img/background-user.jpg') }});  background-repeat: no-repeat; background-size:cover; background-position: center">
+        <div class="typography-line"><h2>Mot de passe oublié </h2></div>
+    </div>
 <div class="container mt-4">
-    {{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button class="btn btn-primary">Réinitialiser mon mot de passe</button>
-    {{ form_end(form) }}
+    <h5 style="font-weight: 800; text-transform: inherit;">Vous avez oublié votre mot de passe ?<br/>
+        Pas de panique, ça arrive même aux meilleurs !</h5>
+    <p>Entrez l’adresse email de votre compte. Nous vous enverrons un email avec un nouveau mot de passe.
+        Pensez à regarder dans votre dossier Spam si vous ne voyez pas arriver notre email.</p>
+    <div class="mt-5 mb-5" style="width: 60%;">
+        {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <button class="btn btn-primary">Réinitialiser mon mot de passe</button>
+        {{ form_end(form) }}
+    </div>
 </div>
 {% endblock %}

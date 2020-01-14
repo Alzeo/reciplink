@@ -59,7 +59,10 @@ class __TwigTemplate_9ecbd44a096aed0c5449e422e47fcc40cdcc092819aae456e9fa14b31c3
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 7, $this->source); })()), "extract", [], "any", false, false, false, 7), "html", null, true);
         echo "
             </p>
-            <a href=\"#\" class=\"btn btn-success\">Voir l'article</a>
+            <a href=\"";
+        // line 9
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("post_show", ["slug" => twig_get_attribute($this->env, $this->source, (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 9, $this->source); })()), "slug", [], "any", false, false, false, 9)]), "html", null, true);
+        echo "\" class=\"btn btn-success\">Voir l'article</a>
         </div>
     </div>
 </div>
@@ -84,7 +87,7 @@ class __TwigTemplate_9ecbd44a096aed0c5449e422e47fcc40cdcc092819aae456e9fa14b31c3
 
     public function getDebugInfo()
     {
-        return array (  59 => 7,  54 => 5,  47 => 3,  43 => 1,);
+        return array (  64 => 9,  59 => 7,  54 => 5,  47 => 3,  43 => 1,);
     }
 
     public function getSourceContext()
@@ -97,7 +100,7 @@ class __TwigTemplate_9ecbd44a096aed0c5449e422e47fcc40cdcc092819aae456e9fa14b31c3
             <p class=\"card-text\">
                 {{ post.extract }}
             </p>
-            <a href=\"#\" class=\"btn btn-success\">Voir l'article</a>
+            <a href=\"{{ path('post_show', {'slug': post.slug}) }}\" class=\"btn btn-success\">Voir l'article</a>
         </div>
     </div>
 </div>

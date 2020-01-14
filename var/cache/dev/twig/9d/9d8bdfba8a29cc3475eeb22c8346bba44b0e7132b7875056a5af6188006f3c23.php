@@ -178,51 +178,51 @@ class __TwigTemplate_b46297f18e917ea1ac4c1835d252acde93d5a6c2d57037d852affaca0f8
 </nav>
 ";
         // line 78
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 78, $this->source); })()), "flashes", [0 => "success"], "method", false, false, false, 78));
+        foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
+            // line 79
+            echo "    <div class=\"alert alert-success\" style=\"background: #86d9ab !important;\">
+        <div class=\"container\">
+            <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">
+                <i class=\"fa fa-times\"></i>
+            </button>
+            <span><i class=\"fa fa-bell\"></i> ";
+            // line 84
+            echo $context["message"];
+            echo "</span>
+        </div>
+    </div>
+";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['message'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 88
         $this->displayBlock('body', $context, $blocks);
-        // line 80
+        // line 90
         echo "<footer >
     <div class=\"container py-5\">
     <div class=\"row\">
-        <div class=\"col-12 col-md\">
+        <div class=\"col-4 col-md\">
             <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" class=\"d-block mb-2\" role=\"img\" viewBox=\"0 0 24 24\" focusable=\"false\"><title>Product</title><circle cx=\"12\" cy=\"12\" r=\"10\"/><path d=\"M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83m13.79-4l-5.74 9.94\"/></svg>
             <small class=\"d-block mb-3 text-muted\">&copy; 2017-2019</small>
         </div>
-        <div class=\"col-6 col-md\">
-            <h5>Features</h5>
+        <div class=\"col-4 col-md\">
+            <h5>Recettes</h5>
             <ul class=\"list-unstyled text-small\">
-                <li><a class=\"text-muted\" href=\"#\">Cool stuff</a></li>
-                <li><a class=\"text-muted\" href=\"#\">Random feature</a></li>
-                <li><a class=\"text-muted\" href=\"#\">Team feature</a></li>
-                <li><a class=\"text-muted\" href=\"#\">Stuff for developers</a></li>
-                <li><a class=\"text-muted\" href=\"#\">Another one</a></li>
-                <li><a class=\"text-muted\" href=\"#\">Last time</a></li>
+                <li><a class=\"text-muted\" href=\"#\">Paléo</a></li>
+                <li><a class=\"text-muted\" href=\"#\">Végétarien</a></li>
+                <li><a class=\"text-muted\" href=\"#\">Végétalien</a></li>
+                <li><a class=\"text-muted\" href=\"#\">Végan</a></li>
             </ul>
         </div>
-        <div class=\"col-6 col-md\">
-            <h5>Resources</h5>
+        <div class=\"col-4 col-md\">
+            <h5>Figuy</h5>
             <ul class=\"list-unstyled text-small\">
-                <li><a class=\"text-muted\" href=\"#\">Resource</a></li>
-                <li><a class=\"text-muted\" href=\"#\">Resource name</a></li>
-                <li><a class=\"text-muted\" href=\"#\">Another resource</a></li>
-                <li><a class=\"text-muted\" href=\"#\">Final resource</a></li>
-            </ul>
-        </div>
-        <div class=\"col-6 col-md\">
-            <h5>Resources</h5>
-            <ul class=\"list-unstyled text-small\">
-                <li><a class=\"text-muted\" href=\"#\">Business</a></li>
-                <li><a class=\"text-muted\" href=\"#\">Education</a></li>
-                <li><a class=\"text-muted\" href=\"#\">Government</a></li>
-                <li><a class=\"text-muted\" href=\"#\">Gaming</a></li>
-            </ul>
-        </div>
-        <div class=\"col-6 col-md\">
-            <h5>About</h5>
-            <ul class=\"list-unstyled text-small\">
-                <li><a class=\"text-muted\" href=\"#\">Team</a></li>
-                <li><a class=\"text-muted\" href=\"#\">Locations</a></li>
-                <li><a class=\"text-muted\" href=\"#\">Privacy</a></li>
-                <li><a class=\"text-muted\" href=\"#\">Terms</a></li>
+                <li><a class=\"text-muted\" href=\"#\">Contact</a></li>
+                <li><a class=\"text-muted\" href=\"#\">Support</a></li>
+                <li><a class=\"text-muted\" href=\"#\">Mentions légales</a></li>
             </ul>
         </div>
     </div>
@@ -280,9 +280,9 @@ class __TwigTemplate_b46297f18e917ea1ac4c1835d252acde93d5a6c2d57037d852affaca0f8
 <script type=\"text/javascript\" src=\"https://platform-api.sharethis.com/js/sharethis.js#property=5e13b83fdd527900136b177a&product=inline-share-buttons\" async=\"async\"></script>
 
 ";
-        // line 179
+        // line 168
         $this->displayBlock('javascript', $context, $blocks);
-        // line 181
+        // line 170
         echo "</body>
 </html>
 
@@ -352,7 +352,7 @@ class __TwigTemplate_b46297f18e917ea1ac4c1835d252acde93d5a6c2d57037d852affaca0f8
 
     }
 
-    // line 78
+    // line 88
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -370,7 +370,7 @@ class __TwigTemplate_b46297f18e917ea1ac4c1835d252acde93d5a6c2d57037d852affaca0f8
 
     }
 
-    // line 179
+    // line 168
     public function block_javascript($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -400,7 +400,7 @@ class __TwigTemplate_b46297f18e917ea1ac4c1835d252acde93d5a6c2d57037d852affaca0f8
 
     public function getDebugInfo()
     {
-        return array (  374 => 179,  356 => 78,  346 => 19,  336 => 18,  317 => 17,  299 => 5,  286 => 181,  284 => 179,  183 => 80,  181 => 78,  175 => 74,  170 => 72,  167 => 71,  159 => 69,  157 => 68,  150 => 64,  143 => 60,  138 => 58,  134 => 57,  130 => 56,  126 => 55,  118 => 50,  106 => 41,  83 => 20,  80 => 18,  78 => 17,  72 => 14,  68 => 13,  64 => 12,  54 => 5,  48 => 1,);
+        return array (  374 => 168,  356 => 88,  346 => 19,  336 => 18,  317 => 17,  299 => 5,  286 => 170,  284 => 168,  204 => 90,  202 => 88,  192 => 84,  185 => 79,  181 => 78,  175 => 74,  170 => 72,  167 => 71,  159 => 69,  157 => 68,  150 => 64,  143 => 60,  138 => 58,  134 => 57,  130 => 56,  126 => 55,  118 => 50,  106 => 41,  83 => 20,  80 => 18,  78 => 17,  72 => 14,  68 => 13,  64 => 12,  54 => 5,  48 => 1,);
     }
 
     public function getSourceContext()
@@ -482,51 +482,40 @@ class __TwigTemplate_b46297f18e917ea1ac4c1835d252acde93d5a6c2d57037d852affaca0f8
         </div>
     </div>
 </nav>
+{% for message in app.flashes('success') %}
+    <div class=\"alert alert-success\" style=\"background: #86d9ab !important;\">
+        <div class=\"container\">
+            <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">
+                <i class=\"fa fa-times\"></i>
+            </button>
+            <span><i class=\"fa fa-bell\"></i> {{ message|raw }}</span>
+        </div>
+    </div>
+{% endfor %}
 {% block body  %}
 {% endblock %}
 <footer >
     <div class=\"container py-5\">
     <div class=\"row\">
-        <div class=\"col-12 col-md\">
+        <div class=\"col-4 col-md\">
             <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" class=\"d-block mb-2\" role=\"img\" viewBox=\"0 0 24 24\" focusable=\"false\"><title>Product</title><circle cx=\"12\" cy=\"12\" r=\"10\"/><path d=\"M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83m13.79-4l-5.74 9.94\"/></svg>
             <small class=\"d-block mb-3 text-muted\">&copy; 2017-2019</small>
         </div>
-        <div class=\"col-6 col-md\">
-            <h5>Features</h5>
+        <div class=\"col-4 col-md\">
+            <h5>Recettes</h5>
             <ul class=\"list-unstyled text-small\">
-                <li><a class=\"text-muted\" href=\"#\">Cool stuff</a></li>
-                <li><a class=\"text-muted\" href=\"#\">Random feature</a></li>
-                <li><a class=\"text-muted\" href=\"#\">Team feature</a></li>
-                <li><a class=\"text-muted\" href=\"#\">Stuff for developers</a></li>
-                <li><a class=\"text-muted\" href=\"#\">Another one</a></li>
-                <li><a class=\"text-muted\" href=\"#\">Last time</a></li>
+                <li><a class=\"text-muted\" href=\"#\">Paléo</a></li>
+                <li><a class=\"text-muted\" href=\"#\">Végétarien</a></li>
+                <li><a class=\"text-muted\" href=\"#\">Végétalien</a></li>
+                <li><a class=\"text-muted\" href=\"#\">Végan</a></li>
             </ul>
         </div>
-        <div class=\"col-6 col-md\">
-            <h5>Resources</h5>
+        <div class=\"col-4 col-md\">
+            <h5>Figuy</h5>
             <ul class=\"list-unstyled text-small\">
-                <li><a class=\"text-muted\" href=\"#\">Resource</a></li>
-                <li><a class=\"text-muted\" href=\"#\">Resource name</a></li>
-                <li><a class=\"text-muted\" href=\"#\">Another resource</a></li>
-                <li><a class=\"text-muted\" href=\"#\">Final resource</a></li>
-            </ul>
-        </div>
-        <div class=\"col-6 col-md\">
-            <h5>Resources</h5>
-            <ul class=\"list-unstyled text-small\">
-                <li><a class=\"text-muted\" href=\"#\">Business</a></li>
-                <li><a class=\"text-muted\" href=\"#\">Education</a></li>
-                <li><a class=\"text-muted\" href=\"#\">Government</a></li>
-                <li><a class=\"text-muted\" href=\"#\">Gaming</a></li>
-            </ul>
-        </div>
-        <div class=\"col-6 col-md\">
-            <h5>About</h5>
-            <ul class=\"list-unstyled text-small\">
-                <li><a class=\"text-muted\" href=\"#\">Team</a></li>
-                <li><a class=\"text-muted\" href=\"#\">Locations</a></li>
-                <li><a class=\"text-muted\" href=\"#\">Privacy</a></li>
-                <li><a class=\"text-muted\" href=\"#\">Terms</a></li>
+                <li><a class=\"text-muted\" href=\"#\">Contact</a></li>
+                <li><a class=\"text-muted\" href=\"#\">Support</a></li>
+                <li><a class=\"text-muted\" href=\"#\">Mentions légales</a></li>
             </ul>
         </div>
     </div>

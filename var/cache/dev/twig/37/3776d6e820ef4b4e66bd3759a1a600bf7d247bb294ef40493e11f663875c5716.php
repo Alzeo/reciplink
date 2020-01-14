@@ -107,20 +107,31 @@ class __TwigTemplate_880dceef2958280db8df204e197dcdb2c31242352acaef379f8616e5c91
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['message'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
         // line 16
-        echo "<div class=\"container mt-4\">
-    ";
-        // line 17
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 17, $this->source); })()), 'form_start');
+        echo "    <div class=\"jumbotron text-center\" style=\"background-image: url(";
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/assets/img/background-user.jpg"), "html", null, true);
+        echo ");  background-repeat: no-repeat; background-size:cover; background-position: center\">
+        <div class=\"typography-line\"><h2>Mot de passe oublié </h2></div>
+    </div>
+<div class=\"container mt-4\">
+    <h5 style=\"font-weight: 800; text-transform: inherit;\">Vous avez oublié votre mot de passe ?<br/>
+        Pas de panique, ça arrive même aux meilleurs !</h5>
+    <p>Entrez l’adresse email de votre compte. Nous vous enverrons un email avec un nouveau mot de passe.
+        Pensez à regarder dans votre dossier Spam si vous ne voyez pas arriver notre email.</p>
+    <div class=\"mt-5 mb-5\" style=\"width: 60%;\">
+        ";
+        // line 25
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 25, $this->source); })()), 'form_start');
         echo "
-    ";
-        // line 18
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 18, $this->source); })()), 'widget');
+        ";
+        // line 26
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 26, $this->source); })()), 'widget');
         echo "
-    <button class=\"btn btn-primary\">Réinitialiser mon mot de passe</button>
-    ";
-        // line 20
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 20, $this->source); })()), 'form_end');
+        <button class=\"btn btn-primary\">Réinitialiser mon mot de passe</button>
+        ";
+        // line 28
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 28, $this->source); })()), 'form_end');
         echo "
+    </div>
 </div>
 ";
         
@@ -143,7 +154,7 @@ class __TwigTemplate_880dceef2958280db8df204e197dcdb2c31242352acaef379f8616e5c91
 
     public function getDebugInfo()
     {
-        return array (  122 => 20,  117 => 18,  113 => 17,  110 => 16,  100 => 12,  93 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  132 => 28,  127 => 26,  123 => 25,  110 => 16,  100 => 12,  93 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -163,11 +174,20 @@ class __TwigTemplate_880dceef2958280db8df204e197dcdb2c31242352acaef379f8616e5c91
             </div>
         </div>
     {% endfor %}
+    <div class=\"jumbotron text-center\" style=\"background-image: url({{ asset ('/assets/img/background-user.jpg') }});  background-repeat: no-repeat; background-size:cover; background-position: center\">
+        <div class=\"typography-line\"><h2>Mot de passe oublié </h2></div>
+    </div>
 <div class=\"container mt-4\">
-    {{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button class=\"btn btn-primary\">Réinitialiser mon mot de passe</button>
-    {{ form_end(form) }}
+    <h5 style=\"font-weight: 800; text-transform: inherit;\">Vous avez oublié votre mot de passe ?<br/>
+        Pas de panique, ça arrive même aux meilleurs !</h5>
+    <p>Entrez l’adresse email de votre compte. Nous vous enverrons un email avec un nouveau mot de passe.
+        Pensez à regarder dans votre dossier Spam si vous ne voyez pas arriver notre email.</p>
+    <div class=\"mt-5 mb-5\" style=\"width: 60%;\">
+        {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <button class=\"btn btn-primary\">Réinitialiser mon mot de passe</button>
+        {{ form_end(form) }}
+    </div>
 </div>
 {% endblock %}
 ", "reset_password/index.html.twig", "/Users/tomaccess/Documents/Sites/reciplink/templates/reset_password/index.html.twig");
