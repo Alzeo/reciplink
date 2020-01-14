@@ -104,6 +104,6 @@ class __TwigTemplate_9ecbd44a096aed0c5449e422e47fcc40cdcc092819aae456e9fa14b31c3
         </div>
     </div>
 </div>
-", "posts/_posts.html.twig", "/Users/tomaccess/Documents/Sites/reciplink/templates/posts/_posts.html.twig");
+", "posts/_posts.html.twig", "/home/cortez/Sites/reciplink/templates/posts/_posts.html.twig");
     }
 }

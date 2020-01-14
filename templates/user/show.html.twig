@@ -12,13 +12,13 @@
     <div class="nav-tabs-wrapper">
         <ul class="nav nav-tabs" id="pills-tab" role="tablist">
             <li class="nav-item">
-                <a href="{{ path('user_show', {'username': user.username}) }}" class="nav-link">Mes informations</a>
+                <a href="{{ path('user_show') }}" class="nav-link">Mes informations</a>
             </li>
             <li class="nav-item">
-                <a href="{{ path('user_save_recipe', {'username': user.username}) }}" class="nav-link">Recettes enregistrés</a>
+                <a href="{{ path('user_save_recipe') }}" class="nav-link">Recettes enregistrées</a>
             </li>
             <li class="nav-item">
-                <a href="{{ path('user_my_recipes', {'username': user.username}) }}" class="nav-link">Mes recettes</a>
+                <a href="{{ path('user_my_recipes') }}" class="nav-link">Mes recettes</a>
             </li>
         </ul>
     </div>

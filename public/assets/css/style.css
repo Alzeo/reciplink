@@ -442,3 +442,23 @@ strong {
 .navbar .navbar-nav .nav-item .nav-link {
     color: #14202a !important;
 }
+
+.content p {
+    line-height: 24px;
+}
+
+.extract {
+    background: #fff;
+    padding:10px;
+}
+
+.border {
+    border: 1px solid #8bdaae !important;
+}
+
+.sidebar h2 {
+    text-align: center;
+}
+
+.dropdown-item {
+}

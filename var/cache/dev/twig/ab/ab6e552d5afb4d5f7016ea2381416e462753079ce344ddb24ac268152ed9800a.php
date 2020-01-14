@@ -110,19 +110,19 @@ class __TwigTemplate_d9f3ace77f43931bfd62b5dbfbde4cdb96c84f3197baad701adfced32b9
             <li class=\"nav-item\">
                 <a href=\"";
         // line 15
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("user_show", ["username" => twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 15, $this->source); })()), "username", [], "any", false, false, false, 15)]), "html", null, true);
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("user_show");
         echo "\" class=\"nav-link\">Mes informations</a>
             </li>
             <li class=\"nav-item\">
                 <a href=\"";
         // line 18
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("user_save_recipe", ["username" => twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 18, $this->source); })()), "username", [], "any", false, false, false, 18)]), "html", null, true);
-        echo "\" class=\"nav-link\">Recettes enregistrés</a>
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("user_save_recipe");
+        echo "\" class=\"nav-link\">Recettes enregistrées</a>
             </li>
             <li class=\"nav-item\">
                 <a href=\"";
         // line 21
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("user_my_recipes", ["username" => twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 21, $this->source); })()), "username", [], "any", false, false, false, 21)]), "html", null, true);
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("user_my_recipes");
         echo "\" class=\"nav-link\">Mes recettes</a>
             </li>
         </ul>
@@ -367,13 +367,13 @@ class __TwigTemplate_d9f3ace77f43931bfd62b5dbfbde4cdb96c84f3197baad701adfced32b9
     <div class=\"nav-tabs-wrapper\">
         <ul class=\"nav nav-tabs\" id=\"pills-tab\" role=\"tablist\">
             <li class=\"nav-item\">
-                <a href=\"{{ path('user_show', {'username': user.username}) }}\" class=\"nav-link\">Mes informations</a>
+                <a href=\"{{ path('user_show') }}\" class=\"nav-link\">Mes informations</a>
             </li>
             <li class=\"nav-item\">
-                <a href=\"{{ path('user_save_recipe', {'username': user.username}) }}\" class=\"nav-link\">Recettes enregistrés</a>
+                <a href=\"{{ path('user_save_recipe') }}\" class=\"nav-link\">Recettes enregistrées</a>
             </li>
             <li class=\"nav-item\">
-                <a href=\"{{ path('user_my_recipes', {'username': user.username}) }}\" class=\"nav-link\">Mes recettes</a>
+                <a href=\"{{ path('user_my_recipes') }}\" class=\"nav-link\">Mes recettes</a>
             </li>
         </ul>
     </div>
@@ -455,6 +455,6 @@ class __TwigTemplate_d9f3ace77f43931bfd62b5dbfbde4cdb96c84f3197baad701adfced32b9
     {% endif %}
     </div>
 {% endblock %}
-", "user/show.html.twig", "/Users/tomaccess/Documents/Sites/reciplink/templates/user/show.html.twig");
+", "user/show.html.twig", "/home/cortez/Sites/reciplink/templates/user/show.html.twig");
     }
 }

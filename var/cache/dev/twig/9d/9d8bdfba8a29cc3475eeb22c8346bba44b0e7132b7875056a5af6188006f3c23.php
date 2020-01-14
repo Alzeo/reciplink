@@ -156,39 +156,64 @@ class __TwigTemplate_b46297f18e917ea1ac4c1835d252acde93d5a6c2d57037d852affaca0f8
         // line 68
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("IS_AUTHENTICATED_FULLY")) {
             // line 69
-            echo "                    <li class=\"nav-item\"><a href=\"";
-            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("user_show");
-            echo "\" class=\"nav-link\"><i class=\"fa fa-user\" aria-hidden=\"true\"></i>";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 69, $this->source); })()), "user", [], "any", false, false, false, 69), "username", [], "any", false, false, false, 69), "html", null, true);
-            echo "</a></li>
+            echo "                    <li class=\"nav-item dropdown\">
+                        <a href=\"#\" class=\"nav-link dropdown-toggle\" id=\"navbarDropdown\" role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\"><i class=\"fa fa-user\" aria-hidden=\"true\"></i> ";
+            // line 70
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 70, $this->source); })()), "user", [], "any", false, false, false, 70), "username", [], "any", false, false, false, 70), "html", null, true);
+            echo "</a>
+                        <div class=\"dropdown-perso dropdown-menu\" role=\"menu\" aria-labelledby=\"navbarDropdown\">
+                            <a class=\"dropdown-item\" href=\"";
+            // line 72
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("user_show", ["username" => twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 72, $this->source); })()), "username", [], "any", false, false, false, 72)]), "html", null, true);
+            echo "\">Mes informations</a>
+                            <a class=\"dropdown-item\" href=\"";
+            // line 73
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("user_save_recipe", ["username" => twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 73, $this->source); })()), "username", [], "any", false, false, false, 73)]), "html", null, true);
+            echo "\">Recettes enregistrées</a>
+                            <a class=\"dropdown-item\" href=\"";
+            // line 74
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("user_my_recipes", ["username" => twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 74, $this->source); })()), "username", [], "any", false, false, false, 74)]), "html", null, true);
+            echo "\">Mes recettes</a>
+                            <div class=\"dropdown-divider\"></div>
+                            <a class=\"dropdown-item\" href=\"";
+            // line 76
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
+            echo "\"><i class=\"fa fa-sign-out\" style=\"color:#9c9995;\"></i> Se déconnecter</a>
+                        </div>
+                    </li>
+
                 ";
         } else {
-            // line 71
+            // line 81
             echo "
                    <a href=\"";
-            // line 72
+            // line 82
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
             echo "\"type=\"button\" class=\"btn-round mr-1 btn btn-outline-success\"><i class=\"fa fa-sign-in\" aria-hidden=\"true\"></i> Se connecter</a>
                 ";
         }
-        // line 74
-        echo "            </ul>
+        // line 84
+        echo "
+
+
+
+
         </div>
     </div>
 </nav>
 ";
-        // line 78
+        // line 92
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 78, $this->source); })()), "flashes", [0 => "success"], "method", false, false, false, 78));
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 92, $this->source); })()), "flashes", [0 => "success"], "method", false, false, false, 92));
         foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
-            // line 79
+            // line 93
             echo "    <div class=\"alert alert-success\" style=\"background: #86d9ab !important;\">
         <div class=\"container\">
             <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">
                 <i class=\"fa fa-times\"></i>
             </button>
             <span><i class=\"fa fa-bell\"></i> ";
-            // line 84
+            // line 98
             echo $context["message"];
             echo "</span>
         </div>
@@ -198,9 +223,9 @@ class __TwigTemplate_b46297f18e917ea1ac4c1835d252acde93d5a6c2d57037d852affaca0f8
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['message'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 88
+        // line 102
         $this->displayBlock('body', $context, $blocks);
-        // line 90
+        // line 104
         echo "<footer >
     <div class=\"container py-5\">
     <div class=\"row\">
@@ -280,9 +305,9 @@ class __TwigTemplate_b46297f18e917ea1ac4c1835d252acde93d5a6c2d57037d852affaca0f8
 <script type=\"text/javascript\" src=\"https://platform-api.sharethis.com/js/sharethis.js#property=5e13b83fdd527900136b177a&product=inline-share-buttons\" async=\"async\"></script>
 
 ";
-        // line 168
+        // line 182
         $this->displayBlock('javascript', $context, $blocks);
-        // line 170
+        // line 184
         echo "</body>
 </html>
 
@@ -352,7 +377,7 @@ class __TwigTemplate_b46297f18e917ea1ac4c1835d252acde93d5a6c2d57037d852affaca0f8
 
     }
 
-    // line 88
+    // line 102
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -370,7 +395,7 @@ class __TwigTemplate_b46297f18e917ea1ac4c1835d252acde93d5a6c2d57037d852affaca0f8
 
     }
 
-    // line 168
+    // line 182
     public function block_javascript($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -400,7 +425,7 @@ class __TwigTemplate_b46297f18e917ea1ac4c1835d252acde93d5a6c2d57037d852affaca0f8
 
     public function getDebugInfo()
     {
-        return array (  374 => 168,  356 => 88,  346 => 19,  336 => 18,  317 => 17,  299 => 5,  286 => 170,  284 => 168,  204 => 90,  202 => 88,  192 => 84,  185 => 79,  181 => 78,  175 => 74,  170 => 72,  167 => 71,  159 => 69,  157 => 68,  150 => 64,  143 => 60,  138 => 58,  134 => 57,  130 => 56,  126 => 55,  118 => 50,  106 => 41,  83 => 20,  80 => 18,  78 => 17,  72 => 14,  68 => 13,  64 => 12,  54 => 5,  48 => 1,);
+        return array (  399 => 182,  381 => 102,  371 => 19,  361 => 18,  342 => 17,  324 => 5,  311 => 184,  309 => 182,  229 => 104,  227 => 102,  217 => 98,  210 => 93,  206 => 92,  196 => 84,  191 => 82,  188 => 81,  180 => 76,  175 => 74,  171 => 73,  167 => 72,  162 => 70,  159 => 69,  157 => 68,  150 => 64,  143 => 60,  138 => 58,  134 => 57,  130 => 56,  126 => 55,  118 => 50,  106 => 41,  83 => 20,  80 => 18,  78 => 17,  72 => 14,  68 => 13,  64 => 12,  54 => 5,  48 => 1,);
     }
 
     public function getSourceContext()
@@ -473,12 +498,26 @@ class __TwigTemplate_b46297f18e917ea1ac4c1835d252acde93d5a6c2d57037d852affaca0f8
             </ul>
             <ul class=\"ml-auto navbar-nav pull-right\">
                 {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-                    <li class=\"nav-item\"><a href=\"{{ path('user_show') }}\" class=\"nav-link\"><i class=\"fa fa-user\" aria-hidden=\"true\"></i>{{ app.user.username}}</a></li>
+                    <li class=\"nav-item dropdown\">
+                        <a href=\"#\" class=\"nav-link dropdown-toggle\" id=\"navbarDropdown\" role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\"><i class=\"fa fa-user\" aria-hidden=\"true\"></i> {{ app.user.username }}</a>
+                        <div class=\"dropdown-perso dropdown-menu\" role=\"menu\" aria-labelledby=\"navbarDropdown\">
+                            <a class=\"dropdown-item\" href=\"{{ path('user_show', {'username': user.username}) }}\">Mes informations</a>
+                            <a class=\"dropdown-item\" href=\"{{ path('user_save_recipe', {'username': user.username}) }}\">Recettes enregistrées</a>
+                            <a class=\"dropdown-item\" href=\"{{ path('user_my_recipes', {'username': user.username}) }}\">Mes recettes</a>
+                            <div class=\"dropdown-divider\"></div>
+                            <a class=\"dropdown-item\" href=\"{{path('app_logout')}}\"><i class=\"fa fa-sign-out\" style=\"color:#9c9995;\"></i> Se déconnecter</a>
+                        </div>
+                    </li>
+
                 {% else %}
 
                    <a href=\"{{ path('app_login') }}\"type=\"button\" class=\"btn-round mr-1 btn btn-outline-success\"><i class=\"fa fa-sign-in\" aria-hidden=\"true\"></i> Se connecter</a>
                 {% endif %}
-            </ul>
+
+
+
+
+
         </div>
     </div>
 </nav>
@@ -577,6 +616,6 @@ class __TwigTemplate_b46297f18e917ea1ac4c1835d252acde93d5a6c2d57037d852affaca0f8
 </body>
 </html>
 
-", "base.html.twig", "/Users/tomaccess/Documents/Sites/reciplink/templates/base.html.twig");
+", "base.html.twig", "/home/cortez/Sites/reciplink/templates/base.html.twig");
     }
 }

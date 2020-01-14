@@ -66,12 +66,26 @@
             </ul>
             <ul class="ml-auto navbar-nav pull-right">
                 {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-                    <li class="nav-item"><a href="{{ path('user_show') }}" class="nav-link"><i class="fa fa-user" aria-hidden="true"></i>{{ app.user.username}}</a></li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user" aria-hidden="true"></i> {{ app.user.username }}</a>
+                        <div class="dropdown-perso dropdown-menu" role="menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{{ path('user_show', {'username': user.username}) }}">Mes informations</a>
+                            <a class="dropdown-item" href="{{ path('user_save_recipe', {'username': user.username}) }}">Recettes enregistrées</a>
+                            <a class="dropdown-item" href="{{ path('user_my_recipes', {'username': user.username}) }}">Mes recettes</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="{{path('app_logout')}}"><i class="fa fa-sign-out" style="color:#9c9995;"></i> Se déconnecter</a>
+                        </div>
+                    </li>
+
                 {% else %}
 
                    <a href="{{ path('app_login') }}"type="button" class="btn-round mr-1 btn btn-outline-success"><i class="fa fa-sign-in" aria-hidden="true"></i> Se connecter</a>
                 {% endif %}
-            </ul>
+
+
+
+
+
         </div>
     </div>
 </nav>

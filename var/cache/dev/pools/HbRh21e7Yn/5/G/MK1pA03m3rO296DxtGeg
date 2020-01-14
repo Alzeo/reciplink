@@ -1,0 +1,29 @@
+<?php //%255BApp%255CEntity%255CPasswordUpdate%2524confirmPassword%255D%255B1%255D
+
+namespace Symfony\Component\VarExporter\Internal;
+
+return $getExpiry ? PHP_INT_MAX : Hydrator::hydrate(
+    $o = [
+        clone (Registry::$prototypes['Symfony\\Component\\Validator\\Constraints\\EqualTo'] ?? Registry::p('Symfony\\Component\\Validator\\Constraints\\EqualTo')),
+    ],
+    null,
+    [
+        'stdClass' => [
+            'message' => [
+                'Les mots de passes ne sont pas similaires',
+            ],
+            'propertyPath' => [
+                'newPassword',
+            ],
+            'groups' => [
+                [
+                    'Default',
+                ],
+            ],
+        ],
+    ],
+    [
+        $o[0],
+    ],
+    []
+);

@@ -2,15 +2,19 @@
 
 namespace App\Controller;
 
+use App\Entity\PasswordUpdate;
 use App\Entity\Recipe;
 use App\Entity\RecipeSave;
 use App\Entity\User;
 use App\Form\editUserType;
+use App\Form\PasswordUpdateType;
 use App\Form\UserType;
 use App\Repository\RecipeCommentRepository;
 use App\Repository\RecipeRepository;
 use App\Repository\RecipeSaveRepository;
 use App\Repository\UserRepository;
+use Doctrine\ORM\EntityManager;
+use Doctrine\ORM\EntityManagerInterface;
 use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -18,6 +22,8 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security as Secur;
+use Symfony\Component\Security\Core\Encoder\UserPasswordEncoder;
+use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 /**
  * @Route("/compte")
@@ -58,7 +64,7 @@ class UserController extends AbstractController
 
 
     /**
-     * @Route("/{username}/recettes-enregistree", name="user_save_recipe", methods={"GET"})
+     * @Route("/recettes-enregistrees", name="user_save_recipe")
      * @param User $user
      * @param RecipeRepository $recipeRepository
      * @param PaginatorInterface $paginator
@@ -66,9 +72,10 @@ class UserController extends AbstractController
      * @param RecipeSaveRepository $saveRepo
      * @return Response
      */
-    public function saveRecipe(User $user, UserRepository $userRepository, RecipeRepository $recipeRepository, PaginatorInterface $paginator, Request $request, RecipeSaveRepository $saveRepo): Response
+    public function saveRecipe(UserRepository $userRepository, RecipeRepository $recipeRepository, PaginatorInterface $paginator, Request $request, RecipeSaveRepository $saveRepo): Response
     {
 
+        $user = $this->getUser();
         $recipeSave = $paginator->paginate($saveRepo->findBy(['user' => $user]),
             $request->query->getInt('page', 1), 6);
 
@@ -80,8 +87,39 @@ class UserController extends AbstractController
         ]);
     }
 
+
     /**
-     * @Route("/{username}/mes-recettes", name="user_my_recipes", methods={"GET"})
+     * @Route("/update-password", name="update_password")
+     */
+    public function updatePassword(Request $request, EntityManagerInterface $manager, UserPasswordEncoderInterface $encoder){
+
+        $user = $this->getUser();
+        $passwordUpdate = new PasswordUpdate();
+        $form = $this->createForm(PasswordUpdateType::class, $passwordUpdate);
+        $form->handleRequest($request);
+
+        if($form->isSubmitted() && $form->isValid()){
+            if(!password_verify($passwordUpdate->getOldPassword(), $user->getPassword())){
+                // gérer l'erreur ici
+            } else {
+                $newPassword = $passwordUpdate->getNewPassword();
+                $password = $encoder->encodePassword($user, $newPassword);
+                $user->setPassword($password);
+                $manager->persist($user);
+                $manager->flush();
+                $this->addFlash('success', 'Votre mot de passe a bien été modifié !');
+                return $this->redirectToRoute('home');
+            }
+        }
+
+        return $this->render('user/password.html.twig', [
+            'form' => $form->createView()
+        ]);
+
+    }
+
+    /**
+     * @Route("/mes-recettes", name="user_my_recipes")
      * @param User $user
      * @param RecipeRepository $recipeRepository
      * @param PaginatorInterface $paginator
@@ -89,9 +127,9 @@ class UserController extends AbstractController
      * @param RecipeSaveRepository $saveRepo
      * @return Response
      */
-    public function userRecipes(User $user, UserRepository $userRepository, RecipeRepository $recipeRepository, PaginatorInterface $paginator, Request $request, RecipeSaveRepository $saveRepo): Response
+    public function userRecipes( UserRepository $userRepository, RecipeRepository $recipeRepository, PaginatorInterface $paginator, Request $request, RecipeSaveRepository $saveRepo): Response
     {
-
+        $user = $this->getUser();
         $userRecipes = $paginator->paginate($recipeRepository->findBy(['user' => $user]),
             $request->query->getInt('page', 1),
             6/*page number*/
@@ -109,7 +147,7 @@ class UserController extends AbstractController
      * @Route("/edit", name="user_edit")
      * @IsGranted("ROLE_USER")
      */
-    public function edit(Request $request): Response
+    public function edit(Request $request, UserPasswordEncoderInterface $encoder, EntityManagerInterface $manager): Response
     {
         $user = $this->getUser();
         $form = $this->createForm(editUserType::class, $user);
@@ -125,9 +163,28 @@ class UserController extends AbstractController
             ]);
         }
 
+        $passwordUpdate = new PasswordUpdate();
+        $formPassword = $this->createForm(PasswordUpdateType::class, $passwordUpdate);
+        $formPassword->handleRequest($request);
+
+        if($formPassword->isSubmitted() && $formPassword->isValid()){
+            if(!password_verify($passwordUpdate->getOldPassword(), $user->getPassword())){
+                // gérer l'erreur ici
+            } else {
+                $newPassword = $passwordUpdate->getNewPassword();
+                $password = $encoder->encodePassword($user, $newPassword);
+                $user->setPassword($password);
+                $manager->persist($user);
+                $manager->flush();
+                $this->addFlash('success', 'Votre mot de passe a bien été modifié !');
+                return $this->redirectToRoute('home');
+            }
+        }
+
         return $this->render('user/edit.html.twig', [
             'user' => $user,
             'form' => $form->createView(),
+            'formPassword' => $formPassword->createView(),
         ]);
     }
 

@@ -15,6 +15,8 @@ return [
         '/_profiler/open' => [[['_route' => '_profiler_open_file', '_controller' => 'web_profiler.controller.profiler::openAction'], null, null, null, false, false, null]],
         '/admin/login' => [[['_route' => 'admin_account_login', '_controller' => 'App\\Controller\\AdminAccountController::login'], null, null, null, false, false, null]],
         '/admin/comments' => [[['_route' => 'admin_comments_index', '_controller' => 'App\\Controller\\AdminCommentController::index'], null, null, null, false, false, null]],
+        '/admin/newsletter' => [[['_route' => 'newsletter', '_controller' => 'App\\Controller\\AdminNewsletterController::index'], null, null, null, false, false, null]],
+        '/admin/send/paleo' => [[['_route' => 'newsletter_paleo', '_controller' => 'App\\Controller\\AdminNewsletterController::newsPaleo'], null, null, null, false, false, null]],
         '/admin/posts' => [[['_route' => 'admin_posts_index', '_controller' => 'App\\Controller\\AdminPostController::index'], null, null, null, false, false, null]],
         '/admin/posts/new' => [[['_route' => 'admin_posts_new', '_controller' => 'App\\Controller\\AdminPostController::new'], null, null, null, false, false, null]],
         '/admin/recipes' => [[['_route' => 'admin_recipes_index', '_controller' => 'App\\Controller\\AdminRecipeController::index'], null, null, null, false, false, null]],
@@ -34,6 +36,9 @@ return [
         '/login' => [[['_route' => 'app_login', '_controller' => 'App\\Controller\\SecurityController::login'], null, null, null, false, false, null]],
         '/logout' => [[['_route' => 'app_logout', '_controller' => 'App\\Controller\\SecurityController::logout'], null, null, null, false, false, null]],
         '/compte' => [[['_route' => 'user_show', '_controller' => 'App\\Controller\\UserController::show'], null, null, null, true, false, null]],
+        '/compte/recettes-enregistrees' => [[['_route' => 'user_save_recipe', '_controller' => 'App\\Controller\\UserController::saveRecipe'], null, null, null, false, false, null]],
+        '/compte/update-password' => [[['_route' => 'update_password', '_controller' => 'App\\Controller\\UserController::updatePassword'], null, null, null, false, false, null]],
+        '/compte/mes-recettes' => [[['_route' => 'user_my_recipes', '_controller' => 'App\\Controller\\UserController::userRecipes'], null, null, null, false, false, null]],
         '/compte/edit' => [[['_route' => 'user_edit', '_controller' => 'App\\Controller\\UserController::edit'], null, null, null, false, false, null]],
     ],
     [ // $regexpList
@@ -70,23 +75,17 @@ return [
                 .')'
                 .'|/c(?'
                     .'|uisine/([^/]++)(*:368)'
-                    .'|ompte/([^/]++)(?'
-                        .'|/(?'
-                            .'|recettes\\-enregistree(*:418)'
-                            .'|mes\\-recettes(*:439)'
-                        .')'
-                        .'|(*:448)'
-                    .')'
+                    .'|ompte/([^/]++)(*:390)'
                 .')'
-                .'|/post/([^/]++)(*:472)'
+                .'|/post/([^/]++)(*:413)'
                 .'|/recette/([^/]++)(?'
-                    .'|(*:500)'
+                    .'|(*:441)'
                     .'|/(?'
-                        .'|edit(*:516)'
-                        .'|delete(*:530)'
-                        .'|like(*:542)'
-                        .'|unsave(*:556)'
-                        .'|save(*:568)'
+                        .'|edit(*:457)'
+                        .'|delete(*:471)'
+                        .'|like(*:483)'
+                        .'|unsave(*:497)'
+                        .'|save(*:509)'
                     .')'
                 .')'
             .')/?$}sD',
@@ -107,16 +106,14 @@ return [
         309 => [[['_route' => 'admin_tags_delete', '_controller' => 'App\\Controller\\AdminTagsController::delete'], ['id'], null, null, false, false, null]],
         339 => [[['_route' => 'admin_users_delete', '_controller' => 'App\\Controller\\AdminUserController::delete'], ['id'], null, null, false, false, null]],
         368 => [[['_route' => 'kitchen_user', '_controller' => 'App\\Controller\\MainController::userKitchen'], ['username'], null, null, false, true, null]],
-        418 => [[['_route' => 'user_save_recipe', '_controller' => 'App\\Controller\\UserController::saveRecipe'], ['username'], ['GET' => 0], null, false, false, null]],
-        439 => [[['_route' => 'user_my_recipes', '_controller' => 'App\\Controller\\UserController::userRecipes'], ['username'], ['GET' => 0], null, false, false, null]],
-        448 => [[['_route' => 'user_delete', '_controller' => 'App\\Controller\\UserController::delete'], ['id'], ['DELETE' => 0], null, false, true, null]],
-        472 => [[['_route' => 'post_show', '_controller' => 'App\\Controller\\PostController::show'], ['slug'], null, null, false, true, null]],
-        500 => [[['_route' => 'recipe_show', '_controller' => 'App\\Controller\\RecipeController::show'], ['slug'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
-        516 => [[['_route' => 'recipe_edit', '_controller' => 'App\\Controller\\RecipeController::edit'], ['slug'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        530 => [[['_route' => 'recipe_delete', '_controller' => 'App\\Controller\\RecipeController::delete'], ['slug'], null, null, false, false, null]],
-        542 => [[['_route' => 'recipe_like', '_controller' => 'App\\Controller\\RecipeController::like'], ['id'], null, null, false, false, null]],
-        556 => [[['_route' => 'recipe_unsave', '_controller' => 'App\\Controller\\RecipeController::unsave'], ['id'], null, null, false, false, null]],
-        568 => [
+        390 => [[['_route' => 'user_delete', '_controller' => 'App\\Controller\\UserController::delete'], ['id'], ['DELETE' => 0], null, false, true, null]],
+        413 => [[['_route' => 'post_show', '_controller' => 'App\\Controller\\PostController::show'], ['slug'], null, null, false, true, null]],
+        441 => [[['_route' => 'recipe_show', '_controller' => 'App\\Controller\\RecipeController::show'], ['slug'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
+        457 => [[['_route' => 'recipe_edit', '_controller' => 'App\\Controller\\RecipeController::edit'], ['slug'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        471 => [[['_route' => 'recipe_delete', '_controller' => 'App\\Controller\\RecipeController::delete'], ['slug'], null, null, false, false, null]],
+        483 => [[['_route' => 'recipe_like', '_controller' => 'App\\Controller\\RecipeController::like'], ['id'], null, null, false, false, null]],
+        497 => [[['_route' => 'recipe_unsave', '_controller' => 'App\\Controller\\RecipeController::unsave'], ['id'], null, null, false, false, null]],
+        509 => [
             [['_route' => 'recipe_save', '_controller' => 'App\\Controller\\RecipeController::save'], ['id'], null, null, false, false, null],
             [null, null, null, null, false, false, 0],
         ],

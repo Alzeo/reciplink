@@ -220,7 +220,7 @@ class RecipeController extends AbstractController
             $entityManager->flush();
             $this->addFlash('success', "La recette {$recipe->getName()}a bien été supprimé !");
 
-            return $this->redirectToRoute('home');
+            return $this->redirectToRoute('user_');
     }
 
     /**

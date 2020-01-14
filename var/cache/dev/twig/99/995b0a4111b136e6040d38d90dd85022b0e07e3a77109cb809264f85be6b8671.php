@@ -110,13 +110,40 @@ class __TwigTemplate_ee64756b9412c8606b28fea8e49dd224bdd7c6c13a9575f2de6d4d4271c
         // line 24
         if ((twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 24, $this->source); })()), "user", [], "any", false, false, false, 24) && (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 24, $this->source); })()), "user", [], "any", false, false, false, 24) == twig_get_attribute($this->env, $this->source, (isset($context["recipe"]) || array_key_exists("recipe", $context) ? $context["recipe"] : (function () { throw new RuntimeError('Variable "recipe" does not exist.', 24, $this->source); })()), "user", [], "any", false, false, false, 24)))) {
             // line 25
-            echo "                <a href=\"";
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("recipe_edit", ["slug" => twig_get_attribute($this->env, $this->source, (isset($context["recipe"]) || array_key_exists("recipe", $context) ? $context["recipe"] : (function () { throw new RuntimeError('Variable "recipe" does not exist.', 25, $this->source); })()), "slug", [], "any", false, false, false, 25)]), "html", null, true);
-            echo "\" class=\"btn btn-neutral\">Modifier ma recette</a>
+            echo "                <button type=\"button\" class=\"btn btn-danger\" data-toggle=\"modal\" data-target=\"#deleteRecipe\">
+                    <i class=\"fa fa-trash\"></i>
+                </button>
+
             ";
         }
-        // line 27
+        // line 30
         echo "        </div>
+    </div>
+</div>
+
+<div class=\"modal fade\" id=\"deleteRecipe\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"deleteRecipeLabel\" aria-hidden=\"true\">
+    <div class=\"modal-dialog\" role=\"document\">
+        <div class=\"modal-content\">
+            <div class=\"modal-header\">
+                <h5 class=\"modal-title\" id=\"exampleModalLabel\">Surpprimer la recette ";
+        // line 38
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["recipe"]) || array_key_exists("recipe", $context) ? $context["recipe"] : (function () { throw new RuntimeError('Variable "recipe" does not exist.', 38, $this->source); })()), "name", [], "any", false, false, false, 38), "html", null, true);
+        echo "<button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\">
+                        <span aria-hidden=\"true\">&times;</span>
+                    </button></h5>
+
+            </div>
+            <div class=\"modal-body\">
+                Êtes-vous sûr de vouloir supprimer votre recette ? Cette action est irréversible.
+            </div>
+            <div class=\"modal-footer\">
+                <button type=\"button\" class=\"btn btn-secondary\" data-dismiss=\"modal\">Fermer</button>
+                <a href=\"";
+        // line 48
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("recipe_delete", ["slug" => twig_get_attribute($this->env, $this->source, (isset($context["recipe"]) || array_key_exists("recipe", $context) ? $context["recipe"] : (function () { throw new RuntimeError('Variable "recipe" does not exist.', 48, $this->source); })()), "slug", [], "any", false, false, false, 48)]), "html", null, true);
+        echo "\" class=\"btn btn-danger\">Supprimer</a>
+            </div>
+        </div>
     </div>
 </div>
 ";
@@ -140,7 +167,7 @@ class __TwigTemplate_ee64756b9412c8606b28fea8e49dd224bdd7c6c13a9575f2de6d4d4271c
 
     public function getDebugInfo()
     {
-        return array (  119 => 27,  113 => 25,  111 => 24,  107 => 23,  104 => 22,  95 => 19,  92 => 18,  88 => 17,  83 => 15,  78 => 13,  75 => 12,  71 => 10,  67 => 9,  65 => 8,  59 => 5,  55 => 4,  47 => 3,  43 => 1,);
+        return array (  143 => 48,  130 => 38,  120 => 30,  113 => 25,  111 => 24,  107 => 23,  104 => 22,  95 => 19,  92 => 18,  88 => 17,  83 => 15,  78 => 13,  75 => 12,  71 => 10,  67 => 9,  65 => 8,  59 => 5,  55 => 4,  47 => 3,  43 => 1,);
     }
 
     public function getSourceContext()
@@ -169,11 +196,34 @@ class __TwigTemplate_ee64756b9412c8606b28fea8e49dd224bdd7c6c13a9575f2de6d4d4271c
             </p>
             <a href=\"{{ path ('recipe_show', {'slug': recipe.slug })}}\" class=\"btn btn-success\">Voir la recette</a>
             {% if  app.user and app.user == recipe.user %}
-                <a href=\"{{ path('recipe_edit', {'slug': recipe.slug}) }}\" class=\"btn btn-neutral\">Modifier ma recette</a>
+                <button type=\"button\" class=\"btn btn-danger\" data-toggle=\"modal\" data-target=\"#deleteRecipe\">
+                    <i class=\"fa fa-trash\"></i>
+                </button>
+
             {% endif %}
         </div>
     </div>
 </div>
-", "recipe/_recipesByUser.html.twig", "/Users/tomaccess/Documents/Sites/reciplink/templates/recipe/_recipesByUser.html.twig");
+
+<div class=\"modal fade\" id=\"deleteRecipe\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"deleteRecipeLabel\" aria-hidden=\"true\">
+    <div class=\"modal-dialog\" role=\"document\">
+        <div class=\"modal-content\">
+            <div class=\"modal-header\">
+                <h5 class=\"modal-title\" id=\"exampleModalLabel\">Surpprimer la recette {{ recipe.name }}<button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\">
+                        <span aria-hidden=\"true\">&times;</span>
+                    </button></h5>
+
+            </div>
+            <div class=\"modal-body\">
+                Êtes-vous sûr de vouloir supprimer votre recette ? Cette action est irréversible.
+            </div>
+            <div class=\"modal-footer\">
+                <button type=\"button\" class=\"btn btn-secondary\" data-dismiss=\"modal\">Fermer</button>
+                <a href=\"{{ path('recipe_delete', {'slug': recipe.slug}) }}\" class=\"btn btn-danger\">Supprimer</a>
+            </div>
+        </div>
+    </div>
+</div>
+", "recipe/_recipesByUser.html.twig", "/home/cortez/Sites/reciplink/templates/recipe/_recipesByUser.html.twig");
     }
 }

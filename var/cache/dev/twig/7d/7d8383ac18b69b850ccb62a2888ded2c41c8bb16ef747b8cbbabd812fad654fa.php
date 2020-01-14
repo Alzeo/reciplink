@@ -92,17 +92,7 @@ class __TwigTemplate_e5e785d2f1756f66c243d3cae9bec2111c87ef25099beb13e6dc5710c43
         // line 17
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("recipe_show", ["slug" => twig_get_attribute($this->env, $this->source, (isset($context["recipe"]) || array_key_exists("recipe", $context) ? $context["recipe"] : (function () { throw new RuntimeError('Variable "recipe" does not exist.', 17, $this->source); })()), "slug", [], "any", false, false, false, 17)]), "html", null, true);
         echo "\" class=\"btn btn-success\">Voir la recette</a>
-            ";
-        // line 18
-        if ((twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 18, $this->source); })()), "user", [], "any", false, false, false, 18) && (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 18, $this->source); })()), "user", [], "any", false, false, false, 18) == twig_get_attribute($this->env, $this->source, (isset($context["recipe"]) || array_key_exists("recipe", $context) ? $context["recipe"] : (function () { throw new RuntimeError('Variable "recipe" does not exist.', 18, $this->source); })()), "user", [], "any", false, false, false, 18)))) {
-            // line 19
-            echo "                <a href=\"";
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("recipe_edit", ["slug" => twig_get_attribute($this->env, $this->source, (isset($context["recipe"]) || array_key_exists("recipe", $context) ? $context["recipe"] : (function () { throw new RuntimeError('Variable "recipe" does not exist.', 19, $this->source); })()), "slug", [], "any", false, false, false, 19)]), "html", null, true);
-            echo "\" class=\"btn btn-neutral\">Modifier ma recette</a>
-            ";
-        }
-        // line 21
-        echo "        </div>
+        </div>
     </div>
 </div>
 ";
@@ -126,7 +116,7 @@ class __TwigTemplate_e5e785d2f1756f66c243d3cae9bec2111c87ef25099beb13e6dc5710c43
 
     public function getDebugInfo()
     {
-        return array (  105 => 21,  99 => 19,  97 => 18,  93 => 17,  90 => 16,  81 => 13,  78 => 12,  74 => 11,  69 => 9,  64 => 7,  59 => 5,  55 => 4,  47 => 3,  43 => 1,);
+        return array (  93 => 17,  90 => 16,  81 => 13,  78 => 12,  74 => 11,  69 => 9,  64 => 7,  59 => 5,  55 => 4,  47 => 3,  43 => 1,);
     }
 
     public function getSourceContext()
@@ -148,12 +138,9 @@ class __TwigTemplate_e5e785d2f1756f66c243d3cae9bec2111c87ef25099beb13e6dc5710c43
                 {% endfor %}
             </p>
             <a href=\"{{ path ('recipe_show', {'slug': recipe.slug })}}\" class=\"btn btn-success\">Voir la recette</a>
-            {% if  app.user and app.user == recipe.user %}
-                <a href=\"{{ path('recipe_edit', {'slug': recipe.slug}) }}\" class=\"btn btn-neutral\">Modifier ma recette</a>
-            {% endif %}
         </div>
     </div>
 </div>
-", "recipe/_recipe.html.twig", "/Users/tomaccess/Documents/Sites/reciplink/templates/recipe/_recipe.html.twig");
+", "recipe/_recipe.html.twig", "/home/cortez/Sites/reciplink/templates/recipe/_recipe.html.twig");
     }
 }

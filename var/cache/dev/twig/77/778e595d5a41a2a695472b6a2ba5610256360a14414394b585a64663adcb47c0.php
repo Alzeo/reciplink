@@ -243,16 +243,11 @@ class __TwigTemplate_cf3b9b60aa756b0288664e7fcc2b55a1fd378d78e5df19d810488af5409
         echo "        </div>
     </section>
 <section class=\"block-newsletter text-center container-fluid mt-5\" style=\"padding-top: 40px; padding-bottom: 40px; background: #f7f7f7\">
-    <img src=\"";
-        // line 62
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/assets/img/paper-plane.png"), "html", null, true);
-        echo "\" alt=\"\" height=\"200px;\">
 
-    </div>
     <h4>Restez informé(e)</h4>
     <h5 class=\"mt-2\">Vous souhaitez recevoir les nouvelles recettes par mail ?</h5>
     <div class=\"container\" style=\"width:40rem;\">
-        <iframe width=\"540\" height=\"305\" src=\"https://e319caef.sibforms.com/serve/MUIEAPp8HwrpPpJdgDhdQkGG0bCqiBtNoK-L59Vle-q86ZyE9yEip7TdZln0U8opR_7SY65Y_7W-BA_-yNuK5B4UMoTAG9gU_cVCaann1zOTToPUCLJBviiUVk1XO_lq14zITBMWpxPCgs5jBEIlYLGB9ZPAO-L_C5AgP7bUbWGv5UobW6JgAXyB8wCPfytOr8watmjXqOSA_3DG\" frameborder=\"0\" scrolling=\"auto\" allowfullscreen style=\"display: block;margin-left: auto;margin-right: auto;max-width: 100%;\"></iframe>
+        <iframe width=\"540\" height=\"450\" src=\"https://e319caef.sibforms.com/serve/MUIEAPp8HwrpPpJdgDhdQkGG0bCqiBtNoK-L59Vle-q86ZyE9yEip7TdZln0U8opR_7SY65Y_7W-BA_-yNuK5B4UMoTAG9gU_cVCaann1zOTToPUCLJBviiUVk1XO_lq14zITBMWpxPCgs5jBEIlYLGB9ZPAO-L_C5AgP7bUbWGv5UobW6JgAXyB8wCPfytOr8watmjXqOSA_3DG\" frameborder=\"0\" scrolling=\"auto\" allowfullscreen style=\"display: block;margin-left: auto;margin-right: auto;max-width: 100%;\"></iframe>
     </div>
 </section>
 ";
@@ -276,7 +271,7 @@ class __TwigTemplate_cf3b9b60aa756b0288664e7fcc2b55a1fd378d78e5df19d810488af5409
 
     public function getDebugInfo()
     {
-        return array (  248 => 62,  243 => 59,  226 => 57,  209 => 56,  198 => 48,  194 => 47,  190 => 46,  186 => 45,  178 => 40,  170 => 35,  166 => 33,  152 => 32,  149 => 31,  132 => 30,  123 => 24,  115 => 20,  105 => 16,  98 => 11,  94 => 10,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  243 => 59,  226 => 57,  209 => 56,  198 => 48,  194 => 47,  190 => 46,  186 => 45,  178 => 40,  170 => 35,  166 => 33,  152 => 32,  149 => 31,  132 => 30,  123 => 24,  115 => 20,  105 => 16,  98 => 11,  94 => 10,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -342,16 +337,14 @@ class __TwigTemplate_cf3b9b60aa756b0288664e7fcc2b55a1fd378d78e5df19d810488af5409
         </div>
     </section>
 <section class=\"block-newsletter text-center container-fluid mt-5\" style=\"padding-top: 40px; padding-bottom: 40px; background: #f7f7f7\">
-    <img src=\"{{ asset ('/assets/img/paper-plane.png') }}\" alt=\"\" height=\"200px;\">
 
-    </div>
     <h4>Restez informé(e)</h4>
     <h5 class=\"mt-2\">Vous souhaitez recevoir les nouvelles recettes par mail ?</h5>
     <div class=\"container\" style=\"width:40rem;\">
-        <iframe width=\"540\" height=\"305\" src=\"https://e319caef.sibforms.com/serve/MUIEAPp8HwrpPpJdgDhdQkGG0bCqiBtNoK-L59Vle-q86ZyE9yEip7TdZln0U8opR_7SY65Y_7W-BA_-yNuK5B4UMoTAG9gU_cVCaann1zOTToPUCLJBviiUVk1XO_lq14zITBMWpxPCgs5jBEIlYLGB9ZPAO-L_C5AgP7bUbWGv5UobW6JgAXyB8wCPfytOr8watmjXqOSA_3DG\" frameborder=\"0\" scrolling=\"auto\" allowfullscreen style=\"display: block;margin-left: auto;margin-right: auto;max-width: 100%;\"></iframe>
+        <iframe width=\"540\" height=\"450\" src=\"https://e319caef.sibforms.com/serve/MUIEAPp8HwrpPpJdgDhdQkGG0bCqiBtNoK-L59Vle-q86ZyE9yEip7TdZln0U8opR_7SY65Y_7W-BA_-yNuK5B4UMoTAG9gU_cVCaann1zOTToPUCLJBviiUVk1XO_lq14zITBMWpxPCgs5jBEIlYLGB9ZPAO-L_C5AgP7bUbWGv5UobW6JgAXyB8wCPfytOr8watmjXqOSA_3DG\" frameborder=\"0\" scrolling=\"auto\" allowfullscreen style=\"display: block;margin-left: auto;margin-right: auto;max-width: 100%;\"></iframe>
     </div>
 </section>
 {% endblock %}
-", "main/index.html.twig", "/Users/tomaccess/Documents/Sites/reciplink/templates/main/index.html.twig");
+", "main/index.html.twig", "/home/cortez/Sites/reciplink/templates/main/index.html.twig");
     }
 }

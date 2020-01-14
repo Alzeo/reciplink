@@ -5,13 +5,41 @@
 {% block body %}
 
 
-<div class="jumbotron position-relative overflow-hidden text-center bg-light" style="background-image: url({{ asset ('/assets/img/12451.jpg') }});  background-repeat: no-repeat; background-size: cover;">
-    <div class="col-md-6 p-lg-6 mx-auto my-6" style="padding-top:30px; padding-bottom:30px; line-height: 60px;">
+<div class="jumbotron position-relative overflow-hidden text-center bg-light" style="background-image: url({{ asset('uploads/posts/' ~ post.image) }});  background-repeat: no-repeat; background-size: cover;">
+    <div class="col-md-6 p-lg-6 mx-auto my-6" style="padding-top:30px; padding-bottom:30px; line-height: 60px; background: #44444482">
         <h1 class="display-4 font-weight-bold" style=" color: #fff;">{{ post.title }}</h1>
         <p class="lead font-weight-normal" style="margin-top:10px;  color: #fff;">{{ post.extract }}</p>
     </div>
 </div>
-<section class="content container text-justify shadow-sm mb-5" style="padding:20px;">
-    {{ post.content|raw }}
+<section class="element-post container">
+    <div class="row">
+        <div class="col-md-8 ml-sm-auto col-lg-8 pt-3 px-4" >
+            <div class="container text-justify mb-5 img-wrap"  style="padding-left:40px; padding-right:40px; line-height: 30px;">
+                {{ post.content|raw }}
+            </div>
+        </div>
+        <div class="col-xs-12 text-center col-md-4 m-auto col-lg-4 sidebar bg-light">
+            <h2 style="font-size: 22px; text-transform: uppercase">Derniers articles</h2>
+            {% for posts in posts %}
+                <div class="posts mb-3 shadow-sm">
+                    <h2 style="font-size: 18px; padding-top:10px; padding-bottom: 10px; font-weight:500; background: #fff;">{{ posts.title }}</h2>
+                    <img src="{{ asset('uploads/posts/' ~ posts.image) }}" alt="" style="max-width: 100% !important;">
+                    <p class="extract">{{ posts.extract }}</p>
+                    <a href="{{ path('post_show', {'slug': posts.slug}) }}" class="btn btn-success btn-block">Voir l'article</a>
+                </div>
+            {% endfor %}
+
+            <h2 class="text-center mt-5" style="font-size: 22px;text-transform: uppercase ">Dernieres recettes</h2>
+            {% for recipe in recipes %}
+                <div class="posts mb-3 shadow-sm">
+                    <h2 style="font-size: 18px; padding-top:10px; padding-bottom: 10px; font-weight:500; background: #fff;">{{ recipe.name }}</h2>
+                    <img src="{{ asset('uploads/recipes/' ~ recipe.picture) }}" alt="" style="max-width: 100%"/>
+                    <p class="extract text-center"><i class="fa fa-thumbs-up"></i> {{ recipe.likes|length }}
+                        <i class="fa fa-comments"></i> {{ recipe.commentRecipe|length }}</p>
+                    <a href="{{ path('recipe_show', {'slug': recipe.slug}) }}" class="btn btn-success btn-block">Voir la recette</a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
 </section>
 {% endblock %}

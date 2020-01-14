@@ -99,16 +99,40 @@ class __TwigTemplate_8224f58423acb7461767008ae461585defd41db00d2e73d8157beb39e67
         echo "\">Annuler les modifications</a>
 
     </div>
-    <div class=\"container mb-3\">
-        <h3 class=\"mb-4\">Modifier mes informations</h3>
-        ";
-        // line 14
+    <div class=\"container-fluid mb-3\" style=\"width:80%;\">
+        <div class=\"row\">
+            <div class=\"col\">
+
+                <h3 class=\"mb-4\">Modifier mes informations</h3>
+                ";
+        // line 17
         echo twig_include($this->env, $context, "user/_form.html.twig", ["button_label" => "Sauvegarder"]);
         echo "<br/>
-        ";
-        // line 15
+                ";
+        // line 18
         echo twig_include($this->env, $context, "user/_delete_form.html.twig");
         echo "
+            </div>
+            <div class=\"col offset-1\">
+                <h3 class=\"mb-4\">Modifier mon mot de passe</h3>
+
+                ";
+        // line 23
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formPassword"]) || array_key_exists("formPassword", $context) ? $context["formPassword"] : (function () { throw new RuntimeError('Variable "formPassword" does not exist.', 23, $this->source); })()), 'form_start');
+        echo "
+                ";
+        // line 24
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["formPassword"]) || array_key_exists("formPassword", $context) ? $context["formPassword"] : (function () { throw new RuntimeError('Variable "formPassword" does not exist.', 24, $this->source); })()), 'widget');
+        echo "
+                <button class=\"btn btn-primary\">
+                    Modifier mon mot de passe
+                </button>
+                ";
+        // line 28
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formPassword"]) || array_key_exists("formPassword", $context) ? $context["formPassword"] : (function () { throw new RuntimeError('Variable "formPassword" does not exist.', 28, $this->source); })()), 'form_end');
+        echo "
+            </div>
+        </div>
     </div>
 ";
         
@@ -131,7 +155,7 @@ class __TwigTemplate_8224f58423acb7461767008ae461585defd41db00d2e73d8157beb39e67
 
     public function getDebugInfo()
     {
-        return array (  110 => 15,  106 => 14,  98 => 9,  94 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  132 => 28,  125 => 24,  121 => 23,  113 => 18,  109 => 17,  98 => 9,  94 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -147,12 +171,27 @@ class __TwigTemplate_8224f58423acb7461767008ae461585defd41db00d2e73d8157beb39e67
         <a class=\"btn btn-neutral mt-4\" href=\"{{ path('user_show', {'id': user.id}) }}\">Annuler les modifications</a>
 
     </div>
-    <div class=\"container mb-3\">
-        <h3 class=\"mb-4\">Modifier mes informations</h3>
-        {{ include('user/_form.html.twig', {'button_label': 'Sauvegarder'}) }}<br/>
-        {{ include('user/_delete_form.html.twig') }}
+    <div class=\"container-fluid mb-3\" style=\"width:80%;\">
+        <div class=\"row\">
+            <div class=\"col\">
+
+                <h3 class=\"mb-4\">Modifier mes informations</h3>
+                {{ include('user/_form.html.twig', {'button_label': 'Sauvegarder'}) }}<br/>
+                {{ include('user/_delete_form.html.twig') }}
+            </div>
+            <div class=\"col offset-1\">
+                <h3 class=\"mb-4\">Modifier mon mot de passe</h3>
+
+                {{ form_start(formPassword) }}
+                {{ form_widget(formPassword) }}
+                <button class=\"btn btn-primary\">
+                    Modifier mon mot de passe
+                </button>
+                {{ form_end(formPassword) }}
+            </div>
+        </div>
     </div>
 {% endblock %}
-", "user/edit.html.twig", "/Users/tomaccess/Documents/Sites/reciplink/templates/user/edit.html.twig");
+", "user/edit.html.twig", "/home/cortez/Sites/reciplink/templates/user/edit.html.twig");
     }
 }

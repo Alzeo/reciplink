@@ -34,6 +34,13 @@ class RecipeRepository extends ServiceEntityRepository
             ->getResult();
     }
 
+    public function findLatestAside() {
+        return $this->createQueryBuilder('a')
+            ->andWhere('a.publish = true')
+            ->setMaxResults(3)
+            ->getQuery()
+            ->getResult();
+    }
 
 
     public function findAllVisibleQuery(RecipeSearch $search): Query
