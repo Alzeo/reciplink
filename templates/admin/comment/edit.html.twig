@@ -21,8 +21,9 @@
                             <i class="fa fa-check"></i>
                             Enregistrer les modifications
                         </button>
-                        <a onclick="return confirm('êtes vous sûr de supprimer la recette ?')" href="{{path('admin_comments_delete', {'id': comment.id})}}" class="btn btn-danger"><i class="fa fa-trash"></i></a>
+                        <a onclick="return confirm('êtes vous sûr de supprimer le commentaire ?')" href="{{path('admin_comments_delete', {'id': comment.id})}}" class="btn btn-danger"><i class="fa fa-trash"></i></a>
                     </div>
+                            <a href="{{ path('admin_comments_publish', {'id': comment.id}) }}" class="btn btn-primary">Publier le commentaire</a>
 
         {{form_end(form)}}
     </div>

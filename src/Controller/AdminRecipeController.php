@@ -11,6 +11,8 @@ use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Mailer\MailerInterface;
+use Symfony\Component\Mime\Email;
 use Symfony\Component\Routing\Annotation\Route;
 
 class AdminRecipeController extends AbstractController
@@ -30,7 +32,7 @@ class AdminRecipeController extends AbstractController
     /**
      * @param Recipe $recipe
      * @return Response
-     * @Route("admin/recipes/{id}/edit", name="admin_recipes_edit")
+     * @Route("/admin/recipes/{id}/edit", name="admin_recipes_edit")
      */
     public function edit(Recipe $recipe, Request $request) {
 
@@ -49,6 +51,26 @@ class AdminRecipeController extends AbstractController
             'form' => $form->createView(),
             'user' => $this->getUser()
         ]);
+    }
+
+
+    /**
+     * @Route("/admin/recipes/{id}/publish", name="admin_recipes_publish")
+     * @param $id
+     */
+    public function publish($id, RecipeRepository $repository, EntityManagerInterface $manager, MailerInterface $mailer){
+        $recipe = $repository->findOneById($id);
+        $recipe->setPublish(true);
+        $manager->persist($recipe);
+        $manager->flush();
+        $email = (new Email())
+            ->from('contact@figuy.fr')
+            ->to('jardisindustrie@gmail.com')
+            ->subject('Votre recette a été approuvé')
+            ->html("<h3>Félicitation votre recette est désormais visible par tous</h3>");
+        $mailer->send($email);
+        $this->addFlash('success', "La recette a bien été publier");
+        return $this->redirectToRoute('admin_recipes_index');
     }
 
     /**

@@ -61,7 +61,7 @@ class RecipeController extends AbstractController
      * @Route("/nouvelle", name="recipe_new", methods={"GET","POST"})
      * @IsGranted("ROLE_USER")
      */
-    public function new(Request $request): Response
+    public function new(Request $request, MailerInterface $mailer): Response
     {
         $user = $this->getUser();
         $username = $user->getUsername();
@@ -101,16 +101,17 @@ class RecipeController extends AbstractController
                 $recipe->setPicture($newFilename);
             }
 
-
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($recipe);
             $entityManager->flush();
-
-            return $this->redirectToRoute('user_my_recipes', [
-                'user' => $user,
-                'id' => $user->getId(),
-                'username' => $username
-            ]);
+            $email = (new Email())
+                ->from('contact@figuy.fr')
+                ->to('jardisindustrie@gmail.com')
+                ->subject('Nouvel recette à modérer !')
+                ->html("<h3>Nouvelle recette vient d'être postée !</h3>");
+            $mailer->send($email);
+            $this->addFlash('success', "Votre recette à bien été enregistrée, elle est en cours de validation, vous pouvez néanmoins la partager via votre espace recette. ");
+            return $this->redirectToRoute('user_my_recipes');
         }
 
         return $this->render('recipe/new.html.twig', [
@@ -220,7 +221,7 @@ class RecipeController extends AbstractController
             $entityManager->flush();
             $this->addFlash('success', "La recette {$recipe->getName()}a bien été supprimé !");
 
-            return $this->redirectToRoute('user_');
+            return $this->redirectToRoute('user_show');
     }
 
     /**

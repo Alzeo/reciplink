@@ -460,5 +460,11 @@ strong {
     text-align: center;
 }
 
-.dropdown-item {
+.navbar .navbar-nav .nav-item .nav-link:hover {
+    color: #434d54b5 !important;
+    transition: 0.5s !important;
+}
+
+a.dropdown-item {
+    text-transform: uppercase;
 }

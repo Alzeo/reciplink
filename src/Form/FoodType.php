@@ -31,7 +31,8 @@ class FoodType extends AbstractType
                     'gr' => 'gr',
                     'càc' => 'càc',
                     'càs' => 'càs',
-                    'ml' => 'ml'
+                    'ml' => 'ml',
+                    'unité' => 'unité'
                 ]
             ])
         ;

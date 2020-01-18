@@ -179,6 +179,10 @@ class __TwigTemplate_b37df47d22798f2183e095c7b264c4696e6563bc7c38c7783ba754e3ccb
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 61, $this->source); })()), 'form_end');
         echo "
     </div>
+    <a href=\"";
+        // line 63
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_recipes_publish", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["recipe"]) || array_key_exists("recipe", $context) ? $context["recipe"] : (function () { throw new RuntimeError('Variable "recipe" does not exist.', 63, $this->source); })()), "id", [], "any", false, false, false, 63)]), "html", null, true);
+        echo "\" class=\"btn btn-primary\">Publier la recette</a>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -188,7 +192,7 @@ class __TwigTemplate_b37df47d22798f2183e095c7b264c4696e6563bc7c38c7783ba754e3ccb
 
     }
 
-    // line 64
+    // line 65
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -198,7 +202,7 @@ class __TwigTemplate_b37df47d22798f2183e095c7b264c4696e6563bc7c38c7783ba754e3ccb
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 65
+        // line 66
         echo "    <script src=\"https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.10/js/select2.min.js\"></script>
     <script>
         \$('select').select2();
@@ -232,7 +236,7 @@ class __TwigTemplate_b37df47d22798f2183e095c7b264c4696e6563bc7c38c7783ba754e3ccb
 
     public function getDebugInfo()
     {
-        return array (  202 => 65,  192 => 64,  179 => 61,  171 => 55,  161 => 51,  157 => 50,  153 => 49,  150 => 48,  146 => 47,  121 => 25,  113 => 20,  100 => 10,  96 => 9,  93 => 8,  83 => 7,  63 => 3,  52 => 1,  50 => 5,  37 => 1,);
+        return array (  206 => 66,  196 => 65,  184 => 63,  179 => 61,  171 => 55,  161 => 51,  157 => 50,  153 => 49,  150 => 48,  146 => 47,  121 => 25,  113 => 20,  100 => 10,  96 => 9,  93 => 8,  83 => 7,  63 => 3,  52 => 1,  50 => 5,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -299,6 +303,7 @@ class __TwigTemplate_b37df47d22798f2183e095c7b264c4696e6563bc7c38c7783ba754e3ccb
         </div>
         {{form_end(form)}}
     </div>
+    <a href=\"{{ path('admin_recipes_publish', {'id': recipe.id}) }}\" class=\"btn btn-primary\">Publier la recette</a>
 {% endblock %}
 {% block javascripts %}
     <script src=\"https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.10/js/select2.min.js\"></script>
@@ -313,6 +318,7 @@ class __TwigTemplate_b37df47d22798f2183e095c7b264c4696e6563bc7c38c7783ba754e3ccb
             \$(this).next('.custom-file-label').html(fileName);
         })
     </script>
-{% endblock %}", "admin/recipe/edit.html.twig", "/Users/tomaccess/Documents/Sites/reciplink/templates/admin/recipe/edit.html.twig");
+{% endblock %}
+", "admin/recipe/edit.html.twig", "/Users/tomaccess/Documents/Sites/reciplink/templates/admin/recipe/edit.html.twig");
     }
 }

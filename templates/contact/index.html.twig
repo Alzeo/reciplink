@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ContacController!{% endblock %}
+
+{% block body %}
+    <style>
+        .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+        .example-wrapper code { ; padding: 2px 6px; }
+    </style>
+    <div class="jumbotron text-center" style="background-image: url({{ asset ('/assets/img/background-user.jpg') }});  background-repeat: no-repeat; background-size:cover; background-position: center">
+        <div class="typography-line"><h2>Nous contacter !</h2></div>
+        <p>Si vous rencontrer des problèmes d'utilisations, des bugs ou encore des suggestions d'améliorer.<br/>
+            Utilisez le formulaire ci-dessous pour nous en faire part, nous serons heureux de vous répondre.</p>
+    </div>
+    <div class="container mb-5">
+        <div class="row">
+            <div class="col-7">
+                {{ form_start(form) }}
+                {{ form_widget(form) }}
+                <button class="btn btn-primary pull-right">Envoyer</button>
+                {{ form_end(form) }}
+            </div>
+            <div class="offset-1 col-4">
+                <h3>Retrouvez Figuy sur les réseaux sociaux</h3>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

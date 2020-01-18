@@ -121,15 +121,19 @@ class __TwigTemplate_00c72e7a6b5a481e38e3a3b56b7897bc855c174f960b5c6984d2fa2958e
                             <i class=\"fa fa-check\"></i>
                             Enregistrer les modifications
                         </button>
-                        <a onclick=\"return confirm('êtes vous sûr de supprimer la recette ?')\" href=\"";
+                        <a onclick=\"return confirm('êtes vous sûr de supprimer le commentaire ?')\" href=\"";
         // line 24
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_comments_delete", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["comment"]) || array_key_exists("comment", $context) ? $context["comment"] : (function () { throw new RuntimeError('Variable "comment" does not exist.', 24, $this->source); })()), "id", [], "any", false, false, false, 24)]), "html", null, true);
         echo "\" class=\"btn btn-danger\"><i class=\"fa fa-trash\"></i></a>
                     </div>
+                            <a href=\"";
+        // line 26
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_comments_publish", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["comment"]) || array_key_exists("comment", $context) ? $context["comment"] : (function () { throw new RuntimeError('Variable "comment" does not exist.', 26, $this->source); })()), "id", [], "any", false, false, false, 26)]), "html", null, true);
+        echo "\" class=\"btn btn-primary\">Publier le commentaire</a>
 
         ";
-        // line 27
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 27, $this->source); })()), 'form_end');
+        // line 28
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 28, $this->source); })()), 'form_end');
         echo "
     </div>
 ";
@@ -141,7 +145,7 @@ class __TwigTemplate_00c72e7a6b5a481e38e3a3b56b7897bc855c174f960b5c6984d2fa2958e
 
     }
 
-    // line 30
+    // line 31
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -151,7 +155,7 @@ class __TwigTemplate_00c72e7a6b5a481e38e3a3b56b7897bc855c174f960b5c6984d2fa2958e
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 31
+        // line 32
         echo "    <script src=\"https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.10/js/select2.min.js\"></script>
     <script>
         \$('select').select2();
@@ -185,7 +189,7 @@ class __TwigTemplate_00c72e7a6b5a481e38e3a3b56b7897bc855c174f960b5c6984d2fa2958e
 
     public function getDebugInfo()
     {
-        return array (  155 => 31,  145 => 30,  132 => 27,  126 => 24,  118 => 19,  111 => 15,  107 => 14,  100 => 10,  96 => 9,  93 => 8,  83 => 7,  63 => 3,  52 => 1,  50 => 5,  37 => 1,);
+        return array (  159 => 32,  149 => 31,  136 => 28,  131 => 26,  126 => 24,  118 => 19,  111 => 15,  107 => 14,  100 => 10,  96 => 9,  93 => 8,  83 => 7,  63 => 3,  52 => 1,  50 => 5,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -213,8 +217,9 @@ class __TwigTemplate_00c72e7a6b5a481e38e3a3b56b7897bc855c174f960b5c6984d2fa2958e
                             <i class=\"fa fa-check\"></i>
                             Enregistrer les modifications
                         </button>
-                        <a onclick=\"return confirm('êtes vous sûr de supprimer la recette ?')\" href=\"{{path('admin_comments_delete', {'id': comment.id})}}\" class=\"btn btn-danger\"><i class=\"fa fa-trash\"></i></a>
+                        <a onclick=\"return confirm('êtes vous sûr de supprimer le commentaire ?')\" href=\"{{path('admin_comments_delete', {'id': comment.id})}}\" class=\"btn btn-danger\"><i class=\"fa fa-trash\"></i></a>
                     </div>
+                            <a href=\"{{ path('admin_comments_publish', {'id': comment.id}) }}\" class=\"btn btn-primary\">Publier le commentaire</a>
 
         {{form_end(form)}}
     </div>
@@ -232,6 +237,7 @@ class __TwigTemplate_00c72e7a6b5a481e38e3a3b56b7897bc855c174f960b5c6984d2fa2958e
             \$(this).next('.custom-file-label').html(fileName);
         })
     </script>
-{% endblock %}", "admin/comment/edit.html.twig", "/Users/tomaccess/Documents/Sites/reciplink/templates/admin/comment/edit.html.twig");
+{% endblock %}
+", "admin/comment/edit.html.twig", "/Users/tomaccess/Documents/Sites/reciplink/templates/admin/comment/edit.html.twig");
     }
 }

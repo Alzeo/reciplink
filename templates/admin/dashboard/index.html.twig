@@ -1,0 +1,59 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block body %}
+
+    <div class="container-fluid mt-4">
+        <div class="row">
+            <div class="col">
+                <div class="card bg-primary text-white mb-3 text-center">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-4">
+                                <i class="fa fa-users fa-3x"></i>
+                            </div>
+                            <div class="col-8">
+                                <h4 class="card-title">
+                                    {{ stats.users }} utilisateurs
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card bg-dark mb-3 text-white text-center">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-4">
+                                <i class="fa fa-cutlery fa-3x"></i>
+                            </div>
+                            <div class="col-8">
+                                <div class="card-title">
+                                    <h4>{{ stats.recipes }} Recettes</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card bg-warning text-white mb-3 text-center">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-4">
+                                <i class="fa fa-comments fa-3x"></i>
+                            </div>
+                            <div class="col-8">
+                                <h4 class="card-title">
+                                    {{ stats.comments }} commentaires
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
