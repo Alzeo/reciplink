@@ -1,16 +1,3 @@
-@media (max-width: 576px) {
-    .card img {
-        height: 100vw !important;
-    }
-}
-
-@media (max-width: 768px) {
-    .card img {
-        height: 100vw !important;
-    }
-}
-
-
 .btn-circle {
     width: 30px;
     height: 30px;
@@ -423,16 +410,23 @@ strong {
     color:#6bd098;
 }
 
-.share-insta {
+a.share-insta {
     border-radius: 4px;
     font-size: 13px;
     height: 28px;
-    padding: 0 8px;
+    padding: 10px 20px;
     background: #f84d76;
-    color: #fff;
-     border:none;
+    border:none;
+    color:#fff;
     font-family: Helvetica, Arial, sans-serif;
     font-weight: 600;
+}
+
+a.share-insta:hover {
+    color:#fff;
+    cursor: pointer;
+    margin-bottom:20px;
+    background: #f8534d;
 }
 
 .block-blog .card img {
@@ -468,3 +462,68 @@ strong {
 a.dropdown-item {
     text-transform: uppercase;
 }
+
+.carousel {
+    height: 600px !important;
+}
+
+.carousel-inner {
+    height: 600px;
+}
+
+.carousel-caption {
+    top: 20%;
+    bottom:0px !important;
+}
+
+li.login-button {
+    border-left: 1px solid #eee;
+    padding-left: 25px;
+}
+
+.block-newsletter {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background-image: url('/assets/img/home-banner2.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+@media (max-width: 900px) {
+    li.login-button {
+        border-left: 0px solid white;
+        padding-left: 0px;
+    }
+}
+
+@media (max-width: 576px) {
+    .card img {
+        height: 60vw !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .card img {
+        height: 60vw !important;
+    }
+}
+
+@media (max-width: 767px) {
+    .block-regime figure {
+        display: none;
+    }
+}
+
+@media (max-width: 767px) {
+    .block-newsletter {
+        background-position: right;
+    }
+}
+
+@media (max-width: 767px) {
+   .jumbotron h1 {
+        font-size: 30px;
+    }
+}
+
+

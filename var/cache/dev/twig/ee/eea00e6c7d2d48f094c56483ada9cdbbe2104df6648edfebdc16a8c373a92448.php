@@ -283,7 +283,7 @@ class __TwigTemplate_c296a2bbaeaaf562e63eeada08f023009758847de2160a8a3b27c919c9a
             </div>
             <div class=\"head-recip row\">
                 <div class=\"col-6 author\">
-                    <p>Recette proposée par : <a href=\"";
+                    <p>Par : <a href=\"";
         // line 88
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("kitchen_user", ["username" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["recipe"]) || array_key_exists("recipe", $context) ? $context["recipe"] : (function () { throw new RuntimeError('Variable "recipe" does not exist.', 88, $this->source); })()), "user", [], "any", false, false, false, 88), "username", [], "any", false, false, false, 88)]), "html", null, true);
         echo "\"><span class=\"user\"><i class=\"fa fa-user\" aria-hidden=\"true\"></i> ";
@@ -388,7 +388,7 @@ class __TwigTemplate_c296a2bbaeaaf562e63eeada08f023009758847de2160a8a3b27c919c9a
             </div>
         <div class=\"explain-recip text-left mb-5\">
             <div class=\"row\">
-                <div class=\"col-4\">
+                <div class=\"col-xs-12 col-md-4\">
                     <h4>Ingrédients</h4>
                     <div class=\"foods mt-4\">
                         ";
@@ -417,7 +417,7 @@ class __TwigTemplate_c296a2bbaeaaf562e63eeada08f023009758847de2160a8a3b27c919c9a
         // line 146
         echo "                    </div>
                 </div>
-                <div class=\"col-8\">
+                <div class=\"col-xs-12 col-md-8\">
                     <h4>Préparation</h4>
                     <p class=\"text-justify text-left mt-4\">
                         ";
@@ -428,7 +428,7 @@ class __TwigTemplate_c296a2bbaeaaf562e63eeada08f023009758847de2160a8a3b27c919c9a
                 </div>
             </div>
         </div>
-        <button type=\"button\" class=\"share-insta\" data-toggle=\"modal\" data-target=\"#shareInsta\"><i class=\"fa fa-instagram\" ></i> Partager</button>
+        <a class=\"share-insta\" data-toggle=\"modal\" data-target=\"#shareInsta\"><i class=\"fa fa-instagram\" ></i> Copier pour instagram</a>
 
         <div class=\"share-social-media mt-3 mb-5\">
             <div class=\"sharethis-inline-share-buttons\"></div>
@@ -691,7 +691,7 @@ class __TwigTemplate_c296a2bbaeaaf562e63eeada08f023009758847de2160a8a3b27c919c9a
             </div>
             <div class=\"head-recip row\">
                 <div class=\"col-6 author\">
-                    <p>Recette proposée par : <a href=\"{{ path('kitchen_user', {'username': recipe.user.username}) }}\"><span class=\"user\"><i class=\"fa fa-user\" aria-hidden=\"true\"></i> {{ recipe.user.username }}</span></a></p>
+                    <p>Par : <a href=\"{{ path('kitchen_user', {'username': recipe.user.username}) }}\"><span class=\"user\"><i class=\"fa fa-user\" aria-hidden=\"true\"></i> {{ recipe.user.username }}</span></a></p>
                 </div>
                 <div class=\"col-6\">
                     {% if is_granted('ROLE_USER') %}
@@ -739,7 +739,7 @@ class __TwigTemplate_c296a2bbaeaaf562e63eeada08f023009758847de2160a8a3b27c919c9a
             </div>
         <div class=\"explain-recip text-left mb-5\">
             <div class=\"row\">
-                <div class=\"col-4\">
+                <div class=\"col-xs-12 col-md-4\">
                     <h4>Ingrédients</h4>
                     <div class=\"foods mt-4\">
                         {% for food in recipe.foods %}
@@ -751,7 +751,7 @@ class __TwigTemplate_c296a2bbaeaaf562e63eeada08f023009758847de2160a8a3b27c919c9a
                         {% endfor %}
                     </div>
                 </div>
-                <div class=\"col-8\">
+                <div class=\"col-xs-12 col-md-8\">
                     <h4>Préparation</h4>
                     <p class=\"text-justify text-left mt-4\">
                         {{ recipe.description|raw }}
@@ -759,7 +759,7 @@ class __TwigTemplate_c296a2bbaeaaf562e63eeada08f023009758847de2160a8a3b27c919c9a
                 </div>
             </div>
         </div>
-        <button type=\"button\" class=\"share-insta\" data-toggle=\"modal\" data-target=\"#shareInsta\"><i class=\"fa fa-instagram\" ></i> Partager</button>
+        <a class=\"share-insta\" data-toggle=\"modal\" data-target=\"#shareInsta\"><i class=\"fa fa-instagram\" ></i> Copier pour instagram</a>
 
         <div class=\"share-social-media mt-3 mb-5\">
             <div class=\"sharethis-inline-share-buttons\"></div>

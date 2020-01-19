@@ -5119,16 +5119,11 @@ License - nucleoapp.com/license/
       padding: 5px 15px 5px 50px; }
     .navbar-nav .open .dropdown-menu > li:last-child > a {
       padding: 15px 15px 25px 50px; }
-  [class*="navbar-"] .navbar-nav > li > a, [class*="navbar-"] .navbar-nav > li > a:hover, [class*="navbar-"] .navbar-nav > li > a:focus, [class*="navbar-"] .navbar-nav .active > a, [class*="navbar-"] .navbar-nav .active > a:hover, [class*="navbar-"] .navbar-nav .active > a:focus, [class*="navbar-"] .navbar-nav .open .dropdown-menu > li > a, [class*="navbar-"] .navbar-nav .open .dropdown-menu > li > a:hover, [class*="navbar-"] .navbar-nav .open .dropdown-menu > li > a:focus, [class*="navbar-"] .navbar-nav .navbar-nav .open .dropdown-menu > li > a:active {
-    color: white; }
   [class*="navbar-"] .navbar-nav > li > a:not(.btn),
   [class*="navbar-"] .navbar-nav > li > a:hover,
   [class*="navbar-"] .navbar-nav > li > a:focus,
   [class*="navbar-"] .navbar-nav .open .dropdown-menu > li > a:not(.btn),
   [class*="navbar-"] .navbar-nav .open .dropdown-menu > li > a:hover,
-  [class*="navbar-"] .navbar-nav .open .dropdown-menu > li > a:focus {
-    opacity: .7;
-    background: transparent; }
   [class*="navbar-"] .navbar-nav.navbar-nav .open .dropdown-menu > li > a:active {
     opacity: 1; }
   [class*="navbar-"] .navbar-nav .dropdown > a:hover .caret {

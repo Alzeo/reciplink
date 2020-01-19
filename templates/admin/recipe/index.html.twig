@@ -13,6 +13,7 @@
         <tr>
             <th>id</th>
             <th>Nom</th>
+            <th>Publié</th>
             <th>Utilisateur</th>
             <th class="text-center">Commentaires</th>
             <th class="text-center">Likes</th>
@@ -24,6 +25,13 @@
         <tr>
             <td>{{ recipe.id }}</td>
             <td>{{ recipe.name }}</td>
+            <td>
+                {% if recipe.publish == 1 %}
+                    Validée
+                {% else %}
+                    En attente
+                {% endif %}
+            </td>
             <td>{{ recipe.user.username }}</td>
             <td class="text-center"><span class="badge badge-primary rounded">{{ recipe.commentRecipe|length }}</span> </td>
             <td class="text-center"><span class="badge badge-primary rounded">{{ recipe.likes|length }}</span></td>

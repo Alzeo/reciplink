@@ -32,6 +32,7 @@ return [
         '/recettes/vegan' => [[['_route' => 'vegan_recipe', '_controller' => 'App\\Controller\\MainController::veganRecipes'], null, null, null, false, false, null]],
         '/recettes/vegetarien' => [[['_route' => 'vegetarien_recipe', '_controller' => 'App\\Controller\\MainController::vegetarienRecipes'], null, null, null, false, false, null]],
         '/recettes/vegetalien' => [[['_route' => 'vegetalien_recipe', '_controller' => 'App\\Controller\\MainController::vegetalienRecipes'], null, null, null, false, false, null]],
+        '/apropos' => [[['_route' => 'main_about', '_controller' => 'App\\Controller\\MainController::about'], null, null, null, false, false, null]],
         '/recette' => [[['_route' => 'recipe_index', '_controller' => 'App\\Controller\\RecipeController::index'], null, ['GET' => 0], null, true, false, null]],
         '/recette/nouvelle' => [[['_route' => 'recipe_new', '_controller' => 'App\\Controller\\RecipeController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/reset/password' => [[['_route' => 'reset_password', '_controller' => 'App\\Controller\\ResetPasswordController::reset'], null, null, null, false, false, null]],

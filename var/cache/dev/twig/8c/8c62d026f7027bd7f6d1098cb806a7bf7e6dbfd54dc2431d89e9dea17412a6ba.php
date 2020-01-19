@@ -93,13 +93,13 @@ class __TwigTemplate_204dd16f4a72d85efb13136fc900301fd5e18db97268080f75302688899
         // line 10
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/assets/img/background-user.jpg"), "html", null, true);
         echo ");  background-repeat: no-repeat; background-size:cover; background-position: center\">
-        <div class=\"typography-line\"><h2>Nous contacter !</h2></div>
+        <h2>Nous contacter !</h2>
         <p>Si vous rencontrer des problèmes d'utilisations, des bugs ou encore des suggestions d'améliorer.<br/>
             Utilisez le formulaire ci-dessous pour nous en faire part, nous serons heureux de vous répondre.</p>
     </div>
     <div class=\"container mb-5\">
         <div class=\"row\">
-            <div class=\"col-7\">
+            <div class=\"col-xs-12 col-md-7\">
                 ";
         // line 18
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 18, $this->source); })()), 'form_start');
@@ -114,7 +114,7 @@ class __TwigTemplate_204dd16f4a72d85efb13136fc900301fd5e18db97268080f75302688899
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 21, $this->source); })()), 'form_end');
         echo "
             </div>
-            <div class=\"offset-1 col-4\">
+            <div class=\"col-xs-offset-0 col-md-4\">
                 <h3>Retrouvez Figuy sur les réseaux sociaux</h3>
             </div>
         </div>
@@ -156,19 +156,19 @@ class __TwigTemplate_204dd16f4a72d85efb13136fc900301fd5e18db97268080f75302688899
         .example-wrapper code { ; padding: 2px 6px; }
     </style>
     <div class=\"jumbotron text-center\" style=\"background-image: url({{ asset ('/assets/img/background-user.jpg') }});  background-repeat: no-repeat; background-size:cover; background-position: center\">
-        <div class=\"typography-line\"><h2>Nous contacter !</h2></div>
+        <h2>Nous contacter !</h2>
         <p>Si vous rencontrer des problèmes d'utilisations, des bugs ou encore des suggestions d'améliorer.<br/>
             Utilisez le formulaire ci-dessous pour nous en faire part, nous serons heureux de vous répondre.</p>
     </div>
     <div class=\"container mb-5\">
         <div class=\"row\">
-            <div class=\"col-7\">
+            <div class=\"col-xs-12 col-md-7\">
                 {{ form_start(form) }}
                 {{ form_widget(form) }}
                 <button class=\"btn btn-primary pull-right\">Envoyer</button>
                 {{ form_end(form) }}
             </div>
-            <div class=\"offset-1 col-4\">
+            <div class=\"col-xs-offset-0 col-md-4\">
                 <h3>Retrouvez Figuy sur les réseaux sociaux</h3>
             </div>
         </div>

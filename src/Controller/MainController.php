@@ -137,11 +137,14 @@ class MainController extends AbstractController
             6/*page number*/
         );
 
+        $countRecipes = count($recipeRepository->findBy(['user' => $profil, 'publish' => true]));
+
         return $this->render('main/profilUser.html.twig', [
             'controller_name' => 'MainController',
             'profilRecipes' => $profilRecipes,
             'user' => $currentUser,
-            'profile' => $profil
+            'profile' => $profil,
+            'countRecipes' => $countRecipes
         ]);
     }
 
@@ -239,5 +242,12 @@ class MainController extends AbstractController
             'form' => $form->createView()
         ]);
 
+    }
+
+    /**
+     * @Route("/apropos", name="main_about")
+     */
+    public function about(){
+        return $this->render('main/about.html.twig');
     }
 }

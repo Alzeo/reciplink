@@ -17,15 +17,17 @@
             </div>
         </div>
     {% endfor %}
+
     <div class="jumbotron position-relative overflow-hidden text-center bg-light" style="background-image: url({{ asset ('/assets/img/2533.jpg') }});  background-repeat: no-repeat; background-size: cover;">
         <div class="col-md-6 p-lg-6 mx-auto my-6" style="padding-top:120px; padding-bottom:120px; line-height: 60px">
             <h1 class="display-4 font-weight-normal" >Que des recettes saines <span class="green"> avec des ingrédients sains </span></h1>
             <p class="lead font-weight-normal" style="margin-top:10px; margin-bottom:30px;">Une manière simple de partager vos recettes</p>
-            <a class="btn btn-success btn-lg" href="{{ path('recipe_new')}}"><i class="fa fa-leaf"></i> Commencer</a>
+            <a class="btn btn-success btn-lg" href="{{ path('main_about')}}"><i class="fa fa-leaf"></i> Comment ça marche ?</a>
         </div>
     </div>
+
     <section class="howWork text-center container-fluid" style="padding-top: 40px; padding-bottom: 40px; width: 80%;">
-        <h4>Dernières recettes</h4>
+        <h2 class="text-uppercase">Dernières recettes</h2>
         <div class="row text-center" style="margin-top:80px;">
                 {% for recipe in recipes %}
                     {% include 'recipe/_recipe.html.twig' %}
@@ -35,12 +37,12 @@
     <section class="block-regime" style="background-image: url({{ asset ('/assets/img/select-program-background.jpg') }});  background-repeat: no-repeat; background-size: cover;">
        <div class="container">
            <div class="row">
-               <div class="col-6">
+               <div class="col-xs-12 col-md-6">
                    <figure style="margin-left:-140px;">
                        <img src="{{ asset('/assets/img/select-program-image.png') }}" height="420rem"/>
                    </figure>
                </div>
-               <div class="col-6 regime-link">
+               <div class="col-xs-12 col-md-6 regime-link">
                    <h2>Quel régime suivez-vous ?</h2>
                    <a href="{{path('paleo_recipe')}}" class="btn btn-success btn-block btn-outline-success"> Paléovore </a>
                    <a href="{{path('vegetarien_recipe')}}" class="btn btn-success btn-block btn-outline-success"> Végétarien </a>
@@ -50,20 +52,27 @@
            </div>
        </div>
     </section>
+
     <section class="block-blog text-center container-fluid mt-5" style="padding-top: 40px; padding-bottom: 40px; width: 80%;">
-        <h4 class="mb-5">Derniers articles</h4>
+        <h2 class="mb-5 text-uppercase">Derniers articles</h2>
         <div class="row text-center" style="margin-top:80px;">
             {% for post in posts %}
                 {{ include('posts/_posts.html.twig') }}
             {% endfor %}
         </div>
     </section>
-<section class="block-newsletter text-center container-fluid mt-5" style="padding-top: 40px; padding-bottom: 40px; background: #f7f7f7">
+<section class="block-newsletter text-center container-fluid mt-5">
+    <div class="row">
+        <div class="offset-xs-0 offset-md-3">
 
-    <h4>Restez informé(e)</h4>
-    <h5 class="mt-2">Vous souhaitez recevoir les nouvelles recettes par mail ?</h5>
-    <div class="container" style="width:40rem;">
-        <iframe width="540" height="450" src="https://e319caef.sibforms.com/serve/MUIEAPp8HwrpPpJdgDhdQkGG0bCqiBtNoK-L59Vle-q86ZyE9yEip7TdZln0U8opR_7SY65Y_7W-BA_-yNuK5B4UMoTAG9gU_cVCaann1zOTToPUCLJBviiUVk1XO_lq14zITBMWpxPCgs5jBEIlYLGB9ZPAO-L_C5AgP7bUbWGv5UobW6JgAXyB8wCPfytOr8watmjXqOSA_3DG" frameborder="0" scrolling="auto" allowfullscreen style="display: block;margin-left: auto;margin-right: auto;max-width: 100%;"></iframe>
+        </div>
+        <div class="col-xs-12 col-md-9">
+            <h2>Restez informé(e)</h2>
+            <h5 class="mt-2">Vous souhaitez recevoir les nouvelles recettes par mail ?</h5>
+            <iframe width="540" height="450" src="https://e319caef.sibforms.com/serve/MUIEAPp8HwrpPpJdgDhdQkGG0bCqiBtNoK-L59Vle-q86ZyE9yEip7TdZln0U8opR_7SY65Y_7W-BA_-yNuK5B4UMoTAG9gU_cVCaann1zOTToPUCLJBviiUVk1XO_lq14zITBMWpxPCgs5jBEIlYLGB9ZPAO-L_C5AgP7bUbWGv5UobW6JgAXyB8wCPfytOr8watmjXqOSA_3DG" frameborder="0" scrolling="auto" allowfullscreen style="display: block; max-width: 100%; margin:auto;"></iframe>
+
+        </div>
     </div>
-</section>
+    </section>
 {% endblock %}
+

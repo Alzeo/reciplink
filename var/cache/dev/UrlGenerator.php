@@ -44,6 +44,7 @@ return [
     'vegan_recipe' => [[], ['_controller' => 'App\\Controller\\MainController::veganRecipes'], [], [['text', '/recettes/vegan']], [], []],
     'vegetarien_recipe' => [[], ['_controller' => 'App\\Controller\\MainController::vegetarienRecipes'], [], [['text', '/recettes/vegetarien']], [], []],
     'vegetalien_recipe' => [[], ['_controller' => 'App\\Controller\\MainController::vegetalienRecipes'], [], [['text', '/recettes/vegetalien']], [], []],
+    'main_about' => [[], ['_controller' => 'App\\Controller\\MainController::about'], [], [['text', '/apropos']], [], []],
     'post_show' => [['slug'], ['_controller' => 'App\\Controller\\PostController::show'], [], [['variable', '/', '[^/]++', 'slug'], ['text', '/post']], [], []],
     'recipe_index' => [[], ['_controller' => 'App\\Controller\\RecipeController::index'], [], [['text', '/recette/']], [], []],
     'recipe_new' => [[], ['_controller' => 'App\\Controller\\RecipeController::new'], [], [['text', '/recette/nouvelle']], [], []],

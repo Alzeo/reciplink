@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>RecipeLink - {% block title %}{% endblock %}</title>
-
+    <meta name="viewport" content="width=device-width, user-scalable=no"/>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.10/css/select2.min.css" rel="stylesheet" />
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
@@ -52,6 +52,9 @@
                 <li class="nav-item">
                     <a href="{{ path('home') }}" class="nav-link"><i class="fa fa-home" aria-hidden="true"></i> Accueil</a>
                 </li>
+                <li class="nav-item">
+                    <a href="{{ path('main_about') }}" class="nav-link"><i class="fa fa-leaf"></i> À propos</a>
+                </li>
                 <li class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-cutlery" aria-hidden="true"></i> Recettes</a>
                     <div class="dropdown-perso dropdown-menu" role="menu" aria-labelledby="navbarDropdown">
@@ -66,23 +69,24 @@
                 <li class="nav-item">
                     <a href="{{ path('recipe_new') }}" class="nav-link"><i class="fa fa-heart" aria-hidden="true"></i> Partager une recette</a>
                 </li>
-                {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-                    <li class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user" aria-hidden="true"></i> {{ app.user.username }}</a>
-                        <div class="dropdown-perso dropdown-menu" role="menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{ path('user_show', {'username': user.username}) }}">Mes informations</a>
-                            <a class="dropdown-item" href="{{ path('user_save_recipe', {'username': user.username}) }}">Recettes enregistrées</a>
-                            <a class="dropdown-item" href="{{ path('user_my_recipes', {'username': user.username}) }}">Mes recettes</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="{{path('app_logout')}}"><i class="fa fa-sign-out" style="color:#9c9995;"></i> Se déconnecter</a>
-                        </div>
-                    </li>
+                <li class="login-button">
+                    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user" aria-hidden="true"></i> {{ app.user.username }}</a>
+                    <div class="dropdown-perso dropdown-menu" role="menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{{ path('user_show', {'username': app.user.username}) }}">Mes informations</a>
+                        <a class="dropdown-item" href="{{ path('user_save_recipe', {'username': app.user.username}) }}">Recettes enregistrées</a>
+                        <a class="dropdown-item" href="{{ path('user_my_recipes', {'username': app.user.username}) }}">Mes recettes</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="{{path('app_logout')}}"><i class="fa fa-sign-out" style="color:#9c9995;"></i> Se déconnecter</a>
+                    </div>
+                </li>
             </ul>
-                {% else %}
-                        <a href="{{ path('register') }}"type="button" class="mr-1 btn btn-success text-white"> S'inscrire</a>
-                        <a href="{{ path('app_login') }}"type="button" class="mr-1 btn btn-outline-success"> Se connecter</a>
-                {% endif %}
-
+            {% else %}
+                <a href="{{ path('register') }}"type="button" class="mr-1 btn btn-success text-white"> S'inscrire</a>
+                <a href="{{ path('app_login') }}"type="button" class="mr-1 btn btn-outline-success"> Se connecter</a>
+            {% endif %}
+                </li>
         </div>
     </div>
 </nav>

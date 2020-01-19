@@ -5,7 +5,8 @@
 {% block body %}
 <div class="jumbotron text-center" style="background-image: url({{ asset ('/assets/img/background-user.jpg') }});  background-repeat: no-repeat; background-size:cover; background-position: center">
     <h1><i class="fa fa-user-circle"></i></h1>
-    <div class="typography-line"><h2>La cuisine de {{ profile.username }}</h2></div>
+    <div class="typography-line"><h2>La cuisine de {{ profile.username }} </h2></div>
+    <p>Total de recettes postées : <span class="label label-info"> {{ countRecipes }}</span></p>
     {% if profile.regime != null %} <h6 class="card-regime mt-3">Régime : {{ profile.regime }}</h6>{% else %}{% endif %}
     <div class="container social-media">
         <div class="row">

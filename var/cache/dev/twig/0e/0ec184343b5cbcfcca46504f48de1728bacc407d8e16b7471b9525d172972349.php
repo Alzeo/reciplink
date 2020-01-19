@@ -95,6 +95,7 @@ class __TwigTemplate_2a85034f2486abac12ff4c4efce942f32313af242c31b04ba32703af9d3
         <tr>
             <th>id</th>
             <th>Nom</th>
+            <th>Publié</th>
             <th>Utilisateur</th>
             <th class=\"text-center\">Commentaires</th>
             <th class=\"text-center\">Likes</th>
@@ -103,40 +104,54 @@ class __TwigTemplate_2a85034f2486abac12ff4c4efce942f32313af242c31b04ba32703af9d3
         </thead>
         <tbody>
         ";
-        // line 23
+        // line 24
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["recipes"]) || array_key_exists("recipes", $context) ? $context["recipes"] : (function () { throw new RuntimeError('Variable "recipes" does not exist.', 23, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["recipes"]) || array_key_exists("recipes", $context) ? $context["recipes"] : (function () { throw new RuntimeError('Variable "recipes" does not exist.', 24, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["recipe"]) {
-            // line 24
+            // line 25
             echo "        <tr>
             <td>";
-            // line 25
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["recipe"], "id", [], "any", false, false, false, 25), "html", null, true);
-            echo "</td>
-            <td>";
             // line 26
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["recipe"], "name", [], "any", false, false, false, 26), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["recipe"], "id", [], "any", false, false, false, 26), "html", null, true);
             echo "</td>
             <td>";
             // line 27
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["recipe"], "user", [], "any", false, false, false, 27), "username", [], "any", false, false, false, 27), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["recipe"], "name", [], "any", false, false, false, 27), "html", null, true);
+            echo "</td>
+            <td>
+                ";
+            // line 29
+            if ((twig_get_attribute($this->env, $this->source, $context["recipe"], "publish", [], "any", false, false, false, 29) == 1)) {
+                // line 30
+                echo "                    Validée
+                ";
+            } else {
+                // line 32
+                echo "                    En attente
+                ";
+            }
+            // line 34
+            echo "            </td>
+            <td>";
+            // line 35
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["recipe"], "user", [], "any", false, false, false, 35), "username", [], "any", false, false, false, 35), "html", null, true);
             echo "</td>
             <td class=\"text-center\"><span class=\"badge badge-primary rounded\">";
-            // line 28
-            echo twig_escape_filter($this->env, twig_length_filter($this->env, twig_get_attribute($this->env, $this->source, $context["recipe"], "commentRecipe", [], "any", false, false, false, 28)), "html", null, true);
+            // line 36
+            echo twig_escape_filter($this->env, twig_length_filter($this->env, twig_get_attribute($this->env, $this->source, $context["recipe"], "commentRecipe", [], "any", false, false, false, 36)), "html", null, true);
             echo "</span> </td>
             <td class=\"text-center\"><span class=\"badge badge-primary rounded\">";
-            // line 29
-            echo twig_escape_filter($this->env, twig_length_filter($this->env, twig_get_attribute($this->env, $this->source, $context["recipe"], "likes", [], "any", false, false, false, 29)), "html", null, true);
+            // line 37
+            echo twig_escape_filter($this->env, twig_length_filter($this->env, twig_get_attribute($this->env, $this->source, $context["recipe"], "likes", [], "any", false, false, false, 37)), "html", null, true);
             echo "</span></td>
             <td>
                 <a href=\"";
-            // line 31
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_recipes_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["recipe"], "id", [], "any", false, false, false, 31)]), "html", null, true);
+            // line 39
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_recipes_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["recipe"], "id", [], "any", false, false, false, 39)]), "html", null, true);
             echo "\" class=\"btn btn-primary\"><i class=\"fa fa-edit\"></i></a>
                 <a href=\"";
-            // line 32
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_recipes_delete", ["id" => twig_get_attribute($this->env, $this->source, $context["recipe"], "id", [], "any", false, false, false, 32)]), "html", null, true);
+            // line 40
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_recipes_delete", ["id" => twig_get_attribute($this->env, $this->source, $context["recipe"], "id", [], "any", false, false, false, 40)]), "html", null, true);
             echo "\" class=\"btn btn-danger\"><i class=\"fa fa-trash\"></i></a>
             </td>
         </tr>
@@ -145,7 +160,7 @@ class __TwigTemplate_2a85034f2486abac12ff4c4efce942f32313af242c31b04ba32703af9d3
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['recipe'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 36
+        // line 44
         echo "        </tbody>
     </table>
 </div>
@@ -170,7 +185,7 @@ class __TwigTemplate_2a85034f2486abac12ff4c4efce942f32313af242c31b04ba32703af9d3
 
     public function getDebugInfo()
     {
-        return array (  149 => 36,  139 => 32,  135 => 31,  130 => 29,  126 => 28,  122 => 27,  118 => 26,  114 => 25,  111 => 24,  107 => 23,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  164 => 44,  154 => 40,  150 => 39,  145 => 37,  141 => 36,  137 => 35,  134 => 34,  130 => 32,  126 => 30,  124 => 29,  119 => 27,  115 => 26,  112 => 25,  108 => 24,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -190,6 +205,7 @@ class __TwigTemplate_2a85034f2486abac12ff4c4efce942f32313af242c31b04ba32703af9d3
         <tr>
             <th>id</th>
             <th>Nom</th>
+            <th>Publié</th>
             <th>Utilisateur</th>
             <th class=\"text-center\">Commentaires</th>
             <th class=\"text-center\">Likes</th>
@@ -201,6 +217,13 @@ class __TwigTemplate_2a85034f2486abac12ff4c4efce942f32313af242c31b04ba32703af9d3
         <tr>
             <td>{{ recipe.id }}</td>
             <td>{{ recipe.name }}</td>
+            <td>
+                {% if recipe.publish == 1 %}
+                    Validée
+                {% else %}
+                    En attente
+                {% endif %}
+            </td>
             <td>{{ recipe.user.username }}</td>
             <td class=\"text-center\"><span class=\"badge badge-primary rounded\">{{ recipe.commentRecipe|length }}</span> </td>
             <td class=\"text-center\"><span class=\"badge badge-primary rounded\">{{ recipe.likes|length }}</span></td>
@@ -214,6 +237,6 @@ class __TwigTemplate_2a85034f2486abac12ff4c4efce942f32313af242c31b04ba32703af9d3
     </table>
 </div>
 {% endblock %}
-", "admin/recipe/index.html.twig", "/home/cortez/Sites/reciplink/templates/admin/recipe/index.html.twig");
+", "admin/recipe/index.html.twig", "/Users/tomaccess/Documents/Sites/reciplink/templates/admin/recipe/index.html.twig");
     }
 }
