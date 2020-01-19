@@ -158,6 +158,6 @@ class __TwigTemplate_4a5b08122c005d2d7e0c4877ec8770907d07d1c1d504b50f7dc1d360f71
     </ul>
 </div>
 {% endblock %}
-", "admin/newsletter/index.html.twig", "/home/cortez/Sites/reciplink/templates/admin/newsletter/index.html.twig");
+", "admin/newsletter/index.html.twig", "/Users/tomaccess/Documents/Sites/reciplink/templates/admin/newsletter/index.html.twig");
     }
 }
