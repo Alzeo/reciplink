@@ -108,8 +108,8 @@ class __TwigTemplate_b46297f18e917ea1ac4c1835d252acde93d5a6c2d57037d852affaca0f8
         <div class=\"navbar-translate\">
             <a href=\"#pablo\" class=\"navbar-brand\"><img src=\"";
         // line 43
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/assets/img/figuy.png"), "html", null, true);
-        echo "\" width=\"170px\" alt=\"Card image cap\"></a>
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/assets/img/figuyv2.png"), "html", null, true);
+        echo "\" width=\"120px\" alt=\"Card image cap\"></a>
             <button class=\"navbar-toggler navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navigation\" aria-controls=\"navigation-index\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
                 <span class=\"navbar-toggler-bar bar1\"></span>
                 <span class=\"navbar-toggler-bar bar2\"></span>
@@ -504,7 +504,7 @@ class __TwigTemplate_b46297f18e917ea1ac4c1835d252acde93d5a6c2d57037d852affaca0f8
 <nav class=\"sticky-top navbar navbar-expand-lg fixed-top\">
     <div class=\"container-fluid\">
         <div class=\"navbar-translate\">
-            <a href=\"#pablo\" class=\"navbar-brand\"><img src=\"{{ asset('/assets/img/figuy.png') }}\" width=\"170px\" alt=\"Card image cap\"></a>
+            <a href=\"#pablo\" class=\"navbar-brand\"><img src=\"{{ asset('/assets/img/figuyv2.png') }}\" width=\"120px\" alt=\"Card image cap\"></a>
             <button class=\"navbar-toggler navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navigation\" aria-controls=\"navigation-index\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
                 <span class=\"navbar-toggler-bar bar1\"></span>
                 <span class=\"navbar-toggler-bar bar2\"></span>
