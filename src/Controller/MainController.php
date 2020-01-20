@@ -74,10 +74,10 @@ class MainController extends AbstractController
      */
     public function register(Request $request, UserPasswordEncoderInterface $passwordEncoder, MailerInterface $mailer){
         $register = new User();
-        $register->setRoles(['ROLE_ADMIN']);
         $form = $this->createForm(RegisterType::class, $register);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
+            $register->setRoles('ROLE_USER');
             $password = $passwordEncoder->encodePassword($register, $register->getPassword());
             $register->setPassword($password);
             $entityManager = $this->getDoctrine()->getManager();

@@ -27,7 +27,7 @@ class __TwigTemplate_c423915b486adbf46d4dcdbf3040d30bee906b6925da647b73892153ea4
         $this->blocks = [
             'title' => [$this, 'block_title'],
             'body' => [$this, 'block_body'],
-            '__internal_321a3d70687af2ca2e2c0584277a074ee337ab924ea7f740a2af384997baba98' => [$this, 'block___internal_321a3d70687af2ca2e2c0584277a074ee337ab924ea7f740a2af384997baba98'],
+            '__internal_0dd5d14ce6cd5b0dabe8d369498385a1c1184b888c0a364a303933c722f820c6' => [$this, 'block___internal_0dd5d14ce6cd5b0dabe8d369498385a1c1184b888c0a364a303933c722f820c6'],
             'stylesheets' => [$this, 'block_stylesheets'],
             'javascript' => [$this, 'block_javascript'],
         ];
@@ -93,20 +93,20 @@ class __TwigTemplate_c423915b486adbf46d4dcdbf3040d30bee906b6925da647b73892153ea4
         echo "); background-repeat: no-repeat; background-size: cover;\">
         <div class=\"background-recip\" style=\"padding-top: 30px; padding-bottom: 30px; text-align: center; \">
         </div>
-        <div class=\"formulaire container\" style=\"max-width: 60%; margin:auto; padding: 50px; background: #fff;\">
+        <div class=\"formulaire container\" style=\"margin:auto; padding: 50px; background: #fff;\">
             <h1 class=\"text-center mb-5\">Nouvelle recette</h1>
             ";
         // line 11
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 11, $this->source); })()), 'form_start');
         echo "
            <div class=\"row\">
-               <div class=\"col-6\">
+               <div class=\"col-xs-12 col-md-6\">
                    ";
         // line 14
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 14, $this->source); })()), "name", [], "any", false, false, false, 14), 'row');
         echo "
                </div>
-               <div class=\"col-6\">
+               <div class=\"col-xs-12 col-md-6\">
                    ";
         // line 17
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 17, $this->source); })()), "picture", [], "any", false, false, false, 17), 'row');
@@ -114,19 +114,19 @@ class __TwigTemplate_c423915b486adbf46d4dcdbf3040d30bee906b6925da647b73892153ea4
                </div>
            </div>
             <div class=\"row\">
-                <div class=\"col-4\">
+                <div class=\"col-xs-12 col-md-4\">
                     ";
         // line 22
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 22, $this->source); })()), "regime", [], "any", false, false, false, 22), 'row');
         echo "
                 </div>
-                <div class=\"col-4\">
+                <div class=\"col-xs-12 col-md-4\">
                     ";
         // line 25
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 25, $this->source); })()), "type", [], "any", false, false, false, 25), 'row');
         echo "
                 </div>
-                <div class=\"col-4\">
+                <div class=\"col-xs-12 col-md-4\">
                     ";
         // line 28
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 28, $this->source); })()), "dificulty", [], "any", false, false, false, 28), 'row');
@@ -135,19 +135,19 @@ class __TwigTemplate_c423915b486adbf46d4dcdbf3040d30bee906b6925da647b73892153ea4
             </div>
             <hr/>
             <div class=\"row\">
-                <div class=\"col\">
+                <div class=\"col-xs-12 col-md-4\">
                     ";
         // line 34
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 34, $this->source); })()), "time", [], "any", false, false, false, 34), 'row');
         echo "
                 </div>
-                <div class=\"col\">
+                <div class=\"col-xs-12 col-md-4\">
                     ";
         // line 37
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 37, $this->source); })()), "timeUnity", [], "any", false, false, false, 37), 'row');
         echo "
                 </div>
-                <div class=\"col\">
+                <div class=\"col-xs-12 col-md-4\">
                     ";
         // line 40
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 40, $this->source); })()), "part", [], "any", false, false, false, 40), 'row');
@@ -158,7 +158,7 @@ class __TwigTemplate_c423915b486adbf46d4dcdbf3040d30bee906b6925da647b73892153ea4
             <div id=\"recipe_foods\" class=\"form-group\" data-prototype=\"
                 ";
         // line 45
-        echo twig_escape_filter($this->env,         $this->renderBlock("__internal_321a3d70687af2ca2e2c0584277a074ee337ab924ea7f740a2af384997baba98", $context, $blocks));
+        echo twig_escape_filter($this->env,         $this->renderBlock("__internal_0dd5d14ce6cd5b0dabe8d369498385a1c1184b888c0a364a303933c722f820c6", $context, $blocks));
         // line 47
         echo "\">
                 ";
@@ -186,25 +186,25 @@ class __TwigTemplate_c423915b486adbf46d4dcdbf3040d30bee906b6925da647b73892153ea4
         echo "
             <hr/>
             <div class=\"row\">
-                <div class=\"col\">
+                <div class=\"col-xs-12 col-md-3\">
                     ";
         // line 61
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 61, $this->source); })()), "protein", [], "any", false, false, false, 61), 'row');
         echo "
                 </div>
-                <div class=\"col\">
+                <div class=\"col-xs-12 col-md-3\">
                     ";
         // line 64
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 64, $this->source); })()), "glucide", [], "any", false, false, false, 64), 'row');
         echo "
                 </div>
-                <div class=\"col\">
+                <div class=\"col-xs-12 col-md-3\">
                     ";
         // line 67
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 67, $this->source); })()), "lipide", [], "any", false, false, false, 67), 'row');
         echo "
                 </div>
-                <div class=\"col\">
+                <div class=\"col-xs-12 col-md-3\">
                     ";
         // line 70
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 70, $this->source); })()), "calorie", [], "any", false, false, false, 70), 'row');
@@ -242,14 +242,14 @@ class __TwigTemplate_c423915b486adbf46d4dcdbf3040d30bee906b6925da647b73892153ea4
     }
 
     // line 45
-    public function block___internal_321a3d70687af2ca2e2c0584277a074ee337ab924ea7f740a2af384997baba98($context, array $blocks = [])
+    public function block___internal_0dd5d14ce6cd5b0dabe8d369498385a1c1184b888c0a364a303933c722f820c6($context, array $blocks = [])
     {
         $macros = $this->macros;
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "__internal_321a3d70687af2ca2e2c0584277a074ee337ab924ea7f740a2af384997baba98"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "__internal_0dd5d14ce6cd5b0dabe8d369498385a1c1184b888c0a364a303933c722f820c6"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "__internal_321a3d70687af2ca2e2c0584277a074ee337ab924ea7f740a2af384997baba98"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "__internal_0dd5d14ce6cd5b0dabe8d369498385a1c1184b888c0a364a303933c722f820c6"));
 
         // line 46
         echo "                ";
@@ -415,37 +415,37 @@ class __TwigTemplate_c423915b486adbf46d4dcdbf3040d30bee906b6925da647b73892153ea4
 <div class=\"content\" style=\"background-image: url({{ asset ('/assets/img/2533.jpg') }}); background-repeat: no-repeat; background-size: cover;\">
         <div class=\"background-recip\" style=\"padding-top: 30px; padding-bottom: 30px; text-align: center; \">
         </div>
-        <div class=\"formulaire container\" style=\"max-width: 60%; margin:auto; padding: 50px; background: #fff;\">
+        <div class=\"formulaire container\" style=\"margin:auto; padding: 50px; background: #fff;\">
             <h1 class=\"text-center mb-5\">Nouvelle recette</h1>
             {{ form_start(form) }}
            <div class=\"row\">
-               <div class=\"col-6\">
+               <div class=\"col-xs-12 col-md-6\">
                    {{ form_row(form.name) }}
                </div>
-               <div class=\"col-6\">
+               <div class=\"col-xs-12 col-md-6\">
                    {{ form_row(form.picture) }}
                </div>
            </div>
             <div class=\"row\">
-                <div class=\"col-4\">
+                <div class=\"col-xs-12 col-md-4\">
                     {{ form_row(form.regime) }}
                 </div>
-                <div class=\"col-4\">
+                <div class=\"col-xs-12 col-md-4\">
                     {{ form_row(form.type) }}
                 </div>
-                <div class=\"col-4\">
+                <div class=\"col-xs-12 col-md-4\">
                     {{ form_row(form.dificulty) }}
                 </div>
             </div>
             <hr/>
             <div class=\"row\">
-                <div class=\"col\">
+                <div class=\"col-xs-12 col-md-4\">
                     {{ form_row(form.time) }}
                 </div>
-                <div class=\"col\">
+                <div class=\"col-xs-12 col-md-4\">
                     {{ form_row(form.timeUnity) }}
                 </div>
-                <div class=\"col\">
+                <div class=\"col-xs-12 col-md-4\">
                     {{ form_row(form.part) }}
                 </div>
             </div>
@@ -466,16 +466,16 @@ class __TwigTemplate_c423915b486adbf46d4dcdbf3040d30bee906b6925da647b73892153ea4
             {{ form_row(form.description) }}
             <hr/>
             <div class=\"row\">
-                <div class=\"col\">
+                <div class=\"col-xs-12 col-md-3\">
                     {{ form_row(form.protein)}}
                 </div>
-                <div class=\"col\">
+                <div class=\"col-xs-12 col-md-3\">
                     {{ form_row(form.glucide) }}
                 </div>
-                <div class=\"col\">
+                <div class=\"col-xs-12 col-md-3\">
                     {{ form_row(form.lipide) }}
                 </div>
-                <div class=\"col\">
+                <div class=\"col-xs-12 col-md-3\">
                     {{ form_row(form.calorie) }}
                 </div>
             </div>
