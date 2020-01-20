@@ -144,8 +144,8 @@ class __TwigTemplate_39649199bb4d14a07b635054383a592e9b1abee151fabb2dd4a859f89cd
         }
         // line 69
         echo "    <img src=\"";
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/assets/img/cauldron.png"), "html", null, true);
-        echo "\" width=\"60px\" alt=\"Card image cap\">
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/assets/img/iconfiguy.png"), "html", null, true);
+        echo "\" width=\"90px\" alt=\"Card image cap\">
     <h1 class=\"h3 mb-3 font-weight-normal\">Connectez vous</h1>
     <input type=\"text\" value=\"";
         // line 71
@@ -178,6 +178,14 @@ class __TwigTemplate_39649199bb4d14a07b635054383a592e9b1abee151fabb2dd4a859f89cd
             Créez en un.
         </a>
     </div>
+    <div class=\"text-center w-full p-t-115 mt-4\">
+        <a class=\"txt1 bo1 hov1\" href=\"";
+        // line 94
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("reset_password");
+        echo "\">
+            Mot de passe oublié ?
+        </a>
+    </div>
 
     <p class=\"mt-5 mb-3 text-muted\">&copy; 2017-2019</p>
 </form>
@@ -204,7 +212,7 @@ class __TwigTemplate_39649199bb4d14a07b635054383a592e9b1abee151fabb2dd4a859f89cd
 
     public function getDebugInfo()
     {
-        return array (  176 => 89,  159 => 75,  152 => 71,  146 => 69,  138 => 66,  135 => 65,  132 => 64,  121 => 55,  118 => 54,  108 => 50,  101 => 45,  97 => 44,  92 => 42,  65 => 18,  61 => 17,  43 => 1,);
+        return array (  184 => 94,  176 => 89,  159 => 75,  152 => 71,  146 => 69,  138 => 66,  135 => 65,  132 => 64,  121 => 55,  118 => 54,  108 => 50,  101 => 45,  97 => 44,  92 => 42,  65 => 18,  61 => 17,  43 => 1,);
     }
 
     public function getSourceContext()
@@ -277,7 +285,7 @@ class __TwigTemplate_39649199bb4d14a07b635054383a592e9b1abee151fabb2dd4a859f89cd
             Vous êtes connecté(e) en tant que {{ app.user.username }}, <a href=\"{{ path('app_logout') }}\">Déconnexion</a>
         </div>
     {% endif %}
-    <img src=\"{{ asset('/assets/img/cauldron.png') }}\" width=\"60px\" alt=\"Card image cap\">
+    <img src=\"{{ asset('/assets/img/iconfiguy.png') }}\" width=\"90px\" alt=\"Card image cap\">
     <h1 class=\"h3 mb-3 font-weight-normal\">Connectez vous</h1>
     <input type=\"text\" value=\"{{ last_username }}\" name=\"username\" placeholder=\"Username\" id=\"inputUsername\" class=\"form-control mb-4\" required autofocus>
     <input type=\"password\" name=\"password\" id=\"inputPassword\"  placeholder=\"********\" class=\"form-control\" required>
@@ -299,6 +307,11 @@ class __TwigTemplate_39649199bb4d14a07b635054383a592e9b1abee151fabb2dd4a859f89cd
 
         <a class=\"txt1 bo1 hov1\" href=\"{{path('register')}}\">
             Créez en un.
+        </a>
+    </div>
+    <div class=\"text-center w-full p-t-115 mt-4\">
+        <a class=\"txt1 bo1 hov1\" href=\"{{path('reset_password')}}\">
+            Mot de passe oublié ?
         </a>
     </div>
 

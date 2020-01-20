@@ -484,7 +484,7 @@ li.login-button {
 .block-newsletter {
     padding-top: 40px;
     padding-bottom: 40px;
-    background-image: url('/assets/img/home-banner2.jpg');
+    background-image: url('/assets/img/newsletter.jpg');
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -525,5 +525,7 @@ li.login-button {
         font-size: 30px;
     }
 }
+
+
 
 

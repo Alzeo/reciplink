@@ -6485,3 +6485,8 @@ td.rdtYear:hover {
   background: #ffda40 !important;
   border-color: #FFDA40 !important;
 }
+
+p.help-form {
+  text-align: left !important;
+  font-size: 13px !important;
+}

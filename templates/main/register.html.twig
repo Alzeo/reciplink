@@ -42,13 +42,14 @@
 <body class="text-center" style="background-image: url({{ asset ('/assets/img/home-banner2.jpg') }});  background-repeat: no-repeat; background-size: cover;">
 <div class="form-signin">
     <div class="container">
-        <h1 class="mb-4">Inscription</h1>
-        <img src="{{ asset('assets/img/register.png') }}" width="50px" class="mb-4"/>
+        <img src="{{ asset('/assets/img/iconfiguy.png') }}" width="90px" class="mb-1"/>
+        <h3 class="mb-4">Inscription</h3>
         {{ form_start(form) }}
         {{ form_row(form.username) }}
         {{ form_row(form.email) }}
         {{ form_row(form.password) }}
         {{ form_row(form.passwordConfirm) }}
+        <p class="help-form">En vous inscrivrant vous accpetez les conditions d'utilisations.</p>
         <div class="form-group">
             <button class="btn btn-primary btn-lg mt-4">{{ button_label|default("S'inscrire") }}</button>
         </div>

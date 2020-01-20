@@ -66,7 +66,7 @@
             Vous êtes connecté(e) en tant que {{ app.user.username }}, <a href="{{ path('app_logout') }}">Déconnexion</a>
         </div>
     {% endif %}
-    <img src="{{ asset('/assets/img/cauldron.png') }}" width="60px" alt="Card image cap">
+    <img src="{{ asset('/assets/img/iconfiguy.png') }}" width="90px" alt="Card image cap">
     <h1 class="h3 mb-3 font-weight-normal">Connectez vous</h1>
     <input type="text" value="{{ last_username }}" name="username" placeholder="Username" id="inputUsername" class="form-control mb-4" required autofocus>
     <input type="password" name="password" id="inputPassword"  placeholder="********" class="form-control" required>
@@ -88,6 +88,11 @@
 
         <a class="txt1 bo1 hov1" href="{{path('register')}}">
             Créez en un.
+        </a>
+    </div>
+    <div class="text-center w-full p-t-115 mt-4">
+        <a class="txt1 bo1 hov1" href="{{path('reset_password')}}">
+            Mot de passe oublié ?
         </a>
     </div>
 

@@ -101,6 +101,8 @@ class User implements UserInterface
      */
     private $userRoles;
 
+    public $rgpd;
+
 
 
     public function __construct()
