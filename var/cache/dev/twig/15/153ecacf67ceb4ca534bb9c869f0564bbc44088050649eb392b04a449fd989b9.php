@@ -118,16 +118,29 @@ class __TwigTemplate_b1e0e5ab628f455751638ac5508e6d45b051a9aaea15779f520c3ee1bb2
         // line 51
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 51, $this->source); })()), "passwordConfirm", [], "any", false, false, false, 51), 'row');
         echo "
-        <p class=\"help-form\">En vous inscrivrant vous accpetez les conditions d'utilisations.</p>
+        <div class=\"checkbox text-left ml-4\">
+            <p>
+               <strong> ";
+        // line 54
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 54, $this->source); })()), "rgpd", [], "any", false, false, false, 54), 'label', ["label" => "j'accepte les conditions générales d'utilisations."]);
+        echo "</strong>
+                ";
+        // line 55
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 55, $this->source); })()), "rgpd", [], "any", false, false, false, 55), 'widget');
+        echo "
+            </p>
+        </div>
+        <small><a href=\"#\">Voir les conditions générales</a> </small>
+
         <div class=\"form-group\">
             <button class=\"btn btn-primary btn-lg mt-4\">";
-        // line 54
-        echo twig_escape_filter($this->env, (((isset($context["button_label"]) || array_key_exists("button_label", $context))) ? (_twig_default_filter((isset($context["button_label"]) || array_key_exists("button_label", $context) ? $context["button_label"] : (function () { throw new RuntimeError('Variable "button_label" does not exist.', 54, $this->source); })()), "S'inscrire")) : ("S'inscrire")), "html", null, true);
+        // line 61
+        echo twig_escape_filter($this->env, (((isset($context["button_label"]) || array_key_exists("button_label", $context))) ? (_twig_default_filter((isset($context["button_label"]) || array_key_exists("button_label", $context) ? $context["button_label"] : (function () { throw new RuntimeError('Variable "button_label" does not exist.', 61, $this->source); })()), "S'inscrire")) : ("S'inscrire")), "html", null, true);
         echo "</button>
         </div>
         ";
-        // line 56
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 56, $this->source); })()), 'form_end');
+        // line 63
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 63, $this->source); })()), 'form_end');
         echo "
     </div>
 </div>
@@ -152,7 +165,7 @@ class __TwigTemplate_b1e0e5ab628f455751638ac5508e6d45b051a9aaea15779f520c3ee1bb2
 
     public function getDebugInfo()
     {
-        return array (  130 => 56,  125 => 54,  119 => 51,  115 => 50,  111 => 49,  107 => 48,  103 => 47,  98 => 45,  92 => 42,  65 => 18,  61 => 17,  43 => 1,);
+        return array (  143 => 63,  138 => 61,  129 => 55,  125 => 54,  119 => 51,  115 => 50,  111 => 49,  107 => 48,  103 => 47,  98 => 45,  92 => 42,  65 => 18,  61 => 17,  43 => 1,);
     }
 
     public function getSourceContext()
@@ -208,13 +221,20 @@ class __TwigTemplate_b1e0e5ab628f455751638ac5508e6d45b051a9aaea15779f520c3ee1bb2
         {{ form_row(form.email) }}
         {{ form_row(form.password) }}
         {{ form_row(form.passwordConfirm) }}
-        <p class=\"help-form\">En vous inscrivrant vous accpetez les conditions d'utilisations.</p>
+        <div class=\"checkbox text-left ml-4\">
+            <p>
+               <strong> {{ form_label(form.rgpd, \"j'accepte les conditions générales d'utilisations.\") }}</strong>
+                {{ form_widget(form.rgpd) }}
+            </p>
+        </div>
+        <small><a href=\"#\">Voir les conditions générales</a> </small>
+
         <div class=\"form-group\">
             <button class=\"btn btn-primary btn-lg mt-4\">{{ button_label|default(\"S'inscrire\") }}</button>
         </div>
         {{ form_end(form) }}
     </div>
 </div>
-", "main/register.html.twig", "/Users/tomaccess/Documents/Sites/reciplink/templates/main/register.html.twig");
+", "main/register.html.twig", "/home/cortez/Sites/reciplink/templates/main/register.html.twig");
     }
 }

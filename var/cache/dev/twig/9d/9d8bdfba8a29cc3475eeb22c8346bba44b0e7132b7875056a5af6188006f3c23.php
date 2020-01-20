@@ -270,7 +270,10 @@ class __TwigTemplate_b46297f18e917ea1ac4c1835d252acde93d5a6c2d57037d852affaca0f8
         // line 124
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("contact");
         echo "\">Contact</a></li>
-                <li><a class=\"text-muted\" href=\"#\">Mentions légales</a></li>
+                <li><a class=\"text-muted\" href=\"";
+        // line 125
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("main_cgu");
+        echo "\">CGU</a></li>
             </ul>
         </div>
     </div>
@@ -278,7 +281,7 @@ class __TwigTemplate_b46297f18e917ea1ac4c1835d252acde93d5a6c2d57037d852affaca0f8
 </footer>
 <div class=\"bottom-footer\">
     <div class=\"copyright-text text-center\">
-        © 2017-2019 RecipLink, Inc. ALL RIGHT RESERVED.
+        © 2017-2019 Figuy, tous droits réservés. Design by <a href=\"https://tomaccess.com\">Tomaccess</a>
     </div>
 </div>
 <div id=\"fb-root\"></div>
@@ -457,7 +460,7 @@ class __TwigTemplate_b46297f18e917ea1ac4c1835d252acde93d5a6c2d57037d852affaca0f8
 
     public function getDebugInfo()
     {
-        return array (  431 => 185,  413 => 103,  403 => 20,  393 => 19,  374 => 18,  356 => 5,  343 => 187,  341 => 185,  296 => 143,  292 => 142,  271 => 124,  262 => 118,  258 => 117,  254 => 116,  250 => 115,  238 => 105,  236 => 103,  226 => 99,  219 => 94,  215 => 93,  209 => 89,  204 => 87,  199 => 86,  191 => 81,  186 => 79,  182 => 78,  178 => 77,  173 => 75,  170 => 74,  168 => 73,  162 => 70,  155 => 66,  150 => 64,  146 => 63,  142 => 62,  138 => 61,  130 => 56,  124 => 53,  111 => 43,  87 => 21,  84 => 19,  82 => 18,  76 => 15,  72 => 14,  68 => 13,  64 => 12,  54 => 5,  48 => 1,);
+        return array (  434 => 185,  416 => 103,  406 => 20,  396 => 19,  377 => 18,  359 => 5,  346 => 187,  344 => 185,  299 => 143,  295 => 142,  275 => 125,  271 => 124,  262 => 118,  258 => 117,  254 => 116,  250 => 115,  238 => 105,  236 => 103,  226 => 99,  219 => 94,  215 => 93,  209 => 89,  204 => 87,  199 => 86,  191 => 81,  186 => 79,  182 => 78,  178 => 77,  173 => 75,  170 => 74,  168 => 73,  162 => 70,  155 => 66,  150 => 64,  146 => 63,  142 => 62,  138 => 61,  130 => 56,  124 => 53,  111 => 43,  87 => 21,  84 => 19,  82 => 18,  76 => 15,  72 => 14,  68 => 13,  64 => 12,  54 => 5,  48 => 1,);
     }
 
     public function getSourceContext()
@@ -586,7 +589,7 @@ class __TwigTemplate_b46297f18e917ea1ac4c1835d252acde93d5a6c2d57037d852affaca0f8
             <h5>Figuy</h5>
             <ul class=\"list-unstyled text-small\">
                 <li><a class=\"text-muted\" href=\"{{path('contact')}}\">Contact</a></li>
-                <li><a class=\"text-muted\" href=\"#\">Mentions légales</a></li>
+                <li><a class=\"text-muted\" href=\"{{path('main_cgu')}}\">CGU</a></li>
             </ul>
         </div>
     </div>
@@ -594,7 +597,7 @@ class __TwigTemplate_b46297f18e917ea1ac4c1835d252acde93d5a6c2d57037d852affaca0f8
 </footer>
 <div class=\"bottom-footer\">
     <div class=\"copyright-text text-center\">
-        © 2017-2019 RecipLink, Inc. ALL RIGHT RESERVED.
+        © 2017-2019 Figuy, tous droits réservés. Design by <a href=\"https://tomaccess.com\">Tomaccess</a>
     </div>
 </div>
 <div id=\"fb-root\"></div>
@@ -651,6 +654,6 @@ class __TwigTemplate_b46297f18e917ea1ac4c1835d252acde93d5a6c2d57037d852affaca0f8
 </body>
 </html>
 
-", "base.html.twig", "/Users/tomaccess/Documents/Sites/reciplink/templates/base.html.twig");
+", "base.html.twig", "/home/cortez/Sites/reciplink/templates/base.html.twig");
     }
 }

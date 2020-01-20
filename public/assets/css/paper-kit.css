@@ -6490,3 +6490,12 @@ p.help-form {
   text-align: left !important;
   font-size: 13px !important;
 }
+.checkbox .form-check input[type="checkbox"] {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.checkbox label {
+  font-size: 11px;
+}
+}

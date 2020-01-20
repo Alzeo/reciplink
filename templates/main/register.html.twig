@@ -49,7 +49,14 @@
         {{ form_row(form.email) }}
         {{ form_row(form.password) }}
         {{ form_row(form.passwordConfirm) }}
-        <p class="help-form">En vous inscrivrant vous accpetez les conditions d'utilisations.</p>
+        <div class="checkbox text-left ml-4">
+            <p>
+               <strong> {{ form_label(form.rgpd, "j'accepte les conditions générales d'utilisations.") }}</strong>
+                {{ form_widget(form.rgpd) }}
+            </p>
+        </div>
+        <small><a href="#">Voir les conditions générales</a> </small>
+
         <div class="form-group">
             <button class="btn btn-primary btn-lg mt-4">{{ button_label|default("S'inscrire") }}</button>
         </div>

@@ -98,21 +98,36 @@ class __TwigTemplate_bc732fb2178d1a37b60dc431b4102b14c46ee8ce96a7863ba5ebf60b638
         echo "\" width=\"500px\"/>
            </div>
            <div class=\"col-xs-12 col-md-6 mt-5\">
-               <h2>Des recettes saines</h2>
-               <p class=\"mt-3\">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eget venenatis purus, at euismod quam. Aenean volutpat leo eu mi vestibulum, non tempus neque tincidunt. Pellentesque a sodales mauris, a tincidunt diam. Nunc sagittis, neque et vehicula tincidunt, elit sem porta turpis, at pulvinar turpis arcu sed lectus. Aliquam lorem tellus, sodales quis placerat eget, cursus ut eros.</p>
+               <img src=\"";
+        // line 16
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/assets/img/iconfiguy.png"), "html", null, true);
+        echo "\" width=\"100px\"/>
+               <h2>Qu'est ce que Figuy ?</h2>
+               <p class=\"mt-3\">Nous sommes une plateforme mettant à disposition des recettes saines et équilibrés de différents régimes alimentaire (Paléo, Végan
+                   Végétarien, Végétalien, Sans gluten), afin que
+                   quiconque désireux de faire attention à son alimentation puisse choisir une recette sans chercher la petite bête.
+               </p>
+               <p>Chacun à la possibilité de partager ses recettes favoris sur le site.</p>
            </div>
        </div>
     </div>
+
     <div class=\"container-fluid\">
         <div class=\"row\">
             <div class=\"col-xs-12 col-md-6\" style=\"background:#eee; padding: 30px;\">
                 <div class=\"container\">
                     <h2>Des recettes saines</h2>
-                    <p class=\"mt-3\">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eget venenatis purus, at euismod quam. Aenean volutpat leo eu mi vestibulum, non tempus neque tincidunt. Pellentesque a sodales mauris, a tincidunt diam. Nunc sagittis, neque et vehicula tincidunt, elit sem porta turpis, at pulvinar turpis arcu sed lectus. Aliquam lorem tellus, sodales quis placerat eget, cursus ut eros.</p>
+                    <p class=\"mt-3\">
+                        Il existe de nombreux sites mettant à disposition une foisonnée de recette, sur Figuy seule les recettes saines sont acceptées.
+                        Les recettes riches en mauvaises graisses, en sucres et autres ingrédients nocif ne seront pas acceptés. </p>
+                    <p>Nous prônons les valeurs
+                        d'une vie saine et cela commence par une bonne alimentation. C'est pourquoi nous insistons sur le fait que les recettes disponibles sur
+                        Figuy se doivent de respecter les restrictions.
+                    </p>
                 </div>
             </div>
             <div class=\"col-xs-12 col-md-6\" style=\"background-image: url(";
-        // line 29
+        // line 41
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/assets/img/2420.jpg"), "html", null, true);
         echo "); background-position: center; height: 400px;\">
 
@@ -141,7 +156,7 @@ class __TwigTemplate_bc732fb2178d1a37b60dc431b4102b14c46ee8ce96a7863ba5ebf60b638
 
     public function getDebugInfo()
     {
-        return array (  116 => 29,  97 => 13,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  131 => 41,  103 => 16,  97 => 13,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -161,17 +176,29 @@ class __TwigTemplate_bc732fb2178d1a37b60dc431b4102b14c46ee8ce96a7863ba5ebf60b638
                <img src=\"{{ asset('/assets/img/background-about.png') }}\" width=\"500px\"/>
            </div>
            <div class=\"col-xs-12 col-md-6 mt-5\">
-               <h2>Des recettes saines</h2>
-               <p class=\"mt-3\">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eget venenatis purus, at euismod quam. Aenean volutpat leo eu mi vestibulum, non tempus neque tincidunt. Pellentesque a sodales mauris, a tincidunt diam. Nunc sagittis, neque et vehicula tincidunt, elit sem porta turpis, at pulvinar turpis arcu sed lectus. Aliquam lorem tellus, sodales quis placerat eget, cursus ut eros.</p>
+               <img src=\"{{ asset('/assets/img/iconfiguy.png') }}\" width=\"100px\"/>
+               <h2>Qu'est ce que Figuy ?</h2>
+               <p class=\"mt-3\">Nous sommes une plateforme mettant à disposition des recettes saines et équilibrés de différents régimes alimentaire (Paléo, Végan
+                   Végétarien, Végétalien, Sans gluten), afin que
+                   quiconque désireux de faire attention à son alimentation puisse choisir une recette sans chercher la petite bête.
+               </p>
+               <p>Chacun à la possibilité de partager ses recettes favoris sur le site.</p>
            </div>
        </div>
     </div>
+
     <div class=\"container-fluid\">
         <div class=\"row\">
             <div class=\"col-xs-12 col-md-6\" style=\"background:#eee; padding: 30px;\">
                 <div class=\"container\">
                     <h2>Des recettes saines</h2>
-                    <p class=\"mt-3\">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eget venenatis purus, at euismod quam. Aenean volutpat leo eu mi vestibulum, non tempus neque tincidunt. Pellentesque a sodales mauris, a tincidunt diam. Nunc sagittis, neque et vehicula tincidunt, elit sem porta turpis, at pulvinar turpis arcu sed lectus. Aliquam lorem tellus, sodales quis placerat eget, cursus ut eros.</p>
+                    <p class=\"mt-3\">
+                        Il existe de nombreux sites mettant à disposition une foisonnée de recette, sur Figuy seule les recettes saines sont acceptées.
+                        Les recettes riches en mauvaises graisses, en sucres et autres ingrédients nocif ne seront pas acceptés. </p>
+                    <p>Nous prônons les valeurs
+                        d'une vie saine et cela commence par une bonne alimentation. C'est pourquoi nous insistons sur le fait que les recettes disponibles sur
+                        Figuy se doivent de respecter les restrictions.
+                    </p>
                 </div>
             </div>
             <div class=\"col-xs-12 col-md-6\" style=\"background-image: url({{ asset('/assets/img/2420.jpg') }}); background-position: center; height: 400px;\">
@@ -181,6 +208,6 @@ class __TwigTemplate_bc732fb2178d1a37b60dc431b4102b14c46ee8ce96a7863ba5ebf60b638
     </div>
 
 {% endblock %}
-", "main/about.html.twig", "/Users/tomaccess/Documents/Sites/reciplink/templates/main/about.html.twig");
+", "main/about.html.twig", "/home/cortez/Sites/reciplink/templates/main/about.html.twig");
     }
 }

@@ -250,4 +250,11 @@ class MainController extends AbstractController
     public function about(){
         return $this->render('main/about.html.twig');
     }
+
+    /**
+     * @Route("/cgu", name="main_cgu")
+     */
+    public function cgu(){
+        return $this->render('main/cgu.html.twig');
+    }
 }

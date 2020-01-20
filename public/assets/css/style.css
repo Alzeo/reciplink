@@ -527,5 +527,22 @@ li.login-button {
 }
 
 
+.sib-form-block__button.sib-form-block__button-with-loader {
+    font-size: 16px;
+    text-align: left;
+    font-weight: 60;
+    font-family: "MontSerrat", sans-serif;
+    color: #FFFFFF;
+    background-color: #6bd098;
+    border-radius: 3px;
+    border-width: 0px;
+}
 
+
+.bottom-footer a  {
+    color: #070707;
+}
+.bottom-footer a:hover  {
+    color: rgba(7, 7, 7, 0.55);
+}
 

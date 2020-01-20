@@ -39,6 +39,13 @@ class RegisterType extends AbstractType
                     'placeholder' => 'Adresse mail'
                 ]
             ])
+            ->add('rgpd', CheckboxType::class, [
+                'label' => "J'accepte les conditions générales d'utilisations",
+                'attr' => [
+                    'class' => 'text-left',
+                    'multiple' => false
+                ]
+            ])
         ;
     }
 

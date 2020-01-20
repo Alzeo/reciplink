@@ -253,7 +253,7 @@ class __TwigTemplate_cf3b9b60aa756b0288664e7fcc2b55a1fd378d78e5df19d810488af5409
         </div>
         <div class=\"col-xs-12 col-md-9\">
             <h2>Restez informé(e)</h2>
-            <h5 class=\"mt-2\">Vous souhaitez recevoir les nouvelles recettes par mail ?</h5>
+            <h5 class=\"mt-2\" style=\"text-transform: inherit\">Recevez sans rien faire des astuces santé, <br/>ainsi que les dernières recettes de nos membres</h5>
             <iframe width=\"540\" height=\"450\" src=\"https://e319caef.sibforms.com/serve/MUIEAPp8HwrpPpJdgDhdQkGG0bCqiBtNoK-L59Vle-q86ZyE9yEip7TdZln0U8opR_7SY65Y_7W-BA_-yNuK5B4UMoTAG9gU_cVCaann1zOTToPUCLJBviiUVk1XO_lq14zITBMWpxPCgs5jBEIlYLGB9ZPAO-L_C5AgP7bUbWGv5UobW6JgAXyB8wCPfytOr8watmjXqOSA_3DG\" frameborder=\"0\" scrolling=\"auto\" allowfullscreen style=\"display: block; max-width: 100%; margin:auto;\"></iframe>
 
         </div>
@@ -355,7 +355,7 @@ class __TwigTemplate_cf3b9b60aa756b0288664e7fcc2b55a1fd378d78e5df19d810488af5409
         </div>
         <div class=\"col-xs-12 col-md-9\">
             <h2>Restez informé(e)</h2>
-            <h5 class=\"mt-2\">Vous souhaitez recevoir les nouvelles recettes par mail ?</h5>
+            <h5 class=\"mt-2\" style=\"text-transform: inherit\">Recevez sans rien faire des astuces santé, <br/>ainsi que les dernières recettes de nos membres</h5>
             <iframe width=\"540\" height=\"450\" src=\"https://e319caef.sibforms.com/serve/MUIEAPp8HwrpPpJdgDhdQkGG0bCqiBtNoK-L59Vle-q86ZyE9yEip7TdZln0U8opR_7SY65Y_7W-BA_-yNuK5B4UMoTAG9gU_cVCaann1zOTToPUCLJBviiUVk1XO_lq14zITBMWpxPCgs5jBEIlYLGB9ZPAO-L_C5AgP7bUbWGv5UobW6JgAXyB8wCPfytOr8watmjXqOSA_3DG\" frameborder=\"0\" scrolling=\"auto\" allowfullscreen style=\"display: block; max-width: 100%; margin:auto;\"></iframe>
 
         </div>
@@ -363,6 +363,6 @@ class __TwigTemplate_cf3b9b60aa756b0288664e7fcc2b55a1fd378d78e5df19d810488af5409
     </section>
 {% endblock %}
 
-", "main/index.html.twig", "/Users/tomaccess/Documents/Sites/reciplink/templates/main/index.html.twig");
+", "main/index.html.twig", "/home/cortez/Sites/reciplink/templates/main/index.html.twig");
     }
 }
