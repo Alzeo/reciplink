@@ -16,10 +16,12 @@ use App\Repository\RecipeRepository;
 use App\Repository\UserRepository;
 use Knp\Component\Pager\Pagination\PaginationInterface;
 use Knp\Component\Pager\PaginatorInterface;
+use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Mailer\MailerInterface;
+use Symfony\Component\Mime\Address;
 use Symfony\Component\Mime\Email;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
@@ -29,6 +31,8 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter ;
 
 class MainController extends AbstractController
 {
+
+
 
     public function __construct(Security $security)
     {
@@ -83,11 +87,15 @@ class MainController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($register);
             $entityManager->flush();
-            $email = (new Email())
-                ->from('aloha@figuy.fr')
+            $email = (new TemplatedEmail())
+                ->from(new Address('aloha@figuy.fr', 'Figuy'))
                 ->to('jardisindustrie@gmail.com')
                 ->subject('Nouvel inscription sur le site !')
-                ->html("<h3>Un nouveau membre parmis nous !</h3><p>Bienvenue à " . $register->getUsername() .  "</p>");
+                ->htmlTemplate('emails/welcome.html.twig')
+                ->context([
+                    'user' => $register->getUsername(),
+                    'mail' => $register->getEmail()
+                ]);
             $mailer->send($email);
             $this->addFlash('success', "Vous êtes inscrit ! Vous pouvez maintenant vous connecter.");
             return $this->redirectToRoute('app_login', [ 'user' => 'null'
