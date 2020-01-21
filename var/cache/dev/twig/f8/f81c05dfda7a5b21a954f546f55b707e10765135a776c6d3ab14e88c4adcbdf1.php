@@ -232,6 +232,6 @@ class __TwigTemplate_dc7fb01891473b8e13e01e881e762d11cbc357f96d7e1368b8e0613ba9c
     </div>
 
 {% endblock %}
-", "admin/dashboard/index.html.twig", "/Users/tomaccess/Documents/Sites/reciplink/templates/admin/dashboard/index.html.twig");
+", "admin/dashboard/index.html.twig", "/home/cortez/Sites/reciplink/templates/admin/dashboard/index.html.twig");
     }
 }

@@ -106,8 +106,10 @@ class __TwigTemplate_b46297f18e917ea1ac4c1835d252acde93d5a6c2d57037d852affaca0f8
 <nav class=\"sticky-top navbar navbar-expand-lg fixed-top\">
     <div class=\"container-fluid\">
         <div class=\"navbar-translate\">
-            <a href=\"#pablo\" class=\"navbar-brand\"><img src=\"";
+            <a href=\"";
         // line 43
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
+        echo "\" class=\"navbar-brand\"><img src=\"";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/assets/img/figuyv2.png"), "html", null, true);
         echo "\" width=\"120px\" alt=\"Card image cap\"></a>
             <button class=\"navbar-toggler navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navigation\" aria-controls=\"navigation-index\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
@@ -118,49 +120,49 @@ class __TwigTemplate_b46297f18e917ea1ac4c1835d252acde93d5a6c2d57037d852affaca0f8
         </div>
         <div class=\"collapse navbar-collapse justify-content-center\" id=\"navigation\">
             <ul class=\"navbar-nav\">
-                <li class=\"nav-item\">
-                    <a href=\"";
-        // line 53
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
-        echo "\" class=\"nav-link\"><i class=\"fa fa-home\" aria-hidden=\"true\"></i> Accueil</a>
-                </li>
-                <li class=\"nav-item\">
-                    <a href=\"";
-        // line 56
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("main_about");
-        echo "\" class=\"nav-link\"><i class=\"fa fa-leaf\"></i> À propos</a>
-                </li>
                 <li class=\"nav-item dropdown\">
                     <a href=\"#\" class=\"nav-link dropdown-toggle\" id=\"navbarDropdown\" role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\"><i class=\"fa fa-cutlery\" aria-hidden=\"true\"></i> Recettes</a>
                     <div class=\"dropdown-perso dropdown-menu\" role=\"menu\" aria-labelledby=\"navbarDropdown\">
                         <a class=\"dropdown-item\" href=\"";
-        // line 61
+        // line 55
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("paleo_recipe");
         echo "\">Paléo</a>
                         <a class=\"dropdown-item\" href=\"";
-        // line 62
+        // line 56
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("vegetarien_recipe");
         echo "\">Végétarien</a>
                         <a class=\"dropdown-item\" href=\"";
-        // line 63
+        // line 57
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("vegetalien_recipe");
         echo "\">Végétalien</a>
                         <a class=\"dropdown-item\" href=\"";
-        // line 64
+        // line 58
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("vegan_recipe");
         echo "\">Végan</a>
                         <div class=\"dropdown-divider\"></div>
                         <a class=\"dropdown-item\" href=\"";
-        // line 66
+        // line 60
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("discover");
         echo "\">Découvrir</a>
                     </div>
                 </li>
                 <li class=\"nav-item\">
                     <a href=\"";
-        // line 70
+        // line 64
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("recipe_new");
         echo "\" class=\"nav-link\"><i class=\"fa fa-heart\" aria-hidden=\"true\"></i> Partager une recette</a>
+                </li>
+                <li class=\"nav-item\">
+                    <a href=\"";
+        // line 67
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("post_index");
+        echo "\" class=\"nav-link\"><i class=\"fa fa-pencil\"></i> Articles</a>
+                </li>
+                <li class=\"nav-item\">
+                    <a href=\"";
+        // line 70
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("main_about");
+        echo "\" class=\"nav-link\"><i class=\"fa fa-leaf\"></i> À propos</a>
                 </li>
                 <li class=\"login-button\">
                     ";
@@ -460,7 +462,7 @@ class __TwigTemplate_b46297f18e917ea1ac4c1835d252acde93d5a6c2d57037d852affaca0f8
 
     public function getDebugInfo()
     {
-        return array (  434 => 185,  416 => 103,  406 => 20,  396 => 19,  377 => 18,  359 => 5,  346 => 187,  344 => 185,  299 => 143,  295 => 142,  275 => 125,  271 => 124,  262 => 118,  258 => 117,  254 => 116,  250 => 115,  238 => 105,  236 => 103,  226 => 99,  219 => 94,  215 => 93,  209 => 89,  204 => 87,  199 => 86,  191 => 81,  186 => 79,  182 => 78,  178 => 77,  173 => 75,  170 => 74,  168 => 73,  162 => 70,  155 => 66,  150 => 64,  146 => 63,  142 => 62,  138 => 61,  130 => 56,  124 => 53,  111 => 43,  87 => 21,  84 => 19,  82 => 18,  76 => 15,  72 => 14,  68 => 13,  64 => 12,  54 => 5,  48 => 1,);
+        return array (  436 => 185,  418 => 103,  408 => 20,  398 => 19,  379 => 18,  361 => 5,  348 => 187,  346 => 185,  301 => 143,  297 => 142,  277 => 125,  273 => 124,  264 => 118,  260 => 117,  256 => 116,  252 => 115,  240 => 105,  238 => 103,  228 => 99,  221 => 94,  217 => 93,  211 => 89,  206 => 87,  201 => 86,  193 => 81,  188 => 79,  184 => 78,  180 => 77,  175 => 75,  172 => 74,  170 => 73,  164 => 70,  158 => 67,  152 => 64,  145 => 60,  140 => 58,  136 => 57,  132 => 56,  128 => 55,  111 => 43,  87 => 21,  84 => 19,  82 => 18,  76 => 15,  72 => 14,  68 => 13,  64 => 12,  54 => 5,  48 => 1,);
     }
 
     public function getSourceContext()
@@ -507,7 +509,7 @@ class __TwigTemplate_b46297f18e917ea1ac4c1835d252acde93d5a6c2d57037d852affaca0f8
 <nav class=\"sticky-top navbar navbar-expand-lg fixed-top\">
     <div class=\"container-fluid\">
         <div class=\"navbar-translate\">
-            <a href=\"#pablo\" class=\"navbar-brand\"><img src=\"{{ asset('/assets/img/figuyv2.png') }}\" width=\"120px\" alt=\"Card image cap\"></a>
+            <a href=\"{{ path('home') }}\" class=\"navbar-brand\"><img src=\"{{ asset('/assets/img/figuyv2.png') }}\" width=\"120px\" alt=\"Card image cap\"></a>
             <button class=\"navbar-toggler navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navigation\" aria-controls=\"navigation-index\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
                 <span class=\"navbar-toggler-bar bar1\"></span>
                 <span class=\"navbar-toggler-bar bar2\"></span>
@@ -516,12 +518,6 @@ class __TwigTemplate_b46297f18e917ea1ac4c1835d252acde93d5a6c2d57037d852affaca0f8
         </div>
         <div class=\"collapse navbar-collapse justify-content-center\" id=\"navigation\">
             <ul class=\"navbar-nav\">
-                <li class=\"nav-item\">
-                    <a href=\"{{ path('home') }}\" class=\"nav-link\"><i class=\"fa fa-home\" aria-hidden=\"true\"></i> Accueil</a>
-                </li>
-                <li class=\"nav-item\">
-                    <a href=\"{{ path('main_about') }}\" class=\"nav-link\"><i class=\"fa fa-leaf\"></i> À propos</a>
-                </li>
                 <li class=\"nav-item dropdown\">
                     <a href=\"#\" class=\"nav-link dropdown-toggle\" id=\"navbarDropdown\" role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\"><i class=\"fa fa-cutlery\" aria-hidden=\"true\"></i> Recettes</a>
                     <div class=\"dropdown-perso dropdown-menu\" role=\"menu\" aria-labelledby=\"navbarDropdown\">
@@ -535,6 +531,12 @@ class __TwigTemplate_b46297f18e917ea1ac4c1835d252acde93d5a6c2d57037d852affaca0f8
                 </li>
                 <li class=\"nav-item\">
                     <a href=\"{{ path('recipe_new') }}\" class=\"nav-link\"><i class=\"fa fa-heart\" aria-hidden=\"true\"></i> Partager une recette</a>
+                </li>
+                <li class=\"nav-item\">
+                    <a href=\"{{ path('post_index') }}\" class=\"nav-link\"><i class=\"fa fa-pencil\"></i> Articles</a>
+                </li>
+                <li class=\"nav-item\">
+                    <a href=\"{{ path('main_about') }}\" class=\"nav-link\"><i class=\"fa fa-leaf\"></i> À propos</a>
                 </li>
                 <li class=\"login-button\">
                     {% if is_granted('IS_AUTHENTICATED_FULLY') %}
@@ -654,6 +656,6 @@ class __TwigTemplate_b46297f18e917ea1ac4c1835d252acde93d5a6c2d57037d852affaca0f8
 </body>
 </html>
 
-", "base.html.twig", "/Users/tomaccess/Documents/Sites/reciplink/templates/base.html.twig");
+", "base.html.twig", "/home/cortez/Sites/reciplink/templates/base.html.twig");
     }
 }

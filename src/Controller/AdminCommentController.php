@@ -8,9 +8,11 @@ use App\Form\RecipeCommentType;
 use App\Repository\RecipeCommentRepository;
 use App\Repository\RecipeRepository;
 use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Mailer\MailerInterface;
+use Symfony\Component\Mime\Address;
 use Symfony\Component\Mime\Email;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -58,14 +60,37 @@ class AdminCommentController extends AbstractController
     public function publish($id, RecipeCommentRepository $repository, EntityManagerInterface $manager, MailerInterface  $mailer){
         $recipeComment = $repository->findOneById($id);
         $recipeComment->setPublish(true);
+        $commentateurPseudo = $recipeComment->getUser()->getUsername();
+        $commentateurEmail = $recipeComment->getUser()->getEmail();
+        $reciperPseudo = $recipeComment->getRecipe()->getUser()->getUsername();
+        $reciperEmail = $recipeComment->getRecipe()->getUser()->getEmail();
         $manager->persist($recipeComment);
         $manager->flush();
-        $email = (new Email())
-            ->from('contact@figuy.fr')
-            ->to('jardisindustrie@gmail.com')
-            ->subject('Votre commentaire a été approuvé')
-            ->html("<h3>Félicitation votre commentaire pour la recette " . $recipeComment->getRecipe()->getName() . " à été approuvé </h3>");
+        $email = (new TemplatedEmail())
+            ->from(new Address('aloha@figuy.fr', 'Figuy'))
+            ->to($commentateurEmail)
+            ->subject('Commentaire approuvé !')
+            ->htmlTemplate('emails/commentPublish.html.twig')
+            ->context([
+                'user' => $commentateurPseudo,
+                'recipe' => $recipeComment->getRecipe()->getName(),
+                'link' => 'https://figuy.fr/recette/'. $recipeComment->getRecipe()->getSlug()
+            ]);
         $mailer->send($email);
+
+        $email2 = (new TemplatedEmail())
+            ->from(new Address('aloha@figuy.fr', 'Figuy'))
+            ->to($reciperEmail)
+            ->subject('Nouveau commentaire !')
+            ->htmlTemplate('emails/commentPublishReciper.html.twig')
+            ->context([
+                'user' => $reciperPseudo,
+                'recipe' => $recipeComment->getRecipe()->getName(),
+                'link' => 'https://figuy.fr/recette/'. $recipeComment->getRecipe()->getSlug(),
+                'commentateur' => $commentateurPseudo
+            ]);
+        $mailer->send($email2);
+
         $this->addFlash('success', "Votre commentaire a bien été publier");
         return $this->redirectToRoute('admin_posts_index');
     }

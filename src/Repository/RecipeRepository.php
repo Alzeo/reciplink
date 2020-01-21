@@ -29,6 +29,7 @@ class RecipeRepository extends ServiceEntityRepository
     public function findLatest() {
         return $this->createQueryBuilder('a')
             ->andWhere('a.publish = true')
+            ->orderBy('a.created_at', 'DESC')
             ->setMaxResults(6)
             ->getQuery()
             ->getResult();
@@ -37,6 +38,7 @@ class RecipeRepository extends ServiceEntityRepository
     public function findLatestAside() {
         return $this->createQueryBuilder('a')
             ->andWhere('a.publish = true')
+            ->orderBy('a.created_at', 'DESC')
             ->setMaxResults(3)
             ->getQuery()
             ->getResult();

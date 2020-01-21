@@ -238,6 +238,6 @@ class __TwigTemplate_00c72e7a6b5a481e38e3a3b56b7897bc855c174f960b5c6984d2fa2958e
         })
     </script>
 {% endblock %}
-", "admin/comment/edit.html.twig", "/Users/tomaccess/Documents/Sites/reciplink/templates/admin/comment/edit.html.twig");
+", "admin/comment/edit.html.twig", "/home/cortez/Sites/reciplink/templates/admin/comment/edit.html.twig");
     }
 }

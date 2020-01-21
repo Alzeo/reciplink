@@ -17,12 +17,14 @@ use App\Repository\UserRepository;
 use Doctrine\Common\Persistence\ObjectManager;
 use Egulias\EmailValidator\Warning\CFWSNearAt;
 use Knp\Component\Pager\PaginatorInterface;
+use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\File\Exception\FileException;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Mailer\MailerInterface;
+use Symfony\Component\Mime\Address;
 use Symfony\Component\Mime\Email;
 use Symfony\Component\Routing\Annotation\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Entity;
@@ -104,11 +106,15 @@ class RecipeController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($recipe);
             $entityManager->flush();
-            $email = (new Email())
-                ->from('contact@figuy.fr')
+            $email = (new TemplatedEmail())
+                ->from(new Address('aloha@figuy.fr', 'Figuy'))
                 ->to('jardisindustrie@gmail.com')
-                ->subject('Nouvel recette à modérer !')
-                ->html("<h3>Nouvelle recette vient d'être postée !</h3>");
+                ->subject('Nouvelle recette postée !')
+                ->htmlTemplate('emails/recipeModeration.html.twig')
+                ->context([
+                    'user' => $recipe->getUser()->getUsername(),
+                    'recipe' => $recipe->getName()
+                ]);
             $mailer->send($email);
             $this->addFlash('success', "Votre recette à bien été enregistrée, elle est en cours de validation, vous pouvez néanmoins la partager via votre espace recette. ");
             return $this->redirectToRoute('user_my_recipes');
@@ -160,6 +166,17 @@ class RecipeController extends AbstractController
             $doctrine = $this->getDoctrine()->getManager();
             $doctrine->persist($commentaire);
             $doctrine->flush();
+            $email = (new TemplatedEmail())
+                ->from(new Address('aloha@figuy.fr', 'Figuy'))
+                ->to('jardisindustrie@gmail.com')
+                ->subject('Commentaire en attente de modération !')
+                ->htmlTemplate('emails/commentModeration.html.twig')
+                ->context([
+                    'user' => $commentaire->getUser()->getUsername(),
+                    'recipe' => $commentaire->getRecipe()->getName(),
+                    'link' => $commentaire->getRecipe()->getSlug()
+                ]);
+            $mailer->send($email);
             $this->addFlash('success', "Merci pour votre commentaire ! Il sera visible lorsqu'il aura été vérifié.");
             unset($commentaire);
             unset($form);

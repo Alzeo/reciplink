@@ -8,10 +8,12 @@ use App\Form\RecipeType;
 use App\Repository\RecipeRepository;
 use Doctrine\Common\Persistence\ObjectManager;
 use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Mailer\MailerInterface;
+use Symfony\Component\Mime\Address;
 use Symfony\Component\Mime\Email;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -63,11 +65,16 @@ class AdminRecipeController extends AbstractController
         $recipe->setPublish(true);
         $manager->persist($recipe);
         $manager->flush();
-        $email = (new Email())
-            ->from('contact@figuy.fr')
-            ->to('jardisindustrie@gmail.com')
-            ->subject('Votre recette a été approuvé')
-            ->html("<h3>Félicitation votre recette est désormais visible par tous</h3>");
+        $email = (new TemplatedEmail())
+            ->from(new Address('aloha@figuy.fr', 'Figuy'))
+            ->to($recipe->getUser()->getEmail())
+            ->subject('Recette approuvée !')
+            ->htmlTemplate('emails/recipePublish.html.twig')
+            ->context([
+                'user' => $recipe->getUser()->getUsername(),
+                'recipe' => $recipe->getName(),
+                'link' => 'https://figuy.fr/recette/'. $recipe->getSlug()
+            ]);
         $mailer->send($email);
         $this->addFlash('success', "La recette a bien été publier");
         return $this->redirectToRoute('admin_recipes_index');

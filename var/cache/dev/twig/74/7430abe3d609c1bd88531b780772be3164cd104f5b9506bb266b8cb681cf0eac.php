@@ -216,6 +216,6 @@ class __TwigTemplate_8cf6c9f2a8054ae8d0148e514bba08c53b5d6703d0ddb1cf880d16e09bd
     </div>
     </section>
 {% endblock %}
-", "posts/index.html.twig", "/Users/tomaccess/Documents/Sites/reciplink/templates/posts/index.html.twig");
+", "posts/index.html.twig", "/home/cortez/Sites/reciplink/templates/posts/index.html.twig");
     }
 }

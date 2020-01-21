@@ -159,7 +159,7 @@ class __TwigTemplate_31714965bc647ac53c06cf27e3574b7e641261c747842ca56ec3892da72
                                 </td>
                             </tr>
                             <tr>
-                                <td align=\"left\" style=\"font-size:0px;padding:10px 25px;word-break:break-word;\">
+                                <td align=\"center\" style=\"font-size:0px;padding:10px 25px;word-break:break-word;\">
                                     <div style=\"font-family:helvetica;font-size:20px;line-height:1;text-align:left;color:#F45E43;\">Nouvelle inscription !</div>
                                 </td>
                             </tr>
@@ -341,7 +341,7 @@ class __TwigTemplate_31714965bc647ac53c06cf27e3574b7e641261c747842ca56ec3892da72
                                 </td>
                             </tr>
                             <tr>
-                                <td align=\"left\" style=\"font-size:0px;padding:10px 25px;word-break:break-word;\">
+                                <td align=\"center\" style=\"font-size:0px;padding:10px 25px;word-break:break-word;\">
                                     <div style=\"font-family:helvetica;font-size:20px;line-height:1;text-align:left;color:#F45E43;\">Nouvelle inscription !</div>
                                 </td>
                             </tr>
@@ -373,6 +373,6 @@ class __TwigTemplate_31714965bc647ac53c06cf27e3574b7e641261c747842ca56ec3892da72
 </body>
 
 </html>
-", "emails/welcome.html.twig", "/Users/tomaccess/Documents/Sites/reciplink/templates/emails/welcome.html.twig");
+", "emails/welcome.html.twig", "/home/cortez/Sites/reciplink/templates/emails/welcome.html.twig");
     }
 }
