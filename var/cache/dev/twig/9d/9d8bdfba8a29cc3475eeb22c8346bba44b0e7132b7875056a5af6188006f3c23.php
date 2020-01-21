@@ -49,7 +49,7 @@ class __TwigTemplate_b46297f18e917ea1ac4c1835d252acde93d5a6c2d57037d852affaca0f8
 <html>
 <head>
     <meta charset=\"UTF-8\">
-    <title>RecipeLink - ";
+    <title>Figuy - ";
         // line 5
         $this->displayBlock('title', $context, $blocks);
         echo "</title>
@@ -469,7 +469,7 @@ class __TwigTemplate_b46297f18e917ea1ac4c1835d252acde93d5a6c2d57037d852affaca0f8
 <html>
 <head>
     <meta charset=\"UTF-8\">
-    <title>RecipeLink - {% block title %}{% endblock %}</title>
+    <title>Figuy - {% block title %}{% endblock %}</title>
     <meta name=\"viewport\" content=\"width=device-width, user-scalable=no\"/>
     <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css\" integrity=\"sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh\" crossorigin=\"anonymous\">
     <link href=\"https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.10/css/select2.min.css\" rel=\"stylesheet\" />
@@ -654,6 +654,6 @@ class __TwigTemplate_b46297f18e917ea1ac4c1835d252acde93d5a6c2d57037d852affaca0f8
 </body>
 </html>
 
-", "base.html.twig", "/home/cortez/Sites/reciplink/templates/base.html.twig");
+", "base.html.twig", "/Users/tomaccess/Documents/Sites/reciplink/templates/base.html.twig");
     }
 }

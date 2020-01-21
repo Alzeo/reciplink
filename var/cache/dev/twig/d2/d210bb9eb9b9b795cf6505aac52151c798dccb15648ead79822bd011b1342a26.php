@@ -65,7 +65,7 @@ class __TwigTemplate_bc732fb2178d1a37b60dc431b4102b14c46ee8ce96a7863ba5ebf60b638
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo "Hello ContacController!";
+        echo "Qu'est-ce que Figuy";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -163,7 +163,7 @@ class __TwigTemplate_bc732fb2178d1a37b60dc431b4102b14c46ee8ce96a7863ba5ebf60b638
     {
         return new Source("{% extends 'base.html.twig' %}
 
-{% block title %}Hello ContacController!{% endblock %}
+{% block title %}Qu'est-ce que Figuy{% endblock %}
 
 {% block body %}
     <style>
@@ -208,6 +208,6 @@ class __TwigTemplate_bc732fb2178d1a37b60dc431b4102b14c46ee8ce96a7863ba5ebf60b638
     </div>
 
 {% endblock %}
-", "main/about.html.twig", "/home/cortez/Sites/reciplink/templates/main/about.html.twig");
+", "main/about.html.twig", "/Users/tomaccess/Documents/Sites/reciplink/templates/main/about.html.twig");
     }
 }

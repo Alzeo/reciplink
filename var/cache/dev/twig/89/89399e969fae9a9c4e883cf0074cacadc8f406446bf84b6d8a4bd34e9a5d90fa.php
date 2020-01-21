@@ -65,7 +65,7 @@ class __TwigTemplate_8b881cdc6c1ca90c2d4c3e0d3b5149c9a38c621d467ecaff192f75df851
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo "RecipeLink - Accueil";
+        echo "Découvrez de nouvelles recettes !";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -197,7 +197,7 @@ class __TwigTemplate_8b881cdc6c1ca90c2d4c3e0d3b5149c9a38c621d467ecaff192f75df851
     {
         return new Source("{% extends 'base.html.twig' %}
 
-{% block title %}RecipeLink - Accueil{% endblock %}
+{% block title %}Découvrez de nouvelles recettes !{% endblock %}
 
 {% block body %}
     <style>

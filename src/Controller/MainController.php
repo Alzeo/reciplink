@@ -70,24 +70,24 @@ class MainController extends AbstractController
     }
 
     /**
-     * @Route("/register", name="register")
+     * @Route("/inscription", name="register")
      */
     public function register(Request $request, UserPasswordEncoderInterface $passwordEncoder, MailerInterface $mailer){
         $register = new User();
         $form = $this->createForm(RegisterType::class, $register);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
-            $register->setRoles('ROLE_USER');
+            $register->setRoles(['ROLE_USER']);
             $password = $passwordEncoder->encodePassword($register, $register->getPassword());
             $register->setPassword($password);
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($register);
             $entityManager->flush();
             $email = (new Email())
-                ->from('contact@figuy.fr')
+                ->from('aloha@figuy.fr')
                 ->to('jardisindustrie@gmail.com')
                 ->subject('Nouvel inscription sur le site !')
-                ->html("<h3>Un nouveau membre parmis nous !</h3><p>Bienvenue à" . $register->getUsername() .  "</p>");
+                ->html("<h3>Un nouveau membre parmis nous !</h3><p>Bienvenue à " . $register->getUsername() .  "</p>");
             $mailer->send($email);
             $this->addFlash('success', "Vous êtes inscrit ! Vous pouvez maintenant vous connecter.");
             return $this->redirectToRoute('app_login', [ 'user' => 'null'

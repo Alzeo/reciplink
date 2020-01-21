@@ -114,6 +114,15 @@
     "fzaninotto/faker": {
         "version": "v1.9.1"
     },
+    "guzzlehttp/guzzle": {
+        "version": "6.5.2"
+    },
+    "guzzlehttp/promises": {
+        "version": "v1.3.1"
+    },
+    "guzzlehttp/psr7": {
+        "version": "1.6.1"
+    },
     "jdorn/sql-formatter": {
         "version": "v1.2.17"
     },
@@ -125,6 +134,9 @@
     },
     "knplabs/knp-paginator-bundle": {
         "version": "v5.0.0"
+    },
+    "mailjet/mailjet-apiv3-php": {
+        "version": "v1.4.1"
     },
     "monolog/monolog": {
         "version": "1.25.2"
@@ -156,11 +168,17 @@
     "psr/container": {
         "version": "1.0.0"
     },
+    "psr/http-message": {
+        "version": "1.0.1"
+    },
     "psr/link": {
         "version": "1.0.0"
     },
     "psr/log": {
         "version": "1.1.2"
+    },
+    "ralouphie/getallheaders": {
+        "version": "3.0.3"
     },
     "sensio/framework-extra-bundle": {
         "version": "5.2",
@@ -458,6 +476,15 @@
     },
     "symfony/security-http": {
         "version": "v4.4.1"
+    },
+    "symfony/sendgrid-mailer": {
+        "version": "4.4",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "4.4",
+            "ref": "b46e4f8f1adb2864f0aa9c0ff57aea3324a07199"
+        }
     },
     "symfony/serializer": {
         "version": "v4.4.1"

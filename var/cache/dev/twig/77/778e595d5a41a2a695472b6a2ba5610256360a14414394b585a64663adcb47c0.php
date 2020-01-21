@@ -65,7 +65,7 @@ class __TwigTemplate_cf3b9b60aa756b0288664e7fcc2b55a1fd378d78e5df19d810488af5409
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo "Accueil";
+        echo "Recettes saines | Paléo, Végan, Végétarienne, Végétalienne, sans gluten";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -287,7 +287,7 @@ class __TwigTemplate_cf3b9b60aa756b0288664e7fcc2b55a1fd378d78e5df19d810488af5409
     {
         return new Source("{% extends 'base.html.twig' %}
 
-{% block title %}Accueil{% endblock %}
+{% block title %}Recettes saines | Paléo, Végan, Végétarienne, Végétalienne, sans gluten{% endblock %}
 
 {% block body %}
     <style>
@@ -363,6 +363,6 @@ class __TwigTemplate_cf3b9b60aa756b0288664e7fcc2b55a1fd378d78e5df19d810488af5409
     </section>
 {% endblock %}
 
-", "main/index.html.twig", "/home/cortez/Sites/reciplink/templates/main/index.html.twig");
+", "main/index.html.twig", "/Users/tomaccess/Documents/Sites/reciplink/templates/main/index.html.twig");
     }
 }

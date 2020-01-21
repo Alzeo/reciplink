@@ -65,7 +65,7 @@ class __TwigTemplate_ba658b3e05c208cc727c3d939bd3f1aa0212387d2b428b2baa0e73d89fe
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo " ";
+        echo " Conditions générales d''utilisations ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -162,7 +162,7 @@ class __TwigTemplate_ba658b3e05c208cc727c3d939bd3f1aa0212387d2b428b2baa0e73d89fe
     {
         return new Source("{% extends 'base.html.twig' %}
 
-{% block title %} {% endblock %}
+{% block title %} Conditions générales d''utilisations {% endblock %}
 
 {% block body %}
 <div class=\"content\" style=\"background-image: url({{ asset ('/assets/img/2533.jpg') }}); background-repeat: no-repeat; background-size: cover;\">
@@ -212,6 +212,7 @@ class __TwigTemplate_ba658b3e05c208cc727c3d939bd3f1aa0212387d2b428b2baa0e73d89fe
 
     </div>
 </div>
-{% endblock %}", "main/cgu.html.twig", "/home/cortez/Sites/reciplink/templates/main/cgu.html.twig");
+{% endblock %}
+", "main/cgu.html.twig", "/Users/tomaccess/Documents/Sites/reciplink/templates/main/cgu.html.twig");
     }
 }

@@ -8,5 +8,6 @@ $baseDir = dirname($vendorDir);
 return array(
     'Twig_' => array($vendorDir . '/twig/twig/lib'),
     'ProxyManager\\' => array($vendorDir . '/ocramius/proxy-manager/src'),
+    'Mailjet' => array($vendorDir . '/mailjet/mailjet-apiv3-php/src'),
     'Behat\\Transliterator' => array($vendorDir . '/behat/transliterator/src'),
 );

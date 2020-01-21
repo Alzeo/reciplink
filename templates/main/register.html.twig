@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v3.8.6">
-    <title>S'inscrire'</title>
+    <title>Figuy - S'inscrire</title>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -55,7 +55,7 @@
                 {{ form_widget(form.rgpd) }}
             </p>
         </div>
-        <small><a href="#">Voir les conditions générales</a> </small>
+        <small><a href="{{ path('main_cgu') }}">Voir les conditions générales</a> </small>
 
         <div class="form-group">
             <button class="btn btn-primary btn-lg mt-4">{{ button_label|default("S'inscrire") }}</button>

@@ -41,25 +41,26 @@ class __TwigTemplate_77eae470a72cd11d6ccac896aba146cd14dc40e168a8821d7a64c19cc38
 
         // line 1
         echo "<div class=\"row\">
-    <div class=\"col-4\">
+    <div class=\"col-xs-12 col-md-4\">
         ";
         // line 3
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 3, $this->source); })()), "name", [], "any", false, false, false, 3), 'row');
         echo "
     </div>
-    <div class=\"col-4\">
+    <div class=\"col-xs-12 col-md-4\">
         ";
         // line 6
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 6, $this->source); })()), "quantity", [], "any", false, false, false, 6), 'row');
         echo "
     </div>
-    <div class=\"col-2\">
+    <div class=\"col-xs-12 col-md-2\">
         ";
         // line 9
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 9, $this->source); })()), "quantityUnity", [], "any", false, false, false, 9), 'row');
         echo "
     </div>
-</div>";
+</div>
+";
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
 
@@ -86,15 +87,16 @@ class __TwigTemplate_77eae470a72cd11d6ccac896aba146cd14dc40e168a8821d7a64c19cc38
     public function getSourceContext()
     {
         return new Source("<div class=\"row\">
-    <div class=\"col-4\">
+    <div class=\"col-xs-12 col-md-4\">
         {{ form_row(form.name) }}
     </div>
-    <div class=\"col-4\">
+    <div class=\"col-xs-12 col-md-4\">
         {{ form_row(form.quantity) }}
     </div>
-    <div class=\"col-2\">
+    <div class=\"col-xs-12 col-md-2\">
         {{ form_row(form.quantityUnity) }}
     </div>
-</div>", "recipe/foods.html.twig", "/Users/tomaccess/Documents/Sites/reciplink/templates/recipe/foods.html.twig");
+</div>
+", "recipe/foods.html.twig", "/Users/tomaccess/Documents/Sites/reciplink/templates/recipe/foods.html.twig");
     }
 }

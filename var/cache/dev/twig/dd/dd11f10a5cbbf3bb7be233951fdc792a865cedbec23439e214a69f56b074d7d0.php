@@ -65,7 +65,7 @@ class __TwigTemplate_057a394694b5d055c5ad453baef3f061b9f68c8c3fdc582e69df4eeb44d
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo "RecipeLink - Accueil";
+        echo "Découvrez de nouvelles recettes paléo !";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -93,7 +93,7 @@ class __TwigTemplate_057a394694b5d055c5ad453baef3f061b9f68c8c3fdc582e69df4eeb44d
         // line 10
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/assets/img/background-user.jpg"), "html", null, true);
         echo ");  background-repeat: no-repeat; background-size:cover; background-position: center\">
-        <div class=\"typography-line\"><h2>Découvrez de nouvelles recettes Paléo</h2></div>
+        <h2>Découvrez de nouvelles recettes Paléo</h2>
         <p>Le régime paléo est basé sur le mode de vie de nos ancêtres du paléolithique</p>
     </div>
     <section class=\"howWork text-center container-fluid\" style=\"padding-top: 40px; padding-bottom: 40px; width: 80%;\">
@@ -195,7 +195,7 @@ class __TwigTemplate_057a394694b5d055c5ad453baef3f061b9f68c8c3fdc582e69df4eeb44d
     {
         return new Source("{% extends 'base.html.twig' %}
 
-{% block title %}RecipeLink - Accueil{% endblock %}
+{% block title %}Découvrez de nouvelles recettes paléo !{% endblock %}
 
 {% block body %}
     <style>
@@ -203,7 +203,7 @@ class __TwigTemplate_057a394694b5d055c5ad453baef3f061b9f68c8c3fdc582e69df4eeb44d
         .example-wrapper code { ; padding: 2px 6px; }
     </style>
     <div class=\"jumbotron text-center\" style=\"background-image: url({{ asset ('/assets/img/background-user.jpg') }});  background-repeat: no-repeat; background-size:cover; background-position: center\">
-        <div class=\"typography-line\"><h2>Découvrez de nouvelles recettes Paléo</h2></div>
+        <h2>Découvrez de nouvelles recettes Paléo</h2>
         <p>Le régime paléo est basé sur le mode de vie de nos ancêtres du paléolithique</p>
     </div>
     <section class=\"howWork text-center container-fluid\" style=\"padding-top: 40px; padding-bottom: 40px; width: 80%;\">

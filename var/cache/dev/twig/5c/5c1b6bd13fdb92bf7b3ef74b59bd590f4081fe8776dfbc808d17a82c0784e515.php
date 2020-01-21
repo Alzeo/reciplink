@@ -48,7 +48,7 @@ class __TwigTemplate_39649199bb4d14a07b635054383a592e9b1abee151fabb2dd4a859f89cd
     <meta name=\"description\" content=\"\">
     <meta name=\"author\" content=\"Mark Otto, Jacob Thornton, and Bootstrap contributors\">
     <meta name=\"generator\" content=\"Jekyll v3.8.6\">
-    <title>Se connecter</title>
+    <title>Figuy - Se connecter</title>
 
     <!-- Bootstrap core CSS -->
     <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css\" integrity=\"sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh\" crossorigin=\"anonymous\">
@@ -186,8 +186,6 @@ class __TwigTemplate_39649199bb4d14a07b635054383a592e9b1abee151fabb2dd4a859f89cd
             Mot de passe oublié ?
         </a>
     </div>
-
-    <p class=\"mt-5 mb-3 text-muted\">&copy; 2017-2019</p>
 </form>
 </body>
 </html>
@@ -225,7 +223,7 @@ class __TwigTemplate_39649199bb4d14a07b635054383a592e9b1abee151fabb2dd4a859f89cd
     <meta name=\"description\" content=\"\">
     <meta name=\"author\" content=\"Mark Otto, Jacob Thornton, and Bootstrap contributors\">
     <meta name=\"generator\" content=\"Jekyll v3.8.6\">
-    <title>Se connecter</title>
+    <title>Figuy - Se connecter</title>
 
     <!-- Bootstrap core CSS -->
     <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css\" integrity=\"sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh\" crossorigin=\"anonymous\">
@@ -314,11 +312,9 @@ class __TwigTemplate_39649199bb4d14a07b635054383a592e9b1abee151fabb2dd4a859f89cd
             Mot de passe oublié ?
         </a>
     </div>
-
-    <p class=\"mt-5 mb-3 text-muted\">&copy; 2017-2019</p>
 </form>
 </body>
 </html>
-", "security/signin.html.twig", "/home/cortez/Sites/reciplink/templates/security/signin.html.twig");
+", "security/signin.html.twig", "/Users/tomaccess/Documents/Sites/reciplink/templates/security/signin.html.twig");
     }
 }

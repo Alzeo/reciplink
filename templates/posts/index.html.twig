@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}RecipeLink - Accueil{% endblock %}
+
+{% block body %}
+    <style>
+        .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+        .example-wrapper code { ; padding: 2px 6px; }
+    </style>
+    <div class="jumbotron text-center" style="background-image: url({{ asset ('/assets/img/background-user.jpg') }});  background-repeat: no-repeat; background-size:cover; background-position: center">
+        <div class="typography-line"><h2>Les articles santé Figuy</h2></div>
+        <p>Apprenez à etre en bonne santé grâce à nos astuces santé</p>
+    </div>
+
+    <div class="container">
+        <div class="row">
+                {% for post in posts %}
+            <div class="col-md-4">
+                <div class="card text-center">
+                    <a href="{{ path('post_show', {'slug': post.slug}) }}"><img class="card-img-top" src="{{ asset('uploads/posts/' ~ post.image) }}" alt="article {{ post.title }}"> </a>
+                    <div class="card-body">
+                        <small class="green">{{ post.createdAt|date('d/m/Y') }}</small>
+                        <h5 class="card-title">{{ post.title }}</h5>
+                        <p class="card-text">
+                            {{ post.extract }}
+                        </p>
+                        <a href="{{ path ('post_show', {'slug': post.slug })}}" class="btn btn-success">Voir l'article</a>
+                    </div>
+                </div>
+            </div>
+                {% endfor %}
+        </div>
+        <div class="pagination justify-content-center">
+            {{ knp_pagination_render(posts) }}
+        </div>
+    </div>
+    </section>
+{% endblock %}

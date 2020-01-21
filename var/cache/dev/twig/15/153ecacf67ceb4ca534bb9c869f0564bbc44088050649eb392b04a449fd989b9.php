@@ -48,7 +48,7 @@ class __TwigTemplate_b1e0e5ab628f455751638ac5508e6d45b051a9aaea15779f520c3ee1bb2
     <meta name=\"description\" content=\"\">
     <meta name=\"author\" content=\"Mark Otto, Jacob Thornton, and Bootstrap contributors\">
     <meta name=\"generator\" content=\"Jekyll v3.8.6\">
-    <title>S'inscrire'</title>
+    <title>Figuy - S'inscrire</title>
 
     <!-- Bootstrap core CSS -->
     <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css\" integrity=\"sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh\" crossorigin=\"anonymous\">
@@ -130,7 +130,10 @@ class __TwigTemplate_b1e0e5ab628f455751638ac5508e6d45b051a9aaea15779f520c3ee1bb2
         echo "
             </p>
         </div>
-        <small><a href=\"#\">Voir les conditions générales</a> </small>
+        <small><a href=\"";
+        // line 58
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("main_cgu");
+        echo "\">Voir les conditions générales</a> </small>
 
         <div class=\"form-group\">
             <button class=\"btn btn-primary btn-lg mt-4\">";
@@ -165,7 +168,7 @@ class __TwigTemplate_b1e0e5ab628f455751638ac5508e6d45b051a9aaea15779f520c3ee1bb2
 
     public function getDebugInfo()
     {
-        return array (  143 => 63,  138 => 61,  129 => 55,  125 => 54,  119 => 51,  115 => 50,  111 => 49,  107 => 48,  103 => 47,  98 => 45,  92 => 42,  65 => 18,  61 => 17,  43 => 1,);
+        return array (  146 => 63,  141 => 61,  135 => 58,  129 => 55,  125 => 54,  119 => 51,  115 => 50,  111 => 49,  107 => 48,  103 => 47,  98 => 45,  92 => 42,  65 => 18,  61 => 17,  43 => 1,);
     }
 
     public function getSourceContext()
@@ -178,7 +181,7 @@ class __TwigTemplate_b1e0e5ab628f455751638ac5508e6d45b051a9aaea15779f520c3ee1bb2
     <meta name=\"description\" content=\"\">
     <meta name=\"author\" content=\"Mark Otto, Jacob Thornton, and Bootstrap contributors\">
     <meta name=\"generator\" content=\"Jekyll v3.8.6\">
-    <title>S'inscrire'</title>
+    <title>Figuy - S'inscrire</title>
 
     <!-- Bootstrap core CSS -->
     <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css\" integrity=\"sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh\" crossorigin=\"anonymous\">
@@ -227,7 +230,7 @@ class __TwigTemplate_b1e0e5ab628f455751638ac5508e6d45b051a9aaea15779f520c3ee1bb2
                 {{ form_widget(form.rgpd) }}
             </p>
         </div>
-        <small><a href=\"#\">Voir les conditions générales</a> </small>
+        <small><a href=\"{{ path('main_cgu') }}\">Voir les conditions générales</a> </small>
 
         <div class=\"form-group\">
             <button class=\"btn btn-primary btn-lg mt-4\">{{ button_label|default(\"S'inscrire\") }}</button>
@@ -235,6 +238,6 @@ class __TwigTemplate_b1e0e5ab628f455751638ac5508e6d45b051a9aaea15779f520c3ee1bb2
         {{ form_end(form) }}
     </div>
 </div>
-", "main/register.html.twig", "/home/cortez/Sites/reciplink/templates/main/register.html.twig");
+", "main/register.html.twig", "/Users/tomaccess/Documents/Sites/reciplink/templates/main/register.html.twig");
     }
 }
