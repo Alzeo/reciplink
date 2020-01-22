@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Vos armes pour vivre en pleine santé{% endblock %}
+{% block meta %}
+    <meta name="description" content="Découvrez nos programmes qui vous permettre de jouir d'une vie saine." />
+    <meta property="og:title" content="Figuy - écouvrez nos programmes qui vous permettre de jouir d'une vie saine." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://figuy.fr/jouvance" />
+    <meta property="og:image" content="https://figuy.fr/library/figuyv2.png" />
+{% endblock %}
+
+{% block body %}
+    <div class="jumbotron text-center" style="background-image: url({{ asset ('/assets/img/background-user.jpg') }});  background-repeat: no-repeat; background-size:cover; background-position: center">
+        <h2>Les programmes jouvance de Figuy</h2>
+        <p>Mettez toutes les chances de votre côté pour jouir d'une vie en pleine santé.</p>
+    </div>
+    <div class="container">
+        <div class="block-programme shadow-lg" style="padding: 20px;">
+            <div class="row">
+                <div class="col-xs-12 col-md-4">
+                    <img src="{{ asset('/assets/img/intesttinreset.jpg') }}" width="250px"/>
+                </div>
+                <div class="col-xs-12 col-md-8">
+                    <h3>Intestin Reset</h3>
+                    <p>Vous souffre de problèmes intestinaux qui vous gâche la vie ? Découvrez notre méthode méconnue des médecins
+                    et restaurer votre système digestif, fini la fatigue chronique, les maux de ventres, migraines.</p>
+                    <a href="#" class="btn btn-success">En savoir plus</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

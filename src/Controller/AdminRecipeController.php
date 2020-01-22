@@ -8,6 +8,7 @@ use App\Form\RecipeType;
 use App\Repository\RecipeRepository;
 use Doctrine\Common\Persistence\ObjectManager;
 use Doctrine\ORM\EntityManagerInterface;
+use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -22,11 +23,16 @@ class AdminRecipeController extends AbstractController
     /**
      * @Route("/admin/recipes", name="admin_recipes_index")
      */
-    public function index(RecipeRepository $repository)
+    public function index(RecipeRepository $repository, Request $request, PaginatorInterface $paginator)
     {
+        $recipes = $paginator->paginate($repository->findAll(),
+            $request->query->getInt('page', 1),
+            12/*page number*/
+        );
+
         $user = $this->getUser();
         return $this->render('admin/recipe/index.html.twig', [
-            'recipes' => $repository->findAll(),
+            'recipes' => $recipes,
             'user' => $user
         ]);
     }

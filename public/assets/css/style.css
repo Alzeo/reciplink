@@ -546,3 +546,13 @@ li.login-button {
     color: rgba(7, 7, 7, 0.55);
 }
 
+.block-programme {
+    border-radius: 13px;
+    border-left:5px solid #6bd098;
+    transition: 0.5s;
+}
+
+.block-programme:hover {
+    margin-left:10px;
+    transition: 0.5s;
+}

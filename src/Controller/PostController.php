@@ -25,7 +25,7 @@ class PostController extends AbstractController
      */
     public function show($slug, Post $post, PostRepository $postRepository, RecipeRepository $recipeRepository): Response
     {
-        $posts = $postRepository->findLatest();
+        $posts = $postRepository->findLatestAside();
         return $this->render('posts/show.html.twig', [
            'post' => $postRepository->findOneBySlug($slug),
             'posts' => $posts,

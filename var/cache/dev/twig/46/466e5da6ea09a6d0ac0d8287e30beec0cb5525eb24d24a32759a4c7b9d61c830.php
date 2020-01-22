@@ -157,6 +157,12 @@ class __TwigTemplate_001f6116b791e3401382a06b21db41f906adea9edb5e07d3dde90f744fb
         // line 42
         echo "            </tbody>
         </table>
+        <div class=\"pagination justify-content-center\">
+            ";
+        // line 45
+        echo $this->extensions['Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension']->render($this->env, (isset($context["comments"]) || array_key_exists("comments", $context) ? $context["comments"] : (function () { throw new RuntimeError('Variable "comments" does not exist.', 45, $this->source); })()));
+        echo "
+        </div>
     </div>
 ";
         
@@ -179,7 +185,7 @@ class __TwigTemplate_001f6116b791e3401382a06b21db41f906adea9edb5e07d3dde90f744fb
 
     public function getDebugInfo()
     {
-        return array (  158 => 42,  147 => 37,  142 => 35,  138 => 34,  134 => 33,  131 => 32,  127 => 31,  110 => 16,  100 => 12,  93 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  163 => 45,  158 => 42,  147 => 37,  142 => 35,  138 => 34,  134 => 33,  131 => 32,  127 => 31,  110 => 16,  100 => 12,  93 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -227,8 +233,11 @@ class __TwigTemplate_001f6116b791e3401382a06b21db41f906adea9edb5e07d3dde90f744fb
             {% endfor %}
             </tbody>
         </table>
+        <div class=\"pagination justify-content-center\">
+            {{ knp_pagination_render(comments) }}
+        </div>
     </div>
 {% endblock %}
-", "admin/comment/index.html.twig", "/home/cortez/Sites/reciplink/templates/admin/comment/index.html.twig");
+", "admin/comment/index.html.twig", "/Users/tomaccess/Documents/Sites/reciplink/templates/admin/comment/index.html.twig");
     }
 }

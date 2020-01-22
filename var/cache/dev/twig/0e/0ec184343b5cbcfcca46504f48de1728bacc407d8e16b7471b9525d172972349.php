@@ -163,6 +163,12 @@ class __TwigTemplate_2a85034f2486abac12ff4c4efce942f32313af242c31b04ba32703af9d3
         // line 44
         echo "        </tbody>
     </table>
+    <div class=\"pagination justify-content-center\">
+        ";
+        // line 47
+        echo $this->extensions['Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension']->render($this->env, (isset($context["recipes"]) || array_key_exists("recipes", $context) ? $context["recipes"] : (function () { throw new RuntimeError('Variable "recipes" does not exist.', 47, $this->source); })()));
+        echo "
+    </div>
 </div>
 ";
         
@@ -185,7 +191,7 @@ class __TwigTemplate_2a85034f2486abac12ff4c4efce942f32313af242c31b04ba32703af9d3
 
     public function getDebugInfo()
     {
-        return array (  164 => 44,  154 => 40,  150 => 39,  145 => 37,  141 => 36,  137 => 35,  134 => 34,  130 => 32,  126 => 30,  124 => 29,  119 => 27,  115 => 26,  112 => 25,  108 => 24,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  169 => 47,  164 => 44,  154 => 40,  150 => 39,  145 => 37,  141 => 36,  137 => 35,  134 => 34,  130 => 32,  126 => 30,  124 => 29,  119 => 27,  115 => 26,  112 => 25,  108 => 24,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -235,8 +241,11 @@ class __TwigTemplate_2a85034f2486abac12ff4c4efce942f32313af242c31b04ba32703af9d3
         {% endfor %}
         </tbody>
     </table>
+    <div class=\"pagination justify-content-center\">
+        {{ knp_pagination_render(recipes) }}
+    </div>
 </div>
 {% endblock %}
-", "admin/recipe/index.html.twig", "/home/cortez/Sites/reciplink/templates/admin/recipe/index.html.twig");
+", "admin/recipe/index.html.twig", "/Users/tomaccess/Documents/Sites/reciplink/templates/admin/recipe/index.html.twig");
     }
 }

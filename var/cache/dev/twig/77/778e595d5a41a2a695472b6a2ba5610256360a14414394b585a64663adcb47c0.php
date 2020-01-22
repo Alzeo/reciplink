@@ -26,6 +26,7 @@ class __TwigTemplate_cf3b9b60aa756b0288664e7fcc2b55a1fd378d78e5df19d810488af5409
 
         $this->blocks = [
             'title' => [$this, 'block_title'],
+            'meta' => [$this, 'block_meta'],
             'body' => [$this, 'block_body'],
         ];
     }
@@ -75,6 +76,31 @@ class __TwigTemplate_cf3b9b60aa756b0288664e7fcc2b55a1fd378d78e5df19d810488af5409
     }
 
     // line 5
+    public function block_meta($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "meta"));
+
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "meta"));
+
+        // line 6
+        echo "    <meta name=\"description\" content=\"Découvrez et partagez des recettes sains. Recettes paléo, végan, végétariennes, végétaliennes, sans gluten\" />
+    <meta property=\"og:title\" content=\"Figuy - Recettes saines | Paléo, Végan, Végétarienne, Végétalienne, sans gluten \" />
+    <meta property=\"og:type\" content=\"website\" />
+    <meta property=\"og:url\" content=\"https://figuy.fr\" />
+    <meta property=\"og:image\" content=\"https://figuy.fr/library/figuyv2.png\" />
+";
+        
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
+
+        
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
+
+    }
+
+    // line 13
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -84,24 +110,24 @@ class __TwigTemplate_cf3b9b60aa756b0288664e7fcc2b55a1fd378d78e5df19d810488af5409
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 6
+        // line 14
         echo "    <style>
         .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
         .example-wrapper code { ; padding: 2px 6px; }
     </style>
     ";
-        // line 10
+        // line 18
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 10, $this->source); })()), "flashes", [0 => "success"], "method", false, false, false, 10));
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 18, $this->source); })()), "flashes", [0 => "success"], "method", false, false, false, 18));
         foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
-            // line 11
+            // line 19
             echo "        <div class=\"alert alert-success\" style=\"background: #86d9ab !important;\">
             <div class=\"container\">
                 <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">
                     <i class=\"fa fa-times\"></i>
                 </button>
                 <span><i class=\"fa fa-bell\"></i> ";
-            // line 16
+            // line 24
             echo twig_escape_filter($this->env, $context["message"], "html", null, true);
             echo "</span>
             </div>
@@ -111,17 +137,17 @@ class __TwigTemplate_cf3b9b60aa756b0288664e7fcc2b55a1fd378d78e5df19d810488af5409
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['message'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 20
+        // line 28
         echo "
     <div class=\"jumbotron position-relative overflow-hidden text-center bg-light\" style=\"background-image: url(";
-        // line 21
+        // line 29
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/assets/img/2533.jpg"), "html", null, true);
         echo ");  background-repeat: no-repeat; background-size: cover;\">
         <div class=\"col-md-6 p-lg-6 mx-auto my-6\" style=\"padding-top:120px; padding-bottom:120px; line-height: 60px\">
             <h1 class=\"display-4 font-weight-normal\" >Que des recettes saines <span class=\"green\"> avec des ingrédients sains </span></h1>
             <p class=\"lead font-weight-normal\" style=\"margin-top:10px; margin-bottom:30px;\">Une manière simple de partager vos recettes</p>
             <a class=\"btn btn-success btn-lg\" href=\"";
-        // line 25
+        // line 33
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("main_about");
         echo "\"><i class=\"fa fa-leaf\"></i> Comment ça marche ?</a>
         </div>
@@ -131,9 +157,9 @@ class __TwigTemplate_cf3b9b60aa756b0288664e7fcc2b55a1fd378d78e5df19d810488af5409
         <h2 class=\"text-uppercase\">Dernières recettes</h2>
         <div class=\"row text-center\" style=\"margin-top:80px;\">
                 ";
-        // line 32
+        // line 40
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["recipes"]) || array_key_exists("recipes", $context) ? $context["recipes"] : (function () { throw new RuntimeError('Variable "recipes" does not exist.', 32, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["recipes"]) || array_key_exists("recipes", $context) ? $context["recipes"] : (function () { throw new RuntimeError('Variable "recipes" does not exist.', 40, $this->source); })()));
         $context['loop'] = [
           'parent' => $context['_parent'],
           'index0' => 0,
@@ -148,10 +174,10 @@ class __TwigTemplate_cf3b9b60aa756b0288664e7fcc2b55a1fd378d78e5df19d810488af5409
             $context['loop']['last'] = 1 === $length;
         }
         foreach ($context['_seq'] as $context["_key"] => $context["recipe"]) {
-            // line 33
+            // line 41
             echo "                    ";
-            $this->loadTemplate("recipe/_recipe.html.twig", "main/index.html.twig", 33)->display($context);
-            // line 34
+            $this->loadTemplate("recipe/_recipe.html.twig", "main/index.html.twig", 41)->display($context);
+            // line 42
             echo "                ";
             ++$context['loop']['index0'];
             ++$context['loop']['index'];
@@ -165,11 +191,11 @@ class __TwigTemplate_cf3b9b60aa756b0288664e7fcc2b55a1fd378d78e5df19d810488af5409
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['recipe'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 35
+        // line 43
         echo "        </div>
     </section>
     <section class=\"block-regime\" style=\"background-image: url(";
-        // line 37
+        // line 45
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/assets/img/select-program-background.jpg"), "html", null, true);
         echo ");  background-repeat: no-repeat; background-size: cover;\">
        <div class=\"container\">
@@ -177,7 +203,7 @@ class __TwigTemplate_cf3b9b60aa756b0288664e7fcc2b55a1fd378d78e5df19d810488af5409
                <div class=\"col-xs-12 col-md-6\">
                    <figure style=\"margin-left:-140px;\">
                        <img src=\"";
-        // line 42
+        // line 50
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/assets/img/select-program-image.png"), "html", null, true);
         echo "\" height=\"420rem\"/>
                    </figure>
@@ -185,19 +211,19 @@ class __TwigTemplate_cf3b9b60aa756b0288664e7fcc2b55a1fd378d78e5df19d810488af5409
                <div class=\"col-xs-12 col-md-6 regime-link\">
                    <h2>Quel régime suivez-vous ?</h2>
                    <a href=\"";
-        // line 47
+        // line 55
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("paleo_recipe");
         echo "\" class=\"btn btn-success btn-block btn-outline-success\"> Paléovore </a>
                    <a href=\"";
-        // line 48
+        // line 56
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("vegetarien_recipe");
         echo "\" class=\"btn btn-success btn-block btn-outline-success\"> Végétarien </a>
                    <a href=\"";
-        // line 49
+        // line 57
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("vegetalien_recipe");
         echo "\" class=\"btn btn-success btn-block btn-outline-success\"> Végétalien </a>
                    <a href=\"";
-        // line 50
+        // line 58
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("vegan_recipe");
         echo "\" class=\"btn btn-success btn-block btn-outline-success\"> Végan </a>
                </div>
@@ -209,9 +235,9 @@ class __TwigTemplate_cf3b9b60aa756b0288664e7fcc2b55a1fd378d78e5df19d810488af5409
         <h2 class=\"mb-5 text-uppercase\">Derniers articles</h2>
         <div class=\"row text-center\" style=\"margin-top:80px;\">
             ";
-        // line 59
+        // line 67
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["posts"]) || array_key_exists("posts", $context) ? $context["posts"] : (function () { throw new RuntimeError('Variable "posts" does not exist.', 59, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["posts"]) || array_key_exists("posts", $context) ? $context["posts"] : (function () { throw new RuntimeError('Variable "posts" does not exist.', 67, $this->source); })()));
         $context['loop'] = [
           'parent' => $context['_parent'],
           'index0' => 0,
@@ -226,7 +252,7 @@ class __TwigTemplate_cf3b9b60aa756b0288664e7fcc2b55a1fd378d78e5df19d810488af5409
             $context['loop']['last'] = 1 === $length;
         }
         foreach ($context['_seq'] as $context["_key"] => $context["post"]) {
-            // line 60
+            // line 68
             echo "                ";
             echo twig_include($this->env, $context, "posts/_posts.html.twig");
             echo "
@@ -243,7 +269,7 @@ class __TwigTemplate_cf3b9b60aa756b0288664e7fcc2b55a1fd378d78e5df19d810488af5409
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['post'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 62
+        // line 70
         echo "        </div>
     </section>
 <section class=\"block-newsletter text-center container-fluid mt-5\">
@@ -280,7 +306,7 @@ class __TwigTemplate_cf3b9b60aa756b0288664e7fcc2b55a1fd378d78e5df19d810488af5409
 
     public function getDebugInfo()
     {
-        return array (  247 => 62,  230 => 60,  213 => 59,  201 => 50,  197 => 49,  193 => 48,  189 => 47,  181 => 42,  173 => 37,  169 => 35,  155 => 34,  152 => 33,  135 => 32,  125 => 25,  118 => 21,  115 => 20,  105 => 16,  98 => 11,  94 => 10,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  273 => 70,  256 => 68,  239 => 67,  227 => 58,  223 => 57,  219 => 56,  215 => 55,  207 => 50,  199 => 45,  195 => 43,  181 => 42,  178 => 41,  161 => 40,  151 => 33,  144 => 29,  141 => 28,  131 => 24,  124 => 19,  120 => 18,  114 => 14,  104 => 13,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -288,6 +314,14 @@ class __TwigTemplate_cf3b9b60aa756b0288664e7fcc2b55a1fd378d78e5df19d810488af5409
         return new Source("{% extends 'base.html.twig' %}
 
 {% block title %}Recettes saines | Paléo, Végan, Végétarienne, Végétalienne, sans gluten{% endblock %}
+
+{% block meta %}
+    <meta name=\"description\" content=\"Découvrez et partagez des recettes sains. Recettes paléo, végan, végétariennes, végétaliennes, sans gluten\" />
+    <meta property=\"og:title\" content=\"Figuy - Recettes saines | Paléo, Végan, Végétarienne, Végétalienne, sans gluten \" />
+    <meta property=\"og:type\" content=\"website\" />
+    <meta property=\"og:url\" content=\"https://figuy.fr\" />
+    <meta property=\"og:image\" content=\"https://figuy.fr/library/figuyv2.png\" />
+{% endblock %}
 
 {% block body %}
     <style>
@@ -363,6 +397,6 @@ class __TwigTemplate_cf3b9b60aa756b0288664e7fcc2b55a1fd378d78e5df19d810488af5409
     </section>
 {% endblock %}
 
-", "main/index.html.twig", "/home/cortez/Sites/reciplink/templates/main/index.html.twig");
+", "main/index.html.twig", "/Users/tomaccess/Documents/Sites/reciplink/templates/main/index.html.twig");
     }
 }

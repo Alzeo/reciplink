@@ -8,6 +8,7 @@ use App\Form\RecipeCommentType;
 use App\Repository\RecipeCommentRepository;
 use App\Repository\RecipeRepository;
 use Doctrine\ORM\EntityManagerInterface;
+use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -21,11 +22,16 @@ class AdminCommentController extends AbstractController
     /**
      * @Route("/admin/comments", name="admin_comments_index")
      */
-    public function index(RecipeCommentRepository $repository)
+    public function index(RecipeCommentRepository $repository, PaginatorInterface $paginator, Request $request)
     {
+        $commentaires = $paginator->paginate($repository->findAll(),
+            $request->query->getInt('page', 1),
+            12/*page number*/
+        );
+
         $user = $this->getUser();
         return $this->render('admin/comment/index.html.twig', [
-            'comments' => $repository->findAll(),
+            'comments' => $commentaires,
             'user' => $user
         ]);
     }

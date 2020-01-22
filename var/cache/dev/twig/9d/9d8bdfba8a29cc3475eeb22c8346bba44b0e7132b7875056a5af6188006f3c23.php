@@ -120,76 +120,82 @@ class __TwigTemplate_b46297f18e917ea1ac4c1835d252acde93d5a6c2d57037d852affaca0f8
         </div>
         <div class=\"collapse navbar-collapse justify-content-center\" id=\"navigation\">
             <ul class=\"navbar-nav\">
+                <li class=\"nav-item\">
+                    <a href=\"";
+        // line 53
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
+        echo "\" class=\"nav-link\"><i class=\"fa fa-home\" aria-hidden=\"true\"></i> Accueil</a>
+                </li>
                 <li class=\"nav-item dropdown\">
                     <a href=\"#\" class=\"nav-link dropdown-toggle\" id=\"navbarDropdown\" role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\"><i class=\"fa fa-cutlery\" aria-hidden=\"true\"></i> Recettes</a>
                     <div class=\"dropdown-perso dropdown-menu\" role=\"menu\" aria-labelledby=\"navbarDropdown\">
                         <a class=\"dropdown-item\" href=\"";
-        // line 55
+        // line 58
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("paleo_recipe");
         echo "\">Paléo</a>
                         <a class=\"dropdown-item\" href=\"";
-        // line 56
+        // line 59
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("vegetarien_recipe");
         echo "\">Végétarien</a>
                         <a class=\"dropdown-item\" href=\"";
-        // line 57
+        // line 60
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("vegetalien_recipe");
         echo "\">Végétalien</a>
                         <a class=\"dropdown-item\" href=\"";
-        // line 58
+        // line 61
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("vegan_recipe");
         echo "\">Végan</a>
                         <div class=\"dropdown-divider\"></div>
                         <a class=\"dropdown-item\" href=\"";
-        // line 60
+        // line 63
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("discover");
         echo "\">Découvrir</a>
                     </div>
                 </li>
                 <li class=\"nav-item\">
                     <a href=\"";
-        // line 64
+        // line 67
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("recipe_new");
         echo "\" class=\"nav-link\"><i class=\"fa fa-heart\" aria-hidden=\"true\"></i> Partager une recette</a>
                 </li>
                 <li class=\"nav-item\">
                     <a href=\"";
-        // line 67
+        // line 70
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("post_index");
         echo "\" class=\"nav-link\"><i class=\"fa fa-pencil\"></i> Articles</a>
                 </li>
                 <li class=\"nav-item\">
                     <a href=\"";
-        // line 70
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("main_about");
-        echo "\" class=\"nav-link\"><i class=\"fa fa-leaf\"></i> À propos</a>
+        // line 73
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("programme_index");
+        echo "\" class=\"nav-link\"><i class=\"fa fa-glass\"></i> Centenaire</a>
                 </li>
                 <li class=\"login-button\">
                     ";
-        // line 73
+        // line 76
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("IS_AUTHENTICATED_FULLY")) {
-            // line 74
+            // line 77
             echo "                <li class=\"nav-item dropdown\">
                     <a href=\"#\" class=\"nav-link dropdown-toggle\" id=\"navbarDropdown\" role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\"><i class=\"fa fa-user\" aria-hidden=\"true\"></i> ";
-            // line 75
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 75, $this->source); })()), "user", [], "any", false, false, false, 75), "username", [], "any", false, false, false, 75), "html", null, true);
+            // line 78
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 78, $this->source); })()), "user", [], "any", false, false, false, 78), "username", [], "any", false, false, false, 78), "html", null, true);
             echo "</a>
                     <div class=\"dropdown-perso dropdown-menu\" role=\"menu\" aria-labelledby=\"navbarDropdown\">
                         <a class=\"dropdown-item\" href=\"";
-            // line 77
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("user_show", ["username" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 77, $this->source); })()), "user", [], "any", false, false, false, 77), "username", [], "any", false, false, false, 77)]), "html", null, true);
+            // line 80
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("user_show", ["username" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 80, $this->source); })()), "user", [], "any", false, false, false, 80), "username", [], "any", false, false, false, 80)]), "html", null, true);
             echo "\">Mes informations</a>
                         <a class=\"dropdown-item\" href=\"";
-            // line 78
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("user_save_recipe", ["username" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 78, $this->source); })()), "user", [], "any", false, false, false, 78), "username", [], "any", false, false, false, 78)]), "html", null, true);
+            // line 81
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("user_save_recipe", ["username" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 81, $this->source); })()), "user", [], "any", false, false, false, 81), "username", [], "any", false, false, false, 81)]), "html", null, true);
             echo "\">Recettes enregistrées</a>
                         <a class=\"dropdown-item\" href=\"";
-            // line 79
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("user_my_recipes", ["username" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 79, $this->source); })()), "user", [], "any", false, false, false, 79), "username", [], "any", false, false, false, 79)]), "html", null, true);
+            // line 82
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("user_my_recipes", ["username" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 82, $this->source); })()), "user", [], "any", false, false, false, 82), "username", [], "any", false, false, false, 82)]), "html", null, true);
             echo "\">Mes recettes</a>
                         <div class=\"dropdown-divider\"></div>
                         <a class=\"dropdown-item\" href=\"";
-            // line 81
+            // line 84
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
             echo "\"><i class=\"fa fa-sign-out\" style=\"color:#9c9995;\"></i> Se déconnecter</a>
                     </div>
@@ -197,34 +203,34 @@ class __TwigTemplate_b46297f18e917ea1ac4c1835d252acde93d5a6c2d57037d852affaca0f8
             </ul>
             ";
         } else {
-            // line 86
+            // line 89
             echo "                <a href=\"";
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("register");
             echo "\"type=\"button\" class=\"mr-1 btn btn-success text-white\"> S'inscrire</a>
                 <a href=\"";
-            // line 87
+            // line 90
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
             echo "\"type=\"button\" class=\"mr-1 btn btn-outline-success\"> Se connecter</a>
             ";
         }
-        // line 89
+        // line 92
         echo "                </li>
         </div>
     </div>
 </nav>
 ";
-        // line 93
+        // line 96
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 93, $this->source); })()), "flashes", [0 => "success"], "method", false, false, false, 93));
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 96, $this->source); })()), "flashes", [0 => "success"], "method", false, false, false, 96));
         foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
-            // line 94
+            // line 97
             echo "    <div class=\"alert alert-success\" style=\"background: #86d9ab !important;\">
         <div class=\"container\">
             <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">
                 <i class=\"fa fa-times\"></i>
             </button>
             <span><i class=\"fa fa-bell\"></i> ";
-            // line 99
+            // line 102
             echo $context["message"];
             echo "</span>
         </div>
@@ -234,9 +240,9 @@ class __TwigTemplate_b46297f18e917ea1ac4c1835d252acde93d5a6c2d57037d852affaca0f8
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['message'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 103
+        // line 106
         $this->displayBlock('body', $context, $blocks);
-        // line 105
+        // line 108
         echo "<footer >
     <div class=\"container py-5\">
     <div class=\"row\">
@@ -248,19 +254,19 @@ class __TwigTemplate_b46297f18e917ea1ac4c1835d252acde93d5a6c2d57037d852affaca0f8
             <h5>Recettes</h5>
             <ul class=\"list-unstyled text-small\">
                 <li><a class=\"text-muted\" href=\"";
-        // line 115
+        // line 118
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("paleo_recipe");
         echo "\">Paléo</a></li>
                 <li><a class=\"text-muted\" href=\"";
-        // line 116
+        // line 119
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("vegetarien_recipe");
         echo "\">Végétarien</a></li>
                 <li><a class=\"text-muted\" href=\"";
-        // line 117
+        // line 120
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("vegetalien_recipe");
         echo "\">Végétalien</a></li>
                 <li><a class=\"text-muted\" href=\"";
-        // line 118
+        // line 121
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("vegan_recipe");
         echo "\">Végan</a></li>
             </ul>
@@ -269,11 +275,11 @@ class __TwigTemplate_b46297f18e917ea1ac4c1835d252acde93d5a6c2d57037d852affaca0f8
             <h5>Figuy</h5>
             <ul class=\"list-unstyled text-small\">
                 <li><a class=\"text-muted\" href=\"";
-        // line 124
+        // line 127
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("contact");
         echo "\">Contact</a></li>
                 <li><a class=\"text-muted\" href=\"";
-        // line 125
+        // line 128
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("main_cgu");
         echo "\">CGU</a></li>
             </ul>
@@ -293,11 +299,11 @@ class __TwigTemplate_b46297f18e917ea1ac4c1835d252acde93d5a6c2d57037d852affaca0f8
 <script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js\" integrity=\"sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6\" crossorigin=\"anonymous\"></script>
 <script src=\"https://demos.creative-tim.com/paper-kit-2/assets/js/paper-kit.min.js?v=2.2.0\"></script>
 <script src=\"";
-        // line 142
+        // line 145
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/assets/js/bootstrap.switch.js"), "html", null, true);
         echo "\"></script>
 <script src=\"";
-        // line 143
+        // line 146
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/assets/js/nouislider.min.js"), "html", null, true);
         echo "\"></script>
 <script>
@@ -342,9 +348,9 @@ class __TwigTemplate_b46297f18e917ea1ac4c1835d252acde93d5a6c2d57037d852affaca0f8
 <script type=\"text/javascript\" src=\"https://platform-api.sharethis.com/js/sharethis.js#property=5e13b83fdd527900136b177a&product=inline-share-buttons\" async=\"async\"></script>
 
 ";
-        // line 185
+        // line 188
         $this->displayBlock('javascript', $context, $blocks);
-        // line 187
+        // line 190
         echo "</body>
 </html>
 
@@ -414,7 +420,7 @@ class __TwigTemplate_b46297f18e917ea1ac4c1835d252acde93d5a6c2d57037d852affaca0f8
 
     }
 
-    // line 103
+    // line 106
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -432,7 +438,7 @@ class __TwigTemplate_b46297f18e917ea1ac4c1835d252acde93d5a6c2d57037d852affaca0f8
 
     }
 
-    // line 185
+    // line 188
     public function block_javascript($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -462,7 +468,7 @@ class __TwigTemplate_b46297f18e917ea1ac4c1835d252acde93d5a6c2d57037d852affaca0f8
 
     public function getDebugInfo()
     {
-        return array (  436 => 185,  418 => 103,  408 => 20,  398 => 19,  379 => 18,  361 => 5,  348 => 187,  346 => 185,  301 => 143,  297 => 142,  277 => 125,  273 => 124,  264 => 118,  260 => 117,  256 => 116,  252 => 115,  240 => 105,  238 => 103,  228 => 99,  221 => 94,  217 => 93,  211 => 89,  206 => 87,  201 => 86,  193 => 81,  188 => 79,  184 => 78,  180 => 77,  175 => 75,  172 => 74,  170 => 73,  164 => 70,  158 => 67,  152 => 64,  145 => 60,  140 => 58,  136 => 57,  132 => 56,  128 => 55,  111 => 43,  87 => 21,  84 => 19,  82 => 18,  76 => 15,  72 => 14,  68 => 13,  64 => 12,  54 => 5,  48 => 1,);
+        return array (  442 => 188,  424 => 106,  414 => 20,  404 => 19,  385 => 18,  367 => 5,  354 => 190,  352 => 188,  307 => 146,  303 => 145,  283 => 128,  279 => 127,  270 => 121,  266 => 120,  262 => 119,  258 => 118,  246 => 108,  244 => 106,  234 => 102,  227 => 97,  223 => 96,  217 => 92,  212 => 90,  207 => 89,  199 => 84,  194 => 82,  190 => 81,  186 => 80,  181 => 78,  178 => 77,  176 => 76,  170 => 73,  164 => 70,  158 => 67,  151 => 63,  146 => 61,  142 => 60,  138 => 59,  134 => 58,  126 => 53,  111 => 43,  87 => 21,  84 => 19,  82 => 18,  76 => 15,  72 => 14,  68 => 13,  64 => 12,  54 => 5,  48 => 1,);
     }
 
     public function getSourceContext()
@@ -518,6 +524,9 @@ class __TwigTemplate_b46297f18e917ea1ac4c1835d252acde93d5a6c2d57037d852affaca0f8
         </div>
         <div class=\"collapse navbar-collapse justify-content-center\" id=\"navigation\">
             <ul class=\"navbar-nav\">
+                <li class=\"nav-item\">
+                    <a href=\"{{ path('home') }}\" class=\"nav-link\"><i class=\"fa fa-home\" aria-hidden=\"true\"></i> Accueil</a>
+                </li>
                 <li class=\"nav-item dropdown\">
                     <a href=\"#\" class=\"nav-link dropdown-toggle\" id=\"navbarDropdown\" role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\"><i class=\"fa fa-cutlery\" aria-hidden=\"true\"></i> Recettes</a>
                     <div class=\"dropdown-perso dropdown-menu\" role=\"menu\" aria-labelledby=\"navbarDropdown\">
@@ -536,7 +545,7 @@ class __TwigTemplate_b46297f18e917ea1ac4c1835d252acde93d5a6c2d57037d852affaca0f8
                     <a href=\"{{ path('post_index') }}\" class=\"nav-link\"><i class=\"fa fa-pencil\"></i> Articles</a>
                 </li>
                 <li class=\"nav-item\">
-                    <a href=\"{{ path('main_about') }}\" class=\"nav-link\"><i class=\"fa fa-leaf\"></i> À propos</a>
+                    <a href=\"{{ path('programme_index') }}\" class=\"nav-link\"><i class=\"fa fa-glass\"></i> Centenaire</a>
                 </li>
                 <li class=\"login-button\">
                     {% if is_granted('IS_AUTHENTICATED_FULLY') %}
@@ -656,6 +665,6 @@ class __TwigTemplate_b46297f18e917ea1ac4c1835d252acde93d5a6c2d57037d852affaca0f8
 </body>
 </html>
 
-", "base.html.twig", "/home/cortez/Sites/reciplink/templates/base.html.twig");
+", "base.html.twig", "/Users/tomaccess/Documents/Sites/reciplink/templates/base.html.twig");
     }
 }

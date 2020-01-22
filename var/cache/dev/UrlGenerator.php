@@ -48,6 +48,7 @@ return [
     'main_cgu' => [[], ['_controller' => 'App\\Controller\\MainController::cgu'], [], [['text', '/cgu']], [], []],
     'post_show' => [['slug'], ['_controller' => 'App\\Controller\\PostController::show'], [], [['variable', '/', '[^/]++', 'slug'], ['text', '/post']], [], []],
     'post_index' => [[], ['_controller' => 'App\\Controller\\PostController::index'], [], [['text', '/posts']], [], []],
+    'programme_index' => [[], ['_controller' => 'App\\Controller\\ProgrammeController::index'], [], [['text', '/programme']], [], []],
     'recipe_index' => [[], ['_controller' => 'App\\Controller\\RecipeController::index'], [], [['text', '/recette/']], [], []],
     'recipe_new' => [[], ['_controller' => 'App\\Controller\\RecipeController::new'], [], [['text', '/recette/nouvelle']], [], []],
     'recipe_show' => [['slug'], ['_controller' => 'App\\Controller\\RecipeController::show'], [], [['variable', '/', '[^/]++', 'slug'], ['text', '/recette']], [], []],

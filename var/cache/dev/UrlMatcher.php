@@ -35,6 +35,7 @@ return [
         '/apropos' => [[['_route' => 'main_about', '_controller' => 'App\\Controller\\MainController::about'], null, null, null, false, false, null]],
         '/cgu' => [[['_route' => 'main_cgu', '_controller' => 'App\\Controller\\MainController::cgu'], null, null, null, false, false, null]],
         '/posts' => [[['_route' => 'post_index', '_controller' => 'App\\Controller\\PostController::index'], null, null, null, false, false, null]],
+        '/programme' => [[['_route' => 'programme_index', '_controller' => 'App\\Controller\\ProgrammeController::index'], null, null, null, false, false, null]],
         '/recette' => [[['_route' => 'recipe_index', '_controller' => 'App\\Controller\\RecipeController::index'], null, ['GET' => 0], null, true, false, null]],
         '/recette/nouvelle' => [[['_route' => 'recipe_new', '_controller' => 'App\\Controller\\RecipeController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/reset/password' => [[['_route' => 'reset_password', '_controller' => 'App\\Controller\\ResetPasswordController::reset'], null, null, null, false, false, null]],

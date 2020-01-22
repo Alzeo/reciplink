@@ -26,6 +26,7 @@ class __TwigTemplate_204dd16f4a72d85efb13136fc900301fd5e18db97268080f75302688899
 
         $this->blocks = [
             'title' => [$this, 'block_title'],
+            'meta' => [$this, 'block_meta'],
             'body' => [$this, 'block_body'],
         ];
     }
@@ -74,7 +75,32 @@ class __TwigTemplate_204dd16f4a72d85efb13136fc900301fd5e18db97268080f75302688899
 
     }
 
-    // line 5
+    // line 4
+    public function block_meta($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "meta"));
+
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "meta"));
+
+        // line 5
+        echo "    <meta name=\"description\" content=\"Contactez l'équipe Figuy\" />
+    <meta property=\"og:title\" content=\"Figuy - Contactez-nous\" />
+    <meta property=\"og:type\" content=\"website\" />
+    <meta property=\"og:url\" content=\"https://figuy.fr/contact\" />
+    <meta property=\"og:image\" content=\"https://figuy.fr/library/figuyv2.png\" />
+";
+        
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
+
+        
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
+
+    }
+
+    // line 11
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -84,13 +110,13 @@ class __TwigTemplate_204dd16f4a72d85efb13136fc900301fd5e18db97268080f75302688899
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 6
+        // line 12
         echo "    <style>
         .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
         .example-wrapper code { ; padding: 2px 6px; }
     </style>
     <div class=\"jumbotron text-center\" style=\"background-image: url(";
-        // line 10
+        // line 16
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/assets/img/background-user.jpg"), "html", null, true);
         echo ");  background-repeat: no-repeat; background-size:cover; background-position: center\">
         <h2>Nous contacter !</h2>
@@ -101,17 +127,17 @@ class __TwigTemplate_204dd16f4a72d85efb13136fc900301fd5e18db97268080f75302688899
         <div class=\"row\">
             <div class=\"col-xs-12 col-md-7\">
                 ";
-        // line 18
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 18, $this->source); })()), 'form_start');
+        // line 24
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 24, $this->source); })()), 'form_start');
         echo "
                 ";
-        // line 19
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 19, $this->source); })()), 'widget');
+        // line 25
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 25, $this->source); })()), 'widget');
         echo "
                 <button class=\"btn btn-primary pull-right\">Envoyer</button>
                 ";
-        // line 21
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 21, $this->source); })()), 'form_end');
+        // line 27
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 27, $this->source); })()), 'form_end');
         echo "
             </div>
             <div class=\"col-xs-offset-0 col-md-4\">
@@ -141,7 +167,7 @@ class __TwigTemplate_204dd16f4a72d85efb13136fc900301fd5e18db97268080f75302688899
 
     public function getDebugInfo()
     {
-        return array (  114 => 21,  109 => 19,  105 => 18,  94 => 10,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  140 => 27,  135 => 25,  131 => 24,  120 => 16,  114 => 12,  104 => 11,  89 => 5,  79 => 4,  60 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -149,7 +175,13 @@ class __TwigTemplate_204dd16f4a72d85efb13136fc900301fd5e18db97268080f75302688899
         return new Source("{% extends 'base.html.twig' %}
 
 {% block title %}Contactez-nous !{% endblock %}
-
+{% block meta %}
+    <meta name=\"description\" content=\"Contactez l'équipe Figuy\" />
+    <meta property=\"og:title\" content=\"Figuy - Contactez-nous\" />
+    <meta property=\"og:type\" content=\"website\" />
+    <meta property=\"og:url\" content=\"https://figuy.fr/contact\" />
+    <meta property=\"og:image\" content=\"https://figuy.fr/library/figuyv2.png\" />
+{% endblock %}
 {% block body %}
     <style>
         .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }

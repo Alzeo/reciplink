@@ -2,9 +2,9 @@
 
 {% block title %}{{recipe.name}} | recette {{ recipe.regime }}{% endblock %}
 {% block meta %}
-    <meta property="og:url"           content="http://127.0.0.1:8000/recette/{{ recipe.id }}" />
+    <meta property="og:url"           content="https://figuy.fr/recette/{{ recipe.id }}" />
     <meta property="og:type"          content="website" />
-    <meta property="og:title"         content="RecipeLink - http://127.0.0.1:8000/recette/{{ recipe.id }}" />
+    <meta property="og:title"         content="Figuy - {{ recipe.name }} | Recette {{ recipe.regime }}" />
     <meta property="og:description"   content="Recette {{ recipe.regime }} - {{ recipe.name }}" />
     <meta property="og:image"         content="https://127.0.0.1:800/recette/{{ recipe.picture }}" />
 {% endblock %}

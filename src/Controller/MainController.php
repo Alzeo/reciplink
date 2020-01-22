@@ -58,7 +58,7 @@ class MainController extends AbstractController
             return $this->redirectToRoute('home');
         }
 
-        $posts = $postRepository->findByPublish(true);
+        $posts = $postRepository->findLatest(true);
 
 
         $recipes = $recipeRepository->findLatest();

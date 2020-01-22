@@ -1,7 +1,13 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}RDécouvrez de nouvelles recettes Végan !{% endblock %}
-
+{% block meta %}
+    <meta name="description" content="Découvrez de nouvelles recettes saines Végan" />
+    <meta property="og:title" content="Figuy - Découvrez de recettes saines végan" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://figuy.fr/vegan" />
+    <meta property="og:image" content="https://figuy.fr/library/figuyv2.png" />
+{% endblock %}
 {% block body %}
     <style>
         .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
