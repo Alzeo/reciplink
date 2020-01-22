@@ -553,6 +553,16 @@ li.login-button {
 }
 
 .block-programme:hover {
-    margin-left:10px;
     transition: 0.5s;
+}
+
+.block-programme h3 {
+    color: #f5593d;
+    font-weight: 600;
+}
+
+.block-programme .btn-success:hover {
+    transform: scale(1.1);
+    background-position: -60px;
+    box-shadow: 0 3px 6px #a3a3a3;
 }

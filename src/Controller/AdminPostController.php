@@ -6,6 +6,7 @@ use App\Entity\Post;
 use App\Form\PostType;
 use App\Repository\PostRepository;
 use Doctrine\ORM\EntityManagerInterface;
+use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
@@ -15,10 +16,15 @@ class AdminPostController extends AbstractController
     /**
      * @Route("/admin/posts", name="admin_posts_index")
      */
-    public function index(PostRepository $repository)
+    public function index(PostRepository $repository, PaginatorInterface $paginator, Request $request)
     {
+        $posts = $paginator->paginate($repository->findAll(),
+            $request->query->getInt('page', 1),
+            12/*page number*/
+        );
+
         return $this->render('admin/Post/index.html.twig', [
-            'posts' => $repository->findAll(),
+            'posts' => $posts,
         ]);
     }
 

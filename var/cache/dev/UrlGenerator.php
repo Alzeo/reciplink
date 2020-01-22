@@ -25,6 +25,8 @@ return [
     'newsletter_paleo' => [[], ['_controller' => 'App\\Controller\\AdminNewsletterController::newsPaleo'], [], [['text', '/admin/send/paleo']], [], []],
     'admin_posts_index' => [[], ['_controller' => 'App\\Controller\\AdminPostController::index'], [], [['text', '/admin/posts']], [], []],
     'admin_posts_new' => [[], ['_controller' => 'App\\Controller\\AdminPostController::new'], [], [['text', '/admin/posts/new']], [], []],
+    'admin_programmes_index' => [[], ['_controller' => 'App\\Controller\\AdminProgrammeController::index'], [], [['text', '/admin/programmes']], [], []],
+    'admin_programmes_new' => [[], ['_controller' => 'App\\Controller\\AdminProgrammeController::new'], [], [['text', '/admin/programmes/new']], [], []],
     'admin_recipes_index' => [[], ['_controller' => 'App\\Controller\\AdminRecipeController::index'], [], [['text', '/admin/recipes']], [], []],
     'admin_recipes_edit' => [['id'], ['_controller' => 'App\\Controller\\AdminRecipeController::edit'], [], [['text', '/edit'], ['variable', '/', '[^/]++', 'id'], ['text', '/admin/recipes']], [], []],
     'admin_recipes_publish' => [['id'], ['_controller' => 'App\\Controller\\AdminRecipeController::publish'], [], [['text', '/publish'], ['variable', '/', '[^/]++', 'id'], ['text', '/admin/recipes']], [], []],

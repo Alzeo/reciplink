@@ -118,22 +118,41 @@ class __TwigTemplate_956626fef784e416d0b8cee53998c81bc762902dfe8a03a997bb2895f5f
         <p>Mettez toutes les chances de votre côté pour jouir d'une vie en pleine santé.</p>
     </div>
     <div class=\"container\">
-        <div class=\"block-programme shadow-lg\" style=\"padding: 20px;\">
+        ";
+        // line 18
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["programmes"]) || array_key_exists("programmes", $context) ? $context["programmes"] : (function () { throw new RuntimeError('Variable "programmes" does not exist.', 18, $this->source); })()));
+        foreach ($context['_seq'] as $context["_key"] => $context["programme"]) {
+            // line 19
+            echo "        <div class=\"block-programme shadow-lg mb-5\" style=\"padding: 20px;\">
             <div class=\"row\">
                 <div class=\"col-xs-12 col-md-4\">
                     <img src=\"";
-        // line 21
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/assets/img/intesttinreset.jpg"), "html", null, true);
-        echo "\" width=\"250px\"/>
+            // line 22
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/posts/" . twig_get_attribute($this->env, $this->source, $context["programme"], "picture", [], "any", false, false, false, 22))), "html", null, true);
+            echo "\" width=\"250px\"/>
                 </div>
                 <div class=\"col-xs-12 col-md-8\">
-                    <h3>Intestin Reset</h3>
-                    <p>Vous souffre de problèmes intestinaux qui vous gâche la vie ? Découvrez notre méthode méconnue des médecins
-                    et restaurer votre système digestif, fini la fatigue chronique, les maux de ventres, migraines.</p>
+                    <h3 class=\"mb-3 text-uppercase\">";
+            // line 25
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["programme"], "name", [], "any", false, false, false, 25), "html", null, true);
+            echo "</h3>
+                    <p class=\"mb-3\">";
+            // line 26
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["programme"], "extract", [], "any", false, false, false, 26), "html", null, true);
+            echo "
+                    </p>
                     <a href=\"#\" class=\"btn btn-success\">En savoir plus</a>
                 </div>
             </div>
         </div>
+        ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['programme'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 33
+        echo "
     </div>
 
 ";
@@ -157,7 +176,7 @@ class __TwigTemplate_956626fef784e416d0b8cee53998c81bc762902dfe8a03a997bb2895f5f
 
     public function getDebugInfo()
     {
-        return array (  126 => 21,  114 => 13,  104 => 12,  89 => 5,  79 => 4,  60 => 3,  37 => 1,);
+        return array (  155 => 33,  142 => 26,  138 => 25,  132 => 22,  127 => 19,  123 => 18,  114 => 13,  104 => 12,  89 => 5,  79 => 4,  60 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -179,19 +198,22 @@ class __TwigTemplate_956626fef784e416d0b8cee53998c81bc762902dfe8a03a997bb2895f5f
         <p>Mettez toutes les chances de votre côté pour jouir d'une vie en pleine santé.</p>
     </div>
     <div class=\"container\">
-        <div class=\"block-programme shadow-lg\" style=\"padding: 20px;\">
+        {% for programme in programmes %}
+        <div class=\"block-programme shadow-lg mb-5\" style=\"padding: 20px;\">
             <div class=\"row\">
                 <div class=\"col-xs-12 col-md-4\">
-                    <img src=\"{{ asset('/assets/img/intesttinreset.jpg') }}\" width=\"250px\"/>
+                    <img src=\"{{ asset('uploads/posts/' ~ programme.picture) }}\" width=\"250px\"/>
                 </div>
                 <div class=\"col-xs-12 col-md-8\">
-                    <h3>Intestin Reset</h3>
-                    <p>Vous souffre de problèmes intestinaux qui vous gâche la vie ? Découvrez notre méthode méconnue des médecins
-                    et restaurer votre système digestif, fini la fatigue chronique, les maux de ventres, migraines.</p>
+                    <h3 class=\"mb-3 text-uppercase\">{{ programme.name }}</h3>
+                    <p class=\"mb-3\">{{ programme.extract }}
+                    </p>
                     <a href=\"#\" class=\"btn btn-success\">En savoir plus</a>
                 </div>
             </div>
         </div>
+        {% endfor %}
+
     </div>
 
 {% endblock %}

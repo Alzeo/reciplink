@@ -20,6 +20,8 @@ return [
         '/admin/send/paleo' => [[['_route' => 'newsletter_paleo', '_controller' => 'App\\Controller\\AdminNewsletterController::newsPaleo'], null, null, null, false, false, null]],
         '/admin/posts' => [[['_route' => 'admin_posts_index', '_controller' => 'App\\Controller\\AdminPostController::index'], null, null, null, false, false, null]],
         '/admin/posts/new' => [[['_route' => 'admin_posts_new', '_controller' => 'App\\Controller\\AdminPostController::new'], null, null, null, false, false, null]],
+        '/admin/programmes' => [[['_route' => 'admin_programmes_index', '_controller' => 'App\\Controller\\AdminProgrammeController::index'], null, null, null, false, false, null]],
+        '/admin/programmes/new' => [[['_route' => 'admin_programmes_new', '_controller' => 'App\\Controller\\AdminProgrammeController::new'], null, null, null, false, false, null]],
         '/admin/recipes' => [[['_route' => 'admin_recipes_index', '_controller' => 'App\\Controller\\AdminRecipeController::index'], null, null, null, false, false, null]],
         '/admin/tags' => [[['_route' => 'admin_tags_index', '_controller' => 'App\\Controller\\AdminTagsController::index'], null, null, null, false, false, null]],
         '/admin/tags/new' => [[['_route' => 'admin_tags_new', '_controller' => 'App\\Controller\\AdminTagsController::create'], null, null, null, false, false, null]],
